@@ -1,0 +1,966 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. Fundamentals · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/dev/os/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/dev/os/assets/gitbook/style.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/dev/os/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/dev/os/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/dev/os/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/dev/os/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/dev/os/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/os/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/dev/os/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/os/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/dev/os/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/dev/os/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/dev/os/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/dev/os/vmmachine/2_windows_hyper_v/" />
+        
+
+        
+            <link rel="next" href="/dev/os/docker/3_dcfd_2_workflow/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/dev/os/">
+            <img class="logo zoom" src="/dev/os/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/dev/os/">
+            <img class="logo zoom" src="/dev/os/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/dev/os/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os">
+                
+                <a href="/dev/os/" onclick="pageScrollToTop(this)">
+                    Wiki | O/S
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_windows</p> -->
+            
+                <p class="collection-title">Windows</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/1_windows10/">
+                
+                <a href="/dev/os/windows/1_windows10/" onclick="pageScrollToTop(this)">
+                    1. Windows 10
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/2_windows_server2019/">
+                
+                <a href="/dev/os/windows/2_windows_server2019/" onclick="pageScrollToTop(this)">
+                    2. Windows Server 2019
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/3.1_mingw/">
+                
+                <a href="/dev/os/windows/3.1_mingw/" onclick="pageScrollToTop(this)">
+                    3.1. MinGW
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/3.2_cygwin/">
+                
+                <a href="/dev/os/windows/3.2_cygwin/" onclick="pageScrollToTop(this)">
+                    3.2. Cygwin
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/3_wsl/">
+                
+                <a href="/dev/os/windows/3_wsl/" onclick="pageScrollToTop(this)">
+                    3. Linux for Windows (WSL)
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>2_unixdistributions</p> -->
+            
+                <p class="collection-title">Unix Distribution</p>
+            
+            
+            
+
+            
+
+            
+            
+            
+            <!-- <p>3_vmachines</p> -->
+            
+                <p class="collection-title">Virtual Machines / Containers</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/vmmachine/1_vmworkstation/">
+                
+                <a href="/dev/os/vmmachine/1_vmworkstation/" onclick="pageScrollToTop(this)">
+                    1. VM Workstation
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/vmmachine/2_windows_hyper_v/">
+                
+                <a href="/dev/os/vmmachine/2_windows_hyper_v/" onclick="pageScrollToTop(this)">
+                    2. Windows Hyper-V
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Docker</p>
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/dev/os/docker/3_dcfd_1_docker/">
+                
+                <a href="/dev/os/docker/3_dcfd_1_docker/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                <ul><li><a href="#1-docker-vs-virtual-machines" onclick="mobilePageScrollToAnchor(this)" >1. Docker vs Virtual Machines?</a><ul><li><a href="#11-architecture" onclick="mobilePageScrollToAnchor(this)" >1.1 Architecture</a></li><li><a href="#12-performance" onclick="mobilePageScrollToAnchor(this)" >1.2 Performance</a></li><li><a href="#13-isolation" onclick="mobilePageScrollToAnchor(this)" >1.3 Isolation</a></li><li><a href="#14-portability" onclick="mobilePageScrollToAnchor(this)" >1.4 Portability</a></li><li><a href="#15-use-cases" onclick="mobilePageScrollToAnchor(this)" >1.5 Use Cases</a></li><li><a href="#summary" onclick="mobilePageScrollToAnchor(this)" >Summary</a></li></ul></li><li><a href="#2-what-is-a-hypervisor" onclick="mobilePageScrollToAnchor(this)" >2. What is a hypervisor?</a><ul><li><a href="#21-types-of-hypervisors" onclick="mobilePageScrollToAnchor(this)" >2.1 Types of Hypervisors</a></li><li><a href="#22-functions-of-a-hypervisor" onclick="mobilePageScrollToAnchor(this)" >2.2 Functions of a Hypervisor</a></li><li><a href="#23-advantages-of-using-hypervisors" onclick="mobilePageScrollToAnchor(this)" >2.3 Advantages of Using Hypervisors</a></li><li><a href="#24-disadvantages-of-using-hypervisors" onclick="mobilePageScrollToAnchor(this)" >2.4 Disadvantages of Using Hypervisors</a></li><li><a href="#25-examples-of-hypervisors" onclick="mobilePageScrollToAnchor(this)" >2.5 Examples of Hypervisors</a></li></ul></li><li><a href="#3-docker-on-windows-installation" onclick="mobilePageScrollToAnchor(this)" >3. Docker on Windows (Installation)</a></li><li><a href="#4-docker-cli-cheat-sheet" onclick="mobilePageScrollToAnchor(this)" >4. Docker CLI Cheat Sheet</a></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_dcfd_2_workflow/">
+                
+                <a href="/dev/os/docker/3_dcfd_2_workflow/" onclick="pageScrollToTop(this)">
+                    2. Workflow
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>4_iotplatforms</p> -->
+            
+                <p class="collection-title">IoT Platform</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/iotplatform/1_tensorboard/">
+                
+                <a href="/dev/os/iotplatform/1_tensorboard/" onclick="pageScrollToTop(this)">
+                    1. Home Assistant
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >1. Fundamentals</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/docker/3_dcfd_1_docker">1. Fundamentals</h1>
+                    
+
+                    <h1 id="1-docker-vs-virtual-machines">1. Docker vs Virtual Machines?</h1>
+
+<p>Docker and virtual machines (VMs) are both technologies used to create isolated environments for running applications, but they have fundamental differences in terms of architecture, performance, and usage. Here’s a detailed comparison:</p>
+
+<h2 id="11-architecture">1.1 Architecture</h2>
+
+<p><strong>Virtual Machines:</strong></p>
+<ul>
+  <li>VMs run on a <a href="#2-what-is-a-hypervisor">hypervisor</a>, which can be either Type 1 (bare-metal) or Type 2 (hosted).</li>
+  <li>Each VM includes a full operating system (OS) instance, which means that every VM has its own kernel and set of system libraries.</li>
+  <li>VMs are more heavyweight due to the need for separate OS instances and the overhead of the <a href="#2-what-is-a-hypervisor">hypervisor</a>.</li>
+</ul>
+
+<p><strong>Docker:</strong></p>
+<ul>
+  <li>Docker uses containerization technology, which leverages the host OS kernel.</li>
+  <li>Containers share the host OS kernel and use isolated user spaces, making them much lighter than VMs.</li>
+  <li>Docker containers package applications and their dependencies but do not include a full OS, just the necessary libraries and binaries.</li>
+</ul>
+
+<h2 id="12-performance">1.2 Performance</h2>
+
+<p><strong>Virtual Machines:</strong></p>
+<ul>
+  <li>VMs are more resource-intensive because they require more CPU, memory, and storage to run multiple full OS instances.</li>
+  <li>The <a href="#2-what-is-a-hypervisor">hypervisor</a> adds a layer of overhead, which can impact performance.</li>
+</ul>
+
+<p><strong>Docker:</strong></p>
+<ul>
+  <li>Containers are more lightweight and efficient because they share the host OS kernel.</li>
+  <li>Startup times for containers are typically much faster compared to VMs.</li>
+  <li>Docker can achieve higher density of applications on the same hardware compared to VMs.</li>
+</ul>
+
+<h2 id="13-isolation">1.3 Isolation</h2>
+
+<p><strong>Virtual Machines:</strong></p>
+<ul>
+  <li>VMs provide strong isolation because each VM runs a completely separate OS instance.</li>
+  <li>This isolation is more secure but at the cost of higher resource usage.</li>
+</ul>
+
+<p><strong>Docker:</strong></p>
+<ul>
+  <li>Containers provide process-level isolation using namespaces and control groups (cgroups) in the Linux kernel.</li>
+  <li>While still secure, container isolation is generally considered to be less strong than VM isolation since they share the same kernel.</li>
+</ul>
+
+<h2 id="14-portability">1.4 Portability</h2>
+
+<p><strong>Virtual Machines:</strong></p>
+<ul>
+  <li>VMs are portable across different physical machines and can be migrated easily using tools provided by <a href="#2-what-is-a-hypervisor">hypervisor</a> vendors.</li>
+  <li>Portability can be limited by differences in the underlying hardware and <a href="#2-what-is-a-hypervisor">hypervisor</a> features.</li>
+</ul>
+
+<p><strong>Docker:</strong></p>
+<ul>
+  <li>Docker containers are highly portable and can run on any system that supports Docker, regardless of the underlying hardware or OS.</li>
+  <li>Docker images can be easily shared and deployed across different environments using Docker Hub or private registries.</li>
+</ul>
+
+<h2 id="15-use-cases">1.5 Use Cases</h2>
+
+<p><strong>Virtual Machines:</strong></p>
+<ul>
+  <li>Running multiple different operating systems on a single physical machine.</li>
+  <li>Providing strong isolation for applications that require high security.</li>
+  <li>Legacy applications that require a specific OS environment.</li>
+</ul>
+
+<p><strong>Docker:</strong></p>
+<ul>
+  <li>Microservices architecture and modern application development.</li>
+  <li>Continuous Integration/Continuous Deployment (CI/CD) pipelines.</li>
+  <li>Applications that need to be lightweight, scalable, and portable.</li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aspect</th>
+      <th>Virtual Machines</th>
+      <th>Docker Containers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Architecture</td>
+      <td>Full OS instance per VM</td>
+      <td>Shared OS kernel</td>
+    </tr>
+    <tr>
+      <td>Resource Usage</td>
+      <td>High</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>Performance</td>
+      <td>Slower startup, higher overhead</td>
+      <td>Fast startup, low overhead</td>
+    </tr>
+    <tr>
+      <td>Isolation</td>
+      <td>Stronger isolation</td>
+      <td>Process-level isolation</td>
+    </tr>
+    <tr>
+      <td>Portability</td>
+      <td>Limited by <a href="#2-what-is-a-hypervisor">hypervisor</a></td>
+      <td>Highly portable</td>
+    </tr>
+    <tr>
+      <td>Use Cases</td>
+      <td>Multi-OS environments, strong security</td>
+      <td>Microservices, CI/CD, scalability</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Both Docker and virtual machines have their own strengths and are suitable for different scenarios. Understanding these differences can help in choosing the right technology for a given use case.</p>
+
+<h1 id="2-what-is-a-hypervisor">2. What is a hypervisor?</h1>
+
+<p>A hypervisor, also known as a virtual machine monitor (VMM), is software, firmware, or hardware that creates and manages virtual machines (VMs) by allowing multiple operating systems to share a single hardware host. Each operating system or virtual machine appears to have the host’s processor, memory, and other resources all to itself, but the hypervisor is actually controlling the host processor and resources, allocating what is needed to each operating system, and making sure that the guest operating systems (guest VMs) cannot disrupt each other.</p>
+
+<h2 id="21-types-of-hypervisors">2.1 Types of Hypervisors</h2>
+
+<p>There are two main types of hypervisors:</p>
+
+<ol>
+  <li><strong>Type 1 Hypervisors (Bare-Metal Hypervisors):</strong>
+    <ul>
+      <li>These hypervisors run directly on the host’s hardware to control the hardware and to manage guest operating systems.</li>
+      <li>They do not require a separate underlying operating system.</li>
+      <li>Examples include VMware ESXi, Microsoft Hyper-V, and Xen.</li>
+    </ul>
+  </li>
+  <li><strong>Type 2 Hypervisors (Hosted Hypervisors):</strong>
+    <ul>
+      <li>These hypervisors run on a conventional operating system (OS) just as other computer programs do.</li>
+      <li>The guest operating system runs as a process on the host.</li>
+      <li>Examples include VMware Workstation, Oracle VirtualBox, and Parallels Desktop.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="22-functions-of-a-hypervisor">2.2 Functions of a Hypervisor</h2>
+
+<ul>
+  <li><strong>Resource Allocation:</strong> Hypervisors allocate resources like CPU, memory, storage, and network to each VM.</li>
+  <li><strong>Isolation:</strong> They provide isolation between VMs to ensure that the operation of one VM does not affect others.</li>
+  <li><strong>Virtual Hardware Emulation:</strong> Hypervisors emulate virtual hardware devices for VMs, allowing VMs to use abstracted hardware resources.</li>
+  <li><strong>VM Management:</strong> They provide tools and interfaces for creating, managing, and monitoring VMs.</li>
+  <li><strong>Migration:</strong> Hypervisors allow for live migration of VMs between hosts without downtime, which is useful for load balancing and maintenance.</li>
+</ul>
+
+<h2 id="23-advantages-of-using-hypervisors">2.3 Advantages of Using Hypervisors</h2>
+
+<ul>
+  <li><strong>Consolidation:</strong> Multiple VMs can run on a single physical machine, improving hardware utilization.</li>
+  <li><strong>Isolation:</strong> Each VM operates independently, providing strong isolation for different workloads or tenants.</li>
+  <li><strong>Scalability:</strong> New VMs can be quickly created and deployed to scale applications.</li>
+  <li><strong>Flexibility:</strong> Different operating systems can be run on the same hardware platform.</li>
+  <li><strong>Disaster Recovery:</strong> Hypervisors can help in creating snapshots and backups of VMs, aiding in disaster recovery.</li>
+</ul>
+
+<h2 id="24-disadvantages-of-using-hypervisors">2.4 Disadvantages of Using Hypervisors</h2>
+
+<ul>
+  <li><strong>Performance Overhead:</strong> Running multiple VMs on the same hardware can introduce performance overhead due to resource sharing and virtualization.</li>
+  <li><strong>Complexity:</strong> Managing a virtualized environment can be complex and may require specialized skills and tools.</li>
+  <li><strong>Security Risks:</strong> While hypervisors provide isolation, vulnerabilities in the hypervisor itself can potentially lead to security risks affecting all VMs.</li>
+</ul>
+
+<h2 id="25-examples-of-hypervisors">2.5 Examples of Hypervisors</h2>
+
+<ul>
+  <li><strong>Type 1 (Bare-Metal):</strong>
+    <ul>
+      <li>VMware ESXi</li>
+      <li>Microsoft Hyper-V</li>
+      <li>Xen</li>
+      <li>KVM (Kernel-based Virtual Machine)</li>
+    </ul>
+  </li>
+  <li><strong>Type 2 (Hosted):</strong>
+    <ul>
+      <li>VMware Workstation</li>
+      <li>Oracle VirtualBox</li>
+      <li>Parallels Desktop</li>
+      <li>QEMU (Quick Emulator)</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="important">IMPORTANT</h5>
+
+  <p>Hypervisors are fundamental to modern cloud computing, enabling the efficient use of hardware resources and the flexible deployment of virtualized workloads.</p>
+</blockquote>
+
+<h1 id="3-docker-on-windows-installation">3. Docker on Windows (Installation)</h1>
+
+<style>  
+
+  #video2.flex-container {
+      display: flex;
+      flex-direction: row;
+  }
+  #video2.flex-container > div {
+    width: 100%;
+    height: 440px;
+    margin: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  
+
+  
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 800px) {
+
+    #video2.flex-container {
+      flex-direction: column;
+    }
+    #video2.flex-container > div {
+      width: 100%;
+      height: 250px;
+    }
+  }
+</style>
+
+<div id="video2" class="flex-container">
+  
+  <div><iframe style="border-radius: 10px; overflow: hidden; border: 2px solid #7a7a7a; box-shadow: 1px 2px 5px #b4b4b4;" width="100%" height="100%" src="https://www.youtube.com/embed/rATNU0Fr8zs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
+  
+</div>
+
+<p>Docker Desktop is a crucial tool for developers looking to containerize applications. The video from the Docker Mastery course offers a detailed walkthrough, now shared on YouTube for broader accessibility. Below are the steps and recommendations from the course for setting up Docker Desktop on Windows 10 or 11.</p>
+
+<p><strong>1. Downloading and Installing Docker Desktop</strong></p>
+
+<ul>
+  <li>Visit the <a href="https://www.docker.com/products/docker-desktop">Docker Desktop download page</a> and download the installer.</li>
+  <li>Run the executable to start the installation process.</li>
+</ul>
+
+<p><strong>2. Enabling WSL 2</strong></p>
+
+<ul>
+  <li>Docker Desktop now uses WSL 2, a more efficient way to run Linux on Windows compared to the older Hyper-V setup.</li>
+  <li>During installation, enable WSL 2 if it isn’t already enabled. The installer will guide you through this, including installing the necessary Linux kernel update.</li>
+</ul>
+
+<p><strong>3. Post-Installation Configuration</strong></p>
+
+<ul>
+  <li>After installation, launch Docker Desktop and follow the setup wizard.</li>
+  <li>Agree to the End User License Agreement (EULA). Docker Desktop is free for learning and personal use, though some enterprise features may require a paid license.</li>
+</ul>
+
+<p><strong>4. Setting Up Visual Studio Code</strong></p>
+
+<ul>
+  <li>Download Visual Studio Code from <a href="https://code.visualstudio.com/">its official website</a>.</li>
+  <li>Install Docker and Kubernetes extensions within Visual Studio Code for enhanced functionality.</li>
+</ul>
+
+<p><strong>5. Adjusting Docker Desktop Settings</strong></p>
+
+<ul>
+  <li>Access Docker Desktop settings by right-clicking the Docker icon in the system tray and selecting “Settings”.</li>
+  <li>Configure your preferred settings, especially under the WSL integration section. Ensure your Linux distributions (e.g., Ubuntu) are enabled for Docker.</li>
+</ul>
+
+<p><strong>6. Creating a Docker ID</strong></p>
+
+<ul>
+  <li>Create a free Docker ID at <a href="https://hub.docker.com/">hub.docker.com</a>.</li>
+  <li>Log in to Docker Desktop with your Docker ID to increase your pull rate limit from Docker Hub.</li>
+</ul>
+
+<p><strong>7. Cloning the Course Repository</strong></p>
+
+<ul>
+  <li>Clone the course repository into your WSL file system for better performance:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone &lt;repository_url&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>Using Windows Terminal (not recommended)</strong></p>
+
+<ul>
+  <li>Windows Terminal provides a modern interface for managing your command-line tools, supporting PowerShell, Command Prompt, and WSL distributions.</li>
+  <li>Download it from the Microsoft Store if you’re on Windows 10, or use the pre-installed version on Windows 11.</li>
+  <li>Customize the terminal to set your default profile to WSL for a seamless Docker experience.</li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="recommended">RECOMMENDED</h5>
+
+  <p>Use WSL2 distribution like Ubuntu to access docker instead of docker desktop or Windows terminal</p>
+</blockquote>
+
+<p><strong>Troubleshooting Tips</strong></p>
+
+<ul>
+  <li><strong>Virtualization Errors</strong>: Ensure CPU virtualization features (VT-x) are enabled in your BIOS.</li>
+  <li><strong>Pull Rate Limits</strong>: Log in with your Docker ID to avoid hitting free-tier limits on Docker Hub.</li>
+</ul>
+
+<h1 id="4-docker-cli-cheat-sheet">4. Docker CLI Cheat Sheet</h1>
+
+<p>Docker provides the ability to package and run an application in a loosely isolated environment called a container. The isolation and security allows you to run many containers simultaneously on a given host. Containers are lightweight and contain everything needed to run the application, so you do not need to rely on what is currently installed on the host. You can easily share containers while you work, and be sure that everyone you share with gets the same container that works in the same way.</p>
+
+<p><a href="https://docs.docker.com/get-started/docker_cheatsheet.pdf">Download Cheat Sheet</a></p>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/dev/os/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/dev/os/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/dev/os/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    
+
+</script>
+
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/dev/os/vmmachine/2_windows_hyper_v/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2. Windows Hyper-V"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/dev/os/docker/3_dcfd_2_workflow/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. Workflow"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "2. Workflow",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_3_vmachines/3_dcfd_2_workflow.md",
+            "ref": "_3_vmachines/3_dcfd_2_workflow.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | O/S",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_3_vmachines/3_dcfd_1_docker.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-07-29 11:15:58 +0800"
+    },
+    "basePath": "/dev/os",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/dev/os/assets/gitbook/gitbook.js"></script>
+<script src="/dev/os/assets/gitbook/theme.js"></script>
+
+<script src="/dev/os/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/dev/os/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/dev/os/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>

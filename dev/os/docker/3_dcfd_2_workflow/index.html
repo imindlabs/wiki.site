@@ -1,0 +1,1020 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2. Workflow · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/dev/os/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/dev/os/assets/gitbook/style.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/dev/os/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/dev/os/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/dev/os/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/dev/os/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/dev/os/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/os/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/dev/os/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/os/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/dev/os/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/dev/os/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/dev/os/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/dev/os/docker/3_dcfd_1_docker/" />
+        
+
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/dev/os/">
+            <img class="logo zoom" src="/dev/os/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/dev/os/">
+            <img class="logo zoom" src="/dev/os/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/dev/os/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os">
+                
+                <a href="/dev/os/" onclick="pageScrollToTop(this)">
+                    Wiki | O/S
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_windows</p> -->
+            
+                <p class="collection-title">Windows</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/1_windows10/">
+                
+                <a href="/dev/os/windows/1_windows10/" onclick="pageScrollToTop(this)">
+                    1. Windows 10
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/2_windows_server2019/">
+                
+                <a href="/dev/os/windows/2_windows_server2019/" onclick="pageScrollToTop(this)">
+                    2. Windows Server 2019
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/3.1_mingw/">
+                
+                <a href="/dev/os/windows/3.1_mingw/" onclick="pageScrollToTop(this)">
+                    3.1. MinGW
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/3.2_cygwin/">
+                
+                <a href="/dev/os/windows/3.2_cygwin/" onclick="pageScrollToTop(this)">
+                    3.2. Cygwin
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/3_wsl/">
+                
+                <a href="/dev/os/windows/3_wsl/" onclick="pageScrollToTop(this)">
+                    3. Linux for Windows (WSL)
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>2_unixdistributions</p> -->
+            
+                <p class="collection-title">Unix Distribution</p>
+            
+            
+            
+
+            
+
+            
+            
+            
+            <!-- <p>3_vmachines</p> -->
+            
+                <p class="collection-title">Virtual Machines / Containers</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/vmmachine/1_vmworkstation/">
+                
+                <a href="/dev/os/vmmachine/1_vmworkstation/" onclick="pageScrollToTop(this)">
+                    1. VM Workstation
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/vmmachine/2_windows_hyper_v/">
+                
+                <a href="/dev/os/vmmachine/2_windows_hyper_v/" onclick="pageScrollToTop(this)">
+                    2. Windows Hyper-V
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Docker</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_dcfd_1_docker/">
+                
+                <a href="/dev/os/docker/3_dcfd_1_docker/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/dev/os/docker/3_dcfd_2_workflow/">
+                
+                <a href="/dev/os/docker/3_dcfd_2_workflow/" onclick="pageScrollToTop(this)">
+                    2. Workflow
+                </a>
+                
+                
+                <ul><li><a href="#1-creating-a-docker-container" onclick="mobilePageScrollToAnchor(this)" >1. Creating a Docker Container</a><ul><li><a href="#11-example-running-an-alpine-linux-shell" onclick="mobilePageScrollToAnchor(this)" >1.1 Example: Running an Alpine Linux Shell</a></li><li><a href="#12-additional-tips" onclick="mobilePageScrollToAnchor(this)" >1.2 Additional Tips</a></li></ul></li><li><a href="#2-docker-with-ubuntu-vs-ubuntu-vm" onclick="mobilePageScrollToAnchor(this)" >2. Docker with Ubuntu vs Ubuntu VM?</a><ul><li><a href="#21-key-concepts-and-technologies" onclick="mobilePageScrollToAnchor(this)" >2.1 Key Concepts and Technologies</a></li><li><a href="#22-example-of-how-an-ubuntu-image-works-in-docker" onclick="mobilePageScrollToAnchor(this)" >2.2 Example of How an Ubuntu Image Works in Docker</a></li><li><a href="#23-how-docker-achieves-this" onclick="mobilePageScrollToAnchor(this)" >2.3 How Docker Achieves This</a></li></ul></li><li><a href="#3-docker-basics" onclick="mobilePageScrollToAnchor(this)" >3. Docker Basics</a><ul><li><a href="#31-docker-crash-course" onclick="mobilePageScrollToAnchor(this)" >3.1 Docker Crash Course</a></li><li><a href="#32-docker-intermediate" onclick="mobilePageScrollToAnchor(this)" >3.2 Docker Intermediate</a></li><li><a href="#33-docker-advance" onclick="mobilePageScrollToAnchor(this)" >3.3 Docker Advance</a></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>4_iotplatforms</p> -->
+            
+                <p class="collection-title">IoT Platform</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/iotplatform/1_tensorboard/">
+                
+                <a href="/dev/os/iotplatform/1_tensorboard/" onclick="pageScrollToTop(this)">
+                    1. Home Assistant
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >2. Workflow</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/docker/3_dcfd_2_workflow">2. Workflow</h1>
+                    
+
+                    <h1 id="1-creating-a-docker-container">1. Creating a Docker Container</h1>
+
+<p>Creating a Docker container that runs a Unix shell is straightforward and a common use case. Docker containers can run any process, including a shell, provided that the necessary binaries and libraries are included in the container image. Here’s a step-by-step guide on how to create and run a Docker container with a Unix shell:</p>
+
+<h4 id="step-1-install-docker">Step 1: Install Docker</h4>
+
+<p>Ensure Docker is installed on your system. You can download and install Docker from the <a href="https://www.docker.com/get-started">official Docker website</a>.</p>
+
+<h4 id="step-2-choose-a-base-image">Step 2: Choose a Base Image</h4>
+
+<p>Docker images are built from base images, which can include various Linux distributions. Common choices for Unix shell environments include:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">alpine</code>: A minimal Docker image based on Alpine Linux.</li>
+  <li><code class="language-plaintext highlighter-rouge">ubuntu</code>: A more full-featured Docker image based on Ubuntu.</li>
+</ul>
+
+<h4 id="step-3-create-a-dockerfile">Step 3: Create a Dockerfile</h4>
+
+<p>A Dockerfile is a script that contains instructions on how to build a Docker image. Below are examples of Dockerfiles for both Alpine Linux and Ubuntu:</p>
+
+<h5 id="dockerfile-for-alpine-linux">Dockerfile for Alpine Linux</h5>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use the official Alpine Linux image</span>
+<span class="k">FROM</span><span class="s"> alpine:latest</span>
+
+<span class="c"># Install Bash shell</span>
+<span class="k">RUN </span>apk add <span class="nt">--no-cache</span> bash
+
+<span class="c"># Set the default command to run Bash</span>
+<span class="k">CMD</span><span class="s"> ["bash"]</span>
+</code></pre></div></div>
+
+<h5 id="dockerfile-for-ubuntu">Dockerfile for Ubuntu</h5>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use the official Ubuntu image</span>
+<span class="k">FROM</span><span class="s"> ubuntu:latest</span>
+
+<span class="c"># Install Bash shell</span>
+<span class="k">RUN </span>apt-get update <span class="o">&amp;&amp;</span> apt-get <span class="nb">install</span> <span class="nt">-y</span> bash
+
+<span class="c"># Set the default command to run Bash</span>
+<span class="k">CMD</span><span class="s"> ["bash"]</span>
+</code></pre></div></div>
+
+<h4 id="step-4-build-the-docker-image">Step 4: Build the Docker Image</h4>
+
+<p>Navigate to the directory containing your Dockerfile and build the Docker image using the <code class="language-plaintext highlighter-rouge">docker build</code> command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For Alpine Linux</span>
+docker build <span class="nt">-t</span> alpine-bash <span class="nb">.</span>
+
+<span class="c"># For Ubuntu</span>
+docker build <span class="nt">-t</span> ubuntu-bash <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">-t</code> flag tags the image with a name (<code class="language-plaintext highlighter-rouge">alpine-bash</code> or <code class="language-plaintext highlighter-rouge">ubuntu-bash</code>).</p>
+
+<h4 id="step-5-run-the-docker-container">Step 5: Run the Docker Container</h4>
+
+<p>Once the image is built, you can run a container from the image using the <code class="language-plaintext highlighter-rouge">docker run</code> command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For Alpine Linux</span>
+docker run <span class="nt">-it</span> alpine-bash
+
+<span class="c"># For Ubuntu</span>
+docker run <span class="nt">-it</span> ubuntu-bash
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">-it</code> flags make the container interactive and allocate a pseudo-TTY, allowing you to interact with the shell.</p>
+
+<h2 id="11-example-running-an-alpine-linux-shell">1.1 Example: Running an Alpine Linux Shell</h2>
+
+<p>Here’s a complete example of creating and running an Alpine Linux shell in a Docker container:</p>
+
+<ol>
+  <li>
+    <p>Create a directory and a Dockerfile:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>alpine-shell
+<span class="nb">cd </span>alpine-shell
+nano Dockerfile
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add the following content to the Dockerfile:</p>
+
+    <div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> alpine:latest</span>
+<span class="k">RUN </span>apk add <span class="nt">--no-cache</span> bash
+<span class="k">CMD</span><span class="s"> ["bash"]</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Build the Docker image:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">-t</span> alpine-bash <span class="nb">.</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run the Docker container:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> alpine-bash
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>You will now be inside a Bash shell running in an Alpine Linux container.</p>
+
+<h2 id="12-additional-tips">1.2 Additional Tips</h2>
+
+<ul>
+  <li>
+    <p><strong>Persisting Data:</strong> If you need to persist data, you can mount a volume using the <code class="language-plaintext highlighter-rouge">-v</code> flag:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> <span class="nt">-v</span> /host/path:/container/path alpine-bash
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Networking:</strong> You can connect the container to a network using the <code class="language-plaintext highlighter-rouge">--network</code> flag:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> <span class="nt">--network</span><span class="o">=</span>my-network alpine-bash
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Custom Commands:</strong> You can override the default command to run custom scripts or commands:</p>
+
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> alpine-bash sh <span class="nt">-c</span> <span class="s2">"echo 'Hello, World!'"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="important">IMPORTANT</h5>
+
+  <p>Docker makes it easy to package and distribute environments, including Unix shells, ensuring consistency and isolation from the host system.</p>
+</blockquote>
+
+<h1 id="2-docker-with-ubuntu-vs-ubuntu-vm">2. Docker with Ubuntu vs Ubuntu VM?</h1>
+
+<p>Docker provides the functionality of different operating systems, like Ubuntu, without running a full guest OS by leveraging a few key concepts and technologies. Here’s how Docker manages to provide the same functionalities using an Ubuntu image without installing the entire Ubuntu operating system:</p>
+
+<h2 id="21-key-concepts-and-technologies">2.1 Key Concepts and Technologies</h2>
+
+<h5 id="containers-vs-virtual-machines">Containers vs. Virtual Machines:</h5>
+<ul>
+  <li><strong>Virtual Machines (VMs):</strong> Each VM includes a full operating system along with the application and its dependencies, running on a hypervisor. This means each VM has its own kernel and OS resources.</li>
+  <li><strong>Containers:</strong> Containers, on the other hand, share the host system’s kernel and only include the application and its dependencies. Containers run as isolated processes on the host OS, using its kernel but maintaining their own filesystem, network, and process space.</li>
+</ul>
+
+<h5 id="union-file-systems-and-docker-layers">Union File Systems and Docker Layers:</h5>
+<ul>
+  <li>Docker images are built in layers. Each instruction in a Dockerfile creates a new layer. These layers are stacked and form a union filesystem, which means that the image only contains the necessary parts of the OS to run the application.</li>
+  <li>For an Ubuntu image, this includes the necessary binaries, libraries, and tools that are part of the Ubuntu userland, but not the kernel.</li>
+</ul>
+
+<h5 id="namespaces-and-cgroups">Namespaces and Cgroups:</h5>
+<ul>
+  <li><strong>Namespaces:</strong> Provide isolated environments within the same OS instance. This includes process isolation (PID namespace), user isolation (user namespace), file system isolation (mount namespace), etc.</li>
+  <li><strong>Control Groups (Cgroups):</strong> Manage and limit resource usage (CPU, memory, disk I/O, etc.) of the containerized applications.</li>
+</ul>
+
+<h5 id="docker-images">Docker Images:</h5>
+<ul>
+  <li>When you pull an Ubuntu Docker image from Docker Hub, it includes the Ubuntu filesystem (binaries, libraries, etc.) but without the Ubuntu kernel. It relies on the host’s kernel to function.</li>
+  <li>This means the image has everything needed to provide the “Ubuntu experience” (such as the apt package manager, bash shell, common utilities, etc.) without the overhead of a full OS.</li>
+</ul>
+
+<h2 id="22-example-of-how-an-ubuntu-image-works-in-docker">2.2 Example of How an Ubuntu Image Works in Docker</h2>
+
+<p>When you run an Ubuntu container, Docker uses the host OS kernel and provides the container with the Ubuntu filesystem:</p>
+
+<ol>
+  <li><strong>Download the Ubuntu Image:</strong>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull ubuntu
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Run the Ubuntu Container:</strong>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> ubuntu
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Inside the container, you can run commands just like you would on a full Ubuntu system:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@container_id:/# <span class="nb">ls
+</span>bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+</code></pre></div></div>
+
+<p>You can use <code class="language-plaintext highlighter-rouge">apt-get</code> to install software, navigate the filesystem, and perform other tasks as if you were on an Ubuntu machine.</p>
+
+<h2 id="23-how-docker-achieves-this">2.3 How Docker Achieves This</h2>
+
+<ol>
+  <li><strong>File System:</strong>
+    <ul>
+      <li>The Ubuntu Docker image contains a minimal root filesystem that replicates the Ubuntu environment. This includes directories like <code class="language-plaintext highlighter-rouge">/bin</code>, <code class="language-plaintext highlighter-rouge">/etc</code>, <code class="language-plaintext highlighter-rouge">/lib</code>, <code class="language-plaintext highlighter-rouge">/usr</code>, etc., filled with the usual tools and libraries.</li>
+    </ul>
+  </li>
+  <li><strong>Process Management:</strong>
+    <ul>
+      <li>Docker containers run as isolated processes on the host system. The host’s kernel manages these processes, providing the necessary system calls and resource management.</li>
+    </ul>
+  </li>
+  <li><strong>User Space Tools:</strong>
+    <ul>
+      <li>The tools and applications you use within the container are from the Ubuntu user space. These tools are packaged in the Docker image, enabling you to interact with the container as if it were a standalone Ubuntu system.</li>
+    </ul>
+  </li>
+</ol>
+
+<blockquote class="block-tip">
+  <h5 id="important-1">IMPORTANT</h5>
+
+  <p>Docker containers simulate a full OS environment by packaging the userland components (binaries, libraries, tools) of that OS while relying on the host’s kernel. This approach allows Docker to provide lightweight, efficient, and isolated environments that mimic the functionalities of a complete OS without the overhead of a full VM.</p>
+</blockquote>
+
+<h1 id="3-docker-basics">3. Docker Basics</h1>
+
+<h2 id="31-docker-crash-course">3.1 Docker Crash Course</h2>
+
+<style>  
+
+  #video2.flex-container {
+      display: flex;
+      flex-direction: row;
+  }
+  #video2.flex-container > div {
+    width: 100%;
+    height: 440px;
+    margin: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  
+
+  
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 800px) {
+
+    #video2.flex-container {
+      flex-direction: column;
+    }
+    #video2.flex-container > div {
+      width: 100%;
+      height: 250px;
+    }
+  }
+</style>
+
+<div id="video2" class="flex-container">
+  
+  <div><iframe style="border-radius: 10px; overflow: hidden; border: 2px solid #7a7a7a; box-shadow: 1px 2px 5px #b4b4b4;" width="100%" height="100%" src="https://www.youtube.com/embed/31ieHmcTUOk?list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
+  
+</div>
+
+<h4 id="pulled-docker-images-are-stored-in">Pulled docker images are stored in?</h4>
+
+<p>Here is a list of the storage locations of the docker images on different operating systems:</p>
+<ul>
+  <li>Ubuntu: /var/lib/docker/</li>
+  <li>Fedora: /var/lib/docker/</li>
+  <li>Debian: /var/lib/docker/</li>
+  <li>Windows: C:\ProgramData\DockerDesktop.</li>
+  <li>MacOS: ~/Library/Containers/com. docker. docker/Data/vms/0/</li>
+</ul>
+
+<h2 id="32-docker-intermediate">3.2 Docker Intermediate</h2>
+
+<style>  
+
+  #video2.flex-container {
+      display: flex;
+      flex-direction: row;
+  }
+  #video2.flex-container > div {
+    width: 100%;
+    height: 440px;
+    margin: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  
+
+  
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 800px) {
+
+    #video2.flex-container {
+      flex-direction: column;
+    }
+    #video2.flex-container > div {
+      width: 100%;
+      height: 250px;
+    }
+  }
+</style>
+
+<div id="video2" class="flex-container">
+  
+  <div><iframe style="border-radius: 10px; overflow: hidden; border: 2px solid #7a7a7a; box-shadow: 1px 2px 5px #b4b4b4;" width="100%" height="100%" src="https://www.youtube.com/embed/gAkwW2tuIqE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
+  
+</div>
+
+<h2 id="33-docker-advance">3.3 Docker Advance</h2>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/dev/os/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/dev/os/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/dev/os/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/dev/os/docker/3_dcfd_1_docker/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 1. Fundamentals"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | O/S",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_3_vmachines/3_dcfd_2_workflow.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-07-29 11:15:58 +0800"
+    },
+    "basePath": "/dev/os",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/dev/os/assets/gitbook/gitbook.js"></script>
+<script src="/dev/os/assets/gitbook/theme.js"></script>
+
+<script src="/dev/os/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/dev/os/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/dev/os/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>
