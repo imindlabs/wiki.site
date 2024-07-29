@@ -655,6 +655,20 @@ nano Dockerfile
 </div>
 
 <h2 id="33-docker-advance">3.3 Docker Advance</h2>
+
+<p>You can enter a running container with:</p>
+
+<p><code class="language-plaintext highlighter-rouge">docker exec -it my_new_container /bin/bash</code></p>
+
+<p>you can replace bash with sh if bash is not available in the container.</p>
+
+<p>to attach to a running container later, use -a / –attach option:</p>
+
+<p><code class="language-plaintext highlighter-rouge">docker start -a  my_new_container</code>
+and if you need to explicitly use a UID , like root = UID 0, you can specify this:</p>
+
+<p><code class="language-plaintext highlighter-rouge">docker exec -it -u 0 my_new_container /bin/bash</code>
+which will log you as root</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -957,7 +971,7 @@ nano Dockerfile
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-07-29 11:15:58 +0800"
+        "time": "2024-07-29 11:31:50 +0800"
     },
     "basePath": "/dev/os",
     "book": {
