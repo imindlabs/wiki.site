@@ -1,0 +1,635 @@
+/* This file is kept intentionally blank inside the jekyll-github-theme
+ * It gets imported at the end of custom.css
+ * Its purpose is for users of the theme to be able to add css rules from a blank file
+ *   these get simply added to the ones already active in the layout.
+ */
+
+
+/******************************************************************************/
+/* 1. General */
+/******************************************************************************/
+
+:root {
+  --c-theme-0-bg: #004577;
+  --c-theme-0-fg: white;
+
+  --c-theme-1-bg: #111111;
+  --c-theme-1-fg: white;
+
+  --c-theme-2-bg: #2d3143;
+  --c-theme-2-fg: white;
+}
+
+/******************************************************************************/
+/* Animation */
+/******************************************************************************/
+/* @import "style.css"; */
+ 
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes headShake {
+  0% {
+    transform: translateX(0);
+  }
+
+  6.5% {
+    transform: translateX(-6px) rotateY(-9deg);
+  }
+
+  18.5% {
+    transform: translateX(5px) rotateY(7deg);
+  }
+
+  31.5% {
+    transform: translateX(-3px) rotateY(-5deg);
+  }
+
+  43.5% {
+    transform: translateX(2px) rotateY(3deg);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+}
+
+.headShake {
+  animation-timing-function: ease-in-out;
+  animation-name: headShake;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+
+/******************************************************************************/
+/* 1. General */
+/******************************************************************************/
+
+/* Scroll bars */
+::-webkit-scrollbar-thumb:vertical {
+  background-color: var(--c-theme-0-bg);
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: var(--c-theme-0-bg);
+}
+.book.color-theme-1 ::-webkit-scrollbar-thumb:vertical {
+  background-color: var(--c-theme-1-bg);
+}
+.book.color-theme-1 ::-webkit-scrollbar-thumb:horizontal {
+  background-color: var(--c-theme-1-bg);
+}
+.book.color-theme-2 ::-webkit-scrollbar-thumb:vertical {
+  background-color: var(--c-theme-2-bg);
+}
+.book.color-theme-2 ::-webkit-scrollbar-thumb:horizontal {
+  background-color: var(--c-theme-2-bg);
+}
+
+/* Copyrights */
+.copyright {
+  text-align: center;
+  padding: 10px 0 10px 0;
+  background-color: var(--c-theme-0-bg);
+  color: var(--c-theme-0-fg);
+}
+.book.color-theme-1 .copyright {
+  background-color: var(--c-theme-1-bg);
+  color: var(--c-theme-1-fg);
+}
+.book.color-theme-2 .copyright {
+  background-color: var(--c-theme-2-bg);
+  color: var(--c-theme-2-fg);
+}
+
+/* Logo */
+.logo-wrap {
+  animation-delay: 2s;
+  animation-duration: 1.7s;
+  animation-name: pulse;
+}
+
+.logo {
+  padding: 5px 4px;
+  /* width: 60%; */
+  animation-duration: 1.7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.logo:hover {
+  animation-name: pulse;
+}
+.logo:active {
+  animation-duration: 0.5s;
+  animation-name: headShake;
+}
+
+/* Side Navigation */
+.book-summary {
+  background: var(--c-theme-0-bg);
+  font-family: "Exo", sans-serif;
+}
+.book-summary ul.summary li a,
+.book-summary ul.summary li span {
+  color: white;
+}
+.book-summary ul.summary li a {
+  text-overflow: initial;
+  overflow: initial;
+  white-space: initial;
+}
+
+.book-summary ul.summary li a:hover {
+  color: #00c2ff;
+  text-decoration: none;
+}
+.book-summary ul.summary li.active > a {
+  color: #00c2ff;
+}
+.book-summary ul.summary li.divider {
+  background-color: #0d83dd8f; /*#ffffff7a;*/
+  margin-bottom: 1px;
+}
+.book.color-theme-2 .book-summary ul.summary li a {
+  font-weight: initial;
+}
+.book-summary .collection-title {
+  color: white;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 0px;
+  background-color: #00b0ff30;
+  box-shadow: 5px 3px 6px 0px #0000005e;
+  border-top-style: solid;
+  border-color: #2575ad;
+  border-top-width: 2px;
+}
+.book-summary .separator-title {
+  color: white;
+  background-color: #00000030;
+  padding: 10px;
+  margin: 0px;
+  font-size: 12px;
+}
+
+
+/* Search on the Nav */
+#book-search-input-link,
+#book-search-input {
+  border-bottom: 1px solid #0d83dd8f;
+  border-top: 1px solid #0d83dd8f;
+  background: #00b6ff7a;
+}
+::placeholder {
+  color: #dbdbdb;
+}
+#book-search-input input,
+#book-search-input input:focus,
+#book-search-input input:hover,
+#book-search-input-link a {
+  color: #dbdbdb;
+  font-style: italic;
+}
+
+/* Loading Spinner */
+.spinner-border {
+  --bs-spinner-width: 5rem;
+  --bs-spinner-height: 5rem;
+}
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+}
+
+/* Body */
+.book.font-family-1 {
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Exo", sans-serif;
+}
+
+/* Mansory Card Collection */
+.mansory-container {
+  border-left: 2px double #f1f1f1;
+}
+.markdown-section .iml-card-anchor .card-header {
+  color: var(--c-theme-0-bg);
+}
+.markdown-section .iml-card-title {
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+  color: var(--c-theme-0-bg) !important;
+}
+.markdown-section .iml-card-body {
+  font-size: 0.8em;
+  /* line-height: initial; */
+}
+.card {
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.01);
+}
+.markdown-section .iml-card-anchor:hover,
+.markdown-section .iml-card-anchor:focus {
+  text-decoration: none;
+}
+
+/* anchor */
+.markdown-section a {
+  cursor: pointer;
+}
+
+/******************************************************************************/
+/* 03. Tips, warnings, and dangers */
+/******************************************************************************/
+.markdown-section blockquote.block-tip {
+  padding: 10px 15px 10px 10px;
+  border-radius: 10px;
+}
+.markdown-section blockquote.block-tip h1,
+.markdown-section blockquote.block-tip h2,
+.markdown-section blockquote.block-tip h3,
+.markdown-section blockquote.block-tip h4,
+.markdown-section blockquote.block-tip h5,
+.markdown-section blockquote.block-tip h6 {
+  margin: 0px 0px 0.65em 0px;
+}
+.markdown-section blockquote.block-tip p {
+  margin: 0px !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-tip {
+  border-color: var(--c-tip) !important;
+  background-color: var(--c-tip-bg) !important;
+  color: var(--c-tip-text) !important;
+  font-family: var(--font-family) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-tip h1 {
+  color: var(--c-tip-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-tip h2 {
+  color: var(--c-tip-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-tip h3 {
+  color: var(--c-tip-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-tip h4 {
+  color: var(--c-tip-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-tip h5 {
+  color: var(--c-tip-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-tip h6 {
+  color: var(--c-tip-title) !important;
+}
+
+/* .markdown-section blockquote.block-warning {
+  border-color: var(--c-warning);
+  background-color: var(--c-warning-bg);
+  color: var(--c-warning-text);
+  font-family: var(--font-family);
+} */
+.markdown-section blockquote.block-warning {
+  padding: 10px 15px 10px 10px;
+  border-radius: 10px;
+}
+.markdown-section blockquote.block-warning h1,
+.markdown-section blockquote.block-warning h2,
+.markdown-section blockquote.block-warning h3,
+.markdown-section blockquote.block-warning h4,
+.markdown-section blockquote.block-warning h5,
+.markdown-section blockquote.block-warning h6 {
+  margin: 0px 0px 0.65em 0px;
+}
+.markdown-section blockquote.block-warning p {
+  margin: 0px !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-tip p {
+  margin: 0px !important;
+  padding: 10px;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-warning h1 {
+  color: var(--c-warning-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-warning h2 {
+  color: var(--c-warning-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-warning h3 {
+  color: var(--c-warning-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-warning h4 {
+  color: var(--c-warning-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-warning h5 {
+  color: var(--c-warning-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-warning h6 {
+  color: var(--c-warning-title) !important;
+}
+
+/* .markdown-section blockquote.block-danger {
+  border-color: var(--c-danger);
+  background-color: var(--c-danger-bg);
+  color: var(--c-danger-text);
+  font-family: var(--font-family);
+} */
+.markdown-section blockquote.block-danger {
+  padding: 10px 15px 10px 10px;
+  border-radius: 10px;
+}
+.markdown-section blockquote.block-danger h1,
+.markdown-section blockquote.block-danger h2,
+.markdown-section blockquote.block-danger h3,
+.markdown-section blockquote.block-danger h4,
+.markdown-section blockquote.block-danger h5,
+.markdown-section blockquote.block-danger h6 {
+  margin: 0px 0px 0.65em 0px;
+}
+.markdown-section blockquote.block-danger p {
+  margin: 0px !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-danger h1 {
+  color: var(--c-danger-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-danger h2 {
+  color: var(--c-danger-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-danger h3 {
+  color: var(--c-danger-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-danger h4 {
+  color: var(--c-danger-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-danger h5 {
+  color: var(--c-danger-title) !important;
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-danger h6 {
+  color: var(--c-danger-title) !important;
+}
+
+/******************************************************************************/
+/* 03. Styles for Paragraphs */
+/******************************************************************************/
+/*
+ * Style 01 Paragraph and Image (float)
+ */
+.float_right_40 {
+  text-align: center;
+  width: 40%;
+  animation-duration: 0.8s;
+  float: right;
+  position: relative;
+}
+.style_1_para_img-img {
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+
+  animation-duration: 1.7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  
+  /* transform-origin: bottom; */
+  /* animation-timing-function: ease-in-out; */
+
+  transition: all .2s ease-in-out;
+}
+.style_1_para_img-img:hover {
+  /* transform: scale(1.5); */
+
+  animation-name: pulse;
+}
+.style_1_para_img-img:active {
+  border: 5px solid #cacaca;
+  animation-duration: 0.5s;
+  animation-name: headShake;
+}
+.animated {
+  animation-duration: 0.8s;
+}
+
+/******************************************************************************/
+/* 03. Image Styles */
+/******************************************************************************/
+.markdown-section .img-style-solid-1 {
+  border: 2px solid #cacaca;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+/******************************************************************************/
+/* 03. Home Page Styles */
+/******************************************************************************/
+/* .img_url {
+  content: url("/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+  content: url("/assets/images/wiki.imindlabs.logo.png");
+} */
+
+#home-title {
+  text-align: center;
+  font-size: 4rem;
+  /* color: #0d83dd; */
+  /* text-shadow: 2px 2px #ff0000; */
+  /* font-family: "Exo", sans-serif; */
+  background-color: #ebf2ff;
+  /* font-variant: small-caps; */
+  padding: 10px 0 10px 0;
+}
+.book.color-theme-1 #home-title {
+  background-color: #d9cd81;
+  /* color: var(--c-theme-1-fg); */
+}
+.book.color-theme-2 #home-title {
+  background-color: var(--c-theme-2-bg);
+  color: var(--c-theme-2-fg);
+}
+.book-body .page-inner section {
+  text-align: justify;
+}
+.book-body .page-inner section h1,
+.book-body .page-inner section h2,
+.book-body .page-inner section h3,
+.book-body .page-inner section h4,
+.book-body .page-inner section h5,
+.book-body .page-inner section h6,
+.book-body .page-inner section table {
+  text-align: left;
+}
+.page-inner h1,
+.page-inner h2,
+.page-inner h3,
+.page-inner h4,
+.page-inner h5,
+.page-inner h6 {
+  color: var(--c-theme-0-bg);
+}
+
+/******************************************************************************/
+/* 03. Tab Styles */
+/******************************************************************************/
+.nav-tabs .nav-link {
+  color: #333;
+}
+.nav-tabs .nav-link.active {
+  color: #0093ff;
+}
+
+.code-tab-padding {
+  padding: 3px 3px 3px 3px;
+}
+.text-tab-padding {
+  padding: 1rem;
+}
+
+/******************************************************************************/
+/* 03. Code Styles */
+/******************************************************************************/
+.markdown-section pre {
+  background: #272822;
+}
+.markdown-section code, .markdown-section pre {
+  color: white;
+}
+.markdown-section pre>code {
+  font-size: 1em;
+}
+
+/******************************************************************************/
+/* 03. Mansory Styles */
+/******************************************************************************/
+.mansory-tag {
+    font-size: .8em;
+ }
+
+/* ---- grid ---- */
+.grid, .grid2 {
+  /* background: #ddd; */
+  /* max-width: 1200px; */
+  max-width: 100%;
+}
+
+/* clear fix */
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+.grid-item {
+  float: left;
+  width: 255px;
+  /* height: 100px; */
+  /* background: #0D8; */
+  /* border: 2px solid #333; */
+  /* border-color: hsla(0, 0%, 0%, 0.7); */
+  padding: 3px 3px 3px 3px;
+}
+
+@media screen and (max-width: 1240px) {
+  .navigation.navigation-prev {
+    background-color: #449ac5;
+  }
+  .navigation.navigation-next {
+    background-color: #007bb8;
+  }
+  .copyright {
+    padding: 70px 0 10px 0;
+    width: 99.3%;
+  }
+}
+/* Large ≥992px */
+@media screen and (max-width: 992px) {
+  .copyright {
+    width: 99%;
+  }
+}
+/* Medium ≥768px */
+@media screen and (max-width: 768px) {
+}
+/* Small ≥576px */
+@media screen and (max-width: 576px) {
+  .grid-item {
+    /* height:2200px; */
+    width: 100%;
+  }
+}
+
+/******************************************************************************/
+/* 03. Xmind Styles */
+/******************************************************************************/
+div[id^='mount'] iframe {
+  border: 1px solid #999999;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px #939393;
+}
+
+
+/******************************************************************************/
+.show_element {
+  visibility: visible;
+}
+.hide_element {
+  visibility: hidden;
+}
+.display_none {
+  display: none;
+}
