@@ -1,0 +1,962 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. Fundamentals · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/dev/distcomp/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/dev/distcomp/assets/gitbook/style.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/dev/distcomp/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/dev/distcomp/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/dev/distcomp/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/dev/distcomp/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/distcomp/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/dev/distcomp/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/distcomp/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/dev/distcomp/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/dev/distcomp/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/dev/distcomp/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/dev/distcomp/c_sharp/1_cs_2_advance/" />
+        
+
+        
+            <link rel="next" href="/dev/distcomp/wcf/1_dc_2_wcf/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/dev/distcomp/">
+            <img class="logo zoom" src="/dev/distcomp/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/dev/distcomp/">
+            <img class="logo zoom" src="/dev/distcomp/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/dev/distcomp/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp">
+                
+                <a href="/dev/distcomp/" onclick="pageScrollToTop(this)">
+                    Wiki | Distributed - Computing
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_net_distcomp</p> -->
+            
+                <p class="collection-title">.Net Distributed Computing</p>
+            
+            
+            
+
+            
+            
+            
+            <p class="separator-title">C#</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/c_sharp/1_cs_1_fundamentals/">
+                
+                <a href="/dev/distcomp/c_sharp/1_cs_1_fundamentals/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/c_sharp/1_cs_2_advance/">
+                
+                <a href="/dev/distcomp/c_sharp/1_cs_2_advance/" onclick="pageScrollToTop(this)">
+                    2. Advance
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Distributed Computing</p>
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/dev/distcomp/wcf/1_dc_1_fundamentals/">
+                
+                <a href="/dev/distcomp/wcf/1_dc_1_fundamentals/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                <ul><li><a href="#1-windows-communication-foundation" onclick="mobilePageScrollToAnchor(this)" >1. Windows Communication Foundation</a><ul><li><a href="#11-key-features-of-wcf" onclick="mobilePageScrollToAnchor(this)" >1.1 Key Features of WCF</a></li><li><a href="#12-importance-of-wcf-in-distributed-computing" onclick="mobilePageScrollToAnchor(this)" >1.2 Importance of WCF in Distributed Computing</a></li></ul></li><li><a href="#2-corba-" onclick="mobilePageScrollToAnchor(this)" >2. CORBA ?</a><ul><li><a href="#21-key-features-of-corba" onclick="mobilePageScrollToAnchor(this)" >2.1 Key Features of CORBA</a></li><li><a href="#22-relationship-between-corba-and-wcf" onclick="mobilePageScrollToAnchor(this)" >2.2 Relationship Between CORBA and WCF</a></li></ul></li><li><a href="#3-simple-application-using-wcf" onclick="mobilePageScrollToAnchor(this)" >3. Simple Application Using WCF</a><ul><li><a href="#1-define-the-service-contract" onclick="mobilePageScrollToAnchor(this)" >1. Define the Service Contract</a></li><li><a href="#2-implement-the-service" onclick="mobilePageScrollToAnchor(this)" >2. Implement the Service</a></li><li><a href="#3-host-the-service" onclick="mobilePageScrollToAnchor(this)" >3. Host the Service</a></li><li><a href="#4-configure-the-service" onclick="mobilePageScrollToAnchor(this)" >4. Configure the Service</a></li><li><a href="#5-create-a-client-to-consume-the-service" onclick="mobilePageScrollToAnchor(this)" >5. Create a Client to Consume the Service</a></li><li><a href="#6-run-the-applications" onclick="mobilePageScrollToAnchor(this)" >6. Run the Applications</a></li><li><a href="#alternative-to-step-4" onclick="mobilePageScrollToAnchor(this)" >Alternative to Step 4</a><ul><li><a href="#1-hosting-the-service-programmatically" onclick="mobilePageScrollToAnchor(this)" >1. Hosting the Service Programmatically</a></li><li><a href="#2-creating-the-client-programmatically" onclick="mobilePageScrollToAnchor(this)" >2. Creating the Client Programmatically</a></li></ul></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Distributed Computing</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/wcf/1_dc_2_wcf/">
+                
+                <a href="/dev/distcomp/wcf/1_dc_2_wcf/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>2_java_distcomp</p> -->
+            
+                <p class="collection-title">Java Distributed Computing</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/java/1_basics/">
+                
+                <a href="/dev/distcomp/java/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Basics
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >1. Fundamentals</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/wcf/1_dc_1_fundamentals">1. Fundamentals</h1>
+                    
+
+                    <h1 id="1-windows-communication-foundation">1. Windows Communication Foundation</h1>
+<p>Windows Communication Foundation (WCF) is a framework developed by Microsoft for building service-oriented applications. It allows developers to build secure, reliable, and scalable distributed systems by providing a unified programming model for building and deploying networked services.</p>
+
+<h2 id="11-key-features-of-wcf">1.1 Key Features of WCF</h2>
+
+<p><strong>1. Interoperability</strong>: WCF is designed to interoperate with services built on other platforms, thanks to its support for various industry standards like SOAP, WS-*, and REST.</p>
+
+<p><strong>2. Service-Oriented Architecture (SOA)</strong>: WCF supports SOA principles, making it easier to create loosely coupled services that can be composed and orchestrated into more complex workflows.</p>
+
+<p><strong>3. Multiple Transport Protocols</strong>: WCF supports multiple communication protocols, including HTTP, TCP, MSMQ, and named pipes. This flexibility allows developers to choose the most appropriate protocol for their application’s requirements.</p>
+
+<p><strong>4. Security</strong>: WCF provides a range of security features, including message encryption, authentication, and authorization. It supports various security standards and allows for secure communication over different protocols.</p>
+
+<p><strong>5. Extensibility</strong>: WCF is highly extensible, allowing developers to customize the runtime behavior and add new communication capabilities.</p>
+
+<p><strong>6. Reliable Messaging</strong>: WCF includes built-in support for reliable messaging, ensuring that messages are delivered even in the presence of network failures.</p>
+
+<h2 id="12-importance-of-wcf-in-distributed-computing">1.2 Importance of WCF in Distributed Computing</h2>
+
+<p><strong>1. Communication Abstraction</strong>: WCF abstracts the underlying communication mechanisms, allowing developers to focus on business logic rather than the complexities of networking. This is crucial for building scalable distributed systems.</p>
+
+<p><strong>2. Interoperability</strong>: With support for standard protocols and data formats, WCF facilitates communication between services built on different platforms and technologies, making it a key tool for building interoperable distributed systems.</p>
+
+<p><strong>3. Security and Reliability</strong>: WCF provides robust security features and reliable messaging, which are critical for distributed systems that need to operate over insecure or unreliable networks.</p>
+
+<p><strong>4. Scalability</strong>: WCF’s support for different communication patterns (such as request/reply, one-way, and duplex) and its ability to host services in various environments (such as IIS, Windows Services, or self-hosted) contribute to building scalable distributed systems.</p>
+
+<p><strong>5. Flexibility and Extensibility</strong>: WCF’s flexible configuration and extensibility make it suitable for a wide range of applications, from simple web services to complex, enterprise-level distributed systems.</p>
+
+<h1 id="2-corba-">2. CORBA ?</h1>
+
+<p><strong>Common Object Request Broker Architecture (CORBA)</strong> is a standard defined by the Object Management Group (OMG) for enabling communication between objects in a distributed computing environment, regardless of the programming language in which they were written or the platforms on which they are running. CORBA achieves this by specifying a set of protocols and services that facilitate object communication and interoperability.</p>
+
+<h2 id="21-key-features-of-corba">2.1 Key Features of CORBA</h2>
+
+<p><strong>1. Object Request Broker (ORB)</strong>: The core component of CORBA, the ORB, acts as a middleware that handles communication between client and server objects. It manages requests and responses, handles object references, and performs necessary data conversions.</p>
+
+<p><strong>2. Interface Definition Language (IDL)</strong>: CORBA uses IDL to define the interfaces that objects expose. IDL is language-agnostic, enabling objects written in different programming languages to communicate.</p>
+
+<p><strong>3. Interoperability</strong>: CORBA supports interoperability between different platforms and languages by providing standard protocols, such as IIOP (Internet Inter-ORB Protocol).</p>
+
+<p><strong>4. Services and Facilities</strong>: CORBA provides a set of standard services (e.g., naming, event, transaction) and facilities (e.g., messaging) that support distributed object interactions.</p>
+
+<p><strong>5. Platform Independence</strong>: CORBA objects can be implemented in any language and run on any platform, as long as they conform to the CORBA standard.</p>
+
+<h2 id="22-relationship-between-corba-and-wcf">2.2 Relationship Between CORBA and WCF</h2>
+
+<p>While both CORBA and WCF serve the purpose of enabling communication in distributed systems, they come from different backgrounds and have some key differences:</p>
+
+<p><strong>1. Technology Origin and Standards</strong>:</p>
+<ul>
+  <li><strong>CORBA</strong>: Developed by the OMG, CORBA is a vendor-neutral, platform-independent standard designed for cross-language and cross-platform interoperability.</li>
+  <li><strong>WCF</strong>: Developed by Microsoft, WCF is a .NET framework that primarily supports interoperability within the .NET ecosystem but also adheres to industry standards like SOAP and WS-*, allowing for some level of cross-platform communication.</li>
+</ul>
+
+<p><strong>2. Communication Model</strong>:</p>
+<ul>
+  <li><strong>CORBA</strong>: Focuses on an object-oriented model where distributed objects interact by invoking methods on each other, much like local objects.</li>
+  <li><strong>WCF</strong>: Is service-oriented, focusing on the exchange of messages between services. It supports various communication patterns, including request/reply, one-way, and duplex.</li>
+</ul>
+
+<p><strong>3. IDL vs. Contracts</strong>:</p>
+<ul>
+  <li><strong>CORBA</strong>: Uses IDL to define the interface of objects in a language-agnostic way.</li>
+  <li><strong>WCF</strong>: Uses .NET interfaces and attributes to define service contracts, which are typically tied to .NET languages.</li>
+</ul>
+
+<p><strong>4. Interoperability</strong>:</p>
+<ul>
+  <li><strong>CORBA</strong>: Is inherently designed for interoperability between different languages and platforms.</li>
+  <li><strong>WCF</strong>: Can interoperate with other platforms and technologies through support for standard protocols like SOAP, but it is primarily geared towards .NET applications.</li>
+</ul>
+
+<p><strong>5. Security and Reliability</strong>:</p>
+<ul>
+  <li>Both CORBA and WCF offer various security and reliability features, though WCF has more built-in support for modern web standards and practices.</li>
+</ul>
+
+<p>CORBA and WCF are both technologies for building distributed systems, but they are rooted in different ecosystems and have different focuses. CORBA is a cross-platform, language-agnostic standard, while WCF is a Microsoft-centric framework with strong integration into the .NET ecosystem. Both serve to enable communication and interoperability in distributed systems, albeit with different approaches and use cases.</p>
+
+<h1 id="3-simple-application-using-wcf">3. Simple Application Using WCF</h1>
+
+<p>Creating a simple WCF (Windows Communication Foundation) application involves defining a service contract, implementing the service, hosting the service, and creating a client to consume the service. Below, I’ll walk you through a basic example where we create a simple calculator service.</p>
+
+<h2 id="1-define-the-service-contract">1. Define the Service Contract</h2>
+
+<p>The service contract specifies the operations that the service provides. We use the <code class="language-plaintext highlighter-rouge">[ServiceContract]</code> and <code class="language-plaintext highlighter-rouge">[OperationContract]</code> attributes to define the contract.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.ServiceModel</span><span class="p">;</span>
+
+<span class="p">[</span><span class="n">ServiceContract</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">ICalculator</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
+    <span class="kt">double</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
+    <span class="kt">double</span> <span class="nf">Subtract</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2-implement-the-service">2. Implement the Service</h2>
+
+<p>Implement the service contract by creating a class that implements the interface.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">CalculatorService</span> <span class="p">:</span> <span class="n">ICalculator</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">Subtract</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="p">-</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="3-host-the-service">3. Host the Service</h2>
+
+<p>The service can be hosted in various environments like IIS, Windows Services, or a console application. For simplicity, we’ll use a console application.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ServiceModel</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Define the base address for the service</span>
+        <span class="n">Uri</span> <span class="n">baseAddress</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Uri</span><span class="p">(</span><span class="s">"http://localhost:8080/CalculatorService"</span><span class="p">);</span>
+
+        <span class="c1">// Create the ServiceHost</span>
+        <span class="k">using</span> <span class="p">(</span><span class="n">ServiceHost</span> <span class="n">host</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ServiceHost</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">CalculatorService</span><span class="p">),</span> <span class="n">baseAddress</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="c1">// Open the host</span>
+            <span class="n">host</span><span class="p">.</span><span class="nf">Open</span><span class="p">();</span>
+
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Service is running..."</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Press Enter to exit."</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="4-configure-the-service">4. Configure the Service</h2>
+
+<p>Add configuration details in the <code class="language-plaintext highlighter-rouge">App.config</code> file. This includes the service, endpoint, binding, and behavior.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;configuration&gt;</span>
+  <span class="nt">&lt;system.serviceModel&gt;</span>
+    <span class="nt">&lt;services&gt;</span>
+      <span class="nt">&lt;service</span> <span class="na">name=</span><span class="s">"Namespace.CalculatorService"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;endpoint</span> <span class="na">address=</span><span class="s">""</span> <span class="na">binding=</span><span class="s">"basicHttpBinding"</span> <span class="na">contract=</span><span class="s">"Namespace.ICalculator"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;host&gt;</span>
+          <span class="nt">&lt;baseAddresses&gt;</span>
+            <span class="nt">&lt;add</span> <span class="na">baseAddress=</span><span class="s">"http://localhost:8080/CalculatorService"</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/baseAddresses&gt;</span>
+        <span class="nt">&lt;/host&gt;</span>
+      <span class="nt">&lt;/service&gt;</span>
+    <span class="nt">&lt;/services&gt;</span>
+    <span class="nt">&lt;behaviors&gt;</span>
+      <span class="nt">&lt;serviceBehaviors&gt;</span>
+        <span class="nt">&lt;behavior&gt;</span>
+          <span class="nt">&lt;serviceMetadata</span> <span class="na">httpGetEnabled=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;serviceDebug</span> <span class="na">includeExceptionDetailInFaults=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/behavior&gt;</span>
+      <span class="nt">&lt;/serviceBehaviors&gt;</span>
+    <span class="nt">&lt;/behaviors&gt;</span>
+  <span class="nt">&lt;/system.serviceModel&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div></div>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">Namespace</code> with the appropriate namespace for your service.</p>
+
+<h2 id="5-create-a-client-to-consume-the-service">5. Create a Client to Consume the Service</h2>
+
+<p>To consume the service, you can create a client application. For simplicity, we’ll also use a console application.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ServiceModel</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Define the service endpoint</span>
+        <span class="kt">string</span> <span class="n">baseAddress</span> <span class="p">=</span> <span class="s">"http://localhost:8080/CalculatorService"</span><span class="p">;</span>
+
+        <span class="c1">// Create the channel factory</span>
+        <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">ICalculator</span><span class="p">&gt;</span> <span class="n">factory</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">ICalculator</span><span class="p">&gt;(</span>
+            <span class="k">new</span> <span class="nf">BasicHttpBinding</span><span class="p">(),</span>
+            <span class="k">new</span> <span class="nf">EndpointAddress</span><span class="p">(</span><span class="n">baseAddress</span><span class="p">)</span>
+        <span class="p">);</span>
+
+        <span class="c1">// Create the channel</span>
+        <span class="n">ICalculator</span> <span class="n">calculator</span> <span class="p">=</span> <span class="n">factory</span><span class="p">.</span><span class="nf">CreateChannel</span><span class="p">();</span>
+
+        <span class="c1">// Use the service</span>
+        <span class="kt">double</span> <span class="n">result</span> <span class="p">=</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"1 + 2 = </span><span class="p">{</span><span class="n">result</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+        <span class="n">result</span> <span class="p">=</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">Subtract</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"5 - 3 = </span><span class="p">{</span><span class="n">result</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+        <span class="c1">// Close the channel</span>
+        <span class="p">((</span><span class="n">IClientChannel</span><span class="p">)</span><span class="n">calculator</span><span class="p">).</span><span class="nf">Close</span><span class="p">();</span>
+        <span class="n">factory</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="6-run-the-applications">6. Run the Applications</h2>
+
+<ol>
+  <li><strong>Run the Service Host</strong>: Start the console application that hosts the WCF service.</li>
+  <li><strong>Run the Client</strong>: Start the console application that consumes the service.</li>
+</ol>
+
+<p>When the client runs, it should display the results of the operations provided by the <code class="language-plaintext highlighter-rouge">CalculatorService</code>.</p>
+
+<p>This example demonstrates a basic setup for a WCF application. In real-world applications, you may need to consider additional aspects like security, error handling, and more complex configurations.</p>
+
+<h2 id="alternative-to-step-4">Alternative to Step 4</h2>
+
+<p>If you prefer to configure the WCF service and client entirely in code without modifying the <code class="language-plaintext highlighter-rouge">App.config</code> file, you can do so by setting up the <code class="language-plaintext highlighter-rouge">ServiceHost</code> and <code class="language-plaintext highlighter-rouge">ChannelFactory</code> programmatically. Here’s how you can implement it:</p>
+
+<h3 id="1-hosting-the-service-programmatically">1. Hosting the Service Programmatically</h3>
+
+<p>In the service host application, you can set up the <code class="language-plaintext highlighter-rouge">ServiceHost</code> and define the binding, endpoint, and base address in code.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ServiceModel</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Define the base address for the service</span>
+        <span class="n">Uri</span> <span class="n">baseAddress</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Uri</span><span class="p">(</span><span class="s">"net.tcp://localhost:8080/CalculatorService"</span><span class="p">);</span>
+
+        <span class="c1">// Create the ServiceHost</span>
+        <span class="k">using</span> <span class="p">(</span><span class="n">ServiceHost</span> <span class="n">host</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ServiceHost</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">CalculatorService</span><span class="p">),</span> <span class="n">baseAddress</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="c1">// Create the NetTcpBinding</span>
+            <span class="n">NetTcpBinding</span> <span class="n">binding</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NetTcpBinding</span><span class="p">();</span>
+
+            <span class="c1">// Add the service endpoint</span>
+            <span class="n">host</span><span class="p">.</span><span class="nf">AddServiceEndpoint</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">ICalculator</span><span class="p">),</span> <span class="n">binding</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+
+            <span class="c1">// Optional: Enable metadata exchange</span>
+            <span class="n">ServiceMetadataBehavior</span> <span class="n">smb</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ServiceMetadataBehavior</span><span class="p">();</span>
+            <span class="n">smb</span><span class="p">.</span><span class="n">MetadataExporter</span><span class="p">.</span><span class="n">PolicyVersion</span> <span class="p">=</span> <span class="n">PolicyVersion</span><span class="p">.</span><span class="n">Policy15</span><span class="p">;</span>
+            <span class="n">host</span><span class="p">.</span><span class="n">Description</span><span class="p">.</span><span class="n">Behaviors</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">smb</span><span class="p">);</span>
+            <span class="n">host</span><span class="p">.</span><span class="nf">AddServiceEndpoint</span><span class="p">(</span><span class="n">ServiceMetadataBehavior</span><span class="p">.</span><span class="n">MexContractName</span><span class="p">,</span> <span class="n">MetadataExchangeBindings</span><span class="p">.</span><span class="nf">CreateMexTcpBinding</span><span class="p">(),</span> <span class="s">"mex"</span><span class="p">);</span>
+
+            <span class="c1">// Open the host</span>
+            <span class="n">host</span><span class="p">.</span><span class="nf">Open</span><span class="p">();</span>
+
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Service is running..."</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Press Enter to exit."</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">();</span>
+
+            <span class="c1">// Close the host</span>
+            <span class="n">host</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this code:</p>
+<ul>
+  <li>We define the base address as <code class="language-plaintext highlighter-rouge">"net.tcp://localhost:8080/CalculatorService"</code>.</li>
+  <li>We create an instance of <code class="language-plaintext highlighter-rouge">NetTcpBinding</code> and add a service endpoint.</li>
+  <li>We optionally enable metadata exchange (MEX) over TCP, which is useful for generating client proxies.</li>
+</ul>
+
+<h3 id="2-creating-the-client-programmatically">2. Creating the Client Programmatically</h3>
+
+<p>In the client application, you can set up the <code class="language-plaintext highlighter-rouge">ChannelFactory</code> and create the channel programmatically.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ServiceModel</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Define the service endpoint</span>
+        <span class="kt">string</span> <span class="n">baseAddress</span> <span class="p">=</span> <span class="s">"net.tcp://localhost:8080/CalculatorService"</span><span class="p">;</span>
+
+        <span class="c1">// Create the NetTcpBinding</span>
+        <span class="n">NetTcpBinding</span> <span class="n">binding</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NetTcpBinding</span><span class="p">();</span>
+
+        <span class="c1">// Create the channel factory</span>
+        <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">ICalculator</span><span class="p">&gt;</span> <span class="n">factory</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">ICalculator</span><span class="p">&gt;(</span><span class="n">binding</span><span class="p">,</span> <span class="k">new</span> <span class="nf">EndpointAddress</span><span class="p">(</span><span class="n">baseAddress</span><span class="p">));</span>
+
+        <span class="c1">// Create the channel</span>
+        <span class="n">ICalculator</span> <span class="n">calculator</span> <span class="p">=</span> <span class="n">factory</span><span class="p">.</span><span class="nf">CreateChannel</span><span class="p">();</span>
+
+        <span class="c1">// Use the service</span>
+        <span class="kt">double</span> <span class="n">result</span> <span class="p">=</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"1 + 2 = </span><span class="p">{</span><span class="n">result</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+        <span class="n">result</span> <span class="p">=</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">Subtract</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"5 - 3 = </span><span class="p">{</span><span class="n">result</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+        <span class="c1">// Close the channel</span>
+        <span class="p">((</span><span class="n">IClientChannel</span><span class="p">)</span><span class="n">calculator</span><span class="p">).</span><span class="nf">Close</span><span class="p">();</span>
+        <span class="n">factory</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this code:</p>
+<ul>
+  <li>We define the base address and create an instance of <code class="language-plaintext highlighter-rouge">NetTcpBinding</code>.</li>
+  <li>We create a <code class="language-plaintext highlighter-rouge">ChannelFactory</code> with the binding and endpoint address.</li>
+  <li>We create the channel and use the service methods.</li>
+</ul>
+
+<p>This approach eliminates the need for configuration files by specifying all settings programmatically. This can be beneficial in scenarios where dynamic configuration is required or where configuration files are not practical. However, using code for configuration can make it harder to change settings without recompiling the application.</p>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/dev/distcomp/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/dev/distcomp/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/dev/distcomp/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/dev/distcomp/c_sharp/1_cs_2_advance/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2. Advance"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/dev/distcomp/wcf/1_dc_2_wcf/" class="navigation navigation-next navigation-unique" aria-label="Next page: 1. Fundamentals"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "1. Fundamentals",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_1_net_distcomp/1_dc_2_wcf.md",
+            "ref": "_1_net_distcomp/1_dc_2_wcf.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | Distributed - Computing",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_1_net_distcomp/1_dc_1_fundamentals.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-08-05 23:35:35 +0800"
+    },
+    "basePath": "/dev/distcomp",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/dev/distcomp/assets/gitbook/gitbook.js"></script>
+<script src="/dev/distcomp/assets/gitbook/theme.js"></script>
+
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/dev/distcomp/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>

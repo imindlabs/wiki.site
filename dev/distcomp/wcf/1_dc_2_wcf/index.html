@@ -52,7 +52,7 @@
 
 
 <!-- trackers -->
-            <link rel="prev" href="/dev/distcomp/c_sharp/1_cs_2_advance/" />
+            <link rel="prev" href="/dev/distcomp/wcf/1_dc_1_fundamentals/" />
         
 
         
@@ -155,14 +155,30 @@
             
             
             
-            <li class="chapter active" data-level="1.2" data-path="/dev/distcomp/c_sharp/1_dc_1_fundamentals/">
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/wcf/1_dc_1_fundamentals/">
                 
-                <a href="/dev/distcomp/c_sharp/1_dc_1_fundamentals/" onclick="pageScrollToTop(this)">
+                <a href="/dev/distcomp/wcf/1_dc_1_fundamentals/" onclick="pageScrollToTop(this)">
                     1. Fundamentals
                 </a>
                 
                 
-                <ul><li><a href="#1-windows-communication-foundation" onclick="mobilePageScrollToAnchor(this)" >1. Windows Communication Foundation</a><ul><li><a href="#11-key-features-of-wcf" onclick="mobilePageScrollToAnchor(this)" >1.1 Key Features of WCF</a></li><li><a href="#12-importance-of-wcf-in-distributed-computing" onclick="mobilePageScrollToAnchor(this)" >1.2 Importance of WCF in Distributed Computing</a></li></ul></li><li><a href="#2-corba-" onclick="mobilePageScrollToAnchor(this)" >2. CORBA ?</a><ul><li><a href="#21-key-features-of-corba" onclick="mobilePageScrollToAnchor(this)" >2.1 Key Features of CORBA</a></li><li><a href="#22-relationship-between-corba-and-wcf" onclick="mobilePageScrollToAnchor(this)" >2.2 Relationship Between CORBA and WCF</a></li></ul></li></ul>
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Distributed Computing</p>
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/dev/distcomp/wcf/1_dc_2_wcf/">
+                
+                <a href="/dev/distcomp/wcf/1_dc_2_wcf/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
 
                 
                 
@@ -239,88 +255,10 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/c_sharp/1_dc_1_fundamentals">1. Fundamentals</h1>
+                        <h1 id="/wcf/1_dc_2_wcf">1. Fundamentals</h1>
                     
 
-                    <h1 id="1-windows-communication-foundation">1. Windows Communication Foundation</h1>
-<p>Windows Communication Foundation (WCF) is a framework developed by Microsoft for building service-oriented applications. It allows developers to build secure, reliable, and scalable distributed systems by providing a unified programming model for building and deploying networked services.</p>
-
-<h2 id="11-key-features-of-wcf">1.1 Key Features of WCF</h2>
-
-<p><strong>1. Interoperability</strong>: WCF is designed to interoperate with services built on other platforms, thanks to its support for various industry standards like SOAP, WS-*, and REST.</p>
-
-<p><strong>2. Service-Oriented Architecture (SOA)</strong>: WCF supports SOA principles, making it easier to create loosely coupled services that can be composed and orchestrated into more complex workflows.</p>
-
-<p><strong>3. Multiple Transport Protocols</strong>: WCF supports multiple communication protocols, including HTTP, TCP, MSMQ, and named pipes. This flexibility allows developers to choose the most appropriate protocol for their application’s requirements.</p>
-
-<p><strong>4. Security</strong>: WCF provides a range of security features, including message encryption, authentication, and authorization. It supports various security standards and allows for secure communication over different protocols.</p>
-
-<p><strong>5. Extensibility</strong>: WCF is highly extensible, allowing developers to customize the runtime behavior and add new communication capabilities.</p>
-
-<p><strong>6. Reliable Messaging</strong>: WCF includes built-in support for reliable messaging, ensuring that messages are delivered even in the presence of network failures.</p>
-
-<h2 id="12-importance-of-wcf-in-distributed-computing">1.2 Importance of WCF in Distributed Computing</h2>
-
-<p><strong>1. Communication Abstraction</strong>: WCF abstracts the underlying communication mechanisms, allowing developers to focus on business logic rather than the complexities of networking. This is crucial for building scalable distributed systems.</p>
-
-<p><strong>2. Interoperability</strong>: With support for standard protocols and data formats, WCF facilitates communication between services built on different platforms and technologies, making it a key tool for building interoperable distributed systems.</p>
-
-<p><strong>3. Security and Reliability</strong>: WCF provides robust security features and reliable messaging, which are critical for distributed systems that need to operate over insecure or unreliable networks.</p>
-
-<p><strong>4. Scalability</strong>: WCF’s support for different communication patterns (such as request/reply, one-way, and duplex) and its ability to host services in various environments (such as IIS, Windows Services, or self-hosted) contribute to building scalable distributed systems.</p>
-
-<p><strong>5. Flexibility and Extensibility</strong>: WCF’s flexible configuration and extensibility make it suitable for a wide range of applications, from simple web services to complex, enterprise-level distributed systems.</p>
-
-<h1 id="2-corba-">2. CORBA ?</h1>
-
-<p><strong>Common Object Request Broker Architecture (CORBA)</strong> is a standard defined by the Object Management Group (OMG) for enabling communication between objects in a distributed computing environment, regardless of the programming language in which they were written or the platforms on which they are running. CORBA achieves this by specifying a set of protocols and services that facilitate object communication and interoperability.</p>
-
-<h2 id="21-key-features-of-corba">2.1 Key Features of CORBA</h2>
-
-<p><strong>1. Object Request Broker (ORB)</strong>: The core component of CORBA, the ORB, acts as a middleware that handles communication between client and server objects. It manages requests and responses, handles object references, and performs necessary data conversions.</p>
-
-<p><strong>2. Interface Definition Language (IDL)</strong>: CORBA uses IDL to define the interfaces that objects expose. IDL is language-agnostic, enabling objects written in different programming languages to communicate.</p>
-
-<p><strong>3. Interoperability</strong>: CORBA supports interoperability between different platforms and languages by providing standard protocols, such as IIOP (Internet Inter-ORB Protocol).</p>
-
-<p><strong>4. Services and Facilities</strong>: CORBA provides a set of standard services (e.g., naming, event, transaction) and facilities (e.g., messaging) that support distributed object interactions.</p>
-
-<p><strong>5. Platform Independence</strong>: CORBA objects can be implemented in any language and run on any platform, as long as they conform to the CORBA standard.</p>
-
-<h2 id="22-relationship-between-corba-and-wcf">2.2 Relationship Between CORBA and WCF</h2>
-
-<p>While both CORBA and WCF serve the purpose of enabling communication in distributed systems, they come from different backgrounds and have some key differences:</p>
-
-<p><strong>1. Technology Origin and Standards</strong>:</p>
-<ul>
-  <li><strong>CORBA</strong>: Developed by the OMG, CORBA is a vendor-neutral, platform-independent standard designed for cross-language and cross-platform interoperability.</li>
-  <li><strong>WCF</strong>: Developed by Microsoft, WCF is a .NET framework that primarily supports interoperability within the .NET ecosystem but also adheres to industry standards like SOAP and WS-*, allowing for some level of cross-platform communication.</li>
-</ul>
-
-<p><strong>2. Communication Model</strong>:</p>
-<ul>
-  <li><strong>CORBA</strong>: Focuses on an object-oriented model where distributed objects interact by invoking methods on each other, much like local objects.</li>
-  <li><strong>WCF</strong>: Is service-oriented, focusing on the exchange of messages between services. It supports various communication patterns, including request/reply, one-way, and duplex.</li>
-</ul>
-
-<p><strong>3. IDL vs. Contracts</strong>:</p>
-<ul>
-  <li><strong>CORBA</strong>: Uses IDL to define the interface of objects in a language-agnostic way.</li>
-  <li><strong>WCF</strong>: Uses .NET interfaces and attributes to define service contracts, which are typically tied to .NET languages.</li>
-</ul>
-
-<p><strong>4. Interoperability</strong>:</p>
-<ul>
-  <li><strong>CORBA</strong>: Is inherently designed for interoperability between different languages and platforms.</li>
-  <li><strong>WCF</strong>: Can interoperate with other platforms and technologies through support for standard protocols like SOAP, but it is primarily geared towards .NET applications.</li>
-</ul>
-
-<p><strong>5. Security and Reliability</strong>:</p>
-<ul>
-  <li>Both CORBA and WCF offer various security and reliability features, though WCF has more built-in support for modern web standards and practices.</li>
-</ul>
-
-<p>CORBA and WCF are both technologies for building distributed systems, but they are rooted in different ecosystems and have different focuses. CORBA is a cross-platform, language-agnostic standard, while WCF is a Microsoft-centric framework with strong integration into the .NET ecosystem. Both serve to enable communication and interoperability in distributed systems, albeit with different approaches and use cases.</p>
+                    
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -485,7 +423,7 @@
 </script>
 
 
-                        <a href="/dev/distcomp/c_sharp/1_cs_2_advance/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2. Advance"> <!-- class="hide_element" -->
+                        <a href="/dev/distcomp/wcf/1_dc_1_fundamentals/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 1. Fundamentals"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
@@ -617,13 +555,13 @@
         "gitbook": "*"
     },
     "file": {
-        "path": "_1_net_distcomp/1_dc_1_fundamentals.md",
+        "path": "_1_net_distcomp/1_dc_2_wcf.md",
         "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-05 23:13:25 +0800"
+        "time": "2024-08-05 23:35:35 +0800"
     },
     "basePath": "/dev/distcomp",
     "book": {
