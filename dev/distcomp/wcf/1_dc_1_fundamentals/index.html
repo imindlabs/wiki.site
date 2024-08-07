@@ -186,6 +186,22 @@
                 
             </li>
             
+            
+            
+            <p class="separator-title">Distributed Computing</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/wcf/notes/">
+                
+                <a href="/dev/distcomp/wcf/notes/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
 
             
             <!-- <li class="divider"></li> -->
@@ -342,9 +358,13 @@
 
 <h1 id="3-simple-application-using-wcf">3. Simple Application Using WCF</h1>
 
-<p>Creating a simple WCF (Windows Communication Foundation) application involves defining a service contract, implementing the service, hosting the service, and creating a client to consume the service. Below, I’ll walk you through a basic example where we create a simple calculator service.</p>
+<p>Creating a simple WCF (Windows Communication Foundation) application involves defining a service contract, implementing the service, hosting the service, and creating a client to consume the service. Following is the walk through of a simple calculator service.</p>
 
 <h2 id="1-define-the-service-contract">1. Define the Service Contract</h2>
+
+<p>Create a Visual Studio <code class="language-plaintext highlighter-rouge">Console App</code> Project. Choose “Console App (.Net Framework)” which can only run on windows.</p>
+
+<p><strong>Do not select the Console App which can run on all platforms (linux, mac os, windows)</strong></p>
 
 <p>The service contract specifies the operations that the service provides. We use the <code class="language-plaintext highlighter-rouge">[ServiceContract]</code> and <code class="language-plaintext highlighter-rouge">[OperationContract]</code> attributes to define the contract.</p>
 
@@ -511,12 +531,6 @@
 
             <span class="c1">// Add the service endpoint</span>
             <span class="n">host</span><span class="p">.</span><span class="nf">AddServiceEndpoint</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">ICalculator</span><span class="p">),</span> <span class="n">binding</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
-
-            <span class="c1">// Optional: Enable metadata exchange</span>
-            <span class="n">ServiceMetadataBehavior</span> <span class="n">smb</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ServiceMetadataBehavior</span><span class="p">();</span>
-            <span class="n">smb</span><span class="p">.</span><span class="n">MetadataExporter</span><span class="p">.</span><span class="n">PolicyVersion</span> <span class="p">=</span> <span class="n">PolicyVersion</span><span class="p">.</span><span class="n">Policy15</span><span class="p">;</span>
-            <span class="n">host</span><span class="p">.</span><span class="n">Description</span><span class="p">.</span><span class="n">Behaviors</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">smb</span><span class="p">);</span>
-            <span class="n">host</span><span class="p">.</span><span class="nf">AddServiceEndpoint</span><span class="p">(</span><span class="n">ServiceMetadataBehavior</span><span class="p">.</span><span class="n">MexContractName</span><span class="p">,</span> <span class="n">MetadataExchangeBindings</span><span class="p">.</span><span class="nf">CreateMexTcpBinding</span><span class="p">(),</span> <span class="s">"mex"</span><span class="p">);</span>
 
             <span class="c1">// Open the host</span>
             <span class="n">host</span><span class="p">.</span><span class="nf">Open</span><span class="p">();</span>
@@ -899,7 +913,7 @@
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-05 23:35:35 +0800"
+        "time": "2024-08-06 17:16:13 +0800"
     },
     "basePath": "/dev/distcomp",
     "book": {
