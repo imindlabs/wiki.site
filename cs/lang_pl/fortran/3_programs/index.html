@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. Fundamentals · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>3. Programs · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -52,7 +52,7 @@
 
 
 <!-- trackers -->
-            <link rel="prev" href="/cs/lang_pl/" />
+            <link rel="prev" href="/cs/lang_pl/fortran/2_basics/" />
         
 
         
@@ -179,12 +179,15 @@
             
             
             
-            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/fortran/3_programs/">
+            <li class="chapter active" data-level="1.2" data-path="/cs/lang_pl/fortran/3_programs/">
                 
                 <a href="/cs/lang_pl/fortran/3_programs/" onclick="pageScrollToTop(this)">
                     3. Programs
                 </a>
                 
+                
+                <ul><li><a href="#1-hello-world-program" onclick="mobilePageScrollToAnchor(this)" >1. Hello World Program</a></li><li><a href="#2-common-keyword" onclick="mobilePageScrollToAnchor(this)" >2. <code class="language-plaintext highlighter-rouge">COMMON</code> keyword</a></li></ul>
+
                 
                 
             </li>
@@ -235,15 +238,12 @@
             
             
             
-            <li class="chapter active" data-level="1.2" data-path="/cs/lang_pl/functional/1_basics/">
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/1_basics/">
                 
                 <a href="/cs/lang_pl/functional/1_basics/" onclick="pageScrollToTop(this)">
                     1. Fundamentals
                 </a>
                 
-                
-                
-
                 
                 
             </li>
@@ -328,7 +328,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >1. Fundamentals</a>
+                            <a href="." >3. Programs</a>
                         
                     </h1>
                 </div>
@@ -347,10 +347,82 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/functional/1_basics">1. Fundamentals</h1>
+                        <h1 id="/fortran/3_programs">3. Programs</h1>
                     
 
-                    
+                    <h1 id="1-hello-world-program">1. Hello World Program</h1>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>program HelloWorld
+    print <span class="k">*</span>, <span class="s1">'Hello, World!'</span> 
+end program HelloWorld
+</code></pre></div></div>
+
+<p>To compile and run this program, you can use a Fortran compiler like <code class="language-plaintext highlighter-rouge">gfortran</code>. Save the code in a file with a <code class="language-plaintext highlighter-rouge">.f90</code> extension, for example, <code class="language-plaintext highlighter-rouge">helloworld.f90</code>, and then use the following commands in your terminal:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gfortran <span class="nt">-o</span> helloworld helloworld.f90
+./helloworld
+</code></pre></div></div>
+
+<p>This will compile the Fortran code and execute the resulting program, displaying the message “Hello, World!” on the screen.</p>
+
+<h1 id="2-common-keyword">2. <code class="language-plaintext highlighter-rouge">COMMON</code> keyword</h1>
+
+<p>In Fortran 77, the <code class="language-plaintext highlighter-rouge">COMMON</code> keyword is used to define and share variables among different program units (such as functions, subroutines, or the main program). This allows for global variables that can be accessed and modified by multiple parts of the program.</p>
+
+<p>Here is an example to illustrate the use of the <code class="language-plaintext highlighter-rouge">COMMON</code> keyword in Fortran 77:</p>
+
+<h4 id="example">Example</h4>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">Main</span><span class="w">
+      </span><span class="k">COMMON</span><span class="w"> </span><span class="p">/</span><span class="n">SharedVars</span><span class="p">/</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="w">
+      </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w">
+      </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0</span><span class="w">
+      </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.0</span><span class="w">
+      </span><span class="k">CALL</span><span class="w"> </span><span class="n">PrintSharedVars</span><span class="w">
+      </span><span class="k">END</span><span class="w">
+
+      </span><span class="k">SUBROUTINE</span><span class="w"> </span><span class="n">PrintSharedVars</span><span class="w">
+      </span><span class="k">COMMON</span><span class="w"> </span><span class="p">/</span><span class="n">SharedVars</span><span class="p">/</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="w">
+      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'A = '</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w">
+      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'B = '</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w">
+      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'C = '</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="w">
+      </span><span class="k">END</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="explanation">Explanation</h4>
+
+<ol>
+  <li><strong>Main Program</strong>:
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">COMMON /SharedVars/ A, B, C</code> statement declares a common block named <code class="language-plaintext highlighter-rouge">SharedVars</code> that includes the variables <code class="language-plaintext highlighter-rouge">A</code>, <code class="language-plaintext highlighter-rouge">B</code>, and <code class="language-plaintext highlighter-rouge">C</code>.</li>
+      <li>The variables <code class="language-plaintext highlighter-rouge">A</code>, <code class="language-plaintext highlighter-rouge">B</code>, and <code class="language-plaintext highlighter-rouge">C</code> are assigned values <code class="language-plaintext highlighter-rouge">1.0</code>, <code class="language-plaintext highlighter-rouge">2.0</code>, and <code class="language-plaintext highlighter-rouge">3.0</code> respectively.</li>
+      <li>The <code class="language-plaintext highlighter-rouge">CALL PrintSharedVars</code> statement calls the subroutine <code class="language-plaintext highlighter-rouge">PrintSharedVars</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Subroutine <code class="language-plaintext highlighter-rouge">PrintSharedVars</code></strong>:
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">COMMON /SharedVars/ A, B, C</code> statement declares the same common block <code class="language-plaintext highlighter-rouge">SharedVars</code> and the same variables <code class="language-plaintext highlighter-rouge">A</code>, <code class="language-plaintext highlighter-rouge">B</code>, and <code class="language-plaintext highlighter-rouge">C</code>.</li>
+      <li>The <code class="language-plaintext highlighter-rouge">PRINT *</code> statements print the values of <code class="language-plaintext highlighter-rouge">A</code>, <code class="language-plaintext highlighter-rouge">B</code>, and <code class="language-plaintext highlighter-rouge">C</code>.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="compilation-and-execution">Compilation and Execution</h4>
+
+<p>Save the code in a file with a <code class="language-plaintext highlighter-rouge">.f</code> extension, for example, <code class="language-plaintext highlighter-rouge">common_example.f</code>, and then use the following commands in your terminal:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gfortran <span class="nt">-o</span> common_example common_example.f
+./common_example
+</code></pre></div></div>
+
+<p>The output will be:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> A =  1.000000
+ B =  2.000000
+ C =  3.000000
+</code></pre></div></div>
+
+<p>This demonstrates that the variables <code class="language-plaintext highlighter-rouge">A</code>, <code class="language-plaintext highlighter-rouge">B</code>, and <code class="language-plaintext highlighter-rouge">C</code> are shared between the main program and the subroutine through the common block <code class="language-plaintext highlighter-rouge">SharedVars</code>.</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -515,7 +587,7 @@
 </script>
 
 
-                        <a href="/cs/lang_pl/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Wiki | Programming Languages Evolution"> <!-- class="hide_element" -->
+                        <a href="/cs/lang_pl/fortran/2_basics/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2. Basics"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
@@ -647,7 +719,7 @@
         "gitbook": "*"
     },
     "file": {
-        "path": "_4_functional/1_basics.md",
+        "path": "_2_fortran/3_programs.md",
         "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },
