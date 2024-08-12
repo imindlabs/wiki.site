@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Wiki | O/S · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2. kubectl · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -52,12 +52,12 @@
 
 
 <!-- trackers -->
+            <link rel="prev" href="/dev/os/docker/3_kube_2_kubectl/" />
+        
 
         
-            <link rel="next" href="/dev/os" />
-        
     </head>
-    <body>
+    <body>         
         <div class="book"><div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -101,7 +101,7 @@
         </div>
         <ul class="summary">
             
-            <li class="chapter active" data-level="1.1" data-path="/dev/os">
+            <li class="chapter" data-level="1.1" data-path="/dev/os">
                 
                 <a href="/dev/os/" onclick="pageScrollToTop(this)">
                     Wiki | O/S
@@ -379,12 +379,15 @@
             
             
             
-            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_3_deployments/">
+            <li class="chapter active" data-level="1.2" data-path="/dev/os/docker/3_kube_3_deployments/">
                 
                 <a href="/dev/os/docker/3_kube_3_deployments/" onclick="pageScrollToTop(this)">
                     2. kubectl
                 </a>
                 
+                
+                <ul><li><a href="#1-config" onclick="mobilePageScrollToAnchor(this)" >1. <code class="language-plaintext highlighter-rouge">config</code></a><ul><li><a href="#11-configuring-kubectl-for-multiple-clusters" onclick="mobilePageScrollToAnchor(this)" >1.1 Configuring Kubectl for Multiple Clusters</a></li><li><a href="#12-retrieving-kubernetes-resources" onclick="mobilePageScrollToAnchor(this)" >1.2 Retrieving Kubernetes Resources</a></li><li><a href="#13-working-with-namespaces" onclick="mobilePageScrollToAnchor(this)" >1.3 Working with Namespaces</a></li><li><a href="#14-describing-resources" onclick="mobilePageScrollToAnchor(this)" >1.4 Describing Resources</a></li><li><a href="#15-checking-versions" onclick="mobilePageScrollToAnchor(this)" >1.5 Checking Versions</a></li></ul></li></ul>
+
                 
                 
             </li>
@@ -441,7 +444,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Wiki | O/S</a>
+                            <a href="." >2. kubectl</a>
                         
                     </h1>
                 </div>
@@ -460,22 +463,198 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="home-title">Wiki | O/S</h1>
+                        <h1 id="/docker/3_kube_3_deployments">2. kubectl</h1>
                     
 
-                    
-<div class="float_right_40 animate__fadeInLeft">
-    <img class="style_1_para_img-img img_url" width="300" style="max-height:379px" />
+                    <h1 id="1-config">1. <code class="language-plaintext highlighter-rouge">config</code></h1>
+
+<style>  
+
+  #vid_kube_kubectl.flex-container {
+      display: flex;
+      flex-direction: row;
+  }
+  #vid_kube_kubectl.flex-container > div {
+    width: 100%;
+    height: 440px;
+    margin: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  
+
+  
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 800px) {
+
+    #vid_kube_kubectl.flex-container {
+      flex-direction: column;
+    }
+    #vid_kube_kubectl.flex-container > div {
+      width: 100%;
+      height: 250px;
+    }
+  }
+</style>
+
+<div id="vid_kube_kubectl" class="flex-container">
+  
+  <div><iframe style="border-radius: 10px; overflow: hidden; border: 2px solid #7a7a7a; box-shadow: 1px 2px 5px #b4b4b4;" width="100%" height="100%" src="https://www.youtube.com/embed/feLpGydQVio" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
+  
 </div>
-<p class="animated animate__fadeInLeft">
-Content coming soon
-</p>
-<!-- <div class='float_right_40'>
-    <img class='style_1_para_img-img img_url' width="300" style="max-height:379px"/>
-</div>
-<p>
-Content coming soon
-</p> -->
+
+<p>we’ll explore how to use Kubectl to manage your Kubernetes clusters, focusing on configuration, retrieving resources, working with namespaces, describing resources, and checking versions.</p>
+
+<h2 id="11-configuring-kubectl-for-multiple-clusters">1.1 Configuring Kubectl for Multiple Clusters</h2>
+
+<p>Kubectl can point to multiple Kubernetes clusters, making it easy to switch between development, staging, and production environments. The configuration is managed through contexts, which are stored in a <code class="language-plaintext highlighter-rouge">kubeconfig</code> file. Here’s how you can configure and switch contexts:</p>
+
+<h4 id="1-checking-your-current-context">1. Checking Your Current Context</h4>
+<p>To find out which Kubernetes cluster your Kubectl is currently pointing to, use the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl config current-context
+</code></pre></div></div>
+
+<p>This command outputs the name of the current context, indicating the active cluster.</p>
+
+<h4 id="2-listing-all-available-contexts">2. Listing All Available Contexts</h4>
+<p>To see all the contexts available in your kubeconfig file, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl config get-contexts
+</code></pre></div></div>
+
+<p>This command displays a table of all contexts, clusters, and users, with a <code class="language-plaintext highlighter-rouge">*</code> next to the currently active context.</p>
+
+<h4 id="3-switching-to-a-different-context">3. Switching to a Different Context</h4>
+<p>To switch to another context, such as a production environment, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl config use-context <span class="o">[</span>context-name]
+</code></pre></div></div>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">[context-name]</code> with the name of the context you want to switch to. This command changes the active cluster to the specified context.</p>
+
+<h4 id="4-using-multiple-kubeconfig-files">4. Using Multiple Kubeconfig Files</h4>
+<p>If you manage multiple clusters with different configuration files, you can temporarily set the KUBECONFIG environment variable:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">KUBECONFIG</span><span class="o">=</span><span class="nv">$HOME</span>/.kube/config:<span class="nv">$HOME</span>/.kube/config2
+</code></pre></div></div>
+
+<p>This command merges the configurations from both files, allowing Kubectl to use them simultaneously.</p>
+
+<hr />
+
+<h2 id="12-retrieving-kubernetes-resources">1.2 Retrieving Kubernetes Resources</h2>
+
+<p>One of the primary tasks in managing Kubernetes clusters is retrieving information about the resources. Kubectl provides several commands for this purpose:</p>
+
+<h4 id="1-listing-pods">1. Listing Pods</h4>
+<p>To list all pods in the current namespace, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods
+</code></pre></div></div>
+
+<p>This command outputs a table with pod names, statuses, and other details.</p>
+
+<h4 id="2-listing-deployments">2. Listing Deployments</h4>
+<p>To list all deployments in the current namespace, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get deployments
+</code></pre></div></div>
+
+<p>This command provides information about all deployments, including the number of replicas and their current status.</p>
+
+<h4 id="3-listing-services">3. Listing Services</h4>
+<p>To see all services running in the current namespace, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get services
+</code></pre></div></div>
+
+<p>This command displays a table listing each service’s name, type, cluster IP, external IP, and ports.</p>
+
+<h4 id="4-listing-configmaps">4. Listing ConfigMaps</h4>
+<p>To list all config maps, which store non-confidential data in key-value pairs, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get configmaps
+</code></pre></div></div>
+
+<p>This command shows a table with all config maps in the current namespace.</p>
+
+<h4 id="5-listing-secrets">5. Listing Secrets</h4>
+<p>To view all secrets, which store sensitive information like passwords and tokens, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get secrets
+</code></pre></div></div>
+
+<p>This command outputs a table of all secrets, showing their names and types.</p>
+
+<hr />
+
+<h2 id="13-working-with-namespaces">1.3 Working with Namespaces</h2>
+
+<p>Namespaces in Kubernetes allow you to create virtual clusters within a physical cluster, enabling better resource management and isolation.</p>
+
+<h4 id="1-listing-all-namespaces">1. Listing All Namespaces</h4>
+<p>To see all namespaces in your cluster, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get namespaces
+</code></pre></div></div>
+
+<p>This command lists all namespaces, showing their names and statuses.</p>
+
+<h4 id="2-creating-a-new-namespace">2. Creating a New Namespace</h4>
+<p>To create a new namespace called <code class="language-plaintext highlighter-rouge">test</code>, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create namespace <span class="nb">test</span>
+</code></pre></div></div>
+
+<p>This command creates a new namespace that can be used to isolate resources.</p>
+
+<h4 id="3-listing-pods-in-a-specific-namespace">3. Listing Pods in a Specific Namespace</h4>
+<p>To list all pods within a specific namespace, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods <span class="nt">-n</span> <span class="o">[</span>namespace-name]
+</code></pre></div></div>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">[namespace-name]</code> with the name of the namespace you’re interested in. This command outputs a table of pod details for the specified namespace.</p>
+
+<hr />
+
+<h2 id="14-describing-resources">1.4 Describing Resources</h2>
+
+<p>For a more in-depth look at the state and events related to specific resources, Kubectl’s <code class="language-plaintext highlighter-rouge">describe</code> command is invaluable.</p>
+
+<h4 id="1-describing-a-pod">1. Describing a Pod</h4>
+<p>To get detailed information about a specific pod, including its status, events, and resource usage, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl describe pod <span class="o">[</span>pod-name] <span class="nt">-n</span> <span class="o">[</span>namespace-name]
+</code></pre></div></div>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">[pod-name]</code> and <code class="language-plaintext highlighter-rouge">[namespace-name]</code> with the appropriate pod and namespace names. This command provides a wealth of information useful for debugging and monitoring.</p>
+
+<h4 id="2-describing-a-node">2. Describing a Node</h4>
+<p>To investigate the details of a specific node, especially when facing infrastructure issues, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl describe node <span class="o">[</span>node-name]
+</code></pre></div></div>
+
+<p>This command provides comprehensive information about the node, including its conditions, capacity, and recent events.</p>
+
+<hr />
+
+<h2 id="15-checking-versions">1.5 Checking Versions</h2>
+
+<p>Knowing the versions of both your Kubectl client and Kubernetes server is crucial, especially when managing clusters with different versions.</p>
+
+<h4 id="1-checking-kubectl-and-kubernetes-versions">1. Checking Kubectl and Kubernetes Versions</h4>
+<p>To see the version of your Kubectl client and the Kubernetes server, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl version
+</code></pre></div></div>
+
+<p>This command outputs the client version (Kubectl) and the server version (Kubernetes cluster).</p>
+
+<hr />
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -522,9 +701,95 @@ Content coming soon
     // Add the script tags before the following element
     var getbookStyleElement = document.getElementById("gitbook_style")
 
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
     
 
 </script>
+
 
 
 
@@ -553,14 +818,12 @@ Content coming soon
     }
 </script>
 
-<a href="/dev/os/" class="navigation navigation-pre navigation-unique"> <!-- class="hide_element" -->
-                        <i class="fa"></i>
-                    </a>
+
+                        <a href="/dev/os/docker/3_kube_2_kubectl/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2. kubectl"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
                     
-                    
-                    <a href="/dev/os" class="navigation navigation-next navigation-unique" aria-label="Next page: "> <!-- class="hide_element" -->
-                        <i class="fa fa-angle-right"></i>
-                    </a>
+
                     
                     <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
                 </div>
@@ -590,7 +853,7 @@ Content coming soon
                     });
                 });
             </script>
-                
+
             <script>
             var gitbook = gitbook || [];
             gitbook.push(function() {
@@ -599,17 +862,6 @@ Content coming soon
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-
-        
-        "next": {
-            "title": "",
-            "level": "1.2",
-            "depth": 1,
-            "path": "",
-            "ref": "",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -699,8 +951,8 @@ Content coming soon
         "gitbook": "*"
     },
     "file": {
-        "path": "README.md",
-        "mtime": "",
+        "path": "_4_containerization/3_kube_3_deployments.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },
     "gitbook": {
@@ -713,6 +965,7 @@ Content coming soon
     }
 });
             });
+
             </script>
         </div><script src="/dev/os/assets/gitbook/gitbook.js"></script>
 <script src="/dev/os/assets/gitbook/theme.js"></script>

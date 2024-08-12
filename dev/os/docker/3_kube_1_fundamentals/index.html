@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Wiki | O/S · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. Fundamentals · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -52,12 +52,14 @@
 
 
 <!-- trackers -->
+            <link rel="prev" href="/dev/os/docker/3_docker_3_networking/" />
+        
 
         
-            <link rel="next" href="/dev/os" />
+            <link rel="next" href="/dev/os/docker/3_kube_2_kubectl/" />
         
     </head>
-    <body>
+    <body>         
         <div class="book"><div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -101,7 +103,7 @@
         </div>
         <ul class="summary">
             
-            <li class="chapter active" data-level="1.1" data-path="/dev/os">
+            <li class="chapter" data-level="1.1" data-path="/dev/os">
                 
                 <a href="/dev/os/" onclick="pageScrollToTop(this)">
                     Wiki | O/S
@@ -351,12 +353,15 @@
             
             
             
-            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_1_fundamentals/">
+            <li class="chapter active" data-level="1.2" data-path="/dev/os/docker/3_kube_1_fundamentals/">
                 
                 <a href="/dev/os/docker/3_kube_1_fundamentals/" onclick="pageScrollToTop(this)">
                     1. Fundamentals
                 </a>
                 
+                
+                <ul><li><a href="#1-kubernetes-and-docker" onclick="mobilePageScrollToAnchor(this)" >1. Kubernetes and Docker</a><ul><li><a href="#11-docker-a-containerization-platform" onclick="mobilePageScrollToAnchor(this)" >1.1 <strong>Docker: A Containerization Platform</strong></a></li><li><a href="#12-kubernetes-a-container-orchestration-tool" onclick="mobilePageScrollToAnchor(this)" >1.2 <strong>Kubernetes: A Container Orchestration Tool</strong></a></li><li><a href="#13-how-are-docker-and-kubernetes-related" onclick="mobilePageScrollToAnchor(this)" >1.3 <strong>How Are Docker and Kubernetes Related?</strong></a></li></ul></li><li><a href="#2-getting-started" onclick="mobilePageScrollToAnchor(this)" >2. Getting Started</a><ul><li><a href="#21-prerequisites-and-setup" onclick="mobilePageScrollToAnchor(this)" >2.1 Prerequisites and Setup</a></li><li><a href="#22-installing-docker-for-windows" onclick="mobilePageScrollToAnchor(this)" >2.2 Installing Docker for Windows</a></li><li><a href="#23-enabling-kubernetes" onclick="mobilePageScrollToAnchor(this)" >2.3 Enabling Kubernetes</a></li><li><a href="#24-installing-and-configuring-kubectl" onclick="mobilePageScrollToAnchor(this)" >2.4 Installing and Configuring kubectl</a></li><li><a href="#25-connecting-kubectl-to-your-kubernetes-cluster" onclick="mobilePageScrollToAnchor(this)" >2.5 Connecting kubectl to Your Kubernetes Cluster</a></li></ul></li></ul>
+
                 
                 
             </li>
@@ -441,7 +446,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Wiki | O/S</a>
+                            <a href="." >1. Fundamentals</a>
                         
                     </h1>
                 </div>
@@ -460,22 +465,142 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="home-title">Wiki | O/S</h1>
+                        <h1 id="/docker/3_kube_1_fundamentals">1. Fundamentals</h1>
                     
 
-                    
-<div class="float_right_40 animate__fadeInLeft">
-    <img class="style_1_para_img-img img_url" width="300" style="max-height:379px" />
+                    <h1 id="1-kubernetes-and-docker">1. Kubernetes and Docker</h1>
+
+<p><strong>Kubernetes</strong> and <strong>Docker</strong> are both crucial tools in the world of containerization, but they serve different purposes and are often used together.</p>
+
+<h2 id="11-docker-a-containerization-platform">1.1 <strong>Docker: A Containerization Platform</strong></h2>
+<p>Docker is a platform designed to simplify the process of building, deploying, and running applications using containers. Containers are lightweight, portable units that package an application and all of its dependencies, ensuring that it runs consistently across different environments—whether it’s on a developer’s local machine, in a testing environment, or in production.</p>
+
+<p><strong>Key features of Docker:</strong></p>
+<ul>
+  <li><strong>Containerization:</strong> Docker packages an application and its dependencies into a single container, which can run on any system with Docker installed.</li>
+  <li><strong>Portability:</strong> Since containers include everything needed to run an application, they can be easily moved across different environments.</li>
+  <li><strong>Isolation:</strong> Docker containers are isolated from each other, which helps in maintaining consistency and preventing conflicts between different applications or services.</li>
+</ul>
+
+<h2 id="12-kubernetes-a-container-orchestration-tool">1.2 <strong>Kubernetes: A Container Orchestration Tool</strong></h2>
+<p>Kubernetes, often abbreviated as K8s, is an open-source platform designed to automate the deployment, scaling, and management of containerized applications. While Docker handles the creation and running of individual containers, Kubernetes takes things a step further by managing large numbers of containers across multiple hosts, ensuring that they work together effectively.</p>
+
+<p><strong>Key features of Kubernetes:</strong></p>
+<ul>
+  <li><strong>Orchestration:</strong> Kubernetes coordinates the scheduling and running of containers on a cluster of machines, making sure the right containers are running at the right time.</li>
+  <li><strong>Scaling:</strong> Kubernetes can automatically scale up or down the number of running containers based on demand.</li>
+  <li><strong>Load balancing:</strong> It distributes network traffic to ensure that no single container is overwhelmed with too many requests.</li>
+  <li><strong>Self-healing:</strong> Kubernetes can automatically restart containers that fail, replace them, and kill those that don’t respond to user-defined health checks.</li>
+  <li><strong>Rolling updates and rollbacks:</strong> Kubernetes allows you to update applications without downtime and roll back to previous versions if something goes wrong.</li>
+</ul>
+
+<h2 id="13-how-are-docker-and-kubernetes-related">1.3 <strong>How Are Docker and Kubernetes Related?</strong></h2>
+<p>Docker and Kubernetes are closely related, but they serve different roles within the container ecosystem. Docker is used to create and manage individual containers, while Kubernetes is used to manage and orchestrate those containers at scale.</p>
+
+<ul>
+  <li><strong>Docker creates containers.</strong> Kubernetes manages those containers across a cluster of machines, handling tasks like load balancing, scaling, and ensuring high availability.</li>
+  <li>Kubernetes often uses Docker as the container runtime. This means Docker is the tool that actually runs the containers, while Kubernetes orchestrates how and where those containers are deployed.</li>
+</ul>
+
+<p>In essence, while Docker is the engine that runs the containers, Kubernetes is the control system that manages many containers across multiple environments, ensuring they work together efficiently.</p>
+
+<h1 id="2-getting-started">2. Getting Started</h1>
+
+<style>  
+
+  #vid_kube_getting_started.flex-container {
+      display: flex;
+      flex-direction: row;
+  }
+  #vid_kube_getting_started.flex-container > div {
+    width: 100%;
+    height: 440px;
+    margin: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  
+
+  
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 800px) {
+
+    #vid_kube_getting_started.flex-container {
+      flex-direction: column;
+    }
+    #vid_kube_getting_started.flex-container > div {
+      width: 100%;
+      height: 250px;
+    }
+  }
+</style>
+
+<div id="vid_kube_getting_started" class="flex-container">
+  
+  <div><iframe style="border-radius: 10px; overflow: hidden; border: 2px solid #7a7a7a; box-shadow: 1px 2px 5px #b4b4b4;" width="100%" height="100%" src="https://www.youtube.com/embed/8h4FoWK7tIA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
+  
 </div>
-<p class="animated animate__fadeInLeft">
-Content coming soon
-</p>
-<!-- <div class='float_right_40'>
-    <img class='style_1_para_img-img img_url' width="300" style="max-height:379px"/>
-</div>
-<p>
-Content coming soon
-</p> -->
+
+<p>In the world of containerization, Kubernetes and Docker are powerful tools that work together to simplify the process of deploying and managing applications. This guide walks through the steps required to set up Kubernetes on Docker for Windows, covering everything from prerequisites to initial configuration.</p>
+
+<h2 id="21-prerequisites-and-setup">2.1 Prerequisites and Setup</h2>
+
+<p>Before diving into Kubernetes, it’s essential to ensure that your system meets the necessary prerequisites. The first crucial step is to enable <strong>Hyper-V</strong> on your Windows machine. Hyper-V is the built-in hypervisor for Windows, and it’s required because Docker and Kubernetes, being Linux-based technologies, need to run within a Linux virtual machine on Windows.</p>
+
+<p>To enable Hyper-V:</p>
+<ol>
+  <li>Open the <strong>Control Panel</strong>.</li>
+  <li>Navigate to <strong>Programs</strong> and select <strong>Turn Windows Features on or off</strong>.</li>
+  <li>Locate the Hyper-V section, check all related boxes, and click <strong>Apply</strong> and <strong>OK</strong>.</li>
+</ol>
+
+<p>If Hyper-V cannot be enabled through the control panel, it may be disabled in your system’s BIOS. This is particularly common in laptops, so you might need to enable it from the BIOS settings before proceeding.</p>
+
+<h2 id="22-installing-docker-for-windows">2.2 Installing Docker for Windows</h2>
+
+<p>Once Hyper-V is enabled, the next step is to install Docker for Windows. Begin by searching for “Docker for Windows” on Google, and follow the link to the official Docker website. The installation process involves creating a Docker Hub account, which is necessary for downloading Docker and managing containers.</p>
+
+<p>After the installation is complete, you can confirm that Docker is running by checking the system tray for the Docker whale icon. This icon provides quick access to Docker’s settings and status. One important setting to configure is the <strong>Shared Drive</strong> option, which allows Docker to access files on your local machine.</p>
+
+<h2 id="23-enabling-kubernetes">2.3 Enabling Kubernetes</h2>
+
+<p>With Docker up and running, enabling Kubernetes is a straightforward process:</p>
+<ol>
+  <li>Open Docker’s settings menu.</li>
+  <li>Navigate to the <strong>Kubernetes</strong> tab.</li>
+  <li>Check the box to enable Kubernetes and click <strong>Apply</strong>.</li>
+</ol>
+
+<p>This action will initiate the download of Kubernetes cluster components, which might take a few minutes depending on your internet connection. Once completed, Kubernetes will start running in the background, ready for use.</p>
+
+<h2 id="24-installing-and-configuring-kubectl">2.4 Installing and Configuring kubectl</h2>
+
+<p>The next step involves installing <strong>kubectl</strong>, the command-line tool used for interacting with Kubernetes clusters. To do this:</p>
+<ol>
+  <li>Search for “kubectl download” and follow the link to the official Kubernetes documentation.</li>
+  <li>Download the <code class="language-plaintext highlighter-rouge">kubectl</code> executable and place it in a directory of your choice, such as <code class="language-plaintext highlighter-rouge">C:\kubectl</code>.</li>
+  <li>Add the path to this directory to your system’s <strong>Environment Variables</strong> so that you can run <code class="language-plaintext highlighter-rouge">kubectl</code> commands from any command prompt.</li>
+</ol>
+
+<p>After setting the path, restart any open command-line windows and type <code class="language-plaintext highlighter-rouge">kubectl</code> to verify that the installation was successful. You should see a list of commands available within <code class="language-plaintext highlighter-rouge">kubectl</code>.</p>
+
+<h2 id="25-connecting-kubectl-to-your-kubernetes-cluster">2.5 Connecting kubectl to Your Kubernetes Cluster</h2>
+
+<p>With <code class="language-plaintext highlighter-rouge">kubectl</code> installed, it’s time to connect it to your Kubernetes cluster. By default, <code class="language-plaintext highlighter-rouge">kubectl</code> is configured to point to the Kubernetes cluster created by Docker for Windows. You can verify this by running the command:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl config current-context
+</code></pre></div></div>
+
+<p>This command should return “docker-for-desktop,” indicating that <code class="language-plaintext highlighter-rouge">kubectl</code> is configured to interact with your local Kubernetes cluster.</p>
+
+<p>To further verify the connection, you can check the status of the nodes and pods in your cluster with the following commands:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get nodes
+kubectl get pods
+</code></pre></div></div>
+
+<p>At this point, your Kubernetes cluster is fully operational, and you’re ready to start deploying applications.</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -522,9 +647,95 @@ Content coming soon
     // Add the script tags before the following element
     var getbookStyleElement = document.getElementById("gitbook_style")
 
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
     
 
 </script>
+
 
 
 
@@ -553,14 +764,16 @@ Content coming soon
     }
 </script>
 
-<a href="/dev/os/" class="navigation navigation-pre navigation-unique"> <!-- class="hide_element" -->
-                        <i class="fa"></i>
-                    </a>
+
+                        <a href="/dev/os/docker/3_docker_3_networking/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 3. Networking"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
                     
+
                     
-                    <a href="/dev/os" class="navigation navigation-next navigation-unique" aria-label="Next page: "> <!-- class="hide_element" -->
-                        <i class="fa fa-angle-right"></i>
-                    </a>
+                        <a href="/dev/os/docker/3_kube_2_kubectl/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. kubectl"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
                     
                     <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
                 </div>
@@ -590,7 +803,7 @@ Content coming soon
                     });
                 });
             </script>
-                
+
             <script>
             var gitbook = gitbook || [];
             gitbook.push(function() {
@@ -600,14 +813,12 @@ Content coming soon
         "level": "1.1",
         "depth": 1,
         
-
-        
         "next": {
-            "title": "",
+            "title": "2. kubectl",
             "level": "1.2",
             "depth": 1,
-            "path": "",
-            "ref": "",
+            "path": "_4_containerization/3_kube_2_kubectl.md",
+            "ref": "_4_containerization/3_kube_2_kubectl.md",
             "articles": []
         },
         
@@ -699,8 +910,8 @@ Content coming soon
         "gitbook": "*"
     },
     "file": {
-        "path": "README.md",
-        "mtime": "",
+        "path": "_4_containerization/3_kube_1_fundamentals.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },
     "gitbook": {
@@ -713,6 +924,7 @@ Content coming soon
     }
 });
             });
+
             </script>
         </div><script src="/dev/os/assets/gitbook/gitbook.js"></script>
 <script src="/dev/os/assets/gitbook/theme.js"></script>

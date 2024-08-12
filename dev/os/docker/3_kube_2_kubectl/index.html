@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Wiki | O/S · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2. kubectl · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -52,12 +52,14 @@
 
 
 <!-- trackers -->
+            <link rel="prev" href="/dev/os/docker/3_kube_1_fundamentals/" />
+        
 
         
-            <link rel="next" href="/dev/os" />
+            <link rel="next" href="/dev/os/docker/3_kube_3_deployments/" />
         
     </head>
-    <body>
+    <body>         
         <div class="book"><div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -101,7 +103,7 @@
         </div>
         <ul class="summary">
             
-            <li class="chapter active" data-level="1.1" data-path="/dev/os">
+            <li class="chapter" data-level="1.1" data-path="/dev/os">
                 
                 <a href="/dev/os/" onclick="pageScrollToTop(this)">
                     Wiki | O/S
@@ -365,12 +367,15 @@
             
             
             
-            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_2_kubectl/">
+            <li class="chapter active" data-level="1.2" data-path="/dev/os/docker/3_kube_2_kubectl/">
                 
                 <a href="/dev/os/docker/3_kube_2_kubectl/" onclick="pageScrollToTop(this)">
                     2. kubectl
                 </a>
                 
+                
+                <ul><li><a href="#deployments" onclick="mobilePageScrollToAnchor(this)" >Deployments</a></li><li><a href="#configuration-management" onclick="mobilePageScrollToAnchor(this)" >Configuration management</a></li></ul>
+
                 
                 
             </li>
@@ -441,7 +446,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Wiki | O/S</a>
+                            <a href="." >2. kubectl</a>
                         
                     </h1>
                 </div>
@@ -460,22 +465,16 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="home-title">Wiki | O/S</h1>
+                        <h1 id="/docker/3_kube_2_kubectl">2. kubectl</h1>
                     
 
-                    
-<div class="float_right_40 animate__fadeInLeft">
-    <img class="style_1_para_img-img img_url" width="300" style="max-height:379px" />
-</div>
-<p class="animated animate__fadeInLeft">
-Content coming soon
-</p>
-<!-- <div class='float_right_40'>
-    <img class='style_1_para_img-img img_url' width="300" style="max-height:379px"/>
-</div>
-<p>
-Content coming soon
-</p> -->
+                    <h1 id="deployments">Deployments</h1>
+
+<p>https://youtu.be/DMpEZEakYVc</p>
+
+<h1 id="configuration-management">Configuration management</h1>
+
+<p>https://youtu.be/o-gXx7r7Rz4</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -522,9 +521,95 @@ Content coming soon
     // Add the script tags before the following element
     var getbookStyleElement = document.getElementById("gitbook_style")
 
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
     
 
 </script>
+
 
 
 
@@ -553,14 +638,16 @@ Content coming soon
     }
 </script>
 
-<a href="/dev/os/" class="navigation navigation-pre navigation-unique"> <!-- class="hide_element" -->
-                        <i class="fa"></i>
-                    </a>
+
+                        <a href="/dev/os/docker/3_kube_1_fundamentals/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 1. Fundamentals"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
                     
+
                     
-                    <a href="/dev/os" class="navigation navigation-next navigation-unique" aria-label="Next page: "> <!-- class="hide_element" -->
-                        <i class="fa fa-angle-right"></i>
-                    </a>
+                        <a href="/dev/os/docker/3_kube_3_deployments/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. kubectl"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
                     
                     <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
                 </div>
@@ -590,7 +677,7 @@ Content coming soon
                     });
                 });
             </script>
-                
+
             <script>
             var gitbook = gitbook || [];
             gitbook.push(function() {
@@ -600,14 +687,12 @@ Content coming soon
         "level": "1.1",
         "depth": 1,
         
-
-        
         "next": {
-            "title": "",
+            "title": "2. kubectl",
             "level": "1.2",
             "depth": 1,
-            "path": "",
-            "ref": "",
+            "path": "_4_containerization/3_kube_3_deployments.md",
+            "ref": "_4_containerization/3_kube_3_deployments.md",
             "articles": []
         },
         
@@ -699,8 +784,8 @@ Content coming soon
         "gitbook": "*"
     },
     "file": {
-        "path": "README.md",
-        "mtime": "",
+        "path": "_4_containerization/3_kube_2_kubectl.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },
     "gitbook": {
@@ -713,6 +798,7 @@ Content coming soon
     }
 });
             });
+
             </script>
         </div><script src="/dev/os/assets/gitbook/gitbook.js"></script>
 <script src="/dev/os/assets/gitbook/theme.js"></script>
