@@ -1152,10 +1152,12 @@ docker run <span class="nt">-dit</span> <span class="nt">--name</span> ubuntu-na
 <h3 id="422-method-02">4.2.2 Method 02</h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a volume on the fly</span>
-docker run <span class="nt">-it</span> <span class="nt">--name</span><span class="o">=</span>Container1 <span class="nt">-v</span> Prac3Volume4:/prac3volume4 ubuntu
+docker run <span class="nt">-it</span> <span class="nt">--name</span><span class="o">=</span>Container1 <span class="nt">-v</span> named-volume:/shared-data-vol ubuntu
 
 <span class="c"># Now, create another container that mounts the same volume from Container1 (using --volumes-from)</span>
-docker run <span class="nt">-it</span> <span class="nt">--name</span><span class="o">=</span>Container2 <span class="nt">--volumes-from</span> Container4 ubuntu
+docker run <span class="nt">-it</span> <span class="nt">--name</span><span class="o">=</span>Container2 <span class="nt">--volumes-from</span> Container1 ubuntu
+
+<span class="c"># This will show the volume `named-volume` (from Container1) inside Container2</span>
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">--volumes-from &lt;source_container&gt;</code>: Specifies the container from which volumes should be mounted. This is the container that has the volumes you want to share.</p>
@@ -1571,7 +1573,7 @@ Let’s come back to docker-compose.</p>
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-12 10:00:07 +0800"
+        "time": "2024-08-12 12:05:22 +0800"
     },
     "basePath": "/dev/os",
     "book": {

@@ -1,0 +1,1352 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2.2 Mongoose · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/dev/web/be/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/dev/web/be/assets/gitbook/style.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/dev/web/be/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/dev/web/be/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/dev/web/be/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/dev/web/be/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/web/be/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/dev/web/be/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/web/be/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/dev/web/be/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/dev/web/be/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/dev/web/be/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/dev/web/be/jsframework/2_2_ejs/" />
+        
+
+        
+            <link rel="next" href="/dev/web/be/jsframework/2_4_routes/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/dev/web/be/">
+            <img class="logo zoom" src="/dev/web/be/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/dev/web/be/">
+            <img class="logo zoom" src="/dev/web/be/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/dev/web/be/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be">
+                
+                <a href="/dev/web/be/" onclick="pageScrollToTop(this)">
+                    Wiki | Backend Development
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_webconcepts</p> -->
+            
+                <p class="collection-title">Web Concepts</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/1_rest/">
+                
+                <a href="/dev/web/be/jsframework/1_rest/" onclick="pageScrollToTop(this)">
+                    REST
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>2_jsframeworks</p> -->
+            
+                <p class="collection-title">JS Framework</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/1_0_nodejs/">
+                
+                <a href="/dev/web/be/jsframework/1_0_nodejs/" onclick="pageScrollToTop(this)">
+                    1. NodeJS
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/1_1_nvm/">
+                
+                <a href="/dev/web/be/jsframework/1_1_nvm/" onclick="pageScrollToTop(this)">
+                    1.1 NVM
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            <li class="divider"></li>
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/2_0_expressjs/">
+                
+                <a href="/dev/web/be/jsframework/2_0_expressjs/" onclick="pageScrollToTop(this)">
+                    2. ExpressJS
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/2_1_pug/">
+                
+                <a href="/dev/web/be/jsframework/2_1_pug/" onclick="pageScrollToTop(this)">
+                    2.1 Pug
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/2_2_ejs/">
+                
+                <a href="/dev/web/be/jsframework/2_2_ejs/" onclick="pageScrollToTop(this)">
+                    2.2 EJS
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/dev/web/be/jsframework/2_3_mongoose/">
+                
+                <a href="/dev/web/be/jsframework/2_3_mongoose/" onclick="pageScrollToTop(this)">
+                    2.2 Mongoose
+                </a>
+                
+                
+                <ul><li><a href="#1-create-a-schema" onclick="mobilePageScrollToAnchor(this)" >1. Create a Schema</a><ul><li><a href="#11-simple-schema" onclick="mobilePageScrollToAnchor(this)" >1.1 Simple Schema</a></li><li><a href="#12-complex-schema" onclick="mobilePageScrollToAnchor(this)" >1.2 Complex Schema</a></li><li><a href="#13-create-a-model" onclick="mobilePageScrollToAnchor(this)" >1.3 Create a Model</a></li><li><a href="#14-creating-a-collection" onclick="mobilePageScrollToAnchor(this)" >1.4 Creating a Collection</a></li><li><a href="#15-use-the-model" onclick="mobilePageScrollToAnchor(this)" >1.5 Use the Model</a></li></ul></li><li><a href="#2-create-a-user" onclick="mobilePageScrollToAnchor(this)" >2. Create a User</a></li><li><a href="#3-update-user" onclick="mobilePageScrollToAnchor(this)" >3. Update User</a></li><li><a href="#4-find-a-user" onclick="mobilePageScrollToAnchor(this)" >4. Find a User</a><ul><li><a href="#41-where-method" onclick="mobilePageScrollToAnchor(this)" >4.1 where(…) Method</a></li><li><a href="#42-updating-a-reference-field" onclick="mobilePageScrollToAnchor(this)" >4.2 Updating a Reference Field</a></li></ul></li><li><a href="#5-delete" onclick="mobilePageScrollToAnchor(this)" >5. Delete</a><ul><li><a href="#51-cascade-on-delete" onclick="mobilePageScrollToAnchor(this)" >5.1 Cascade on Delete</a></li><li><a href="#52-preimage-trigger-option" onclick="mobilePageScrollToAnchor(this)" >5.2 Preimage Trigger Option</a><ul><li><a href="#521-building-the-trigger" onclick="mobilePageScrollToAnchor(this)" >5.2.1 Building the Trigger</a></li><li><a href="#522-deletecascadingquests---function" onclick="mobilePageScrollToAnchor(this)" >5.2.2 deleteCascadingQuests - Function</a></li><li><a href="#523-deleting-the-parent-document" onclick="mobilePageScrollToAnchor(this)" >5.2.3 Deleting the Parent Document</a></li></ul></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/2_4_routes/">
+                
+                <a href="/dev/web/be/jsframework/2_4_routes/" onclick="pageScrollToTop(this)">
+                    2.4 Routes
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>3_phpframeworks</p> -->
+            
+                <p class="collection-title">PhP Framework</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/phpframework/1_laravel/">
+                
+                <a href="/dev/web/be/phpframework/1_laravel/" onclick="pageScrollToTop(this)">
+                    1. Laravel
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/phpframework/2_cakephp/">
+                
+                <a href="/dev/web/be/phpframework/2_cakephp/" onclick="pageScrollToTop(this)">
+                    2. CakePhP
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>4_pythonframeworks</p> -->
+            
+                <p class="collection-title">Python Framework</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/pythonframework/1_django/">
+                
+                <a href="/dev/web/be/pythonframework/1_django/" onclick="pageScrollToTop(this)">
+                    1. Django
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/pythonframework/2_adv-django/">
+                
+                <a href="/dev/web/be/pythonframework/2_adv-django/" onclick="pageScrollToTop(this)">
+                    1.1. Advance Django
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >2.2 Mongoose</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/jsframework/2_3_mongoose">2.2 Mongoose</h1>
+                    
+
+                    <p>Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.</p>
+
+<h4 id="installation">Installation</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i mongoose
+</code></pre></div></div>
+
+<h4 id="connect-to-mongodb">Connect to mongodb</h4>
+
+<p>Create a file <code class="language-plaintext highlighter-rouge">server.js</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span>  <span class="nx">mongoose</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">mongoose</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">dbUrl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;URI&gt;</span><span class="dl">"</span>
+
+<span class="c1">// Async function</span>
+<span class="nx">mongoose</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="nx">dbUrl</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Connected to MongoDB</span><span class="dl">'</span><span class="p">))</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Could not connect to MongoDB</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">));</span>
+
+<span class="cm">/*&lt;URI&gt; field 
+  ============
+  if mongodb is locally installed use 
+  mongodb://localhost:port/&lt;database_name&gt;
+
+  if mongodb is from mongo atlas cloud
+  mongodb+srv://&lt;username&gt;:&lt;password&gt;@cluster0.svo1s8u.mongodb.net/&lt;database_name&gt;?retryWrites=true&amp;w=majority&amp;appName=Cluster0
+*/</span>
+</code></pre></div></div>
+
+<h1 id="1-create-a-schema">1. Create a Schema</h1>
+
+<p>A schema is a JSON object that defines the structure and contents of your data. A Mongoose model is a wrapper on the Mongoose schema. A Mongoose schema defines the structure of the document, default values, validators, etc., whereas a Mongoose model provides an interface to the database for creating, querying, updating, deleting records, etc</p>
+
+<h2 id="11-simple-schema">1.1 Simple Schema</h2>
+
+<p>Create a file <code class="language-plaintext highlighter-rouge">Post.js</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">postSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nc">Schema</span><span class="p">({</span>
+    <span class="na">title</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">author</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">tag</span><span class="p">:</span> <span class="p">[</span> <span class="nb">String</span> <span class="p">],</span> <span class="cm">/* list of strings */</span>
+    <span class="na">date</span><span class="p">:</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="nb">Date</span><span class="p">,</span> <span class="na">default</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nf">model</span><span class="p">(</span><span class="dl">"</span><span class="s2">Post</span><span class="dl">"</span><span class="p">,</span> <span class="nx">userSchema</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="12-complex-schema">1.2 Complex Schema</h2>
+
+<p>Create a file <code class="language-plaintext highlighter-rouge">User.js</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">mongoose</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">addressSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="k">new</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nc">Schema</span><span class="p">({</span>  
+  <span class="na">street</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> 
+  <span class="na">city</span><span class="p">:</span> <span class="nb">String</span>  
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">userSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nc">Schema</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">lowercase</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">minLength</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="cm">/* Can put more properties */</span>
+  <span class="p">},</span>
+  <span class="na">age</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">Number</span><span class="p">,</span>
+    <span class="na">min</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">max</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+
+    <span class="cm">/* for custom validator */</span>
+    <span class="na">validate</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">validator</span><span class="p">:</span> <span class="nx">v</span> <span class="o">=&gt;</span> <span class="nx">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="na">message</span><span class="p">:</span> <span class="nx">props</span> <span class="o">=&gt;</span> <span class="s2">`</span><span class="p">${</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="s2"> is not an even number`</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="na">email</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+  <span class="na">createdAt</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="na">immutable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="c1">// default: new Date() </span>
+    <span class="c1">// above will give you a static value i.e. default: 5 (same for all objects)    </span>
+    <span class="na">default</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Date</span><span class="p">.</span><span class="nf">now</span><span class="p">(),</span> <span class="cm">/* new value every time a object it created. i.e. current date  */</span> 
+  <span class="p">}</span>
+    
+  <span class="nl">updatedAt</span><span class="p">:</span> <span class="nb">Date</span>
+  <span class="na">bestFriend</span><span class="p">:</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">SchemaTypes</span><span class="p">.</span><span class="nx">ObjectId</span><span class="p">,</span>
+  <span class="na">bestFriend2</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">SchemaTypes</span><span class="p">.</span><span class="nx">ObjectId</span><span class="p">,</span>
+    <span class="na">ref</span><span class="p">:</span> <span class="dl">"</span><span class="s2">User</span><span class="dl">"</span> <span class="cm">/* tells mongodb, what type the model objectId refers to */</span>
+  <span class="p">}</span>
+  <span class="nl">hobbies</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">],</span>
+  <span class="na">address</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">street</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> 
+    <span class="na">city</span><span class="p">:</span> <span class="nb">String</span>
+  <span class="p">},</span>
+  <span class="na">address2</span><span class="p">:</span> <span class="nx">addressSchema</span> <span class="cm">/* alternative to address */</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<h2 id="13-create-a-model">1.3 Create a Model</h2>
+
+<p>In <code class="language-plaintext highlighter-rouge">User.js</code></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nf">model</span><span class="p">(</span><span class="dl">"</span><span class="s2">User</span><span class="dl">"</span><span class="p">,</span> <span class="nx">userSchema</span><span class="p">);</span>
+<span class="cm">/* exports the model so that other js files can use it */</span>
+
+<span class="c1">// Alternatively: Can export the schema </span>
+<span class="c1">// module.exports = userSchema;</span>
+<span class="c1">//</span>
+<span class="c1">// In this case, the files which require `User.js` should create a .model()</span>
+<span class="c1">// i.e. In server.js</span>
+<span class="c1">// const userSchema = require('./User')</span>
+<span class="c1">// const User = mongoose.model("User", userSchema);</span>
+
+<span class="c1">// You can also export multiple schemas/models via export</span>
+<span class="c1">// module.exports = [</span>
+<span class="c1">//               mongoose.model("User", userSchema), </span>
+<span class="c1">//               mongoose.model("Person", userSchema)</span>
+<span class="c1">// ]</span>
+<span class="c1">//</span>
+<span class="c1">// In server.js</span>
+<span class="c1">// const  UserModels = require('./User')</span>
+<span class="c1">// UserModel[0] // User Model</span>
+<span class="c1">// UserModel[1] // Person Model</span>
+</code></pre></div></div>
+<p><code class="language-js highlighter-rouge"><span class="nx">User</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nf">model</span><span class="p">(</span><span class="dl">"</span><span class="s2">User</span><span class="dl">"</span><span class="p">,</span> <span class="nx">userSchema</span><span class="p">)</span></code> The first argument is the <strong>singular name of the collection</strong> your model is for. Mongoose automatically looks for the plural, lowercased version of your model name in its collections. Thus, for the example above, the model <code class="language-plaintext highlighter-rouge">User</code> is for the <code class="language-plaintext highlighter-rouge">users</code> collection in the database. The model <code class="language-plaintext highlighter-rouge">Person</code> is for the <code class="language-plaintext highlighter-rouge">persons</code> collection in the database.</p>
+
+<blockquote class="block-tip">
+  <h4 id="tip">TIP</h4>
+
+  <p>The <code class="language-plaintext highlighter-rouge">.model()</code> function makes a copy of schema. Make sure that you’ve added everything you want to schema, including hooks, before calling <code class="language-plaintext highlighter-rouge">.model()</code>!</p>
+</blockquote>
+
+<p><em>Special Note:</em></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nf">model</span><span class="p">(</span><span class="dl">"</span><span class="s2">User</span><span class="dl">"</span><span class="p">,</span> <span class="nx">userSchema</span><span class="p">,</span> <span class="dl">"</span><span class="s2">persons</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+<p>If the third parameter is defined, <code class="language-plaintext highlighter-rouge">User</code> model data will stored in collection specified in the third param. i.e. <code class="language-plaintext highlighter-rouge">persons</code> collection</p>
+
+<h2 id="14-creating-a-collection">1.4 Creating a Collection</h2>
+
+<p>By default, <code class="language-plaintext highlighter-rouge">mongoose.model("User", userSchema);</code> will create a collection <code class="language-plaintext highlighter-rouge">users</code> once a <a href="#2-create-a-user"><code class="language-plaintext highlighter-rouge">user</code> object is saved()</a>. In case the collection needs to be created without a <code class="language-plaintext highlighter-rouge">user</code> object:</p>
+
+<p>In <code class="language-plaintext highlighter-rouge">server.js</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span>  <span class="nx">User</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./User</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">User</span><span class="p">.</span><span class="nf">createCollection</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="15-use-the-model">1.5 Use the Model</h2>
+
+<p>In <code class="language-plaintext highlighter-rouge">server.js</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span>  <span class="nx">mongoose</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">mongoose</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">mongoose</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;URI&gt;</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="kd">const</span>  <span class="nx">User</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./User</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">User</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">method</span><span class="o">&gt;</span><span class="p">(...)</span>
+<span class="cm">/* can us methods from the user class */</span>
+
+<span class="nx">User</span><span class="p">.</span><span class="nf">findOne</span><span class="p">(...);</span>
+<span class="nx">User</span><span class="p">.</span><span class="nf">findMany</span><span class="p">(...);</span>
+<span class="nx">User</span><span class="p">.</span><span class="nf">updateOne</span><span class="p">(...);</span>
+<span class="nx">User</span><span class="p">.</span><span class="nf">updateMany</span><span class="p">(...);</span>
+</code></pre></div></div>
+
+<h1 id="2-create-a-user">2. Create a User</h1>
+
+<p>In <code class="language-plaintext highlighter-rouge">server.js</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span>  <span class="nx">mongoose</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">mongoose</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span>  <span class="nx">User</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./User</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">mongoose</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;URI&gt;</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="cm">/* creating a user */</span><span class="p">{</span><span class="nl">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kyle</span><span class="dl">"</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="mi">26</span><span class="p">}</span>
+<span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">User</span><span class="p">()</span>
+
+<span class="cm">/* save it into the database */</span>
+<span class="cm">/* this is an async function */</span>
+<span class="nx">user</span><span class="p">.</span><span class="nf">save</span><span class="p">().</span><span class="nf">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">User Saved</span><span class="dl">"</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>to avoid using <code class="language-plaintext highlighter-rouge">then()</code>, create a async function alternatively</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span>  <span class="nx">mongoose</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">mongoose</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span>  <span class="nx">User</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./User</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">mongoose</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;URI&gt;</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="nf">run</span><span class="p">()</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+  <span class="cm">/* creating a user */</span>
+  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">User</span><span class="p">({</span><span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kyle</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">26</span><span class="p">})</span>
+
+  <span class="cm">/* save it into the database */</span>
+  <span class="k">await</span> <span class="nx">user</span><span class="p">.</span><span class="nf">save</span><span class="p">();</span>
+
+  <span class="cm">/* or, following creates a user and saves in db */</span>
+  <span class="c1">// const user = await User.create({name: "Kyle", age: 26})</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">User Saved</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">consle</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Console output:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">name:</span><span class="w"> </span><span class="s2">"Kyle"</span><span class="p">,</span><span class="w">
+  </span><span class="err">age:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+  </span><span class="err">_id:</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"61855c3d736483eaef556c5c"</span><span class="err">)</span><span class="p">,</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">unique</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="err">*/</span><span class="w">
+  </span><span class="err">__v:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">internal</span><span class="w"> </span><span class="err">versioning</span><span class="w"> </span><span class="err">*/</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Note that <code class="language-plaintext highlighter-rouge">user.save()</code> will create a collection <code class="language-plaintext highlighter-rouge">users</code> and store the data of user object (document) as a json.</p>
+
+<h4 id="creating-a-user-with-multiple-fields">Creating a user with multiple fields</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="nf">run</span><span class="p">()</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="k">try</span> <span class="p">{</span> <span class="cm">/* errors, i.e wrong value type for the field */</span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">.</span><span class="nf">create</span><span class="p">({</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kyle</span><span class="dl">"</span><span class="p">,</span> 
+      <span class="na">age</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+      <span class="na">hobbies</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Weight Lifting</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bowling</span><span class="dl">"</span><span class="p">],</span>
+      <span class="na">address</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">street</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Main St</span><span class="dl">"</span><span class="p">,</span>      
+      <span class="p">}</span>
+
+    <span class="p">});</span>
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+    <span class="c1">// console.log(e.errors.age);</span>
+  <span class="p">}</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">User Updated</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="3-update-user">3. Update User</h1>
+
+<p>In <code class="language-plaintext highlighter-rouge">server.js</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="nf">run</span><span class="p">();</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">.</span><span class="nf">create</span><span class="p">({</span><span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kyle</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">26</span><span class="p">})</span>
+    <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Sally</span><span class="dl">"</span><span class="p">;</span>
+    <span class="k">await</span> <span class="nx">user</span><span class="p">.</span><span class="nf">save</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">User Updated</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote class="block-warning">
+  <h4 id="warning">WARNING</h4>
+
+  <p><code class="language-plaintext highlighter-rouge">User.findbyIdAndUpdate()</code> or <code class="language-plaintext highlighter-rouge">.updateOne()</code> or <code class="language-plaintext highlighter-rouge">.updateMany()</code> or etc, will not run field validations defined in the schema. Use <code class="language-plaintext highlighter-rouge">User.findById().save()</code> instead!</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="nf">run</span><span class="p">();</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>  
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">.</span><span class="nf">findById</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">object_id</span><span class="o">&gt;</span><span class="p">);</span>
+    <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Sally</span><span class="dl">"</span><span class="p">;</span>
+    <span class="k">await</span> <span class="nx">user</span><span class="p">.</span><span class="nf">save</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">User Updated</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="4-find-a-user">4. Find a User</h1>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="nf">run</span><span class="p">()</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>  
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">.</span><span class="nf">find</span><span class="p">({</span><span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kyle</span><span class="dl">"</span><span class="p">});</span> <span class="c1">// All users with the name Kyle</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span>
+
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="41-where-method">4.1 where(…) Method</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="nf">run</span><span class="p">()</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>  
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">).</span><span class="nf">equals</span><span class="p">(</span><span class="dl">"</span><span class="s2">Kyle</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="dl">"</span><span class="s2">age</span><span class="dl">"</span><span class="p">).</span><span class="nf">gt</span><span class="p">(</span><span class="dl">"</span><span class="s2">12</span><span class="dl">"</span><span class="p">);</span> 
+    <span class="c1">// greater than 12 (notice "12" is a numerical string)</span>
+
+    <span class="c1">// Chaining </span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="dl">"</span><span class="s2">age</span><span class="dl">"</span><span class="p">).</span><span class="nf">gt</span><span class="p">(</span><span class="dl">"</span><span class="s2">12</span><span class="dl">"</span><span class="p">).</span><span class="nf">where</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">).</span><span class="nf">equals</span><span class="p">(</span><span class="dl">"</span><span class="s2">Kyle</span><span class="dl">"</span><span class="p">);</span> 
+
+    <span class="cm">/* Return only 2 users */</span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="dl">"</span><span class="s2">age</span><span class="dl">"</span><span class="p">).</span><span class="nf">gt</span><span class="p">(</span><span class="dl">"</span><span class="s2">12</span><span class="dl">"</span><span class="p">).</span><span class="nf">limit</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1">// Select only the "age" field, equivalent ot SELECT in SQL</span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="dl">"</span><span class="s2">age</span><span class="dl">"</span><span class="p">).</span><span class="nf">gt</span><span class="p">(</span><span class="dl">"</span><span class="s2">12</span><span class="dl">"</span><span class="p">).</span><span class="nf">select</span><span class="p">(</span><span class="dl">"</span><span class="s2">age</span><span class="dl">"</span><span class="p">)</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="42-updating-a-reference-field">4.2 Updating a Reference Field</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="nf">run</span><span class="p">()</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>  
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="c1">// Select only the "age" field, equivalent ot SELECT in SQL</span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">).</span><span class="nf">equals</span><span class="p">(</span><span class="dl">"</span><span class="s2">Kyle</span><span class="dl">"</span><span class="p">).</span><span class="nf">limit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nx">user</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">bestFriend</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">61855c3d736483eaefcddecfef</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">user</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">bestFriend2</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">61855c3d736483eaefffffccff</span><span class="dl">'</span><span class="p">;</span>
+    <span class="k">await</span> <span class="nx">user</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">save</span><span class="p">();</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="populate-method"><code class="language-plaintext highlighter-rouge">populate()</code> method</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="nf">run</span><span class="p">()</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>  
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">..</span><span class="nf">where</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">).</span><span class="nf">equals</span><span class="p">(</span><span class="dl">"</span><span class="s2">Kyle</span><span class="dl">"</span><span class="p">)</span>
+                  <span class="p">.</span><span class="nf">populate</span><span class="p">(</span><span class="dl">"</span><span class="s2">bestFriend</span><span class="dl">"</span><span class="p">)</span>
+                  <span class="p">.</span><span class="nf">limit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+   <span class="cm">/* populate(...) "bestFriend" field
+      ==============================
+      Instead of the "bestFriend" field is just being an id, 
+      populate the "bestFriend" field with teh actual data 
+      of the best friend object including all the fields.
+  
+      Since join in mongodb are not the best thing to do, 
+      populate() is a good alternative. 
+    */</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">user</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="5-delete">5. Delete</h1>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="nf">run</span><span class="p">()</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>  
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">stat</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">User</span><span class="p">.</span><span class="nf">deleteOne</span><span class="p">({</span><span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kyle</span><span class="dl">"</span><span class="p">});</span> <span class="c1">// All users with the name Kyle</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">stat</span><span class="p">)</span>
+
+  <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>output</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="err">deletedCount:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="51-cascade-on-delete">5.1 Cascade on Delete</h2>
+
+<p>Relationships are an important part of any data design. Relational databases use primary and foreign key concepts to form those relationships when normalizing the data schema. Using those concepts, it allows a “cascading’’ delete, which means a primary key parent delete will delete the related siblings.</p>
+
+<p>MongoDB allows you to form relationships in different ways—for example, by embedding documents or arrays inside a parent document. This allows the document to contain all of its relationships within itself and therefore it does the cascading delete out of the box. Consider the following example between a user and the assigned tasks of the user:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">userId</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+  </span><span class="err">username</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"user1@example.com"</span><span class="w"> 
+  </span><span class="err">Tasks</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+         </span><span class="p">{</span><span class="w"> </span><span class="err">taskId</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+           </span><span class="err">Details</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"write"</span><span class="p">,</span><span class="s2">"print"</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s2">"delete"</span><span class="p">]</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+       </span><span class="p">{</span><span class="w"> </span><span class="err">taskId</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+         </span><span class="err">Details</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"clean"</span><span class="p">,</span><span class="s2">"cook"</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s2">"eat"</span><span class="p">]</span><span class="w">
+       </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>However, in some design cases, we will want to separate the data of the relationship into Parent and Sibling collections—for example, games collection holding data for a specific game including ids referencing a quests collection holding a per game quest. As amount of quest data per game can be large and complex, we’d rather not embed it in games but reference:</p>
+
+<p><strong>Games collection</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">_id:</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"60f950794a61939b6aac12a4"</span><span class="err">)</span><span class="p">,</span><span class="w">
+  </span><span class="err">userId:</span><span class="w"> </span><span class="err">'xxx'</span><span class="p">,</span><span class="w">
+  </span><span class="err">gameId:</span><span class="w"> </span><span class="err">'abcd-wxyz'</span><span class="p">,</span><span class="w">
+  </span><span class="err">gameName:</span><span class="w"> </span><span class="err">'Crash'</span><span class="p">,</span><span class="w">
+  </span><span class="err">quests:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">startTime:</span><span class="w"> </span><span class="err">ISODate(</span><span class="s2">"2021-01-01T22:00:00.000Z"</span><span class="err">)</span><span class="p">,</span><span class="w">
+      </span><span class="err">questId:</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"60f94b7beb7f78709b97b5f3"</span><span class="err">)</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">questId:</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"60f94bbfeb7f78709b97b5f4"</span><span class="err">)</span><span class="p">,</span><span class="w">
+      </span><span class="err">startTime:</span><span class="w"> </span><span class="err">ISODate(</span><span class="s2">"2021-01-02T02:00:00.000Z"</span><span class="err">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Each game has a quest array with a start time of this quest and a reference to the quests collection where the quest data reside.</p>
+
+<p><strong>Quests collection</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">_id:</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"60f94bbfeb7f78709b97b5f4"</span><span class="err">)</span><span class="p">,</span><span class="w">
+  </span><span class="err">questName:</span><span class="w"> </span><span class="err">'War</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">fruits</span><span class="w"> </span><span class="err">'</span><span class="p">,</span><span class="w">
+  </span><span class="err">userId:</span><span class="w"> </span><span class="err">'xxx'</span><span class="p">,</span><span class="w">
+  </span><span class="err">details:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">lastModified:</span><span class="w"> </span><span class="err">ISODate(</span><span class="s2">"2021-01-01T23:00:00.000Z"</span><span class="err">)</span><span class="p">,</span><span class="w">
+    </span><span class="err">currentState:</span><span class="w"> </span><span class="err">'in-progress'</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">progressRounds:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">'failed'</span><span class="p">,</span><span class="w"> </span><span class="err">'failed'</span><span class="p">,</span><span class="w"> </span><span class="err">'in-progress'</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">_id:</span><span class="w"> </span><span class="err">ObjectId(</span><span class="s2">"60f94b7beb7f78709b97b5f3"</span><span class="err">)</span><span class="p">,</span><span class="w">
+  </span><span class="err">questName:</span><span class="w"> </span><span class="err">'War</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">vegetable</span><span class="w"> </span><span class="err">'</span><span class="p">,</span><span class="w">
+  </span><span class="err">userId:</span><span class="w"> </span><span class="err">'xxx'</span><span class="p">,</span><span class="w">
+  </span><span class="err">details:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">lastModified:</span><span class="w"> </span><span class="err">ISODate(</span><span class="s2">"2021-01-01T22:00:00.000Z"</span><span class="err">)</span><span class="p">,</span><span class="w">
+    </span><span class="err">currentState:</span><span class="w"> </span><span class="err">'failed'</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">progressRounds:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">'failed'</span><span class="p">,</span><span class="w"> </span><span class="err">'failed'</span><span class="p">,</span><span class="w"> </span><span class="err">'failed'</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>When a game gets deleted, we would like to purge the relevant quests in a cascading delete. This is where the Preimage trigger feature comes into play.</p>
+
+<h2 id="52-preimage-trigger-option">5.2 Preimage Trigger Option</h2>
+
+<p>The Preimage option allows the trigger function to receive a snapshot of the deleted/modified document just before the change that triggered the function. This feature is enabled by enriching the oplog of the underlying replica set to store this snapshot as part of the change.</p>
+
+<p>In our case, we will use this feature to capture the parent deleted document full snapshot (games) and delete the related relationship documents in the sibling collection (quests).</p>
+
+<h3 id="521-building-the-trigger">5.2.1 Building the Trigger</h3>
+
+<p>When we define the database trigger, we will point it to the relevant cluster and parent namespace to monitor and trigger when a document is deleted—in our case, GamesDB.games.</p>
+
+<p><img src="../../assets/images/jsframeworks/2_2_mongoose/edit_trigger.png" alt="Preimage Feature" width="100%" class="text-center img-style-solid-1" /></p>
+
+<p>To enable the <code class="language-plaintext highlighter-rouge">Preimage</code> feature, we will toggle Document Preimage to <code class="language-plaintext highlighter-rouge">ON</code> and specify our function to handle the cascade delete logic.</p>
+
+<p><img src="../../assets/images/jsframeworks/2_2_mongoose/edit_trigger2.png" alt="Preimage Feature" width="100%" class="text-center img-style-solid-1" /></p>
+
+<h3 id="522-deletecascadingquests---function">5.2.2 deleteCascadingQuests - Function</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">exports</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">async</span><span class="w"> </span><span class="err">function(changeEvent)</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Get</span><span class="w"> </span><span class="err">deleted</span><span class="w"> </span><span class="err">document</span><span class="w"> </span><span class="err">preImage</span><span class="w"> </span><span class="err">using</span><span class="w"> </span><span class="s2">"fullDocumentBeforeChange"</span><span class="w">
+  </span><span class="err">var</span><span class="w"> </span><span class="err">deletedDocument</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">changeEvent.fullDocumentBeforeChange;</span><span class="w">
+
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Get</span><span class="w"> </span><span class="err">sibling</span><span class="w"> </span><span class="err">collection</span><span class="w"> </span><span class="s2">"quests"</span><span class="w">
+  </span><span class="err">const</span><span class="w"> </span><span class="err">quests</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">context.services.get(</span><span class="s2">"mongodb-atlas"</span><span class="err">).db(</span><span class="s2">"GamesDB"</span><span class="err">).collection(</span><span class="s2">"quests"</span><span class="err">);</span><span class="w">
+
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Delete</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">relevant</span><span class="w"> </span><span class="err">quest</span><span class="w"> </span><span class="err">documents.</span><span class="w">
+  </span><span class="err">deletedDocument.quests.map(</span><span class="w"> </span><span class="err">async</span><span class="w"> </span><span class="err">(quest)</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="err">await</span><span class="w"> </span><span class="err">quests.deleteOne(</span><span class="p">{</span><span class="err">_id</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">quest.questId</span><span class="p">}</span><span class="err">);</span><span class="w">
+  </span><span class="p">}</span><span class="err">)</span><span class="w">
+</span><span class="p">}</span><span class="err">;</span><span class="w">
+</span></code></pre></div></div>
+<p>As you can see, the function gets the fully deleted <code class="language-plaintext highlighter-rouge">games</code> document present in <code class="language-plaintext highlighter-rouge">changeEvent.fullDocumentBeforeChange</code> and iterates over the <code class="language-plaintext highlighter-rouge">quests</code> array. For each of those array elements, the function runs a “deleteOne” on the <code class="language-plaintext highlighter-rouge">quests</code> collection to delete the relevant quests documents.</p>
+
+<h3 id="523-deleting-the-parent-document">5.2.3 Deleting the Parent Document</h3>
+<p>Now let’s put our trigger to the test by deleting the game from the <code class="language-plaintext highlighter-rouge">games</code> collection:</p>
+
+<p><img src="../../assets/images/jsframeworks/2_2_mongoose/del_parent_doc.png" alt="Delete parent document" width="100%" class="text-center img-style-solid-1" /></p>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/dev/web/be/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/dev/web/be/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/dev/web/be/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `bootstrap_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'bootstrap');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `bootstrap_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'bootstrap')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", bootstrap, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `bootstrap_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `bootstrap_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'bootstrap');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `bootstrap_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'bootstrap')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `bootstrap_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/dev/web/be/jsframework/2_2_ejs/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2.2 EJS"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/dev/web/be/jsframework/2_4_routes/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2.4 Routes"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "2.4 Routes",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_2_jsframeworks/2_4_routes.md",
+            "ref": "_2_jsframeworks/2_4_routes.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | Backend Development",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_2_jsframeworks/2_3_mongoose.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-08-12 11:27:44 +0800"
+    },
+    "basePath": "/dev/web/be",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/dev/web/be/assets/gitbook/gitbook.js"></script>
+<script src="/dev/web/be/assets/gitbook/theme.js"></script>
+
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/dev/web/be/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>

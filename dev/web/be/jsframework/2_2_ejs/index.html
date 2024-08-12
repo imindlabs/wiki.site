@@ -1,0 +1,1145 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2.2 EJS · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/dev/web/be/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/dev/web/be/assets/gitbook/style.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/dev/web/be/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/dev/web/be/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/dev/web/be/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/dev/web/be/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/dev/web/be/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/web/be/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/dev/web/be/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/web/be/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/dev/web/be/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/dev/web/be/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/dev/web/be/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/dev/web/be/jsframework/2_1_pug/" />
+        
+
+        
+            <link rel="next" href="/dev/web/be/jsframework/2_3_mongoose/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/dev/web/be/">
+            <img class="logo zoom" src="/dev/web/be/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/dev/web/be/">
+            <img class="logo zoom" src="/dev/web/be/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/dev/web/be/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be">
+                
+                <a href="/dev/web/be/" onclick="pageScrollToTop(this)">
+                    Wiki | Backend Development
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_webconcepts</p> -->
+            
+                <p class="collection-title">Web Concepts</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/1_rest/">
+                
+                <a href="/dev/web/be/jsframework/1_rest/" onclick="pageScrollToTop(this)">
+                    REST
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>2_jsframeworks</p> -->
+            
+                <p class="collection-title">JS Framework</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/1_0_nodejs/">
+                
+                <a href="/dev/web/be/jsframework/1_0_nodejs/" onclick="pageScrollToTop(this)">
+                    1. NodeJS
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/1_1_nvm/">
+                
+                <a href="/dev/web/be/jsframework/1_1_nvm/" onclick="pageScrollToTop(this)">
+                    1.1 NVM
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            <li class="divider"></li>
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/2_0_expressjs/">
+                
+                <a href="/dev/web/be/jsframework/2_0_expressjs/" onclick="pageScrollToTop(this)">
+                    2. ExpressJS
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/2_1_pug/">
+                
+                <a href="/dev/web/be/jsframework/2_1_pug/" onclick="pageScrollToTop(this)">
+                    2.1 Pug
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/dev/web/be/jsframework/2_2_ejs/">
+                
+                <a href="/dev/web/be/jsframework/2_2_ejs/" onclick="pageScrollToTop(this)">
+                    2.2 EJS
+                </a>
+                
+                
+                <ul><li><a href="#1-introduction" onclick="mobilePageScrollToAnchor(this)" >1. Introduction</a></li><li><a href="#2-example" onclick="mobilePageScrollToAnchor(this)" >2. Example</a></li><li><a href="#3-control-flow-statements" onclick="mobilePageScrollToAnchor(this)" >3. Control Flow Statements</a><ul><li><a href="#31-conditional-statements" onclick="mobilePageScrollToAnchor(this)" >3.1 Conditional Statements</a></li><li><a href="#32-looping-statements" onclick="mobilePageScrollToAnchor(this)" >3.2 Looping Statements</a></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/2_3_mongoose/">
+                
+                <a href="/dev/web/be/jsframework/2_3_mongoose/" onclick="pageScrollToTop(this)">
+                    2.2 Mongoose
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/jsframework/2_4_routes/">
+                
+                <a href="/dev/web/be/jsframework/2_4_routes/" onclick="pageScrollToTop(this)">
+                    2.4 Routes
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>3_phpframeworks</p> -->
+            
+                <p class="collection-title">PhP Framework</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/phpframework/1_laravel/">
+                
+                <a href="/dev/web/be/phpframework/1_laravel/" onclick="pageScrollToTop(this)">
+                    1. Laravel
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/phpframework/2_cakephp/">
+                
+                <a href="/dev/web/be/phpframework/2_cakephp/" onclick="pageScrollToTop(this)">
+                    2. CakePhP
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>4_pythonframeworks</p> -->
+            
+                <p class="collection-title">Python Framework</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/pythonframework/1_django/">
+                
+                <a href="/dev/web/be/pythonframework/1_django/" onclick="pageScrollToTop(this)">
+                    1. Django
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/web/be/pythonframework/2_adv-django/">
+                
+                <a href="/dev/web/be/pythonframework/2_adv-django/" onclick="pageScrollToTop(this)">
+                    1.1. Advance Django
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >2.2 EJS</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/jsframework/2_2_ejs">2.2 EJS</h1>
+                    
+
+                    <h1 id="1-introduction">1. Introduction</h1>
+<p>EJS (Embedded JavaScript Templating) is a simple templating language that lets you generate HTML markup with plain JavaScript.</p>
+
+<h4 id="features">Features</h4>
+
+<ul>
+  <li><strong>Use plain JavaScript:</strong> Unlike <code class="language-plaintext highlighter-rouge">pug</code>, <code class="language-plaintext highlighter-rouge">ejs</code> uses JS!</li>
+  <li><strong>Fast development time:</strong> Don’t waste time learning complex new syntax or preprocessing data for proper rendering.</li>
+  <li><strong>Simple syntax:</strong> Just write JavaScript that emits the HTML you want, and get the job done!</li>
+  <li><strong>Speedy execution:</strong> We all know how fast V8 and the other JavaScript runtimes have gotten. EJS caches the intermediate JS functions for fast execution.</li>
+  <li><strong>Easy debugging:</strong> It’s easy to debug EJS errors: your errors are plain JavaScript exceptions, with template line-numbers included.</li>
+  <li><strong>Active development:</strong> EJS has a large community of active users, and the library is under active development. We’re happy to answer your questions or give you help.</li>
+</ul>
+
+<blockquote class="block-warning">
+  <h5 id="warning">WARNING</h5>
+
+  <p>If you give end-users unfettered access (ref below) to the EJS render method, you are using EJS in an inherently <strong>un-secure way</strong>. Please do not report security issues that stem from doing that. EJS is effectively a JavaScript runtime. Its entire job is to execute JavaScript. If you run the EJS render method without checking the inputs yourself, you are responsible for the results.</p>
+  <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ <span class="nx">res</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="dl">'</span><span class="s1">index</span><span class="dl">'</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<h1 id="2-example">2. Example</h1>
+
+<p>Create a file <code class="language-plaintext highlighter-rouge">hello.ejs</code> and place it in <code class="language-plaintext highlighter-rouge">.\views</code> folder</p>
+
+<pre><code class="language-treeview">    testNodeProject/
+    |-- views/
+    |   |-- hello.ejs
+    |-- server.js
+    |-- package.json
+</code></pre>
+
+<p>In <code class="language-plaintext highlighter-rouge">server.js</code> set the view engine to <code class="language-plaintext highlighter-rouge">ejs</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nf">express</span><span class="p">()</span>
+
+<span class="c1">// Set the view engine</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span> <span class="dl">'</span><span class="s1">view engine</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ejs</span><span class="dl">'</span> <span class="p">);</span>
+
+<span class="c1">// Set handler for the root '/'</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">theTitle</span><span class="p">:</span> <span class="dl">'</span><span class="s1">This is the Title</span><span class="dl">'</span><span class="p">});</span>
+    <span class="c1">// this will look for the file 'hello.ejs' in './views' folder</span>
+    <span class="c1">// second parameter to render(...) method is optional </span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Content for <code class="language-plaintext highlighter-rouge">hello.ejs</code></p>
+
+<pre class="line-numbers"><code class="language-ejs">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;Hello World! &lt;%= locals.theTitle || "Default Value" %&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;div class="remark"&gt;
+      &lt;p&gt;EJS rocks!!&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>It is important to use <code class="language-plaintext highlighter-rouge">locals.theTitle</code> instead of <code class="language-plaintext highlighter-rouge">theTitle</code> in the <code class="language-plaintext highlighter-rouge">.ejs</code> file above since the page will report an error <strong>if the parameter is not defined</strong> during the call to <code class="language-js highlighter-rouge"><span class="nx">res</span><span class="p">.</span><span class="nf">render</span><span class="p">(...)</span></code> method. In contrast, <code class="language-plaintext highlighter-rouge">locals</code> dictionary <strong>will always be defined internally</strong> when called <code class="language-js highlighter-rouge"><span class="nx">res</span><span class="p">.</span><span class="nf">render</span><span class="p">(...)</span></code> method. if a parameter (i.e. <code class="language-plaintext highlighter-rouge">theTitle</code>) is not defined, <code class="language-plaintext highlighter-rouge">locals.theTitle</code> will simply return nothing.</p>
+
+<p>Rendered output, when <code class="language-plaintext highlighter-rouge">http://localhost:3000/</code> is accessed</p>
+
+<div class="language-html line-numbers highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Hello World! This is the Title<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  Hello World This is the Title
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h1 id="3-control-flow-statements">3. Control Flow Statements</h1>
+
+<p>Similar to JavaScript, EJS provides a syntax for using conditional logic within your HTML templates. Following demonstrate practical examples of using conditional statements with the EJS template</p>
+
+<h2 id="31-conditional-statements">3.1 Conditional Statements</h2>
+
+<p>Below is an example of using a <code class="language-plaintext highlighter-rouge">if</code> conditional statement in <code class="language-plaintext highlighter-rouge">ejs</code></p>
+
+<p>In <code class="language-plaintext highlighter-rouge">./views/index.ejs</code></p>
+
+<style>
+
+
+
+:root {
+/* Tab: Error color scheme */
+--tabex-tag-bg-color-err: #ffc8c8;
+--tabex-tag-color-err: black;
+
+--tabex-tag-bg-color-err-active: #cf2121;
+--tabex-tag-color-err-active: white;
+
+/* Tab: Warning color scheme */
+--tabex-tag-bg-color-wrn: #ffe8a8; 
+--tabex-tag-color-wrn: black;
+
+--tabex-tag-bg-color-wrn-active: #ffb900;
+--tabex-tag-color-wrn-active: white;
+
+/* Tab: Correct color scheme */
+--tabex-tag-bg-color-crt: #d4ffd4; 
+--tabex-tag-color-crt: black;
+
+--tabex-tag-bg-color-crt-active: #009400;
+--tabex-tag-color-crt-active: white;
+
+/* Tab: Grey color scheme */
+--tabex-tag-bg-color-grey: #eeeeee;
+--tabex-tag-color-grey: black;
+
+--tabex-tag-bg-color-grey-active: #c7c7c7;
+--tabex-tag-color-grey-active: black;
+}
+
+#ejsTab-tabs {
+    --bs-nav-tabs-border-width: 0px;
+}
+#ejsTab-tabContent .tab-pane{
+    border-radius: 5px;
+}
+
+
+
+    /* When tab header is not selected */
+    #ejsTab-tabs #ejsTab-tab0 {
+      background-color: var(--tabex-tag-bg-color-crt);
+      color: var(--tabex-tag-color-crt);
+      border-radius: 7px 7px 0px 0px;
+    }
+
+    /* When tab header is selected */
+    #ejsTab-tabs #ejsTab-tab0.active {
+        background-color: var(--tabex-tag-bg-color-crt-active);
+        color: var(--tabex-tag-color-crt-active);
+    }
+
+    /* Tab body */
+    #ejsTab-tabContent.tab-content #ejsTab-content0{
+        background-color: var(--tabex-tag-bg-color-crt-active);
+        color: var(--tabex-tag-color-crt-active);
+    }
+
+  
+
+  
+    /* When tab header is not selected */
+    #ejsTab-tabs #ejsTab-tab1 {
+        background-color: var(--tabex-tag-bg-color-err);
+        color: var(--tabex-tag-color-err);
+        border-radius: 7px 7px 0px 0px;
+    }
+
+    /* When tab header is selected */
+    #ejsTab-tabs #ejsTab-tab1.active {
+        background-color: var(--tabex-tag-bg-color-err-active);
+        color: var(--tabex-tag-color-err-active);
+    }
+
+    /* Tab body */
+    #ejsTab-tabContent.tab-content #ejsTab-content1{
+        background-color: var(--tabex-tag-bg-color-err-active);
+        color: var(--tabex-tag-color-err-active);
+    }
+
+  
+
+
+
+</style>
+
+<ul class="nav nav-tabs mb-0" id="ejsTab-tabs" role="tablist">
+<li class="nav-item" role="presentation">
+
+    
+    
+    
+    <button class="nav-link active" id="ejsTab-tab0" data-bs-toggle="tab" data-bs-target="#ejsTab-content0" type="button" role="tab" aria-controls="ejsTab-tab-content0" aria-selected="true">CORRECT</button>
+  </li>
+<li class="nav-item" role="presentation">
+
+    
+    
+    
+    <button class="nav-link " id="ejsTab-tab1" data-bs-toggle="tab" data-bs-target="#ejsTab-content1" type="button" role="tab" aria-controls="ejsTab-tab-content1" aria-selected="false">ERROR</button>
+  </li>
+
+</ul>
+
+<div class="tab-content" id="ejsTab-tabContent">
+
+  
+
+  
+  <div class="code-tab-padding tab-pane show active" id="ejsTab-content0" role="tabpanel" aria-labelledby="ejsTab-tab0">
+    
+
+<pre class="line-numbers mb-0"><code class="language-ejs match-braces">&lt;% if(true){ %&gt;
+    &lt;h1&gt;foo&lt;/h1&gt;
+ &lt;% } else { %&gt;
+    &lt;h1&gt;bar&lt;/h1&gt;
+ &lt;% } %&gt;
+</code></pre>
+
+
+<p class="px-4 py-2 mb-0">
+Line 3: <code class="language-ejs">} else {</code> must be on the same line
+</p>
+
+  </div>  
+  
+  
+
+  
+  <div class="code-tab-padding tab-pane " id="ejsTab-content1" role="tabpanel" aria-labelledby="ejsTab-tab1">
+    
+
+<pre class="line-numbers mb-0"><code class="language-ejs match-braces">&lt;% if(true){ %&gt;
+    &lt;h1&gt;foo&lt;/h1&gt;
+ &lt;% } %&gt;
+ &lt;% else { %&gt;
+    &lt;h1&gt;bar&lt;/h1&gt;
+ &lt;% } %&gt;
+</code></pre>
+
+
+<p class="px-4 py-2 mb-0">
+Line 3 and 4 must be on the same line.
+</p>
+
+  </div>  
+  
+</div>
+
+<h2 id="32-looping-statements">3.2 Looping Statements</h2>
+
+<p>Below is an example of using a <code class="language-plaintext highlighter-rouge">for</code> loop statement in <code class="language-plaintext highlighter-rouge">ejs</code></p>
+
+<p>In <code class="language-plaintext highlighter-rouge">server.js</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nf">express</span><span class="p">()</span>
+
+<span class="c1">// Set the view engine</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span> <span class="dl">'</span><span class="s1">view engine</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ejs</span><span class="dl">'</span> <span class="p">);</span>
+
+<span class="c1">// Set handler for the root '/'</span>
+<span class="nx">app</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="dl">'</span><span class="s1">index</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bob</span><span class="dl">"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">john</span><span class="dl">"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jake</span><span class="dl">"</span> <span class="p">},</span>
+       <span class="p">]</span> <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>In <code class="language-plaintext highlighter-rouge">./views/index.ejs</code></p>
+
+<pre><code class="language-ejs">&lt;table&gt;
+  &lt;% for(var i=0; i &lt; data.length; i++) { %&gt;
+     &lt;tr&gt;
+       &lt;td&gt;&lt;%= data[i].id %&gt;&lt;/td&gt;
+       &lt;td&gt;&lt;%= data[i].name %&gt;&lt;/td&gt;
+     &lt;/tr&gt;
+  &lt;% } %&gt;
+&lt;/table&gt;
+</code></pre>
+
+<p>Rendered output, when <code class="language-plaintext highlighter-rouge">http://localhost:3000/</code> is accessed</p>
+
+<div class="language-html line-numbers highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table&gt;</span>  
+<span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>bob<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>  
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>john<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>3<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>jake<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>  
+<span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div></div>
+
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/dev/web/be/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/dev/web/be/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/dev/web/be/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `bootstrap_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'bootstrap');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `bootstrap_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'bootstrap')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", bootstrap, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `bootstrap_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `bootstrap_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'bootstrap');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `bootstrap_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'bootstrap')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `bootstrap_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/dev/web/be/jsframework/2_1_pug/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2.1 Pug"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/dev/web/be/jsframework/2_3_mongoose/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2.2 Mongoose"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "2.2 Mongoose",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_2_jsframeworks/2_3_mongoose.md",
+            "ref": "_2_jsframeworks/2_3_mongoose.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | Backend Development",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_2_jsframeworks/2_2_ejs.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-08-12 11:27:44 +0800"
+    },
+    "basePath": "/dev/web/be",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/dev/web/be/assets/gitbook/gitbook.js"></script>
+<script src="/dev/web/be/assets/gitbook/theme.js"></script>
+
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/dev/web/be/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/dev/web/be/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>
