@@ -1,0 +1,1062 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>4. Corner Detectors · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/ds/aml/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/ds/aml/assets/gitbook/style.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/ds/aml/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/ds/aml/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/ds/aml/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/ds/aml/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/ds/aml/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/ds/aml/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/ds/aml/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/ds/aml/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/ds/aml/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/ds/aml/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/ds/aml/image_analysis/1_ima_3_edge_detectors/" />
+        
+
+        
+            <link rel="next" href="/ds/aml/image_analysis/1_ima_5_region_detectors/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/ds/aml/">
+            <img class="logo zoom" src="/ds/aml/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/ds/aml/">
+            <img class="logo zoom" src="/ds/aml/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/ds/aml/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml">
+                
+                <a href="/ds/aml/" onclick="pageScrollToTop(this)">
+                    Wiki | Advance Machine Learning
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_learning_domains</p> -->
+            
+                <p class="collection-title">Learning Domains</p>
+            
+            
+            
+
+            
+
+            
+            
+            
+            <!-- <p>2_dataset_preparation</p> -->
+            
+                <p class="collection-title">Dataset Preparation</p>
+            
+            
+            
+
+            
+
+            
+            
+            
+            <!-- <p>3_feature_analysis</p> -->
+            
+                <p class="collection-title">Feature Analysis</p>
+            
+            
+            
+
+            
+
+            
+            
+            
+            <!-- <p>4_problem_domains</p> -->
+            
+                <p class="collection-title">Problem Domains</p>
+            
+            
+            
+
+            
+            
+            
+            <p class="separator-title">Image Processing</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/image_analysis/1_ima_1_basics/">
+                
+                <a href="/ds/aml/image_analysis/1_ima_1_basics/" onclick="pageScrollToTop(this)">
+                    1. Introduction
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/image_analysis/1_ima_2_filters/">
+                
+                <a href="/ds/aml/image_analysis/1_ima_2_filters/" onclick="pageScrollToTop(this)">
+                    2. Filters
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/image_analysis/1_ima_3_edge_detectors/">
+                
+                <a href="/ds/aml/image_analysis/1_ima_3_edge_detectors/" onclick="pageScrollToTop(this)">
+                    3. Edge Detectors
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/ds/aml/image_analysis/1_ima_4_corner_detectors/">
+                
+                <a href="/ds/aml/image_analysis/1_ima_4_corner_detectors/" onclick="pageScrollToTop(this)">
+                    4. Corner Detectors
+                </a>
+                
+                
+                <ul><li><a href="#1-cornerharris-corner-detection" onclick="mobilePageScrollToAnchor(this)" >1. CornerHarris Corner Detection</a><ul><li><a href="#11-how-it-works" onclick="mobilePageScrollToAnchor(this)" >1.1 How It Works:</a><ul><li><a href="#1-gradient-computation" onclick="mobilePageScrollToAnchor(this)" >1. Gradient Computation</a></li><li><a href="#2-structure-tensor-auto-correlation-matrix" onclick="mobilePageScrollToAnchor(this)" >2. Structure Tensor (Auto-correlation Matrix)</a></li><li><a href="#3-corner-response-calculation" onclick="mobilePageScrollToAnchor(this)" >3. Corner Response Calculation</a></li><li><a href="#4-thresholding-and-non-maximum-suppression" onclick="mobilePageScrollToAnchor(this)" >4. Thresholding and Non-Maximum Suppression</a></li></ul></li><li><a href="#12-usage" onclick="mobilePageScrollToAnchor(this)" >1.2 Usage:</a><ul><li><a href="#1-load-an-image" onclick="mobilePageScrollToAnchor(this)" >1. Load an Image:</a></li><li><a href="#2-convert-image-to-float32" onclick="mobilePageScrollToAnchor(this)" >2. Convert Image to Float32:</a></li><li><a href="#3-apply-the-cornerharris-function" onclick="mobilePageScrollToAnchor(this)" >3. Apply the CornerHarris Function:</a></li><li><a href="#4-dilate-the-result-optional" onclick="mobilePageScrollToAnchor(this)" >4. Dilate the Result (Optional):</a></li><li><a href="#7-threshold-and-mark-the-corners" onclick="mobilePageScrollToAnchor(this)" >7. Threshold and Mark the Corners:</a></li><li><a href="#8-display-the-image-with-detected-corners" onclick="mobilePageScrollToAnchor(this)" >8. Display the Image with Detected Corners:</a></li><li><a href="#9-full-example-code" onclick="mobilePageScrollToAnchor(this)" >9. Full Example Code:</a></li><li><a href="#10-additional-tips" onclick="mobilePageScrollToAnchor(this)" >10. Additional Tips:</a></li></ul></li></ul></li><li><a href="#2-shi-tomasi-corner-detection" onclick="mobilePageScrollToAnchor(this)" >2. Shi-Tomasi Corner Detection</a><ul><li><a href="#21-how-it-works" onclick="mobilePageScrollToAnchor(this)" >2.1 How It Works:</a></li><li><a href="#22-advantages-of-shi-tomasi-over-harris" onclick="mobilePageScrollToAnchor(this)" >2.2 Advantages of Shi-Tomasi Over Harris</a></li><li><a href="#23-usage" onclick="mobilePageScrollToAnchor(this)" >2.3 Usage</a></li><li><a href="#24-keypoints" onclick="mobilePageScrollToAnchor(this)" >2.4 Keypoints</a></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/image_analysis/1_ima_5_region_detectors/">
+                
+                <a href="/ds/aml/image_analysis/1_ima_5_region_detectors/" onclick="pageScrollToTop(this)">
+                    5. Region Detectors
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >4. Corner Detectors</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/image_analysis/1_ima_4_corner_detectors">4. Corner Detectors</h1>
+                    
+
+                    <h1 id="1-cornerharris-corner-detection">1. CornerHarris Corner Detection</h1>
+
+<p>The CornerHarris algorithm is a popular method used in computer vision for detecting corners in an image. Corners are points in the image where the intensity changes significantly in all directions. This algorithm is often used in image processing for feature detection, which is essential in tasks such as object recognition, image matching, and tracking.</p>
+
+<p>The CornerHarris algorithm works by computing the gradients of the image, forming a matrix that captures changes in intensity, and then calculating a response function that identifies corners based on these changes. It is effective in detecting corners that are invariant to rotations and scale changes, making it a robust tool in feature detection for various image processing tasks.</p>
+
+<h2 id="11-how-it-works">1.1 How It Works:</h2>
+
+<h3 id="1-gradient-computation">1. Gradient Computation</h3>
+<ul>
+  <li>First, the algorithm computes the gradient of the image in the \(x\) and \(y\) directions. This can be done using Sobel filters or any other method to find the derivatives \(I_x\) and \(I_y\) of the image.</li>
+</ul>
+
+<h3 id="2-structure-tensor-auto-correlation-matrix">2. Structure Tensor (Auto-correlation Matrix)</h3>
+<ul>
+  <li>The algorithm then computes the structure tensor, also known as the second-moment matrix, at each pixel. This matrix is defined as:
+\(M = \begin{bmatrix}
+I_x^2 &amp; I_x I_y \\
+I_x I_y &amp; I_y^2
+\end{bmatrix}\)
+where:
+    <ul>
+      <li>\(I_x^2\) is the squared gradient in the \(x\) direction.</li>
+      <li>\(I_y^2\) is the squared gradient in the \(y\) direction.</li>
+      <li>\(I_x I_y\) is the product of the gradients in the \(x\) and \(y\) directions.</li>
+    </ul>
+  </li>
+  <li>The elements of this matrix are then smoothed (often with a Gaussian filter) to reduce noise.</li>
+</ul>
+
+<h3 id="3-corner-response-calculation">3. Corner Response Calculation</h3>
+<ul>
+  <li>The CornerHarris algorithm then computes the <strong>corner response function</strong> \(R\) at each pixel using the structure tensor \(M\). The response function is given by:
+\(R = \text{det}(M) - k \cdot (\text{trace}(M))^2\)
+where:
+    <ul>
+      <li>\(\text{det}(M) = I_x^2 \cdot I_y^2 - (I_x I_y)^2\) is the determinant of the matrix \(M\).</li>
+      <li>\(\text{trace}(M) = I_x^2 + I_y^2\) is the trace of the matrix \(M\).</li>
+      <li>\(k\) is a sensitivity parameter (typically a small constant, around 0.04 to 0.06).</li>
+    </ul>
+  </li>
+  <li>\(R\) is a scalar value that indicates the likelihood of a pixel being a corner:
+    <ul>
+      <li>If \(R\) is large and positive, it indicates a corner.</li>
+      <li>If \(R\) is negative, it indicates an edge.</li>
+      <li>If \(R\) is close to zero, it indicates a flat region.</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="purpose-of-calculating-the-determinant-and-trace">Purpose of Calculating the Determinant and Trace:</h5>
+
+<p>The determinant of \(M\) captures the “intensity variation” around a pixel in two perpendicular directions. Here’s why it is important:</p>
+
+<ul>
+  <li><strong>Measuring the Response to Corners:</strong>
+    <ul>
+      <li>The determinant \(\text{det}(M)\) reflects how much the image intensity varies in the local neighborhood of a pixel. A large determinant indicates a strong variation in both directions, which is characteristic of a corner.</li>
+      <li>Specifically:
+        <ul>
+          <li><strong>Corners</strong>: If \(\text{det}(M)\) is large and positive, it indicates that the pixel has significant intensity variations in all directions, characteristic of a corner.</li>
+          <li><strong>Edges</strong>: If the intensity varies significantly in one direction but not in the perpendicular direction, the determinant will be small or close to zero, indicating an edge rather than a corner.</li>
+          <li><strong>Flat Regions</strong>: If there is little or no variation in any direction, the determinant will be close to zero, indicating a flat region.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Corner Response Function \(R\):</strong>
+    <ul>
+      <li>The determinant of \(M\) is used in the corner response function \(R\), which is calculated as:
+\(R = \text{det}(M) - k \cdot (\text{trace}(M))^2\)
+where:
+        <ul>
+          <li>\(\text{trace}(M) = I_x^2 + I_y^2\) is the trace of matrix \(M\) and represents the sum of the eigenvalues of \(M\).</li>
+          <li>\(k\) is a constant (typically around 0.04 to 0.06) that controls the sensitivity of the detector.</li>
+        </ul>
+      </li>
+      <li>The purpose of this response function \(R\) is to combine the determinant (which measures variation) with the trace (which provides a measure of the average intensity change). The combination helps to distinguish corners from edges and flat regions.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="4-thresholding-and-non-maximum-suppression">4. Thresholding and Non-Maximum Suppression</h3>
+<ul>
+  <li>The algorithm then applies a threshold to the \(R\) values to detect strong corners.</li>
+  <li>Non-maximum suppression is performed to ensure that only the most prominent corners are retained. This involves comparing each corner’s \(R\) value to its neighbors and keeping only local maxima.</li>
+</ul>
+
+<h2 id="12-usage">1.2 Usage:</h2>
+
+<p>You can use the CornerHarris algorithm in OpenCV using the <code class="language-plaintext highlighter-rouge">cv2.cornerHarris</code> function. Below is a step-by-step guide and example of how to use this function in Python with OpenCV.</p>
+
+<h3 id="1-load-an-image">1. Load an Image:</h3>
+
+<p>Load the image on which you want to detect corners. Grayscale images are preferred for corner detection.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="sh">'</span><span class="s">path_to_your_image.jpg</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="2-convert-image-to-float32">2. Convert Image to Float32:</h3>
+<p>The <code class="language-plaintext highlighter-rouge">cornerHarris</code> function requires the input image to be in the <code class="language-plaintext highlighter-rouge">float32</code> format.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gray</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">float32</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="3-apply-the-cornerharris-function">3. Apply the CornerHarris Function:</h3>
+<p>Use <code class="language-plaintext highlighter-rouge">cv2.cornerHarris</code> to detect corners. You can adjust the parameters to fit your needs.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cornerHarris</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">blockSize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ksize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">gray</code></strong>: The input image in <code class="language-plaintext highlighter-rouge">float32</code> format.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">blockSize</code></strong>: The size of the neighborhood considered for corner detection. A larger <code class="language-plaintext highlighter-rouge">blockSize</code> makes the algorithm consider more surrounding pixels, which can help detect larger features but may miss smaller details.</li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">ksize</code></strong>: Aperture parameter for the Sobel operator (used for gradient computation). This affects the computation of image gradients. A larger <code class="language-plaintext highlighter-rouge">ksize</code> will make the gradients more smooth.</p>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">k</code></strong>: Harris detector free parameter, typically between 0.04 and 0.06. A sensitivity parameter that adjusts the detection threshold. Lower values tend to be more sensitive to edges, while higher values make the detection stricter.</li>
+</ul>
+
+<h3 id="4-dilate-the-result-optional">4. Dilate the Result (Optional):</h3>
+<p>Dilate the corner image to enhance the corners (this is often done for better visualization).</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">dilate</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="7-threshold-and-mark-the-corners">7. Threshold and Mark the Corners:</h3>
+<p>Threshold the image to highlight the corners. For visualization, you can mark these corners on the original image.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">img</span><span class="p">[</span><span class="n">dst</span> <span class="o">&gt;</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">dst</span><span class="p">.</span><span class="nf">max</span><span class="p">()]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">]</span>
+</code></pre></div></div>
+<p>Here, the corners are marked in red on the original image.</p>
+
+<h3 id="8-display-the-image-with-detected-corners">8. Display the Image with Detected Corners:</h3>
+<p>Finally, show the image with detected corners using OpenCV’s <code class="language-plaintext highlighter-rouge">imshow</code> function.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">'</span><span class="s">Corners Detected</span><span class="sh">'</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">destroyAllWindows</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="9-full-example-code">9. Full Example Code:</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># Load the image and convert it to grayscale
+</span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="sh">'</span><span class="s">path_to_your_image.jpg</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+<span class="c1"># Convert to float32 format
+</span><span class="n">gray</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">float32</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
+
+<span class="c1"># Detect corners using the Harris Corner Detection method
+</span><span class="n">dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cornerHarris</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">blockSize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ksize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+
+<span class="c1"># Dilate the detected corners for better visibility
+</span><span class="n">dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">dilate</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+<span class="c1"># Threshold to mark the corners on the original image
+</span><span class="n">img</span><span class="p">[</span><span class="n">dst</span> <span class="o">&gt;</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">dst</span><span class="p">.</span><span class="nf">max</span><span class="p">()]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">]</span>
+
+<span class="c1"># Display the image with corners
+</span><span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">'</span><span class="s">Corners Detected</span><span class="sh">'</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">destroyAllWindows</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="10-additional-tips">10. Additional Tips:</h3>
+<ul>
+  <li>Experiment with the <code class="language-plaintext highlighter-rouge">blockSize</code>, <code class="language-plaintext highlighter-rouge">ksize</code>, and <code class="language-plaintext highlighter-rouge">k</code> parameters to fine-tune the corner detection for your specific image.</li>
+  <li>Consider using <code class="language-plaintext highlighter-rouge">cv2.cornerSubPix</code> to refine the corner locations for sub-pixel accuracy if needed.</li>
+</ul>
+
+<h1 id="2-shi-tomasi-corner-detection">2. Shi-Tomasi Corner Detection</h1>
+<p>The Shi-Tomasi corner detection algorithm is an improvement over the Harris Corner Detection method. It is also known as the “Good Features to Track” algorithm. Shi-Tomasi refines the Harris method by providing a more reliable way to detect corners, especially in scenarios involving image tracking and matching.</p>
+
+<h2 id="21-how-it-works">2.1 How It Works:</h2>
+
+<p><strong>1. Structure Tensor (Matrix \(M\)):</strong></p>
+<ul>
+  <li>Similar to the Harris algorithm, the Shi-Tomasi method begins by computing the structure tensor (also called the second-moment matrix) at each pixel:
+ \(M = \begin{bmatrix}
+ I_x^2 &amp; I_x I_y \\
+ I_x I_y &amp; I_y^2
+ \end{bmatrix}\)
+ where \(I_x\) and \(I_y\) are the image gradients in the \(x\) and \(y\) directions, respectively.</li>
+</ul>
+
+<p><strong>2. Eigenvalue Calculation:</strong></p>
+<ul>
+  <li>The key difference between Harris and Shi-Tomasi lies in how corners are detected from the matrix \(M\).</li>
+  <li>For each pixel, the algorithm computes the eigenvalues \(\lambda_1\) and \(\lambda_2\) of the matrix \(M\). These eigenvalues represent the intensity changes in two perpendicular directions.</li>
+</ul>
+
+<h4 id="understanding-eigenvalues-in-image-gradients">Understanding Eigenvalues in Image Gradients:</h4>
+
+<p><strong>Eigenvalues \(\lambda_1\) and \(\lambda_2\):</strong></p>
+
+<ul>
+  <li>
+    <p>The eigenvalues \(\lambda_1\) and \(\lambda_2\) of the matrix \(M\) represent the amount of variation (or change in intensity) in the image along two orthogonal directions.</p>
+  </li>
+  <li>
+    <p>These directions are determined by the eigenvectors corresponding to the eigenvalues.</p>
+  </li>
+</ul>
+
+<p><strong>Largest Eigenvalue:</strong></p>
+
+<ul>
+  <li>
+    <p>The largest eigenvalue \(\lambda_1\) (assuming \(\lambda_1 \geq \lambda_2\)) represents the direction in which the image intensity changes the most. This direction is not necessarily aligned with the \(x\) or \(y\) axes; it could be any orientation depending on the local image structure.</p>
+  </li>
+  <li>
+    <p>A large \(\lambda_1\) indicates significant variation in intensity along this principal direction, which could be a combination of changes in both \(x\) and \(y\).</p>
+  </li>
+</ul>
+
+<p><strong>Smallest Eigenvalue:</strong></p>
+
+<ul>
+  <li>
+    <p>The smallest eigenvalue \(\lambda_2\) represents the intensity variation in the direction orthogonal to the direction of \(\lambda_1\).</p>
+  </li>
+  <li>
+    <p>If \(\lambda_2\) is also large, it indicates significant variation in the perpendicular direction as well, which is characteristic of a corner.</p>
+  </li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="important">IMPORTANT</h5>
+
+  <p>In corner detection:</p>
+  <ul>
+    <li>A corner is identified when both \(\lambda_1\) and \(\lambda_2\) are large, meaning there is significant variation in all directions around that pixel.</li>
+    <li>An edge is characterized by a large \(\lambda_1\) and a small \(\lambda_2\), meaning the intensity varies strongly in one direction but not much in the perpendicular direction.</li>
+    <li>A flat region has both \(\lambda_1\) and \(\lambda_2\) small, indicating little to no variation in any direction.</li>
+  </ul>
+</blockquote>
+
+<p><strong>3. Corner Response Criterion:</strong></p>
+<ul>
+  <li>Instead of using a response function like Harris, the Shi-Tomasi algorithm directly uses the smallest eigenvalue as the corner response:
+ \(R = \min(\lambda_1 and \lambda_2)\)</li>
+  <li>A large \(R\) indicates that both eigenvalues are large, suggesting significant intensity changes in both directions, which is characteristic of a corner.</li>
+  <li>If \(R\) is small or close to zero, it indicates an edge or a flat region.</li>
+</ul>
+
+<p><strong>4. Corner Selection:</strong></p>
+<ul>
+  <li>Corners are selected as the pixels with the highest \(R\) values, subject to a threshold. The threshold is typically chosen to select the strongest corners.</li>
+  <li>Non-maximum suppression is applied to ensure that only the most prominent corners are retained.</li>
+</ul>
+
+<h2 id="22-advantages-of-shi-tomasi-over-harris">2.2 Advantages of Shi-Tomasi Over Harris</h2>
+<ul>
+  <li>Shi-Tomasi is more stable in detecting corners because it avoids the need to combine eigenvalues into a single response function.</li>
+  <li>It directly considers the smallest eigenvalue, which better represents the quality of a corner, especially when one direction has a much larger intensity change than the other.</li>
+</ul>
+
+<h2 id="23-usage">2.3 Usage</h2>
+
+<p>Here’s how you can use the Shi-Tomasi algorithm in Python with OpenCV:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># Load the image in grayscale
+</span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="sh">'</span><span class="s">path_to_your_image.jpg</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+<span class="c1"># Shi-Tomasi corner detection
+</span><span class="n">corners</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">goodFeaturesToTrack</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">maxCorners</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">qualityLevel</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">minDistance</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Convert the corners to integer values
+</span><span class="n">corners</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">int0</span><span class="p">(</span><span class="n">corners</span><span class="p">)</span>
+
+<span class="c1"># Draw circles around the detected corners
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">corners</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">i</span><span class="p">.</span><span class="nf">ravel</span><span class="p">()</span>
+    <span class="n">cv2</span><span class="p">.</span><span class="nf">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Display the image with detected corners
+</span><span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">'</span><span class="s">Shi-Tomasi Corners</span><span class="sh">'</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">destroyAllWindows</span><span class="p">()</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">gray</code></strong>: The grayscale input image.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">maxCorners</code></strong>: The maximum number of corners to detect. If more corners are found, the algorithm retains only the strongest ones.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">qualityLevel</code></strong>: A value between 0 and 1, which determines the minimum acceptable quality of corners. A lower value means more corners might be detected.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">minDistance</code></strong>: The minimum Euclidean distance between detected corners to avoid detecting too many closely located corners.</li>
+</ul>
+
+<h2 id="24-keypoints">2.4 Keypoints</h2>
+
+<ul>
+  <li><strong>Shi-Tomasi Corner Detection</strong>: An algorithm that improves upon the Harris method by directly using the smallest eigenvalue of the structure tensor as the corner response.</li>
+  <li><strong>More Robust</strong>: It tends to be more reliable in detecting corners, especially in real-world applications like feature tracking.</li>
+  <li><strong>Implementation</strong>: OpenCV provides a built-in function <code class="language-plaintext highlighter-rouge">cv2.goodFeaturesToTrack</code> to perform Shi-Tomasi corner detection easily.</li>
+  <li>The Shi-Tomasi algorithm is particularly useful in applications like object tracking, where reliable corner detection is crucial.</li>
+</ul>
+
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/ds/aml/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/ds/aml/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/ds/aml/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    // Adding script tags to externally link js
+        keyName = `mathjax_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'mathjax');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `mathjax_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'mathjax')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", mathjax, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `mathjax_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `mathjax_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'mathjax');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `mathjax_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'mathjax')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `mathjax_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script
+  type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/ds/aml/image_analysis/1_ima_3_edge_detectors/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 3. Edge Detectors"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/ds/aml/image_analysis/1_ima_5_region_detectors/" class="navigation navigation-next navigation-unique" aria-label="Next page: 5. Region Detectors"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "5. Region Detectors",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_4_problem_domains/1_ima_5_region_detectors.md",
+            "ref": "_4_problem_domains/1_ima_5_region_detectors.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | Advance Machine Learning",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_4_problem_domains/1_ima_4_corner_detectors.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-08-13 11:27:46 +0800"
+    },
+    "basePath": "/ds/aml",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/ds/aml/assets/gitbook/gitbook.js"></script>
+<script src="/ds/aml/assets/gitbook/theme.js"></script>
+
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/ds/aml/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>
