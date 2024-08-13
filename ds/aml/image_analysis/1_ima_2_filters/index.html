@@ -52,7 +52,7 @@
 
 
 <!-- trackers -->
-            <link rel="prev" href="/ds/aml/image_analysis/1_ima_1_basics/" />
+            <link rel="prev" href="/ds/aml/basics/1_ima_1_basics/" />
         
 
         
@@ -163,9 +163,9 @@
             
             
             
-            <li class="chapter" data-level="1.1" data-path="/ds/aml/image_analysis/1_ima_1_basics/">
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/basics/1_ima_1_basics/">
                 
-                <a href="/ds/aml/image_analysis/1_ima_1_basics/" onclick="pageScrollToTop(this)">
+                <a href="/ds/aml/basics/1_ima_1_basics/" onclick="pageScrollToTop(this)">
                     1. Introduction
                 </a>
                 
@@ -184,7 +184,7 @@
                 </a>
                 
                 
-                <ul><li><a href="#guass-and-median-filters" onclick="mobilePageScrollToAnchor(this)" >Guass and Median Filters</a></li><li><a href="#1-image-gradient" onclick="mobilePageScrollToAnchor(this)" >1. Image Gradient</a><ul><li><a href="#11-key-concepts" onclick="mobilePageScrollToAnchor(this)" >1.1 Key Concepts</a></li><li><a href="#12-how-to-compute-the-gradient" onclick="mobilePageScrollToAnchor(this)" >1.2 How to Compute the Gradient:</a></li><li><a href="#13-implementation" onclick="mobilePageScrollToAnchor(this)" >1.3 Implementation</a></li></ul></li><li><a href="#2-image-gradient-corelation-ixiy" onclick="mobilePageScrollToAnchor(this)" >2. Image Gradient Corelation <code class="language-plaintext highlighter-rouge">Ix.Iy</code></a><ul><li><a href="#21-steps-to-calculate-i_xy" onclick="mobilePageScrollToAnchor(this)" >2.1 Steps to Calculate \(I_{xy}\)</a></li><li><a href="#22-implementation" onclick="mobilePageScrollToAnchor(this)" >2.2 Implementation</a></li></ul></li></ul>
+                <ul><li><a href="#1-linear-filters" onclick="mobilePageScrollToAnchor(this)" >1. Linear Filters</a><ul><li><a href="#11-how-linear-filters-work" onclick="mobilePageScrollToAnchor(this)" >1.1 How Linear Filters Work</a></li><li><a href="#12-common-linear-filters" onclick="mobilePageScrollToAnchor(this)" >1.2 Common Linear Filters</a></li><li><a href="#13-applications-of-linear-filters-in-machine-learning" onclick="mobilePageScrollToAnchor(this)" >1.3 Applications of Linear Filters in Machine Learning</a></li><li><a href="#14-keypoints" onclick="mobilePageScrollToAnchor(this)" >1.4 Keypoints</a></li></ul></li><li><a href="#2-image-gradient" onclick="mobilePageScrollToAnchor(this)" >2. Image Gradient</a><ul><li><a href="#21-key-concepts" onclick="mobilePageScrollToAnchor(this)" >2.1 Key Concepts</a></li><li><a href="#22-how-to-compute-the-gradient" onclick="mobilePageScrollToAnchor(this)" >2.2 How to Compute the Gradient:</a></li><li><a href="#23-implementation" onclick="mobilePageScrollToAnchor(this)" >2.3 Implementation</a></li></ul></li><li><a href="#3-image-gradient-corelation-ixiy" onclick="mobilePageScrollToAnchor(this)" >3. Image Gradient Corelation <code class="language-plaintext highlighter-rouge">Ix.Iy</code></a><ul><li><a href="#31-steps-to-calculate-i_xy" onclick="mobilePageScrollToAnchor(this)" >3.1 Steps to Calculate \(I_{xy}\)</a></li><li><a href="#32-implementation" onclick="mobilePageScrollToAnchor(this)" >3.2 Implementation</a></li></ul></li><li><a href="#4-median-filter" onclick="mobilePageScrollToAnchor(this)" >4. Median Filter</a><ul><li><a href="#41-how-the-median-filter-works" onclick="mobilePageScrollToAnchor(this)" >4.1 How the Median Filter Works</a></li><li><a href="#42-example-median-filter-application" onclick="mobilePageScrollToAnchor(this)" >4.2 Example: Median Filter Application</a></li><li><a href="#43-importance-of-median-filter-in-computer-vision" onclick="mobilePageScrollToAnchor(this)" >4.3 Importance of Median Filter in Computer Vision</a></li><li><a href="#44-usage" onclick="mobilePageScrollToAnchor(this)" >4.4 Usage</a></li><li><a href="#45-keypoints" onclick="mobilePageScrollToAnchor(this)" >4.5 Keypoints</a></li></ul></li><li><a href="#5-non-linear-filters" onclick="mobilePageScrollToAnchor(this)" >5. Non-linear Filters</a><ul><li><a href="#51-common-non-linear-filters-in-computer-vision" onclick="mobilePageScrollToAnchor(this)" >5.1 Common Non-Linear Filters in Computer Vision</a></li><li><a href="#52-importance-of-non-linear-filters-in-computer-vision" onclick="mobilePageScrollToAnchor(this)" >5.2 Importance of Non-Linear Filters in Computer Vision</a></li><li><a href="#53-usage" onclick="mobilePageScrollToAnchor(this)" >5.3 Usage</a></li><li><a href="#54-keypoints" onclick="mobilePageScrollToAnchor(this)" >5.4 Keypoints</a></li></ul></li></ul>
 
                 
                 
@@ -226,6 +226,36 @@
                 
                 <a href="/ds/aml/image_analysis/1_ima_5_region_detectors/" onclick="pageScrollToTop(this)">
                     5. Region Detectors
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Regression</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/basics/1_regression_1_cv/">
+                
+                <a href="/ds/aml/basics/1_regression_1_cv/" onclick="pageScrollToTop(this)">
+                    1. Computer Vision
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/basics/1_regression_1_nlp/">
+                
+                <a href="/ds/aml/basics/1_regression_1_nlp/" onclick="pageScrollToTop(this)">
+                    2. Natural Language Processing
                 </a>
                 
                 
@@ -278,15 +308,152 @@
                         <h1 id="/image_analysis/1_ima_2_filters">2. Filters</h1>
                     
 
-                    <h1 id="guass-and-median-filters">Guass and Median Filters</h1>
+                    <h1 id="1-linear-filters">1. Linear Filters</h1>
 
-<p>https://medium.com/jun94-devpblog/cv-2-gaussian-and-median-filter-separable-2d-filter-2d11ee022c66#:~:text=Gaussian%20kernel%2C%20as%20its%20name,(pixels)%20in%20an%20image.</p>
+<p>Linear filters are fundamental tools in image processing and computer vision. They involve the application of a convolution operation to an image using a kernel (or filter). This operation produces a new image where each pixel value is computed as a weighted sum of its neighboring pixels, defined by the kernel. Linear filters are used for a variety of tasks such as blurring, sharpening, edge detection, and noise reduction.</p>
 
-<h1 id="1-image-gradient">1. Image Gradient</h1>
+<h2 id="11-how-linear-filters-work">1.1 How Linear Filters Work</h2>
+
+<p><strong>1. Kernel (Filter) Matrix</strong>:</p>
+<ul>
+  <li>A kernel is a small matrix (usually 3x3, 5x5, etc.) that is applied to each pixel in the image.</li>
+  <li>The kernel defines the weights that will be multiplied by the pixel values in the neighborhood of the pixel being processed.</li>
+</ul>
+
+<p><strong>2. Convolution Operation</strong>:</p>
+<ul>
+  <li>Convolution involves sliding the kernel over the image and computing the weighted sum of the pixel values covered by the kernel.</li>
+  <li>The center of the kernel is aligned with each pixel in the image, and the result of the convolution replaces the original pixel value.</li>
+  <li>Mathematically, if \(I(x, y)\) is the image and \(K(i, j)\) is the kernel, the convolution \(I'\) at a point \((x, y)\) is given by:
+\(I'(x, y) = \sum_{i=-n}^{n} \sum_{j=-n}^{n} I(x+i, y+j) \cdot K(i, j)\)</li>
+  <li>Here, \(n\) is half the width/height of the kernel.</li>
+</ul>
+
+<h2 id="12-common-linear-filters">1.2 Common Linear Filters</h2>
+
+<p><strong>1. Box Filter (Averaging Filter)</strong>:</p>
+<ul>
+  <li>Kernel: A matrix with equal values that sum to 1.</li>
+  <li>Effect: Smooths the image by averaging the pixel values within the neighborhood.</li>
+  <li>Example kernel:
+\(\frac{1}{9}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1
+\end{bmatrix}\)</li>
+</ul>
+
+<p><strong>2. Gaussian Filter</strong>:</p>
+<ul>
+  <li>Kernel: Values follow a Gaussian distribution, giving more weight to the center pixels.</li>
+  <li>Effect: Smooths the image with a Gaussian blur, preserving edges better than the box filter.</li>
+  <li>Example kernel (3x3 with \(\sigma = 1\)):
+\(\frac{1}{16}
+\begin{bmatrix}
+1 &amp; 2 &amp; 1 \\
+2 &amp; 4 &amp; 2 \\
+1 &amp; 2 &amp; 1
+\end{bmatrix}\)</li>
+</ul>
+
+<p><strong>3. Sobel Filter</strong>:</p>
+<ul>
+  <li>Kernel: Specifically designed for edge detection, with separate kernels for detecting horizontal and vertical edges.</li>
+  <li>Effect: Highlights edges in the image by computing the gradient magnitude.</li>
+  <li>Example kernels (for horizontal and vertical edges):
+\(K_x = \begin{bmatrix}
+-1 &amp; 0 &amp; 1 \\
+-2 &amp; 0 &amp; 2 \\
+-1 &amp; 0 &amp; 1
+\end{bmatrix}, \quad
+K_y = \begin{bmatrix}
+-1 &amp; -2 &amp; -1 \\
+0 &amp; 0 &amp; 0 \\
+1 &amp; 2 &amp; 1
+\end{bmatrix}\)</li>
+</ul>
+
+<p><strong>4. Prewitt Filter</strong>:</p>
+<ul>
+  <li>Kernel: Similar to Sobel, but with slightly different weights.</li>
+  <li>Effect: Another method for edge detection, emphasizing vertical or horizontal gradients.</li>
+  <li>Example kernels:
+\(K_x = \begin{bmatrix}
+-1 &amp; 0 &amp; 1 \\
+-1 &amp; 0 &amp; 1 \\
+-1 &amp; 0 &amp; 1
+\end{bmatrix}, \quad
+K_y = \begin{bmatrix}
+-1 &amp; -1 &amp; -1 \\
+0 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 1
+\end{bmatrix}\)</li>
+</ul>
+
+<p><strong>5. Laplacian Filter</strong>:</p>
+<ul>
+  <li>Kernel: A second-order derivative operator that detects edges by measuring the rate of change in intensity.</li>
+  <li>Effect: Highlights regions of rapid intensity change (edges).</li>
+  <li>Example kernel:
+\(\begin{bmatrix}
+0 &amp; -1 &amp; 0 \\
+-1 &amp; 4 &amp; -1 \\
+0 &amp; -1 &amp; 0
+\end{bmatrix}\)</li>
+</ul>
+
+<p><strong>6. Sharpening Filter</strong>:</p>
+<ul>
+  <li>Kernel: Emphasizes differences between a pixel and its neighbors, enhancing edges.</li>
+  <li>Effect: Makes edges and fine details in an image more pronounced.</li>
+  <li>Example kernel:
+\(\begin{bmatrix}
+0 &amp; -1 &amp; 0 \\
+-1 &amp; 5 &amp; -1 \\
+0 &amp; -1 &amp; 0
+\end{bmatrix}\)</li>
+</ul>
+
+<h2 id="13-applications-of-linear-filters-in-machine-learning">1.3 Applications of Linear Filters in Machine Learning</h2>
+
+<p><strong>1. Preprocessing</strong>:</p>
+<ul>
+  <li>Linear filters can be used to preprocess images before feeding them into machine learning models. For example, Gaussian filters can reduce noise, while edge-detection filters like Sobel can highlight important features.</li>
+</ul>
+
+<p><strong>2. Feature Extraction</strong>:</p>
+<ul>
+  <li>Filters like Sobel and Prewitt can extract edge features, which can then be used as input features for models in tasks like object detection, image segmentation, and facial recognition.</li>
+</ul>
+
+<p><strong>3. Image Augmentation</strong>:</p>
+<ul>
+  <li>Applying different linear filters to images can create augmented datasets that help models generalize better by learning from various image representations.</li>
+</ul>
+
+<p><strong>4. Noise Reduction</strong>:</p>
+<ul>
+  <li>Filters like Gaussian and median filters are used to reduce noise in images, making it easier for models to learn from clean, relevant features.</li>
+</ul>
+
+<p><strong>5. Enhancing Model Interpretability</strong>:</p>
+<ul>
+  <li>Linear filters can help in visualizing what parts of the image are most important for model decisions, especially in tasks like saliency mapping or visualization of convolutional neural networks (CNNs).</li>
+</ul>
+
+<h2 id="14-keypoints">1.4 Keypoints</h2>
+<ul>
+  <li><strong>Linear filters</strong> are used to modify images by applying convolution with a kernel.</li>
+  <li><strong>Different filters</strong> serve different purposes, like blurring, sharpening, or edge detection.</li>
+  <li><strong>In machine learning</strong>, linear filters are crucial for preprocessing, feature extraction, noise reduction, and data augmentation, all of which contribute to better model performance in computer vision tasks.</li>
+</ul>
+
+<h1 id="2-image-gradient">2. Image Gradient</h1>
 
 <p>An image gradient is a directional change in the intensity or color in an image. It is a fundamental concept in image processing and computer vision, often used for edge detection, texture analysis, and object recognition. The gradient of an image measures how much and in which direction the intensity of the image is changing.</p>
 
-<h2 id="11-key-concepts">1.1 Key Concepts</h2>
+<h2 id="21-key-concepts">2.1 Key Concepts</h2>
 
 <p><strong>1. Gradient at a Pixel:</strong></p>
 <ul>
@@ -317,7 +484,7 @@
   <li>Gradients are commonly used in corner and edge detection algorithms because edges in an image are typically locations of high intensity change. The magnitude of the gradient will be high at edges and low in flat regions.</li>
 </ul>
 
-<h2 id="12-how-to-compute-the-gradient">1.2 How to Compute the Gradient:</h2>
+<h2 id="22-how-to-compute-the-gradient">2.2 How to Compute the Gradient:</h2>
 
 <p>The image gradient is usually computed using convolution with derivative kernels such as the Sobel operator, Prewitt operator, or Scharr operator.</p>
 
@@ -343,7 +510,7 @@
   </li>
 </ul>
 
-<h2 id="13-implementation">1.3 Implementation</h2>
+<h2 id="23-implementation">2.3 Implementation</h2>
 
 <p>Here’s how you can compute the gradient of an image using the Sobel operator in OpenCV:</p>
 
@@ -373,11 +540,11 @@
 <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<h1 id="2-image-gradient-corelation-ixiy">2. Image Gradient Corelation <code class="language-plaintext highlighter-rouge">Ix.Iy</code></h1>
+<h1 id="3-image-gradient-corelation-ixiy">3. Image Gradient Corelation <code class="language-plaintext highlighter-rouge">Ix.Iy</code></h1>
 
 <p>In the Harris Corner Detection algorithm, \(I_{xy}\) represents the product of the gradients in the \(x\) and \(y\) directions at each pixel. The gradients \(I_x\) and \(I_y\) are computed using derivative operations on the image, typically with the Sobel operator. The steps to calculate \(I_{xy}\) are as follows:</p>
 
-<h2 id="21-steps-to-calculate-i_xy">2.1 Steps to Calculate \(I_{xy}\)</h2>
+<h2 id="31-steps-to-calculate-i_xy">3.1 Steps to Calculate \(I_{xy}\)</h2>
 
 <p><strong>1. Compute Image Gradients \(I_x\) and \(I_y\):</strong></p>
 <ul>
@@ -412,7 +579,7 @@ The Sobel filter for \(I_y\) is:
 \(I_{xy} = I_x \cdot I_y\)</li>
 </ul>
 
-<h2 id="22-implementation">2.2 Implementation</h2>
+<h2 id="32-implementation">3.2 Implementation</h2>
 
 <p>In OpenCV, you can compute \(I_{xy}\) using the following steps:</p>
 
@@ -436,7 +603,6 @@ The Sobel filter for \(I_y\) is:
 # Harris Corner Detection algorithm.
 </span></code></pre></div></div>
 
-<h4 id="explanation">Explanation:</h4>
 <ul>
   <li><strong><code class="language-plaintext highlighter-rouge">cv2.Sobel</code></strong>: This function computes the first derivative of the image in the specified direction.
     <ul>
@@ -447,6 +613,228 @@ The Sobel filter for \(I_y\) is:
   <li>The gradients \(I_x\) and \(I_y\) are then multiplied to get \(I_{xy}\).</li>
 </ul>
 
+<h1 id="4-median-filter">4. Median Filter</h1>
+
+<p>A <strong>median filter</strong> is a non-linear digital filtering technique commonly used in image processing to reduce noise while preserving edges in an image. Unlike linear filters, which compute the average of pixel values in the neighborhood, the median filter replaces the pixel value with the median value of the intensities in the neighborhood. This characteristic makes the median filter particularly effective at removing “salt-and-pepper” noise from images.</p>
+
+<h2 id="41-how-the-median-filter-works">4.1 How the Median Filter Works</h2>
+
+<p><strong>1. Kernel (Neighborhood) Definition</strong>:</p>
+<ul>
+  <li>A kernel, typically a square window (e.g., 3x3, 5x5), is defined around each pixel in the image.</li>
+</ul>
+
+<p><strong>2. Median Calculation</strong>:</p>
+<ul>
+  <li>For each pixel, the pixel values within the kernel are sorted, and the median value is identified.</li>
+  <li>The median value is then assigned to the central pixel of the kernel.</li>
+</ul>
+
+<p><strong>3. Non-linear Operation</strong>:</p>
+<ul>
+  <li>The process is non-linear because the median operation does not involve any direct averaging or weighted sums like linear filters.</li>
+</ul>
+
+<h2 id="42-example-median-filter-application">4.2 Example: Median Filter Application</h2>
+
+<p>Let’s consider a simple example using a 3x3 kernel:</p>
+
+<h4 id="original-3x3-neighborhood">Original 3x3 Neighborhood:</h4>
+<p>\(\begin{bmatrix}
+10 &amp; 20 &amp; 10 \\
+20 &amp; 500 &amp; 20 \\
+10 &amp; 20 &amp; 10
+\end{bmatrix}\)</p>
+
+<ul>
+  <li>The center pixel value is 500, which is a noise spike (assuming most pixels are around 10-20).</li>
+  <li>The sorted list of values: \([10, 10, 10, 10, 20, 20, 20, 20, 500]\).</li>
+  <li>The median value in this list is 20.</li>
+</ul>
+
+<h4 id="after-applying-the-median-filter">After Applying the Median Filter:</h4>
+<p>\(\begin{bmatrix}
+10 &amp; 20 &amp; 10 \\
+20 &amp; \textbf{20} &amp; 20 \\
+10 &amp; 20 &amp; 10
+\end{bmatrix}\)</p>
+<ul>
+  <li>The center pixel value (previously 500) is replaced with 20, effectively removing the noise.</li>
+</ul>
+
+<h2 id="43-importance-of-median-filter-in-computer-vision">4.3 Importance of Median Filter in Computer Vision</h2>
+
+<ol>
+  <li><strong>Noise Reduction</strong>:
+    <ul>
+      <li>The primary application of the median filter is noise reduction, particularly for “salt-and-pepper” noise, which consists of random occurrences of white and black pixels. The median filter effectively removes this noise without blurring the edges.</li>
+    </ul>
+  </li>
+  <li><strong>Edge Preservation</strong>:
+    <ul>
+      <li>Unlike linear filters like the mean filter, which can blur edges, the median filter preserves edges. This is crucial in computer vision tasks where edge information is important, such as in edge detection, object recognition, and image segmentation.</li>
+    </ul>
+  </li>
+  <li><strong>Image Smoothing</strong>:
+    <ul>
+      <li>The median filter smooths an image by removing small details or outliers while keeping the overall structure intact. This is beneficial for tasks that require clean images, like template matching and pattern recognition.</li>
+    </ul>
+  </li>
+  <li><strong>Preprocessing Step in Machine Learning</strong>:
+    <ul>
+      <li>In machine learning, especially in computer vision applications, the median filter is often used as a preprocessing step to clean the input images. This ensures that the models focus on relevant features rather than noise, leading to better accuracy and robustness.</li>
+    </ul>
+  </li>
+  <li><strong>Application in Medical Imaging</strong>:
+    <ul>
+      <li>The median filter is widely used in medical imaging to reduce noise from imaging techniques like X-rays, MRI, and CT scans, where preserving edge details is crucial for accurate diagnosis.</li>
+    </ul>
+  </li>
+  <li><strong>Real-Time Processing</strong>:
+    <ul>
+      <li>Due to its simplicity and effectiveness, the median filter is often used in real-time image processing applications, such as video surveillance and autonomous driving, where quick and reliable noise reduction is essential.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="44-usage">4.4 Usage</h2>
+
+<p>Here’s how you can apply a median filter using OpenCV:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">cv2</span>
+
+<span class="c1"># Load an image with noise
+</span><span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="sh">'</span><span class="s">noisy_image.jpg</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="c1"># Apply a median filter with a 5x5 kernel
+</span><span class="n">filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">medianBlur</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Display the original and filtered images
+</span><span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">'</span><span class="s">Original Image</span><span class="sh">'</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">'</span><span class="s">Median Filtered Image</span><span class="sh">'</span><span class="p">,</span> <span class="n">filtered_image</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="p">.</span><span class="nf">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">destroyAllWindows</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="45-keypoints">4.5 Keypoints</h2>
+
+<ul>
+  <li><strong>Median filter</strong>: A non-linear filter used to reduce noise while preserving edges in an image.</li>
+  <li><strong>Key applications</strong>: Noise reduction, edge preservation, image smoothing, and preprocessing in computer vision tasks.</li>
+  <li><strong>Importance</strong>: It is particularly effective against “salt-and-pepper” noise and is essential in tasks where edge preservation is critical, making it a go-to filter in many computer vision applications.</li>
+</ul>
+
+<h1 id="5-non-linear-filters">5. Non-linear Filters</h1>
+
+<p>Non-linear filters are a class of image processing filters that operate on an image in a non-linear manner. Unlike linear filters, which apply a weighted sum or convolution to the pixels in a neighborhood, non-linear filters apply operations that are not linear in nature, such as finding the maximum, minimum, or median values within a neighborhood of pixels. These filters are particularly useful in preserving important features like edges while reducing noise and can address issues that linear filters struggle with, such as handling outliers and non-Gaussian noise.</p>
+
+<h2 id="51-common-non-linear-filters-in-computer-vision">5.1 Common Non-Linear Filters in Computer Vision</h2>
+
+<p><strong>1. Median Filter</strong>:</p>
+<ul>
+  <li><strong>Operation</strong>: Replaces each pixel’s value with the median of the neighboring pixel values.</li>
+  <li><strong>Use Case</strong>: Excellent for removing “salt-and-pepper” noise while preserving edges. Unlike linear filters, it doesn’t blur edges, making it ideal for tasks where edge preservation is crucial.</li>
+  <li><strong>Example Kernel</strong>: Typically a 3x3 or 5x5 window is used, but larger sizes can be used depending on the noise level.</li>
+</ul>
+
+<p><strong>2. Bilateral Filter</strong>:</p>
+<ul>
+  <li><strong>Operation</strong>: Applies a combination of Gaussian filtering in both the spatial domain and the intensity domain, preserving edges while smoothing the image.</li>
+  <li><strong>Use Case</strong>: Used for edge-preserving smoothing, which is important in scenarios like denoising where edges should remain sharp.</li>
+  <li><strong>Example Kernel</strong>: The filter considers both spatial closeness (pixels close to each other) and intensity similarity.</li>
+</ul>
+
+<p><strong>3. Min and Max Filters</strong>:</p>
+<ul>
+  <li><strong>Min Filter</strong>: Replaces each pixel with the minimum value in its neighborhood.</li>
+  <li><strong>Max Filter</strong>: Replaces each pixel with the maximum value in its neighborhood.</li>
+  <li><strong>Use Case</strong>: The Min filter can remove small bright details, while the Max filter can remove small dark details. These are useful for morphological operations like erosion and dilation in binary image processing.</li>
+</ul>
+
+<p><strong>4. Mode Filter</strong>:</p>
+<ul>
+  <li><strong>Operation</strong>: Replaces each pixel with the most frequently occurring value in its neighborhood.</li>
+  <li><strong>Use Case</strong>: This filter is used when the goal is to remove outliers in a specific region while preserving the most common value. It is particularly useful in texture analysis and noise reduction.</li>
+</ul>
+
+<p><strong>5. Non-Local Means (NLM) Filter</strong>:</p>
+<ul>
+  <li><strong>Operation</strong>: Each pixel is replaced by a weighted average of similar pixels across the entire image, not just within a local neighborhood.</li>
+  <li><strong>Use Case</strong>: Effective for noise reduction while preserving fine details, as it considers a larger context for filtering each pixel.</li>
+  <li><strong>Example Application</strong>: Used in denoising algorithms where preserving high-frequency details is important, such as in medical imaging.</li>
+</ul>
+
+<p><strong>6. Adaptive Filters</strong>:</p>
+<ul>
+  <li><strong>Operation</strong>: Adjusts the filter behavior based on local image statistics (e.g., the variance within a neighborhood).</li>
+  <li><strong>Use Case</strong>: Useful in scenarios where noise characteristics vary across the image, such as in adaptive smoothing or adaptive thresholding.</li>
+  <li><strong>Example</strong>: Adaptive median filter, which changes the size of the neighborhood based on local conditions, can remove larger noise spikes while preserving edges.</li>
+</ul>
+
+<h2 id="52-importance-of-non-linear-filters-in-computer-vision">5.2 Importance of Non-Linear Filters in Computer Vision</h2>
+
+<p><strong>1. Edge Preservation</strong>:</p>
+<ul>
+  <li>Non-linear filters like the median and bilateral filters are specifically designed to preserve edges while performing tasks like noise reduction. This is crucial in computer vision tasks like object recognition, where edges define important features.</li>
+</ul>
+
+<p><strong>2. Noise Reduction</strong>:</p>
+<ul>
+  <li>Non-linear filters excel at reducing various types of noise, including impulsive noise (e.g., “salt-and-pepper” noise) and speckle noise. This is vital in preparing images for further processing, such as segmentation or feature extraction.</li>
+</ul>
+
+<p><strong>3. Morphological Operations</strong>:</p>
+<ul>
+  <li>Filters like Min and Max are foundational in morphological image processing, which involves operations like dilation, erosion, opening, and closing. These operations are important in tasks such as shape analysis, object counting, and boundary extraction.</li>
+</ul>
+
+<p><strong>4. Handling Non-Gaussian Noise</strong>:</p>
+<ul>
+  <li>While linear filters are effective against Gaussian noise, non-linear filters are more versatile and can handle a wider range of noise types, including non-Gaussian and mixed noise types.</li>
+</ul>
+
+<p><strong>5. Image Smoothing and Detail Preservation</strong>:</p>
+<ul>
+  <li>Non-linear filters like the bilateral filter smooth images while retaining important details, which is important in applications like facial recognition and image compression, where both noise reduction and detail preservation are needed.</li>
+</ul>
+
+<p><strong>6. Adaptive Processing</strong>:</p>
+<ul>
+  <li>Non-linear filters can adapt their behavior based on local image characteristics, making them more effective in real-world applications where image properties can vary significantly across different regions.</li>
+</ul>
+
+<h2 id="53-usage">5.3 Usage</h2>
+
+<p>Here’s an example of applying a median filter and a bilateral filter using OpenCV:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">cv2</span>
+
+<span class="c1"># Load an image with noise
+</span><span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="sh">'</span><span class="s">noisy_image.jpg</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="c1"># Apply a median filter with a 5x5 kernel
+</span><span class="n">median_filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">medianBlur</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Apply a bilateral filter
+</span><span class="n">bilateral_filtered_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">bilateralFilter</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+
+<span class="c1"># Display the original and filtered images
+</span><span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">'</span><span class="s">Original Image</span><span class="sh">'</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">'</span><span class="s">Median Filtered Image</span><span class="sh">'</span><span class="p">,</span> <span class="n">median_filtered_image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="sh">'</span><span class="s">Bilateral Filtered Image</span><span class="sh">'</span><span class="p">,</span> <span class="n">bilateral_filtered_image</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="p">.</span><span class="nf">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="p">.</span><span class="nf">destroyAllWindows</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="54-keypoints">5.4 Keypoints</h2>
+
+<ul>
+  <li><strong>Non-linear filters</strong> are essential tools in image processing and computer vision, offering advantages over linear filters in terms of edge preservation, noise reduction, and handling complex image characteristics.</li>
+  <li><strong>Common non-linear filters</strong> include median filters, bilateral filters, and adaptive filters, each serving specific purposes such as edge preservation, noise reduction, and morphological processing.</li>
+  <li><strong>Application</strong>: Non-linear filters are widely used in tasks such as denoising, edge detection, image smoothing, and texture analysis, making them crucial in developing robust computer vision systems.</li>
+</ul>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -711,7 +1099,7 @@ window.MathJax = {
 </script>
 
 
-                        <a href="/ds/aml/image_analysis/1_ima_1_basics/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 1. Introduction"> <!-- class="hide_element" -->
+                        <a href="/ds/aml/basics/1_ima_1_basics/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 1. Introduction"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
@@ -862,7 +1250,7 @@ window.MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-13 11:27:46 +0800"
+        "time": "2024-08-13 14:28:11 +0800"
     },
     "basePath": "/ds/aml",
     "book": {

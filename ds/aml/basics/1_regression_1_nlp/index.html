@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. Introduction · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2. Natural Language Processing · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -52,11 +52,9 @@
 
 
 <!-- trackers -->
-            <link rel="prev" href="/ds/aml/" />
+            <link rel="prev" href="/ds/aml/basics/1_regression_1_cv/" />
         
 
-        
-            <link rel="next" href="/ds/aml/image_analysis/1_ima_2_filters/" />
         
     </head>
     <body>         
@@ -163,15 +161,12 @@
             
             
             
-            <li class="chapter active" data-level="1.2" data-path="/ds/aml/image_analysis/1_ima_1_basics/">
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/basics/1_ima_1_basics/">
                 
-                <a href="/ds/aml/image_analysis/1_ima_1_basics/" onclick="pageScrollToTop(this)">
+                <a href="/ds/aml/basics/1_ima_1_basics/" onclick="pageScrollToTop(this)">
                     1. Introduction
                 </a>
                 
-                
-                <ul><li><a href="#guass-and-median-filters" onclick="mobilePageScrollToAnchor(this)" >Guass and Median Filters</a></li></ul>
-
                 
                 
             </li>
@@ -232,6 +227,39 @@
                 
             </li>
             
+            
+            
+            <p class="separator-title">Regression</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/basics/1_regression_1_cv/">
+                
+                <a href="/ds/aml/basics/1_regression_1_cv/" onclick="pageScrollToTop(this)">
+                    1. Computer Vision
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/ds/aml/basics/1_regression_1_nlp/">
+                
+                <a href="/ds/aml/basics/1_regression_1_nlp/" onclick="pageScrollToTop(this)">
+                    2. Natural Language Processing
+                </a>
+                
+                
+                
+
+                
+                
+            </li>
+            
 
             
             <!-- <li class="divider"></li> -->
@@ -256,7 +284,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >1. Introduction</a>
+                            <a href="." >2. Natural Language Processing</a>
                         
                     </h1>
                 </div>
@@ -275,12 +303,10 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/image_analysis/1_ima_1_basics">1. Introduction</h1>
+                        <h1 id="/basics/1_regression_1_nlp">2. Natural Language Processing</h1>
                     
 
-                    <h1 id="guass-and-median-filters">Guass and Median Filters</h1>
-
-<p>https://medium.com/jun94-devpblog/cv-2-gaussian-and-median-filter-separable-2d-filter-2d11ee022c66#:~:text=Gaussian%20kernel%2C%20as%20its%20name,(pixels)%20in%20an%20image.</p>
+                    
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -327,10 +353,196 @@
     // Add the script tags before the following element
     var getbookStyleElement = document.getElementById("gitbook_style")
 
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    // Adding script tags to externally link js
+        keyName = `mathjax_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'mathjax');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `mathjax_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'mathjax')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", mathjax, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `mathjax_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `mathjax_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'mathjax');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `mathjax_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'mathjax')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `mathjax_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
     
 
 </script>
 
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script
+  type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
 
 
 
@@ -359,15 +571,11 @@
 </script>
 
 
-                        <a href="/ds/aml/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Wiki | Advance Machine Learning"> <!-- class="hide_element" -->
+                        <a href="/ds/aml/basics/1_regression_1_cv/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 1. Computer Vision"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
-                    
-                        <a href="/ds/aml/image_analysis/1_ima_2_filters/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. Filters"> <!-- class="hide_element" -->
-                            <i class="fa fa-angle-right"></i>
-                        </a>
                     
                     <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
                 </div>
@@ -406,15 +614,6 @@
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "2. Filters",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_4_problem_domains/1_ima_2_filters.md",
-            "ref": "_4_problem_domains/1_ima_2_filters.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -504,13 +703,13 @@
         "gitbook": "*"
     },
     "file": {
-        "path": "_4_problem_domains/1_ima_1_basics.md",
+        "path": "_4_problem_domains/1_regression_1_nlp.md",
         "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-13 11:27:46 +0800"
+        "time": "2024-08-13 14:28:11 +0800"
     },
     "basePath": "/ds/aml",
     "book": {
