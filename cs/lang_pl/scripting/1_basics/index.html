@@ -217,6 +217,20 @@
                 
             </li>
             
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/algol/2_programs/">
+                
+                <a href="/cs/lang_pl/algol/2_programs/" onclick="pageScrollToTop(this)">
+                    2. Programs
+                </a>
+                
+                
+                
+            </li>
+            
 
             
             <!-- <li class="divider"></li> -->
@@ -298,7 +312,7 @@
                 </a>
                 
                 
-                <ul><li><a href="#characteristics-of-fortran77" onclick="mobilePageScrollToAnchor(this)" >Characteristics of Fortran77</a><ul><li><a href="#1-fixed-form-source-code" onclick="mobilePageScrollToAnchor(this)" >1. <strong>Fixed-Form Source Code</strong></a></li><li><a href="#2-implicit-typing" onclick="mobilePageScrollToAnchor(this)" >2. <strong>Implicit Typing</strong></a></li><li><a href="#3-improved-control-structures" onclick="mobilePageScrollToAnchor(this)" >3. <strong>Improved Control Structures</strong></a></li><li><a href="#4-data-types" onclick="mobilePageScrollToAnchor(this)" >4. <strong>Data Types</strong></a></li><li><a href="#5-array-handling" onclick="mobilePageScrollToAnchor(this)" >5. <strong>Array Handling</strong></a></li><li><a href="#6-common-blocks" onclick="mobilePageScrollToAnchor(this)" >6. <strong>COMMON Blocks</strong></a></li><li><a href="#7-intrinsic-functions" onclick="mobilePageScrollToAnchor(this)" >7. <strong>Intrinsic Functions</strong></a></li><li><a href="#8-portability" onclick="mobilePageScrollToAnchor(this)" >8. <strong>Portability</strong></a></li><li><a href="#9-formatted-and-unformatted-io" onclick="mobilePageScrollToAnchor(this)" >9. <strong>Formatted and Unformatted I/O</strong></a></li><li><a href="#10-subroutines-and-functions" onclick="mobilePageScrollToAnchor(this)" >10. <strong>Subroutines and Functions</strong></a></li><li><a href="#example-code" onclick="mobilePageScrollToAnchor(this)" >Example Code</a></li><li><a href="#example-with-control-structures-and-arrays" onclick="mobilePageScrollToAnchor(this)" >Example with Control Structures and Arrays</a></li><li><a href="#explanation" onclick="mobilePageScrollToAnchor(this)" >Explanation</a></li></ul></li></ul></li><li><a href="#2-limitations" onclick="mobilePageScrollToAnchor(this)" >2. Limitations</a><ul><li><a href="#1-fixed-form-source-code-1" onclick="mobilePageScrollToAnchor(this)" >1. <strong>Fixed-Form Source Code</strong></a></li><li><a href="#2-limited-modern-programming-constructs" onclick="mobilePageScrollToAnchor(this)" >2. <strong>Limited Modern Programming Constructs</strong></a></li><li><a href="#3-lack-of-modular-programming-features" onclick="mobilePageScrollToAnchor(this)" >3. <strong>Lack of Modular Programming Features</strong></a></li><li><a href="#4-primitive-error-handling" onclick="mobilePageScrollToAnchor(this)" >4. <strong>Primitive Error Handling</strong></a></li><li><a href="#5-limited-string-handling" onclick="mobilePageScrollToAnchor(this)" >5. <strong>Limited String Handling</strong></a></li><li><a href="#6-verbosity-and-readability" onclick="mobilePageScrollToAnchor(this)" >6. <strong>Verbosity and Readability</strong></a></li><li><a href="#7-no-built-in-support-for-parallelism" onclick="mobilePageScrollToAnchor(this)" >7. <strong>No Built-In Support for Parallelism</strong></a></li><li><a href="#8-poor-standard-library-support" onclick="mobilePageScrollToAnchor(this)" >8. <strong>Poor Standard Library Support</strong></a></li><li><a href="#9-maintenance-and-portability-issues" onclick="mobilePageScrollToAnchor(this)" >9. <strong>Maintenance and Portability Issues</strong></a></li><li><a href="#example-illustrating-some-downsides" onclick="mobilePageScrollToAnchor(this)" >Example Illustrating Some Downsides</a></li><li><a href="#downsides-illustrated" onclick="mobilePageScrollToAnchor(this)" >Downsides Illustrated</a></li></ul></li></ul></li></ul>
+                
 
                 
                 
@@ -350,184 +364,7 @@
                         <h1 id="/scripting/1_basics">1. Fundamentals</h1>
                     
 
-                    <h1 id="characteristics-of-fortran77">Characteristics of Fortran77</h1>
-
-<p>Fortran 77 is a significant version of the Fortran programming language, which introduced several features and improvements over its predecessor, Fortran 66. Here are the key characteristics of Fortran 77:</p>
-
-<h3 id="1-fixed-form-source-code">1. <strong>Fixed-Form Source Code</strong></h3>
-<ul>
-  <li>Fortran 77 uses fixed-form source code format, where specific columns in the code have particular meanings. For example, columns 1-5 are used for statement labels, column 6 for continuation characters, and columns 7-72 for code.</li>
-</ul>
-
-<h3 id="2-implicit-typing">2. <strong>Implicit Typing</strong></h3>
-<ul>
-  <li>Variables starting with the letters I through N are implicitly integers, while all other variables are implicitly real numbers, unless explicitly declared otherwise. The <code class="language-plaintext highlighter-rouge">IMPLICIT NONE</code> statement can be used to disable implicit typing, forcing all variables to be explicitly declared.</li>
-</ul>
-
-<h3 id="3-improved-control-structures">3. <strong>Improved Control Structures</strong></h3>
-<ul>
-  <li>Fortran 77 introduced the <code class="language-plaintext highlighter-rouge">IF-THEN-ELSE</code> construct for more readable and flexible conditional branching.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">DO</code> loop construct was enhanced, allowing more complex looping structures.</li>
-</ul>
-
-<h3 id="4-data-types">4. <strong>Data Types</strong></h3>
-<ul>
-  <li>Fortran 77 supports basic data types: <code class="language-plaintext highlighter-rouge">INTEGER</code>, <code class="language-plaintext highlighter-rouge">REAL</code>, <code class="language-plaintext highlighter-rouge">DOUBLE PRECISION</code>, <code class="language-plaintext highlighter-rouge">COMPLEX</code>, <code class="language-plaintext highlighter-rouge">LOGICAL</code>, and <code class="language-plaintext highlighter-rouge">CHARACTER</code>.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">CHARACTER</code> data type was introduced, enabling better handling of strings.</li>
-</ul>
-
-<h3 id="5-array-handling">5. <strong>Array Handling</strong></h3>
-<ul>
-  <li>Fortran 77 allows multi-dimensional arrays, enhancing the language’s capability to handle mathematical and scientific computations involving matrices and tensors.</li>
-</ul>
-
-<h3 id="6-common-blocks">6. <strong>COMMON Blocks</strong></h3>
-<ul>
-  <li>COMMON blocks in Fortran 77 allow sharing of variables between program units (such as the main program and subroutines). This feature enables global variables and facilitates modular programming.</li>
-</ul>
-
-<h3 id="7-intrinsic-functions">7. <strong>Intrinsic Functions</strong></h3>
-<ul>
-  <li>Fortran 77 includes a rich set of intrinsic functions for mathematical operations, character manipulation, and logical operations. Examples include <code class="language-plaintext highlighter-rouge">SIN</code>, <code class="language-plaintext highlighter-rouge">COS</code>, <code class="language-plaintext highlighter-rouge">LOG</code>, <code class="language-plaintext highlighter-rouge">EXP</code>, <code class="language-plaintext highlighter-rouge">SQRT</code>, <code class="language-plaintext highlighter-rouge">ABS</code>, and <code class="language-plaintext highlighter-rouge">LEN</code>.</li>
-</ul>
-
-<h3 id="8-portability">8. <strong>Portability</strong></h3>
-<ul>
-  <li>Fortran 77 code is highly portable across different computing platforms, which was a significant improvement over Fortran 66. This standardization helped in the widespread adoption of the language in scientific computing.</li>
-</ul>
-
-<h3 id="9-formatted-and-unformatted-io">9. <strong>Formatted and Unformatted I/O</strong></h3>
-<ul>
-  <li>Fortran 77 provides comprehensive input/output (I/O) capabilities, including both formatted and unformatted I/O operations. The <code class="language-plaintext highlighter-rouge">READ</code>, <code class="language-plaintext highlighter-rouge">WRITE</code>, and <code class="language-plaintext highlighter-rouge">FORMAT</code> statements allow detailed control over data input and output.</li>
-</ul>
-
-<h3 id="10-subroutines-and-functions">10. <strong>Subroutines and Functions</strong></h3>
-<ul>
-  <li>Fortran 77 supports the use of subroutines and functions to promote code reuse and modularity. Subroutines are defined using the <code class="language-plaintext highlighter-rouge">SUBROUTINE</code> keyword, and functions using the <code class="language-plaintext highlighter-rouge">FUNCTION</code> keyword.</li>
-</ul>
-
-<h3 id="example-code">Example Code</h3>
-
-<p>Here is a simple example of a Fortran 77 program that demonstrates some of its features:</p>
-
-<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">HelloWorld</span><span class="w">
-      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Hello, World!'</span><span class="w">
-      </span><span class="k">END</span><span class="w">
-</span></code></pre></div></div>
-
-<h3 id="example-with-control-structures-and-arrays">Example with Control Structures and Arrays</h3>
-
-<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">ArrayExample</span><span class="w">
-      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">
-      </span><span class="k">PARAMETER</span><span class="w"> </span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="w">
-      </span><span class="kt">REAL</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="w">
-      
-      </span><span class="c1">! Initialize arrays</span><span class="w">
-      </span><span class="k">DO</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">
-         </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w">
-         </span><span class="n">B</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w">
- </span><span class="mi">10</span><span class="w">   </span><span class="k">CONTINUE</span><span class="w">
-
-      </span><span class="c1">! Print results</span><span class="w">
-      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Array A:'</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w">
-      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Array B:'</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w">
-
-      </span><span class="k">END</span><span class="w">
-</span></code></pre></div></div>
-
-<h3 id="explanation">Explanation</h3>
-
-<ul>
-  <li>The program defines two arrays, <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">B</code>, each of size <code class="language-plaintext highlighter-rouge">N</code> (which is set to 5).</li>
-  <li>It initializes the array <code class="language-plaintext highlighter-rouge">A</code> with values 1 through 5 and computes the square of each element, storing the results in array <code class="language-plaintext highlighter-rouge">B</code>.</li>
-  <li>Finally, it prints the contents of both arrays.</li>
-</ul>
-
-<blockquote class="block-tip">
-  <h5 id="important">IMPORTANT</h5>
-  <p>Fortran 77 played a crucial role in the evolution of Fortran, providing a solid foundation for scientific and numerical computing with its array handling, control structures, and intrinsic functions. Despite its limitations, it remains an important version of the language, particularly for legacy scientific and engineering codebases.</p>
-</blockquote>
-
-<h1 id="2-limitations">2. Limitations</h1>
-
-<p>Fortran 77, while a significant advancement in the Fortran language, also has several downsides and limitations. Here are some of the key disadvantages:</p>
-
-<h3 id="1-fixed-form-source-code-1">1. <strong>Fixed-Form Source Code</strong></h3>
-<ul>
-  <li><strong>Column Dependency</strong>: The fixed-form source code format is rigid and prone to errors. For example, specific columns have designated purposes, and accidental misalignment can lead to syntax errors.</li>
-  <li><strong>Line Length</strong>: Code lines are limited to 72 characters, which can lead to cumbersome code formatting and the need for continuation lines.</li>
-</ul>
-
-<h3 id="2-limited-modern-programming-constructs">2. <strong>Limited Modern Programming Constructs</strong></h3>
-<ul>
-  <li><strong>No Dynamic Memory Allocation</strong>: Fortran 77 does not support dynamic memory allocation. All arrays and variables must have fixed sizes defined at compile time, which limits flexibility in handling data of varying sizes.</li>
-  <li><strong>No Recursive Procedures</strong>: Fortran 77 does not support recursive procedures, which are essential for many modern algorithms and programming techniques.</li>
-</ul>
-
-<h3 id="3-lack-of-modular-programming-features">3. <strong>Lack of Modular Programming Features</strong></h3>
-<ul>
-  <li><strong>No Modules</strong>: Fortran 77 does not have modules, making it difficult to encapsulate and organize code. Instead, it relies heavily on COMMON blocks, which can lead to namespace pollution and make code maintenance challenging.</li>
-  <li><strong>No Derived Types</strong>: The language does not support user-defined data types (derived types), limiting the ability to create complex data structures.</li>
-</ul>
-
-<h3 id="4-primitive-error-handling">4. <strong>Primitive Error Handling</strong></h3>
-<ul>
-  <li>Fortran 77 has very basic error handling capabilities. There are no sophisticated mechanisms for catching and handling runtime errors, which can make debugging and developing robust applications more difficult.</li>
-</ul>
-
-<h3 id="5-limited-string-handling">5. <strong>Limited String Handling</strong></h3>
-<ul>
-  <li>String manipulation capabilities in Fortran 77 are quite limited compared to modern languages. The CHARACTER data type was introduced in Fortran 77, but string operations are still cumbersome and less powerful.</li>
-</ul>
-
-<h3 id="6-verbosity-and-readability">6. <strong>Verbosity and Readability</strong></h3>
-<ul>
-  <li>Fortran 77 code tends to be verbose, making it harder to read and write compared to more modern programming languages. The syntax can be less intuitive, especially for new programmers.</li>
-</ul>
-
-<h3 id="7-no-built-in-support-for-parallelism">7. <strong>No Built-In Support for Parallelism</strong></h3>
-<ul>
-  <li>While Fortran is used extensively in high-performance computing, Fortran 77 does not have built-in support for parallel programming. Extensions like MPI and OpenMP must be used to achieve parallelism, which can add complexity.</li>
-</ul>
-
-<h3 id="8-poor-standard-library-support">8. <strong>Poor Standard Library Support</strong></h3>
-<ul>
-  <li>The standard library in Fortran 77 is minimal, offering limited built-in functions and utilities. This lack of extensive libraries can make it harder to perform common tasks without writing substantial amounts of code from scratch.</li>
-</ul>
-
-<h3 id="9-maintenance-and-portability-issues">9. <strong>Maintenance and Portability Issues</strong></h3>
-<ul>
-  <li>Due to its age and the evolution of programming practices, maintaining and updating Fortran 77 code can be challenging. Porting legacy Fortran 77 code to more modern systems or integrating it with contemporary software can also be problematic.</li>
-</ul>
-
-<h3 id="example-illustrating-some-downsides">Example Illustrating Some Downsides</h3>
-
-<p>Here is a simple example highlighting the fixed-form layout and the limitations in handling dynamic arrays:</p>
-
-<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">Example</span><span class="w">
-      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w">
-      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="n">I</span><span class="w">
-
-      </span><span class="k">DO</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w">
-         </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w">
-         </span><span class="n">B</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w">
- </span><span class="mi">10</span><span class="w">   </span><span class="k">CONTINUE</span><span class="w">
-
-      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Array A:'</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w">
-      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Array B:'</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w">
-      </span><span class="k">END</span><span class="w">
-</span></code></pre></div></div>
-
-<h3 id="downsides-illustrated">Downsides Illustrated</h3>
-<ul>
-  <li><strong>Fixed-Form Layout</strong>: The strict column-based format and the need for continuation lines can make the code less readable and more error-prone.</li>
-  <li><strong>No Dynamic Arrays</strong>: The arrays <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">B</code> must have fixed sizes defined at compile time, limiting flexibility.</li>
-</ul>
-
-<blockquote class="block-tip">
-  <h5 id="important-1">IMPORTANT</h5>
-  <p>While Fortran 77 was a significant step forward for numerical and scientific computing at its time, it has notable limitations and downsides by today’s standards. These include its rigid syntax, lack of modern programming constructs, and limited error handling and string manipulation capabilities. As a result, more recent versions of Fortran and other modern programming languages have largely supplanted Fortran 77 in many areas.</p>
-</blockquote>
+                    
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -830,7 +667,7 @@
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-08 15:55:59 +0800"
+        "time": "2024-08-15 00:24:14 +0800"
     },
     "basePath": "/cs/lang_pl",
     "book": {

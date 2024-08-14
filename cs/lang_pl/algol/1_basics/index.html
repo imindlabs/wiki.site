@@ -56,6 +56,8 @@
         
 
         
+            <link rel="next" href="/cs/lang_pl/algol/2_programs/" />
+        
     </head>
     <body>         
         <div class="book"><div class="book-summary">
@@ -214,8 +216,22 @@
                 </a>
                 
                 
-                
+                <ul><li><a href="#11-major-contributions-of-algol-60" onclick="mobilePageScrollToAnchor(this)" >1.1 Major Contributions of ALGOL-60</a></li><li><a href="#12-differences-between-call-by-value-call-by-reference-and-call-by-name" onclick="mobilePageScrollToAnchor(this)" >1.2 Differences Between ‘Call by Value’, ‘Call by Reference’, and ‘Call by Name’</a></li><li><a href="#13-issues-with-call-by-name" onclick="mobilePageScrollToAnchor(this)" >1.3 Issues with ‘Call by Name’</a></li><li><a href="#14-fortrans-continued-use-despite-algol-60s-contributions" onclick="mobilePageScrollToAnchor(this)" >1.4 FORTRAN’s Continued Use Despite ALGOL-60’s Contributions</a></li><li><a href="#15-difference-between-dynamic-and-static-scoping" onclick="mobilePageScrollToAnchor(this)" >1.5 Difference Between Dynamic and Static Scoping</a></li><li><a href="#16-differences-between-strong-and-weak-typing" onclick="mobilePageScrollToAnchor(this)" >1.6 Differences Between Strong and Weak Typing</a></li><li><a href="#17-issue-in-the-c-code-snippet" onclick="mobilePageScrollToAnchor(this)" >1.7 Issue in the C Code Snippet</a></li><li><a href="#18-how-algol-60-addresses-the-issue" onclick="mobilePageScrollToAnchor(this)" >1.8 How ALGOL-60 Addresses the Issue</a></li><li><a href="#19-two-forms-of-type-equivalence" onclick="mobilePageScrollToAnchor(this)" >1.9 Two Forms of Type Equivalence</a></li><li><a href="#110-information-stored-in-an-activation-record" onclick="mobilePageScrollToAnchor(this)" >1.10 Information Stored in an Activation Record</a></li><li><a href="#111-order-of-procedure-calls" onclick="mobilePageScrollToAnchor(this)" >1.11 Order of Procedure Calls</a></li><li><a href="#112-stack-depiction-of-static-and-dynamic-chains-at-position-1" onclick="mobilePageScrollToAnchor(this)" >1.12 Stack Depiction of Static and Dynamic Chains at Position 1</a></li><li><a href="#113-pascals-control-structures-advantageous" onclick="mobilePageScrollToAnchor(this)" >1.13 Pascal’s Control Structures: Advantageous?</a></li><li><a href="#114-pascals-implementation-of-arrays" onclick="mobilePageScrollToAnchor(this)" >1.14 Pascal’s Implementation of Arrays</a></li><li><a href="#115-pascals-handling-of-integer-and-real-assignments" onclick="mobilePageScrollToAnchor(this)" >1.15 Pascal’s Handling of Integer and Real Assignments</a></li><li><a href="#116-functionality-of-recursion-and-nested-subprograms" onclick="mobilePageScrollToAnchor(this)" >1.16 Functionality of Recursion and Nested Subprograms</a><ul><li><a href="#1-requirements-for-allowing-nested-subprograms" onclick="mobilePageScrollToAnchor(this)" >1. Requirements for Allowing Nested Subprograms</a></li><li><a href="#2-requirements-for-implementing-recursion" onclick="mobilePageScrollToAnchor(this)" >2. Requirements for Implementing Recursion</a></li><li><a href="#3-consideration-of-functionality-with-respect-to-programming-language-characteristics" onclick="mobilePageScrollToAnchor(this)" >3. Consideration of Functionality with Respect to Programming Language Characteristics</a></li></ul></li></ul>
 
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/algol/2_programs/">
+                
+                <a href="/cs/lang_pl/algol/2_programs/" onclick="pageScrollToTop(this)">
+                    2. Programs
+                </a>
+                
                 
                 
             </li>
@@ -350,7 +366,333 @@
                         <h1 id="/algol/1_basics">1. Fundamentals</h1>
                     
 
-                    
+                    <h1 id="11-major-contributions-of-algol-60">1.1 Major Contributions of ALGOL-60</h1>
+
+<p>ALGOL-60 (Algorithmic Language 1960) made significant contributions to the field of computer science and programming languages:</p>
+
+<ul>
+  <li>
+    <p><strong>Block Structure</strong>: Introduced the concept of block structure, allowing nested blocks and local variables, which led to better-organized and more readable code.</p>
+  </li>
+  <li>
+    <p><strong>Formal Syntax Description</strong>: Introduced the Backus-Naur Form (BNF) for describing the syntax of programming languages, a notation that has been widely adopted.</p>
+  </li>
+  <li>
+    <p><strong>Structured Programming</strong>: ALGOL-60 laid the groundwork for structured programming by supporting recursive procedures and introducing control structures like <code class="language-plaintext highlighter-rouge">if-then-else</code> and <code class="language-plaintext highlighter-rouge">for</code> loops.</p>
+  </li>
+  <li>
+    <p><strong>Call by Value and Call by Name</strong>: Supported different parameter passing mechanisms, specifically call by value and call by name, providing flexibility in how arguments were passed to procedures.</p>
+  </li>
+  <li>
+    <p><strong>Influence on Later Languages</strong>: Many later programming languages, including Pascal, C, and Ada, were heavily influenced by ALGOL-60’s structure and design principles.</p>
+  </li>
+</ul>
+
+<h1 id="12-differences-between-call-by-value-call-by-reference-and-call-by-name">1.2 Differences Between ‘Call by Value’, ‘Call by Reference’, and ‘Call by Name’</h1>
+
+<ul>
+  <li>
+    <p><strong>Call by Value</strong>: The actual value of the argument is passed to the function. Inside the function, the parameter is a copy of the argument, so changes made to the parameter do not affect the original argument.</p>
+  </li>
+  <li>
+    <p><strong>Call by Reference</strong>: A reference (or address) of the argument is passed to the function. Inside the function, the parameter acts as an alias for the argument, so changes made to the parameter directly affect the original argument.</p>
+  </li>
+  <li>
+    <p><strong>Call by Name</strong>: The argument is not evaluated when the function is called. Instead, the expression itself is passed, and it is evaluated every time the parameter is used within the function. This can lead to multiple evaluations and potentially unexpected behavior.</p>
+  </li>
+</ul>
+
+<h1 id="13-issues-with-call-by-name">1.3 Issues with ‘Call by Name’</h1>
+
+<ul>
+  <li>
+    <p><strong>Repeated Evaluation</strong>: The argument expression is evaluated every time it is used within the function, which can lead to inefficiency, especially if the expression is complex or if it involves side effects.</p>
+  </li>
+  <li>
+    <p><strong>Complexity</strong>: Understanding and debugging code that uses call by name can be more challenging, as the behavior may be less predictable than with call by value or call by reference.</p>
+  </li>
+  <li>
+    <p><strong>Side Effects</strong>: If the expression involves side effects (e.g., modifying a global variable), these side effects can occur multiple times, potentially leading to unintended behavior.</p>
+  </li>
+</ul>
+
+<h1 id="14-fortrans-continued-use-despite-algol-60s-contributions">1.4 FORTRAN’s Continued Use Despite ALGOL-60’s Contributions</h1>
+
+<p>FORTRAN (FORmula TRANslation) remained in use and still is today for several reasons:</p>
+
+<ul>
+  <li>
+    <p><strong>Early Adoption</strong>: FORTRAN was one of the first high-level programming languages and became the standard for scientific and engineering computations. Its early adoption established a strong user base.</p>
+  </li>
+  <li>
+    <p><strong>Performance</strong>: FORTRAN was designed for numerical computation and optimized for performance, making it a preferred choice in fields where execution speed is critical.</p>
+  </li>
+  <li>
+    <p><strong>Extensive Libraries</strong>: Over time, FORTRAN accumulated a vast number of libraries for scientific and numerical computing, making it difficult for other languages to displace it in these areas.</p>
+  </li>
+  <li>
+    <p><strong>Backward Compatibility</strong>: FORTRAN maintained backward compatibility with earlier versions, which encouraged continued use and prevented the need for rewriting large amounts of legacy code.</p>
+  </li>
+</ul>
+
+<h1 id="15-difference-between-dynamic-and-static-scoping">1.5 Difference Between Dynamic and Static Scoping</h1>
+
+<ul>
+  <li>
+    <p><strong>Static Scoping (Lexical Scoping)</strong>: The scope of a variable is determined by the structure of the program code and the location where the variable is declared. The binding of variables to values occurs at compile time. Most modern programming languages, including C, Java, and Python, use static scoping.</p>
+  </li>
+  <li>
+    <p><strong>Dynamic Scoping</strong>: The scope of a variable is determined at runtime based on the calling sequence of functions. The binding of variables to values occurs during execution, and the most recent binding in the call stack is used. Dynamic scoping is less common and is found in languages like early versions of Lisp.</p>
+  </li>
+</ul>
+
+<h1 id="16-differences-between-strong-and-weak-typing">1.6 Differences Between Strong and Weak Typing</h1>
+
+<ul>
+  <li>
+    <p><strong>Strong Typing</strong>: In a strongly typed language, the type of a variable is enforced, meaning you cannot perform operations on incompatible types without explicit conversion. Errors are more likely to be caught at compile time. Examples include Java and Python.</p>
+  </li>
+  <li>
+    <p><strong>Weak Typing</strong>: In a weakly typed language, type conversions are more flexible, and the language may automatically convert between types. This can lead to more subtle bugs that are harder to detect. Examples include JavaScript and PHP.</p>
+  </li>
+</ul>
+
+<h1 id="17-issue-in-the-c-code-snippet">1.7 Issue in the C Code Snippet</h1>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">x</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="n">y</span><span class="o">++</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><strong>Issue</strong>: The problem with this code snippet is related to ambiguity in the <code class="language-plaintext highlighter-rouge">else</code> clause. The <code class="language-plaintext highlighter-rouge">else</code> statement is associated with the nearest <code class="language-plaintext highlighter-rouge">if</code>, so it pairs with <code class="language-plaintext highlighter-rouge">if(y == 0)</code> instead of <code class="language-plaintext highlighter-rouge">if(x == 0)</code>. This might not be the intended behavior.</p>
+
+<h1 id="18-how-algol-60-addresses-the-issue">1.8 How ALGOL-60 Addresses the Issue</h1>
+
+<p>ALGOL-60 addresses this issue by introducing the concept of <strong>explicit block structuring</strong> and requiring the use of <code class="language-plaintext highlighter-rouge">begin</code> and <code class="language-plaintext highlighter-rouge">end</code> to define blocks. In ALGOL-60, the <code class="language-plaintext highlighter-rouge">else</code> statement would clearly associate with the intended <code class="language-plaintext highlighter-rouge">if</code> due to the enforced block structure, removing ambiguity.</p>
+
+<h1 id="19-two-forms-of-type-equivalence">1.9 Two Forms of Type Equivalence</h1>
+
+<ul>
+  <li>
+    <p><strong>Name Equivalence</strong>: Two variables are considered equivalent if they have the same type name. The type name explicitly defines the type, and variables must share this name to be considered of the same type.</p>
+  </li>
+  <li>
+    <p><strong>Structural Equivalence</strong>: Two variables are considered equivalent if they have the same structure or content, even if their type names are different. The actual composition of the type determines equivalence, not the name.</p>
+  </li>
+</ul>
+
+<h1 id="110-information-stored-in-an-activation-record">1.10 Information Stored in an Activation Record</h1>
+
+<p>An activation record (also known as a stack frame) typically contains the following information:</p>
+
+<ul>
+  <li><strong>Return Address</strong>: The address to which control should return after the function execution is complete.</li>
+  <li><strong>Parameters</strong>: The arguments passed to the function.</li>
+  <li><strong>Local Variables</strong>: The variables that are local to the function.</li>
+  <li><strong>Saved Registers</strong>: The state of certain CPU registers before the function call.</li>
+  <li><strong>Control Link</strong>: A reference to the previous activation record (used in dynamic scoping).</li>
+  <li><strong>Access Link</strong>: A reference to the activation record of the lexically enclosing function (used in static scoping).</li>
+  <li><strong>Temporary Data</strong>: Space for storing intermediate results or temporary values.</li>
+</ul>
+
+<h1 id="111-order-of-procedure-calls">1.11 Order of Procedure Calls</h1>
+
+<p>Given the code provided:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PROCEDURE S
+    PROCEDURE A
+        PROCEDURE B
+            PROCEDURE D
+            BEGIN
+                …
+            END; //Procedure D
+        BEGIN
+        __Position 1;__
+        END; //Procedure B
+        PROCEDURE C;
+        BEGIN
+            B;
+        END; //Procedure C
+    BEGIN
+        C;
+    END; //Procedure A
+BEGIN
+A; 
+END; //Procedure S
+</code></pre></div></div>
+
+<p>The order of procedure calls is as follows:</p>
+
+<ol>
+  <li><strong>S</strong> is called (as it is the main procedure).</li>
+  <li><strong>A</strong> is called from within <strong>S</strong>.</li>
+  <li><strong>C</strong> is called from within <strong>A</strong>.</li>
+  <li><strong>B</strong> is called from within <strong>C</strong>.</li>
+  <li>Execution reaches <strong>Position 1</strong> within <strong>B</strong>.</li>
+</ol>
+
+<p>So, the order of calls is: <strong>S → A → C → B</strong>.</p>
+
+<h1 id="112-stack-depiction-of-static-and-dynamic-chains-at-position-1">1.12 Stack Depiction of Static and Dynamic Chains at Position 1</h1>
+
+<p><strong>Static Chain</strong>: The static chain links an activation record to its lexically enclosing procedure’s activation record.</p>
+
+<p><strong>Dynamic Chain</strong>: The dynamic chain links an activation record to the activation record of the procedure that called it.</p>
+
+<p>At <strong>Position 1</strong>, the stack would look like this:</p>
+
+<ul>
+  <li><strong>Top of Stack (B’s Activation Record)</strong>
+    <ul>
+      <li><strong>Static Link</strong>: Points to <strong>A</strong> (since <strong>A</strong> lexically encloses <strong>B</strong>).</li>
+      <li><strong>Dynamic Link</strong>: Points to <strong>C</strong> (since <strong>C</strong> dynamically called <strong>B</strong>).</li>
+    </ul>
+  </li>
+  <li><strong>A’s Activation Record</strong>
+    <ul>
+      <li><strong>Static Link</strong>: Points to <strong>S</strong> (since <strong>S</strong> lexically encloses <strong>A</strong>).</li>
+      <li><strong>Dynamic Link</strong>: Points to <strong>S</strong> (since <strong>S</strong> dynamically called <strong>A</strong>).</li>
+    </ul>
+  </li>
+  <li><strong>C’s Activation Record</strong>
+    <ul>
+      <li><strong>Static Link</strong>: Points to <strong>A</strong> (since <strong>A</strong> lexically encloses <strong>C</strong>).</li>
+      <li><strong>Dynamic Link</strong>: Points to <strong>A</strong> (since <strong>A</strong> dynamically called <strong>C</strong>).</li>
+    </ul>
+  </li>
+  <li><strong>Bottom of Stack (S’s Activation Record)</strong>
+    <ul>
+      <li><strong>Static Link</strong>: Points to <strong>Global Frame</strong> (since there is no enclosing procedure for <strong>S</strong>).</li>
+      <li><strong>Dynamic Link</strong>: Points to the <strong>Global Frame</strong> or <code class="language-plaintext highlighter-rouge">null</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="113-pascals-control-structures-advantageous">1.13 Pascal’s Control Structures: Advantageous?</h1>
+
+<p>Pascal provides a variety of control structures, such as <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">case</code>, <code class="language-plaintext highlighter-rouge">for</code>, <code class="language-plaintext highlighter-rouge">while</code>, and <code class="language-plaintext highlighter-rouge">repeat-until</code>. This richness in control structures can be advantageous:</p>
+
+<ul>
+  <li>
+    <p><strong>Expressiveness</strong>: Allows for more expressive and readable code, as different constructs can be used for different scenarios.</p>
+  </li>
+  <li>
+    <p><strong>Clarity</strong>: Each control structure is designed for a specific type of task (e.g., <code class="language-plaintext highlighter-rouge">case</code> for multi-way branching), which can lead to clearer and more maintainable code.</p>
+  </li>
+  <li>
+    <p><strong>Error Reduction</strong>: The use of specific control structures can reduce errors by making the programmer’s intentions more explicit.</p>
+  </li>
+</ul>
+
+<p>However, it could also lead to <strong>complexity</strong> if overused or used inappropriately, making the code harder to follow.</p>
+
+<h1 id="114-pascals-implementation-of-arrays">1.14 Pascal’s Implementation of Arrays</h1>
+
+<p>Pascal implements arrays in a way that was more rigid and structured compared to other contemporary languages:</p>
+
+<ul>
+  <li>
+    <p><strong>Fixed Bounds</strong>: The bounds of Pascal arrays are fixed at compile time, which means the size of the array cannot be changed dynamically. This ensures type safety but reduces flexibility.</p>
+  </li>
+  <li>
+    <p><strong>Strict Type Checking</strong>: Pascal enforces strict type checking for arrays, ensuring that operations on arrays are type-safe, which prevents many common programming errors.</p>
+  </li>
+  <li>
+    <p><strong>Static vs. Dynamic Arrays</strong>: Pascal originally only supported static arrays (size fixed at compile time). Some later implementations introduced dynamic arrays, but this was not part of the original language.</p>
+  </li>
+</ul>
+
+<p>In comparison, languages like C provide more flexibility (e.g., dynamic memory allocation for arrays using pointers), but at the cost of less safety and potentially more errors.</p>
+
+<h1 id="115-pascals-handling-of-integer-and-real-assignments">1.15 Pascal’s Handling of Integer and Real Assignments</h1>
+
+<p>Pascal allows integers to be assigned to real variables but not the other way around. This reflects certain characteristics of the language:</p>
+
+<ul>
+  <li>
+    <p><strong>Type Safety</strong>: By not allowing real variables to be assigned to integers, Pascal enforces type safety, avoiding the loss of precision that could occur when converting from a real number to an integer.</p>
+  </li>
+  <li>
+    <p><strong>Implicit Type Conversion</strong>: Allowing integers to be assigned to real variables without explicit conversion is an example of implicit type conversion, making it easier for the programmer but still safe since no precision is lost.</p>
+  </li>
+  <li>
+    <p><strong>Design Philosophy</strong>: This decision aligns with Pascal’s design philosophy of promoting safe and structured programming, preventing potential bugs and ensuring that data types are used correctly.</p>
+  </li>
+</ul>
+
+<h1 id="116-functionality-of-recursion-and-nested-subprograms">1.16 Functionality of Recursion and Nested Subprograms</h1>
+
+<p>The functionality of recursion and nested subprograms is highly worthwhile in a programming language. These features enhance the language’s expressiveness, modularity, and abstraction capabilities, making it easier to write clear and maintainable code for complex problems. However, the language and its runtime environment must be designed to handle the potential performance and memory management challenges that recursion introduces. Despite these challenges, the benefits generally outweigh the drawbacks, especially in languages designed for structured and algorithmic programming, as seen in ALGOL-60.</p>
+
+<h2 id="1-requirements-for-allowing-nested-subprograms">1. Requirements for Allowing Nested Subprograms</h2>
+
+<p>To support nested subprograms (procedures or functions within other procedures or functions), a programming language must provide:</p>
+
+<ul>
+  <li>
+    <p><strong>Lexical Scoping</strong>: The language must support lexical scoping, where the scope of variables is determined by their position in the source code. This allows variables declared in an outer block to be accessible in inner blocks.</p>
+  </li>
+  <li>
+    <p><strong>Static Chain</strong>: The implementation needs a mechanism to maintain the static chain (also known as the lexical chain), which links an activation record (stack frame) of a procedure to the activation record of its lexically enclosing procedure. This allows nested subprograms to access variables from their enclosing scope.</p>
+  </li>
+  <li>
+    <p><strong>Activation Record Management</strong>: The runtime system must correctly manage activation records to handle variables and control links, ensuring that the correct variables and procedures are referenced during execution.</p>
+  </li>
+  <li>
+    <p><strong>Name Resolution</strong>: The language must resolve names based on the nesting structure, meaning that when an inner subprogram refers to a variable, the compiler or interpreter must be able to find that variable in the appropriate enclosing scope.</p>
+  </li>
+</ul>
+
+<h2 id="2-requirements-for-implementing-recursion">2. Requirements for Implementing Recursion</h2>
+
+<p>To implement recursion in a programming language, the following are necessary:</p>
+
+<ul>
+  <li>
+    <p><strong>Stack-based Activation Records</strong>: Each invocation of a recursive procedure must have its own activation record on the stack. This ensures that local variables and parameters of each recursive call do not interfere with those of other calls.</p>
+  </li>
+  <li>
+    <p><strong>Dynamic Chain</strong>: The language must maintain a dynamic chain (call chain) linking activation records in the order they were called. This allows the program to return to the correct point after a recursive call completes.</p>
+  </li>
+  <li>
+    <p><strong>Return Address Handling</strong>: The runtime must correctly manage return addresses for each activation record so that after a recursive call completes, the program can return to the appropriate point in the calling procedure.</p>
+  </li>
+  <li>
+    <p><strong>Base Case Identification</strong>: For recursion to terminate properly, the language or programmer must identify a base case or stopping condition to prevent infinite recursion.</p>
+  </li>
+</ul>
+
+<h2 id="3-consideration-of-functionality-with-respect-to-programming-language-characteristics">3. Consideration of Functionality with Respect to Programming Language Characteristics</h2>
+
+<p><strong>Worthwhile Aspects:</strong></p>
+
+<ul>
+  <li>
+    <p><strong>Expressiveness</strong>: Recursion and nested subprograms enhance the expressiveness of a language, allowing programmers to solve complex problems more naturally, such as in cases involving tree traversal, mathematical computations (like factorials or Fibonacci sequences), and divide-and-conquer algorithms.</p>
+  </li>
+  <li>
+    <p><strong>Modularity and Abstraction</strong>: Nested subprograms allow for better modularity and encapsulation. By nesting procedures, a programmer can define helper functions within the scope where they are needed, reducing the chance of name clashes and improving code organization.</p>
+  </li>
+  <li>
+    <p><strong>Reusability</strong>: Recursion can lead to more reusable code. Recursive solutions often mirror the problem’s structure, making them easier to understand and reuse across different parts of a program.</p>
+  </li>
+</ul>
+
+<p><strong>Challenges:</strong></p>
+
+<ul>
+  <li>
+    <p><strong>Performance Considerations</strong>: Recursive functions can be less efficient due to the overhead of multiple function calls and the potential for deep recursion, leading to stack overflow. Iterative solutions might be more efficient in some cases.</p>
+  </li>
+  <li>
+    <p><strong>Complexity and Readability</strong>: While recursion can simplify the code in some scenarios, it can also make it harder to understand, especially for those who are not familiar with the concept. Debugging recursive code can also be more challenging.</p>
+  </li>
+  <li>
+    <p><strong>Memory Management</strong>: Recursive calls require careful memory management, particularly in languages with limited stack space. Some languages implement tail recursion optimization to mitigate this, but not all recursive functions can be optimized in this way.</p>
+  </li>
+</ul>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -521,6 +863,10 @@
                     
 
                     
+                        <a href="/cs/lang_pl/algol/2_programs/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. Programs"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
                     <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
                 </div>
             </div>
@@ -558,6 +904,15 @@
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+        "next": {
+            "title": "2. Programs",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_3_algol/2_programs.md",
+            "ref": "_3_algol/2_programs.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -653,7 +1008,7 @@
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-08 15:55:59 +0800"
+        "time": "2024-08-15 00:24:14 +0800"
     },
     "basePath": "/cs/lang_pl",
     "book": {

@@ -56,7 +56,7 @@
         
 
         
-            <link rel="next" href="/dev/distcomp/wcf/1_dc_1_fundamentals/" />
+            <link rel="next" href="/dev/distcomp/c_sharp/1_cs_3_async_task/" />
         
     </head>
     <body>         
@@ -148,8 +148,22 @@
                 </a>
                 
                 
-                <ul><li><a href="#21-data-annotations" onclick="mobilePageScrollToAnchor(this)" >2.1 Data Annotations</a></li></ul>
+                <ul><li><a href="#21-data-annotations" onclick="mobilePageScrollToAnchor(this)" >2.1 Data Annotations</a></li><li><a href="#22-using-keyword-in-c" onclick="mobilePageScrollToAnchor(this)" >2.2 <code class="language-plaintext highlighter-rouge">using</code> keyword in C#</a><ul><li><a href="#1-using-with-a-single-object" onclick="mobilePageScrollToAnchor(this)" ><strong>1. Using with a Single Object</strong></a></li><li><a href="#2-using-with-multiple-objects-c-80-and-later" onclick="mobilePageScrollToAnchor(this)" ><strong>2. Using with Multiple Objects (C# 8.0 and later)</strong></a></li><li><a href="#3-using-as-a-declaration-c-80-and-later" onclick="mobilePageScrollToAnchor(this)" ><strong>3. Using as a Declaration (C# 8.0 and later)</strong></a></li></ul></li></ul>
 
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/c_sharp/1_cs_3_async_task/">
+                
+                <a href="/dev/distcomp/c_sharp/1_cs_3_async_task/" onclick="pageScrollToTop(this)">
+                    3. Async Task
+                </a>
+                
                 
                 
             </li>
@@ -172,14 +186,12 @@
             
             
             
-            <p class="separator-title">Distributed Computing</p>
             
             
-            
-            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/wcf/1_dc_2_wcf/">
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/wcf/1_dc_2_service_and_data_contract/">
                 
-                <a href="/dev/distcomp/wcf/1_dc_2_wcf/" onclick="pageScrollToTop(this)">
-                    1. Fundamentals
+                <a href="/dev/distcomp/wcf/1_dc_2_service_and_data_contract/" onclick="pageScrollToTop(this)">
+                    2. Contracts
                 </a>
                 
                 
@@ -322,6 +334,52 @@
 <span class="c1">// use the function:</span>
 <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="nf">GetDisplayName</span><span class="p">(</span><span class="n">Model</span><span class="p">,</span> <span class="n">m</span> <span class="p">=&gt;</span> <span class="n">m</span><span class="p">.</span><span class="n">Prop</span><span class="p">);</span>
 </code></pre></div></div>
+
+<h1 id="22-using-keyword-in-c">2.2 <code class="language-plaintext highlighter-rouge">using</code> keyword in C#</h1>
+
+<p>In C#, the <code class="language-plaintext highlighter-rouge">using</code> statement is used to ensure that resources are properly disposed of when they are no longer needed. This is particularly useful for objects that consume resources like file handles, database connections, or network connections, which need to be explicitly released.</p>
+
+<p>There are two primary ways to use <code class="language-plaintext highlighter-rouge">using</code> in C#:</p>
+
+<h2 id="1-using-with-a-single-object"><strong>1. Using with a Single Object</strong></h2>
+<p>This is the most common usage, where a single object that implements the <code class="language-plaintext highlighter-rouge">IDisposable</code> interface is used within a <code class="language-plaintext highlighter-rouge">using</code> block. When the block is exited, either normally or through an exception, the object’s <code class="language-plaintext highlighter-rouge">Dispose</code> method is automatically called.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">resource</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SomeDisposableResource</span><span class="p">())</span>
+   <span class="p">{</span>
+       <span class="c1">// Use the resource here.</span>
+   <span class="p">}</span> <span class="c1">// resource.Dispose() is automatically called here.</span>
+</code></pre></div></div>
+
+<h2 id="2-using-with-multiple-objects-c-80-and-later"><strong>2. Using with Multiple Objects (C# 8.0 and later)</strong></h2>
+<p>Starting with C# 8.0, you can declare multiple disposable objects within a single <code class="language-plaintext highlighter-rouge">using</code> statement.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">resource1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SomeDisposableResource</span><span class="p">())</span>
+   <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">resource2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">AnotherDisposableResource</span><span class="p">())</span>
+   <span class="p">{</span>
+       <span class="c1">// Use resource1 and resource2 here.</span>
+   <span class="p">}</span> <span class="c1">// resource1.Dispose() and resource2.Dispose() are automatically called here.</span>
+</code></pre></div></div>
+
+<h2 id="3-using-as-a-declaration-c-80-and-later"><strong>3. Using as a Declaration (C# 8.0 and later)</strong></h2>
+<p>In C# 8.0 and later, you can also use <code class="language-plaintext highlighter-rouge">using</code> as a declaration without a block. The resource will be disposed at the end of the containing scope, such as a method.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">using</span> <span class="nn">var</span> <span class="n">resource</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SomeDisposableResource</span><span class="p">();</span>
+   <span class="c1">// Use the resource here.</span>
+   <span class="c1">// resource.Dispose() is automatically called at the end of the scope.</span>
+</code></pre></div></div>
+
+<h4 id="example-with-a-file-stream">Example with a File Stream</h4>
+<p>Here is an example using <code class="language-plaintext highlighter-rouge">using</code> with a <code class="language-plaintext highlighter-rouge">FileStream</code> to read from a file:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">stream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FileStream</span><span class="p">(</span><span class="s">"example.txt"</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Open</span><span class="p">))</span>
+<span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">reader</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamReader</span><span class="p">(</span><span class="n">stream</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="kt">string</span> <span class="n">content</span> <span class="p">=</span> <span class="n">reader</span><span class="p">.</span><span class="nf">ReadToEnd</span><span class="p">();</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">content</span><span class="p">);</span>
+<span class="p">}</span> <span class="c1">// Both stream and reader are disposed here.</span>
+</code></pre></div></div>
+
+<p>This ensures that both the <code class="language-plaintext highlighter-rouge">FileStream</code> and <code class="language-plaintext highlighter-rouge">StreamReader</code> are properly disposed of, even if an exception occurs while reading the file.</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -492,7 +550,7 @@
                     
 
                     
-                        <a href="/dev/distcomp/wcf/1_dc_1_fundamentals/" class="navigation navigation-next navigation-unique" aria-label="Next page: 1. Fundamentals"> <!-- class="hide_element" -->
+                        <a href="/dev/distcomp/c_sharp/1_cs_3_async_task/" class="navigation navigation-next navigation-unique" aria-label="Next page: 3. Async Task"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-right"></i>
                         </a>
                     
@@ -535,11 +593,11 @@
         "depth": 1,
         
         "next": {
-            "title": "1. Fundamentals",
+            "title": "3. Async Task",
             "level": "1.2",
             "depth": 1,
-            "path": "_1_net_distcomp/1_dc_1_fundamentals.md",
-            "ref": "_1_net_distcomp/1_dc_1_fundamentals.md",
+            "path": "_1_net_distcomp/1_cs_3_async_task.md",
+            "ref": "_1_net_distcomp/1_cs_3_async_task.md",
             "articles": []
         },
         
@@ -637,7 +695,7 @@
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-08 09:49:22 +0800"
+        "time": "2024-08-15 00:23:40 +0800"
     },
     "basePath": "/dev/distcomp",
     "book": {

@@ -52,11 +52,11 @@
 
 
 <!-- trackers -->
-            <link rel="prev" href="/dev/distcomp/c_sharp/1_cs_2_advance/" />
+            <link rel="prev" href="/dev/distcomp/c_sharp/1_cs_3_async_task/" />
         
 
         
-            <link rel="next" href="/dev/distcomp/wcf/1_dc_2_wcf/" />
+            <link rel="next" href="/dev/distcomp/wcf/1_dc_2_service_and_data_contract/" />
         
     </head>
     <body>         
@@ -153,6 +153,20 @@
             
             
             
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/c_sharp/1_cs_3_async_task/">
+                
+                <a href="/dev/distcomp/c_sharp/1_cs_3_async_task/" onclick="pageScrollToTop(this)">
+                    3. Async Task
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
             <p class="separator-title">Distributed Computing</p>
             
             
@@ -164,7 +178,7 @@
                 </a>
                 
                 
-                <ul><li><a href="#1-windows-communication-foundation" onclick="mobilePageScrollToAnchor(this)" >1. Windows Communication Foundation</a><ul><li><a href="#11-key-features-of-wcf" onclick="mobilePageScrollToAnchor(this)" >1.1 Key Features of WCF</a></li><li><a href="#12-importance-of-wcf-in-distributed-computing" onclick="mobilePageScrollToAnchor(this)" >1.2 Importance of WCF in Distributed Computing</a></li></ul></li><li><a href="#2-corba-" onclick="mobilePageScrollToAnchor(this)" >2. CORBA ?</a><ul><li><a href="#21-key-features-of-corba" onclick="mobilePageScrollToAnchor(this)" >2.1 Key Features of CORBA</a></li><li><a href="#22-relationship-between-corba-and-wcf" onclick="mobilePageScrollToAnchor(this)" >2.2 Relationship Between CORBA and WCF</a></li></ul></li><li><a href="#3-simple-application-using-wcf" onclick="mobilePageScrollToAnchor(this)" >3. Simple Application Using WCF</a><ul><li><a href="#1-define-the-service-contract" onclick="mobilePageScrollToAnchor(this)" >1. Define the Service Contract</a></li><li><a href="#2-implement-the-service" onclick="mobilePageScrollToAnchor(this)" >2. Implement the Service</a></li><li><a href="#3-host-the-service" onclick="mobilePageScrollToAnchor(this)" >3. Host the Service</a></li><li><a href="#4-configure-the-service" onclick="mobilePageScrollToAnchor(this)" >4. Configure the Service</a></li><li><a href="#5-create-a-client-to-consume-the-service" onclick="mobilePageScrollToAnchor(this)" >5. Create a Client to Consume the Service</a></li><li><a href="#6-run-the-applications" onclick="mobilePageScrollToAnchor(this)" >6. Run the Applications</a></li><li><a href="#alternative-to-step-4" onclick="mobilePageScrollToAnchor(this)" >Alternative to Step 4</a><ul><li><a href="#1-hosting-the-service-programmatically" onclick="mobilePageScrollToAnchor(this)" >1. Hosting the Service Programmatically</a></li><li><a href="#2-creating-the-client-programmatically" onclick="mobilePageScrollToAnchor(this)" >2. Creating the Client Programmatically</a></li></ul></li></ul></li></ul>
+                <ul><li><a href="#11-windows-communication-foundation" onclick="mobilePageScrollToAnchor(this)" >1.1 Windows Communication Foundation</a><ul><li><a href="#1-key-features-of-wcf" onclick="mobilePageScrollToAnchor(this)" >1 Key Features of WCF</a></li><li><a href="#2-importance-of-wcf-in-distributed-computing" onclick="mobilePageScrollToAnchor(this)" >2. Importance of WCF in Distributed Computing</a></li></ul></li><li><a href="#12-corba-" onclick="mobilePageScrollToAnchor(this)" >1.2 CORBA ?</a><ul><li><a href="#1-key-features-of-corba" onclick="mobilePageScrollToAnchor(this)" >1. Key Features of CORBA</a></li><li><a href="#2-relationship-between-corba-and-wcf" onclick="mobilePageScrollToAnchor(this)" >2. Relationship Between CORBA and WCF</a></li></ul></li><li><a href="#13-simple-application-using-wcf" onclick="mobilePageScrollToAnchor(this)" >1.3 Simple Application Using WCF</a><ul><li><a href="#1-define-the-service-contract" onclick="mobilePageScrollToAnchor(this)" >1. Define the Service Contract</a></li><li><a href="#2-implement-the-service" onclick="mobilePageScrollToAnchor(this)" >2. Implement the Service</a></li><li><a href="#3-host-the-service" onclick="mobilePageScrollToAnchor(this)" >3. Host the Service</a></li><li><a href="#4-creating-the-client" onclick="mobilePageScrollToAnchor(this)" >4. Creating the Client</a></li><li><a href="#5-run-the-applications" onclick="mobilePageScrollToAnchor(this)" >5. Run the Applications</a></li></ul></li></ul>
 
                 
                 
@@ -172,14 +186,12 @@
             
             
             
-            <p class="separator-title">Distributed Computing</p>
             
             
-            
-            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/wcf/1_dc_2_wcf/">
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/wcf/1_dc_2_service_and_data_contract/">
                 
-                <a href="/dev/distcomp/wcf/1_dc_2_wcf/" onclick="pageScrollToTop(this)">
-                    1. Fundamentals
+                <a href="/dev/distcomp/wcf/1_dc_2_service_and_data_contract/" onclick="pageScrollToTop(this)">
+                    2. Contracts
                 </a>
                 
                 
@@ -260,10 +272,10 @@
                         <h1 id="/wcf/1_dc_1_fundamentals">1. Fundamentals</h1>
                     
 
-                    <h1 id="1-windows-communication-foundation">1. Windows Communication Foundation</h1>
+                    <h1 id="11-windows-communication-foundation">1.1 Windows Communication Foundation</h1>
 <p>Windows Communication Foundation (WCF) is a framework developed by Microsoft for building service-oriented applications. It allows developers to build secure, reliable, and scalable distributed systems by providing a unified programming model for building and deploying networked services.</p>
 
-<h2 id="11-key-features-of-wcf">1.1 Key Features of WCF</h2>
+<h2 id="1-key-features-of-wcf">1 Key Features of WCF</h2>
 
 <p><strong>1. Interoperability</strong>: WCF is designed to interoperate with services built on other platforms, thanks to its support for various industry standards like SOAP, WS-*, and REST.</p>
 
@@ -277,7 +289,7 @@
 
 <p><strong>6. Reliable Messaging</strong>: WCF includes built-in support for reliable messaging, ensuring that messages are delivered even in the presence of network failures.</p>
 
-<h2 id="12-importance-of-wcf-in-distributed-computing">1.2 Importance of WCF in Distributed Computing</h2>
+<h2 id="2-importance-of-wcf-in-distributed-computing">2. Importance of WCF in Distributed Computing</h2>
 
 <p><strong>1. Communication Abstraction</strong>: WCF abstracts the underlying communication mechanisms, allowing developers to focus on business logic rather than the complexities of networking. This is crucial for building scalable distributed systems.</p>
 
@@ -289,11 +301,11 @@
 
 <p><strong>5. Flexibility and Extensibility</strong>: WCF’s flexible configuration and extensibility make it suitable for a wide range of applications, from simple web services to complex, enterprise-level distributed systems.</p>
 
-<h1 id="2-corba-">2. CORBA ?</h1>
+<h1 id="12-corba-">1.2 CORBA ?</h1>
 
 <p><strong>Common Object Request Broker Architecture (CORBA)</strong> is a standard defined by the Object Management Group (OMG) for enabling communication between objects in a distributed computing environment, regardless of the programming language in which they were written or the platforms on which they are running. CORBA achieves this by specifying a set of protocols and services that facilitate object communication and interoperability.</p>
 
-<h2 id="21-key-features-of-corba">2.1 Key Features of CORBA</h2>
+<h2 id="1-key-features-of-corba">1. Key Features of CORBA</h2>
 
 <p><strong>1. Object Request Broker (ORB)</strong>: The core component of CORBA, the ORB, acts as a middleware that handles communication between client and server objects. It manages requests and responses, handles object references, and performs necessary data conversions.</p>
 
@@ -305,7 +317,7 @@
 
 <p><strong>5. Platform Independence</strong>: CORBA objects can be implemented in any language and run on any platform, as long as they conform to the CORBA standard.</p>
 
-<h2 id="22-relationship-between-corba-and-wcf">2.2 Relationship Between CORBA and WCF</h2>
+<h2 id="2-relationship-between-corba-and-wcf">2. Relationship Between CORBA and WCF</h2>
 
 <p>While both CORBA and WCF serve the purpose of enabling communication in distributed systems, they come from different backgrounds and have some key differences:</p>
 
@@ -340,162 +352,66 @@
 
 <p>CORBA and WCF are both technologies for building distributed systems, but they are rooted in different ecosystems and have different focuses. CORBA is a cross-platform, language-agnostic standard, while WCF is a Microsoft-centric framework with strong integration into the .NET ecosystem. Both serve to enable communication and interoperability in distributed systems, albeit with different approaches and use cases.</p>
 
-<h1 id="3-simple-application-using-wcf">3. Simple Application Using WCF</h1>
+<h1 id="13-simple-application-using-wcf">1.3 Simple Application Using WCF</h1>
 
 <p>Creating a simple WCF (Windows Communication Foundation) application involves defining a service contract, implementing the service, hosting the service, and creating a client to consume the service. Following is the walk through of a simple calculator service.</p>
 
 <h2 id="1-define-the-service-contract">1. Define the Service Contract</h2>
 
-<p>Create a Visual Studio <code class="language-plaintext highlighter-rouge">Console App</code> Project. Choose “Console App (.Net Framework)” which can only run on windows.</p>
+<p>Create a Visual Studio <code class="language-plaintext highlighter-rouge">Class Library C# (.Net Framework)</code> Project. Name the project as <code class="language-plaintext highlighter-rouge">Interface</code>. Add the Assembly reference for <code class="language-plaintext highlighter-rouge">System.ServiceModel</code> in the project.</p>
 
-<p><strong>Do not select the Console App which can run on all platforms (linux, mac os, windows)</strong></p>
+<blockquote class="block-danger">
+  <h5 id="important">IMPORTANT</h5>
+
+  <p>Do not select the <code class="language-plaintext highlighter-rouge">Class Library</code> (that does not have full .Net Framework Support) which can run on all platforms (linux, mac os, windows). This will not let you add the Assembly reference <code class="language-plaintext highlighter-rouge">System.ServiceModel</code></p>
+</blockquote>
 
 <p>The service contract specifies the operations that the service provides. We use the <code class="language-plaintext highlighter-rouge">[ServiceContract]</code> and <code class="language-plaintext highlighter-rouge">[OperationContract]</code> attributes to define the contract.</p>
 
 <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.ServiceModel</span><span class="p">;</span>
 
-<span class="p">[</span><span class="n">ServiceContract</span><span class="p">]</span>
-<span class="k">public</span> <span class="k">interface</span> <span class="nc">ICalculator</span>
+<span class="k">namespace</span> <span class="nn">CalculatorInterface</span>
 <span class="p">{</span>
-    <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
-    <span class="kt">double</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">);</span>
+  <span class="p">[</span><span class="n">ServiceContract</span><span class="p">]</span>
+  <span class="k">public</span> <span class="k">interface</span> <span class="nc">ICalculator</span>
+  <span class="p">{</span>
+      <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
+      <span class="kt">double</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">);</span>
 
-    <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
-    <span class="kt">double</span> <span class="nf">Subtract</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">);</span>
+      <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
+      <span class="kt">double</span> <span class="nf">Subtract</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">);</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="2-implement-the-service">2. Implement the Service</h2>
 
+<p>Create a Visual Studio <code class="language-plaintext highlighter-rouge">Console App (.Net Framework)</code> Project. Name the project as <code class="language-plaintext highlighter-rouge">ServerApp</code>. Add the Assembly reference for <code class="language-plaintext highlighter-rouge">System.ServiceModel</code> in the project. Add the project reference to the project <code class="language-plaintext highlighter-rouge">Interface</code> created above.</p>
+
 <p>Implement the service contract by creating a class that implements the interface.</p>
 
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">CalculatorService</span> <span class="p">:</span> <span class="n">ICalculator</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="kt">double</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">}</span>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">CalculatorInterface</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="kt">double</span> <span class="nf">Subtract</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="p">-</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="k">namespace</span> <span class="nn">CalculatorNS</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">class</span> <span class="nc">CalculatorService</span> <span class="p">:</span> <span class="n">ICalculator</span>
+  <span class="p">{</span>
+      <span class="k">public</span> <span class="kt">double</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">)</span>
+      <span class="p">{</span>
+          <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="k">public</span> <span class="kt">double</span> <span class="nf">Subtract</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">)</span>
+      <span class="p">{</span>
+          <span class="k">return</span> <span class="n">a</span> <span class="p">-</span> <span class="n">b</span><span class="p">;</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="3-host-the-service">3. Host the Service</h2>
 
-<p>The service can be hosted in various environments like IIS, Windows Services, or a console application. For simplicity, we’ll use a console application.</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.ServiceModel</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Program</span>
-<span class="p">{</span>
-    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// Define the base address for the service</span>
-        <span class="n">Uri</span> <span class="n">baseAddress</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Uri</span><span class="p">(</span><span class="s">"http://localhost:8080/CalculatorService"</span><span class="p">);</span>
-
-        <span class="c1">// Create the ServiceHost</span>
-        <span class="k">using</span> <span class="p">(</span><span class="n">ServiceHost</span> <span class="n">host</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ServiceHost</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">CalculatorService</span><span class="p">),</span> <span class="n">baseAddress</span><span class="p">))</span>
-        <span class="p">{</span>
-            <span class="c1">// Open the host</span>
-            <span class="n">host</span><span class="p">.</span><span class="nf">Open</span><span class="p">();</span>
-
-            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Service is running..."</span><span class="p">);</span>
-            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Press Enter to exit."</span><span class="p">);</span>
-            <span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">();</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="4-configure-the-service">4. Configure the Service</h2>
-
-<p>Add configuration details in the <code class="language-plaintext highlighter-rouge">App.config</code> file. This includes the service, endpoint, binding, and behavior.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;configuration&gt;</span>
-  <span class="nt">&lt;system.serviceModel&gt;</span>
-    <span class="nt">&lt;services&gt;</span>
-      <span class="nt">&lt;service</span> <span class="na">name=</span><span class="s">"Namespace.CalculatorService"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;endpoint</span> <span class="na">address=</span><span class="s">""</span> <span class="na">binding=</span><span class="s">"basicHttpBinding"</span> <span class="na">contract=</span><span class="s">"Namespace.ICalculator"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;host&gt;</span>
-          <span class="nt">&lt;baseAddresses&gt;</span>
-            <span class="nt">&lt;add</span> <span class="na">baseAddress=</span><span class="s">"http://localhost:8080/CalculatorService"</span><span class="nt">/&gt;</span>
-          <span class="nt">&lt;/baseAddresses&gt;</span>
-        <span class="nt">&lt;/host&gt;</span>
-      <span class="nt">&lt;/service&gt;</span>
-    <span class="nt">&lt;/services&gt;</span>
-    <span class="nt">&lt;behaviors&gt;</span>
-      <span class="nt">&lt;serviceBehaviors&gt;</span>
-        <span class="nt">&lt;behavior&gt;</span>
-          <span class="nt">&lt;serviceMetadata</span> <span class="na">httpGetEnabled=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
-          <span class="nt">&lt;serviceDebug</span> <span class="na">includeExceptionDetailInFaults=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/behavior&gt;</span>
-      <span class="nt">&lt;/serviceBehaviors&gt;</span>
-    <span class="nt">&lt;/behaviors&gt;</span>
-  <span class="nt">&lt;/system.serviceModel&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div></div>
-
-<p>Replace <code class="language-plaintext highlighter-rouge">Namespace</code> with the appropriate namespace for your service.</p>
-
-<h2 id="5-create-a-client-to-consume-the-service">5. Create a Client to Consume the Service</h2>
-
-<p>To consume the service, you can create a client application. For simplicity, we’ll also use a console application.</p>
-
-<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.ServiceModel</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Program</span>
-<span class="p">{</span>
-    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// Define the service endpoint</span>
-        <span class="kt">string</span> <span class="n">baseAddress</span> <span class="p">=</span> <span class="s">"http://localhost:8080/CalculatorService"</span><span class="p">;</span>
-
-        <span class="c1">// Create the channel factory</span>
-        <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">ICalculator</span><span class="p">&gt;</span> <span class="n">factory</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">ICalculator</span><span class="p">&gt;(</span>
-            <span class="k">new</span> <span class="nf">BasicHttpBinding</span><span class="p">(),</span>
-            <span class="k">new</span> <span class="nf">EndpointAddress</span><span class="p">(</span><span class="n">baseAddress</span><span class="p">)</span>
-        <span class="p">);</span>
-
-        <span class="c1">// Create the channel</span>
-        <span class="n">ICalculator</span> <span class="n">calculator</span> <span class="p">=</span> <span class="n">factory</span><span class="p">.</span><span class="nf">CreateChannel</span><span class="p">();</span>
-
-        <span class="c1">// Use the service</span>
-        <span class="kt">double</span> <span class="n">result</span> <span class="p">=</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
-        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"1 + 2 = </span><span class="p">{</span><span class="n">result</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
-
-        <span class="n">result</span> <span class="p">=</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">Subtract</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
-        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"5 - 3 = </span><span class="p">{</span><span class="n">result</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
-
-        <span class="c1">// Close the channel</span>
-        <span class="p">((</span><span class="n">IClientChannel</span><span class="p">)</span><span class="n">calculator</span><span class="p">).</span><span class="nf">Close</span><span class="p">();</span>
-        <span class="n">factory</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="6-run-the-applications">6. Run the Applications</h2>
-
-<ol>
-  <li><strong>Run the Service Host</strong>: Start the console application that hosts the WCF service.</li>
-  <li><strong>Run the Client</strong>: Start the console application that consumes the service.</li>
-</ol>
-
-<p>When the client runs, it should display the results of the operations provided by the <code class="language-plaintext highlighter-rouge">CalculatorService</code>.</p>
-
-<p>This example demonstrates a basic setup for a WCF application. In real-world applications, you may need to consider additional aspects like security, error handling, and more complex configurations.</p>
-
-<h2 id="alternative-to-step-4">Alternative to Step 4</h2>
-
-<p>If you prefer to configure the WCF service and client entirely in code without modifying the <code class="language-plaintext highlighter-rouge">App.config</code> file, you can do so by setting up the <code class="language-plaintext highlighter-rouge">ServiceHost</code> and <code class="language-plaintext highlighter-rouge">ChannelFactory</code> programmatically. Here’s how you can implement it:</p>
-
-<h3 id="1-hosting-the-service-programmatically">1. Hosting the Service Programmatically</h3>
-
-<p>In the service host application, you can set up the <code class="language-plaintext highlighter-rouge">ServiceHost</code> and define the binding, endpoint, and base address in code.</p>
+<p>In the <code class="language-plaintext highlighter-rouge">ServerApp</code> project, the service can be hosted in various environments like IIS, Windows Services, or a console application. For simplicity, we’ll use a console application.</p>
 
 <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">System.ServiceModel</span><span class="p">;</span>
@@ -504,42 +420,39 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Define the base address for the service</span>
-        <span class="n">Uri</span> <span class="n">baseAddress</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Uri</span><span class="p">(</span><span class="s">"net.tcp://localhost:8080/CalculatorService"</span><span class="p">);</span>
+      <span class="c1">//Start the server</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Welcome"</span><span class="p">);</span>
+      <span class="kt">var</span> <span class="n">tcp</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NetTcpBinding</span><span class="p">();</span>
 
-        <span class="c1">// Create the ServiceHost</span>
-        <span class="k">using</span> <span class="p">(</span><span class="n">ServiceHost</span> <span class="n">host</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ServiceHost</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">CalculatorService</span><span class="p">),</span> <span class="n">baseAddress</span><span class="p">))</span>
-        <span class="p">{</span>
-            <span class="c1">// Create the NetTcpBinding</span>
-            <span class="n">NetTcpBinding</span> <span class="n">binding</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NetTcpBinding</span><span class="p">();</span>
+      <span class="c1">// Create the ServiceHost            </span>
+      <span class="n">ServiceHost</span> <span class="n">host</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ServiceHost</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">CalculatorService</span><span class="p">));</span>
 
-            <span class="c1">// Add the service endpoint</span>
-            <span class="n">host</span><span class="p">.</span><span class="nf">AddServiceEndpoint</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">ICalculator</span><span class="p">),</span> <span class="n">binding</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+      <span class="c1">// Bind the interface (Define the base address for the service)</span>
+      <span class="n">host</span><span class="p">.</span><span class="nf">AddServiceEndpoint</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">ICalculator</span><span class="p">),</span> <span class="n">tcp</span><span class="p">,</span> <span class="s">"net.tcp://localhost:8081/Calculator"</span><span class="p">);</span>
 
-            <span class="c1">// Open the host</span>
-            <span class="n">host</span><span class="p">.</span><span class="nf">Open</span><span class="p">();</span>
+      <span class="c1">// Open the host</span>
+      <span class="n">host</span><span class="p">.</span><span class="nf">Open</span><span class="p">();</span>
 
-            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Service is running..."</span><span class="p">);</span>
-            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Press Enter to exit."</span><span class="p">);</span>
-            <span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">();</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Service is running..."</span><span class="p">);</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Press Enter to exit."</span><span class="p">);</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">();</span>
 
-            <span class="c1">// Close the host</span>
-            <span class="n">host</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
-        <span class="p">}</span>
+      <span class="c1">// Close the host</span>
+      <span class="n">host</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>In this code:</p>
 <ul>
-  <li>We define the base address as <code class="language-plaintext highlighter-rouge">"net.tcp://localhost:8080/CalculatorService"</code>.</li>
+  <li>We define the base address as <code class="language-plaintext highlighter-rouge">"net.tcp://localhost:8080/Calculator"</code>.</li>
   <li>We create an instance of <code class="language-plaintext highlighter-rouge">NetTcpBinding</code> and add a service endpoint.</li>
   <li>We optionally enable metadata exchange (MEX) over TCP, which is useful for generating client proxies.</li>
 </ul>
 
-<h3 id="2-creating-the-client-programmatically">2. Creating the Client Programmatically</h3>
+<h2 id="4-creating-the-client">4. Creating the Client</h2>
 
-<p>In the client application, you can set up the <code class="language-plaintext highlighter-rouge">ChannelFactory</code> and create the channel programmatically.</p>
+<p>Create a Visual Studio <code class="language-plaintext highlighter-rouge">Console App (.Net Framework)</code> Project. Name the project as <code class="language-plaintext highlighter-rouge">ClientApp</code>. Add the Assembly reference for <code class="language-plaintext highlighter-rouge">System.ServiceModel</code> in the project. Add the project reference to the project <code class="language-plaintext highlighter-rouge">Interface</code> created above.</p>
 
 <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">System.ServiceModel</span><span class="p">;</span>
@@ -555,7 +468,7 @@
         <span class="n">NetTcpBinding</span> <span class="n">binding</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NetTcpBinding</span><span class="p">();</span>
 
         <span class="c1">// Create the channel factory</span>
-        <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">ICalculator</span><span class="p">&gt;</span> <span class="n">factory</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">ICalculator</span><span class="p">&gt;(</span><span class="n">binding</span><span class="p">,</span> <span class="k">new</span> <span class="nf">EndpointAddress</span><span class="p">(</span><span class="n">baseAddress</span><span class="p">));</span>
+        <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">ICalculator</span><span class="p">&gt;</span> <span class="n">factory</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">ICalculator</span><span class="p">&gt;(</span><span class="n">binding</span><span class="p">,</span> <span class="n">baseAddress</span><span class="p">);</span>
 
         <span class="c1">// Create the channel</span>
         <span class="n">ICalculator</span> <span class="n">calculator</span> <span class="p">=</span> <span class="n">factory</span><span class="p">.</span><span class="nf">CreateChannel</span><span class="p">();</span>
@@ -570,6 +483,8 @@
         <span class="c1">// Close the channel</span>
         <span class="p">((</span><span class="n">IClientChannel</span><span class="p">)</span><span class="n">calculator</span><span class="p">).</span><span class="nf">Close</span><span class="p">();</span>
         <span class="n">factory</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+
+        <span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -581,7 +496,15 @@
   <li>We create the channel and use the service methods.</li>
 </ul>
 
-<p>This approach eliminates the need for configuration files by specifying all settings programmatically. This can be beneficial in scenarios where dynamic configuration is required or where configuration files are not practical. However, using code for configuration can make it harder to change settings without recompiling the application.</p>
+<h2 id="5-run-the-applications">5. Run the Applications</h2>
+
+<ol>
+  <li><strong>Run the Service Host</strong>: Start the console application that hosts the WCF service.</li>
+  <li><strong>Run the Client</strong>: Start the console application that consumes the service.</li>
+</ol>
+
+<p>When the client runs, it should display the results of the operations provided by the <code class="language-plaintext highlighter-rouge">ICalculator</code> Interface.</p>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -746,13 +669,13 @@
 </script>
 
 
-                        <a href="/dev/distcomp/c_sharp/1_cs_2_advance/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2. Advance"> <!-- class="hide_element" -->
+                        <a href="/dev/distcomp/c_sharp/1_cs_3_async_task/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 3. Async Task"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
                     
-                        <a href="/dev/distcomp/wcf/1_dc_2_wcf/" class="navigation navigation-next navigation-unique" aria-label="Next page: 1. Fundamentals"> <!-- class="hide_element" -->
+                        <a href="/dev/distcomp/wcf/1_dc_2_service_and_data_contract/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. Contracts"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-right"></i>
                         </a>
                     
@@ -795,11 +718,11 @@
         "depth": 1,
         
         "next": {
-            "title": "1. Fundamentals",
+            "title": "2. Contracts",
             "level": "1.2",
             "depth": 1,
-            "path": "_1_net_distcomp/1_dc_2_wcf.md",
-            "ref": "_1_net_distcomp/1_dc_2_wcf.md",
+            "path": "_1_net_distcomp/1_dc_2_service_and_data_contract.md",
+            "ref": "_1_net_distcomp/1_dc_2_service_and_data_contract.md",
             "articles": []
         },
         
@@ -897,7 +820,7 @@
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-08 09:49:22 +0800"
+        "time": "2024-08-15 00:23:40 +0800"
     },
     "basePath": "/dev/distcomp",
     "book": {
