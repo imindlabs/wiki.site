@@ -445,7 +445,7 @@
 
 <p>In this code:</p>
 <ul>
-  <li>We define the base address as <code class="language-plaintext highlighter-rouge">"net.tcp://localhost:8080/Calculator"</code>.</li>
+  <li>We define the base address as <code class="language-plaintext highlighter-rouge">"net.tcp://localhost:8081/Calculator"</code>.</li>
   <li>We create an instance of <code class="language-plaintext highlighter-rouge">NetTcpBinding</code> and add a service endpoint.</li>
   <li>We optionally enable metadata exchange (MEX) over TCP, which is useful for generating client proxies.</li>
 </ul>
@@ -462,7 +462,7 @@
     <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// Define the service endpoint</span>
-        <span class="kt">string</span> <span class="n">baseAddress</span> <span class="p">=</span> <span class="s">"net.tcp://localhost:8080/CalculatorService"</span><span class="p">;</span>
+        <span class="kt">string</span> <span class="n">baseAddress</span> <span class="p">=</span> <span class="s">"net.tcp://localhost:8081/Calculator"</span><span class="p">;</span>
 
         <span class="c1">// Create the NetTcpBinding</span>
         <span class="n">NetTcpBinding</span> <span class="n">binding</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NetTcpBinding</span><span class="p">();</span>
@@ -820,7 +820,7 @@
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-15 00:25:43 +0800"
+        "time": "2024-08-15 08:47:47 +0800"
     },
     "basePath": "/dev/distcomp",
     "book": {
