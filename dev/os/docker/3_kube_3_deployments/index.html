@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2. kubectl · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>3. Deployments · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -396,11 +396,11 @@
             <li class="chapter active" data-level="1.2" data-path="/dev/os/docker/3_kube_3_deployments/">
                 
                 <a href="/dev/os/docker/3_kube_3_deployments/" onclick="pageScrollToTop(this)">
-                    2. kubectl
+                    3. Deployments
                 </a>
                 
                 
-                <ul><li><a href="#1-config" onclick="mobilePageScrollToAnchor(this)" >1. <code class="language-plaintext highlighter-rouge">config</code></a><ul><li><a href="#11-configuring-kubectl-for-multiple-clusters" onclick="mobilePageScrollToAnchor(this)" >1.1 Configuring Kubectl for Multiple Clusters</a></li><li><a href="#12-retrieving-kubernetes-resources" onclick="mobilePageScrollToAnchor(this)" >1.2 Retrieving Kubernetes Resources</a></li><li><a href="#13-working-with-namespaces" onclick="mobilePageScrollToAnchor(this)" >1.3 Working with Namespaces</a></li><li><a href="#14-describing-resources" onclick="mobilePageScrollToAnchor(this)" >1.4 Describing Resources</a></li><li><a href="#15-checking-versions" onclick="mobilePageScrollToAnchor(this)" >1.5 Checking Versions</a></li></ul></li></ul>
+                <ul><li><a href="#31-understanding-nodes-and-pods-in-kubernetes" onclick="mobilePageScrollToAnchor(this)" >3.1 Understanding Nodes and Pods in Kubernetes</a><ul><li><a href="#1-what-is-a-node-in-kubernetes" onclick="mobilePageScrollToAnchor(this)" >1. What is a Node in Kubernetes?</a></li><li><a href="#2-what-is-a-pod-in-kubernetes" onclick="mobilePageScrollToAnchor(this)" >2. What is a Pod in Kubernetes?</a></li><li><a href="#3-how-nodes-and-pods-work-together" onclick="mobilePageScrollToAnchor(this)" >3. How Nodes and Pods Work Together</a></li><li><a href="#4-keypoints" onclick="mobilePageScrollToAnchor(this)" >4. Keypoints</a></li></ul></li><li><a href="#32-kubernetes-deployment" onclick="mobilePageScrollToAnchor(this)" >3.2 Kubernetes Deployment</a><ul><li><a href="#1-introduction-to-kubernetes-deployments" onclick="mobilePageScrollToAnchor(this)" >1. Introduction to Kubernetes Deployments</a></li><li><a href="#2-what-is-a-kubernetes-deployment" onclick="mobilePageScrollToAnchor(this)" >2. What is a Kubernetes Deployment?</a></li><li><a href="#3-the-power-of-desired-state" onclick="mobilePageScrollToAnchor(this)" >3. The Power of Desired State</a></li><li><a href="#4-defining-a-kubernetes-deployment" onclick="mobilePageScrollToAnchor(this)" >4. Defining a Kubernetes Deployment</a></li><li><a href="#5-understanding-pods-in-kubernetes" onclick="mobilePageScrollToAnchor(this)" >5. Understanding Pods in Kubernetes</a></li><li><a href="#6-deploying-with-kubectl" onclick="mobilePageScrollToAnchor(this)" >6. Deploying with <code class="language-plaintext highlighter-rouge">kubectl</code></a></li></ul></li><li><a href="#33-example" onclick="mobilePageScrollToAnchor(this)" >3.3 Example</a></li><li><a href="#34-example-redis-client-server" onclick="mobilePageScrollToAnchor(this)" >3.4 Example Redis Client Server</a><ul><li><a href="#1-redis-server-deployment" onclick="mobilePageScrollToAnchor(this)" >1. Redis Server Deployment</a></li><li><a href="#2-redis-client-deployment" onclick="mobilePageScrollToAnchor(this)" >2. Redis Client Deployment</a></li><li><a href="#3-how-to-connect-the-client-to-the-server" onclick="mobilePageScrollToAnchor(this)" >3. How to Connect the Client to the Server</a></li></ul></li></ul>
 
                 
                 
@@ -458,7 +458,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >2. kubectl</a>
+                            <a href="." >3. Deployments</a>
                         
                     </h1>
                 </div>
@@ -477,202 +477,321 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/docker/3_kube_3_deployments">2. kubectl</h1>
+                        <h1 id="/docker/3_kube_3_deployments">3. Deployments</h1>
                     
 
-                    <h1 id="1-config">1. <code class="language-plaintext highlighter-rouge">config</code></h1>
+                    <h1 id="31-understanding-nodes-and-pods-in-kubernetes">3.1 Understanding Nodes and Pods in Kubernetes</h1>
 
-<style>  
+<p>Kubernetes, often referred to as K8s, is a powerful system for automating the deployment, scaling, and management of containerized applications. Two of the most fundamental concepts in Kubernetes are <strong>nodes</strong> and <strong>pods</strong>. Let’s break these down to understand their roles and how they work together within a Kubernetes cluster.</p>
 
-  #vid_kube_kubectl.flex-container {
-      display: flex;
-      flex-direction: row;
-  }
-  #vid_kube_kubectl.flex-container > div {
-    width: 100%;
-    height: 440px;
-    margin: auto;
-    padding: 5px;
-    margin-bottom: 10px;
-  }
+<h2 id="1-what-is-a-node-in-kubernetes">1. What is a Node in Kubernetes?</h2>
 
-  
+<p>A <strong>node</strong> is a worker machine in Kubernetes. It can be either a physical server or a virtual machine, depending on the environment in which Kubernetes is running. Each node in a Kubernetes cluster runs the services necessary to manage the networking between the containers, the communication with the master, and the assigned workloads.</p>
 
-  
-  /* Responsive layout - makes a one column layout instead of a two-column layout */
-  @media (max-width: 800px) {
+<p><strong>Key components of a node include:</strong></p>
+<ul>
+  <li><strong>Kubelet:</strong> An agent that runs on each node and ensures that the containers are running in a pod.</li>
+  <li><strong>Kube-proxy:</strong> A network proxy that runs on each node, maintaining network rules and enabling communication between different parts of the cluster.</li>
+  <li><strong>Container Runtime:</strong> The software responsible for running containers. Docker is the most commonly used runtime, but alternatives like containerd or CRI-O can also be used.</li>
+</ul>
 
-    #vid_kube_kubectl.flex-container {
-      flex-direction: column;
-    }
-    #vid_kube_kubectl.flex-container > div {
-      width: 100%;
-      height: 250px;
-    }
-  }
-</style>
+<p><strong>Example:</strong>
+Imagine you have a Kubernetes cluster running on three virtual machines (VMs). Each VM represents a node in the cluster. When you deploy an application, Kubernetes schedules the application’s components (containers) to run on one or more of these nodes.</p>
 
-<div id="vid_kube_kubectl" class="flex-container">
-  
-  <div><iframe style="border-radius: 10px; overflow: hidden; border: 2px solid #7a7a7a; box-shadow: 1px 2px 5px #b4b4b4;" width="100%" height="100%" src="https://www.youtube.com/embed/feLpGydQVio" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
-  
-</div>
+<h2 id="2-what-is-a-pod-in-kubernetes">2. What is a Pod in Kubernetes?</h2>
 
-<p>we’ll explore how to use Kubectl to manage your Kubernetes clusters, focusing on configuration, retrieving resources, working with namespaces, describing resources, and checking versions.</p>
+<p>A <strong>pod</strong> is the smallest and simplest Kubernetes object. It represents a single instance of a running process in your cluster. Pods are the unit of deployment in Kubernetes and can contain one or more tightly coupled containers. All containers in a pod share the same network namespace (IP address and port space) and can communicate with each other directly using <code class="language-plaintext highlighter-rouge">localhost</code>.</p>
 
-<h2 id="11-configuring-kubectl-for-multiple-clusters">1.1 Configuring Kubectl for Multiple Clusters</h2>
+<p><strong>Key characteristics of a pod:</strong></p>
+<ul>
+  <li><strong>Single or Multiple Containers:</strong> A pod can run a single container, but it can also run multiple containers that need to work together (e.g., a web server container and a logging container).</li>
+  <li><strong>Shared Resources:</strong> Containers within a pod share storage volumes and a network IP, allowing them to communicate easily and efficiently.</li>
+  <li><strong>Lifecycle Management:</strong> Pods are ephemeral, meaning they can be created and destroyed as needed. Kubernetes ensures that the desired number of pods are running at all times.</li>
+</ul>
 
-<p>Kubectl can point to multiple Kubernetes clusters, making it easy to switch between development, staging, and production environments. The configuration is managed through contexts, which are stored in a <code class="language-plaintext highlighter-rouge">kubeconfig</code> file. Here’s how you can configure and switch contexts:</p>
+<p><strong>Example:</strong>
+Consider an e-commerce application where you have a web server and a Redis cache. You might deploy both the web server and Redis in a single pod. Since they share the same IP address, the web server can easily connect to Redis using <code class="language-plaintext highlighter-rouge">localhost</code>. If the web server fails, Kubernetes can restart the pod to ensure that the application remains available.</p>
 
-<h4 id="1-checking-your-current-context">1. Checking Your Current Context</h4>
-<p>To find out which Kubernetes cluster your Kubectl is currently pointing to, use the following command:</p>
+<h2 id="3-how-nodes-and-pods-work-together">3. How Nodes and Pods Work Together</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl config current-context
-</code></pre></div></div>
+<p>When you deploy an application in Kubernetes, the platform schedules pods to run on nodes. For example, if you have three nodes and deploy an application that requires five instances (pods), Kubernetes might place two pods on the first node, two on the second node, and one on the third node, depending on resource availability and other factors like load balancing.</p>
 
-<p>This command outputs the name of the current context, indicating the active cluster.</p>
+<p><strong>Example Scenario:</strong>
+Suppose you have a Kubernetes cluster with three nodes. You want to deploy a microservice-based application that has the following components:</p>
+<ul>
+  <li><strong>Frontend</strong> (web server)</li>
+  <li><strong>Backend</strong> (API server)</li>
+  <li><strong>Database</strong> (PostgreSQL)</li>
+</ul>
 
-<h4 id="2-listing-all-available-contexts">2. Listing All Available Contexts</h4>
-<p>To see all the contexts available in your kubeconfig file, run:</p>
+<p>You define each of these components as a separate pod. Kubernetes schedules these pods across the available nodes. If one of the nodes goes down, Kubernetes can reschedule the pods to run on the remaining healthy nodes, ensuring the application remains up and running.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl config get-contexts
-</code></pre></div></div>
+<h2 id="4-keypoints">4. Keypoints</h2>
 
-<p>This command displays a table of all contexts, clusters, and users, with a <code class="language-plaintext highlighter-rouge">*</code> next to the currently active context.</p>
+<ul>
+  <li><strong>Nodes</strong> are the worker machines in a Kubernetes cluster that run your applications.</li>
+  <li><strong>Pods</strong> are the smallest deployable units in Kubernetes, representing a single instance of a running process.</li>
+</ul>
 
-<h4 id="3-switching-to-a-different-context">3. Switching to a Different Context</h4>
-<p>To switch to another context, such as a production environment, use:</p>
+<p>Nodes and pods are the building blocks that Kubernetes uses to manage, scale, and ensure the high availability of applications. Understanding these concepts is crucial for anyone working with Kubernetes, as they are fundamental to how the platform operates and handles containerized workloads.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl config use-context <span class="o">[</span>context-name]
-</code></pre></div></div>
-
-<p>Replace <code class="language-plaintext highlighter-rouge">[context-name]</code> with the name of the context you want to switch to. This command changes the active cluster to the specified context.</p>
-
-<h4 id="4-using-multiple-kubeconfig-files">4. Using Multiple Kubeconfig Files</h4>
-<p>If you manage multiple clusters with different configuration files, you can temporarily set the KUBECONFIG environment variable:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">KUBECONFIG</span><span class="o">=</span><span class="nv">$HOME</span>/.kube/config:<span class="nv">$HOME</span>/.kube/config2
-</code></pre></div></div>
-
-<p>This command merges the configurations from both files, allowing Kubectl to use them simultaneously.</p>
-
-<hr />
-
-<h2 id="12-retrieving-kubernetes-resources">1.2 Retrieving Kubernetes Resources</h2>
-
-<p>One of the primary tasks in managing Kubernetes clusters is retrieving information about the resources. Kubectl provides several commands for this purpose:</p>
-
-<h4 id="1-listing-pods">1. Listing Pods</h4>
-<p>To list all pods in the current namespace, use:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods
-</code></pre></div></div>
-
-<p>This command outputs a table with pod names, statuses, and other details.</p>
-
-<h4 id="2-listing-deployments">2. Listing Deployments</h4>
-<p>To list all deployments in the current namespace, run:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get deployments
-</code></pre></div></div>
-
-<p>This command provides information about all deployments, including the number of replicas and their current status.</p>
-
-<h4 id="3-listing-services">3. Listing Services</h4>
-<p>To see all services running in the current namespace, use:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get services
-</code></pre></div></div>
-
-<p>This command displays a table listing each service’s name, type, cluster IP, external IP, and ports.</p>
-
-<h4 id="4-listing-configmaps">4. Listing ConfigMaps</h4>
-<p>To list all config maps, which store non-confidential data in key-value pairs, use:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get configmaps
-</code></pre></div></div>
-
-<p>This command shows a table with all config maps in the current namespace.</p>
-
-<h4 id="5-listing-secrets">5. Listing Secrets</h4>
-<p>To view all secrets, which store sensitive information like passwords and tokens, run:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get secrets
-</code></pre></div></div>
-
-<p>This command outputs a table of all secrets, showing their names and types.</p>
-
-<hr />
-
-<h2 id="13-working-with-namespaces">1.3 Working with Namespaces</h2>
-
-<p>Namespaces in Kubernetes allow you to create virtual clusters within a physical cluster, enabling better resource management and isolation.</p>
-
-<h4 id="1-listing-all-namespaces">1. Listing All Namespaces</h4>
-<p>To see all namespaces in your cluster, use:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get namespaces
-</code></pre></div></div>
-
-<p>This command lists all namespaces, showing their names and statuses.</p>
-
-<h4 id="2-creating-a-new-namespace">2. Creating a New Namespace</h4>
-<p>To create a new namespace called <code class="language-plaintext highlighter-rouge">test</code>, run:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create namespace <span class="nb">test</span>
-</code></pre></div></div>
-
-<p>This command creates a new namespace that can be used to isolate resources.</p>
-
-<h4 id="3-listing-pods-in-a-specific-namespace">3. Listing Pods in a Specific Namespace</h4>
-<p>To list all pods within a specific namespace, use:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods <span class="nt">-n</span> <span class="o">[</span>namespace-name]
-</code></pre></div></div>
-
-<p>Replace <code class="language-plaintext highlighter-rouge">[namespace-name]</code> with the name of the namespace you’re interested in. This command outputs a table of pod details for the specified namespace.</p>
-
-<hr />
-
-<h2 id="14-describing-resources">1.4 Describing Resources</h2>
-
-<p>For a more in-depth look at the state and events related to specific resources, Kubectl’s <code class="language-plaintext highlighter-rouge">describe</code> command is invaluable.</p>
-
-<h4 id="1-describing-a-pod">1. Describing a Pod</h4>
-<p>To get detailed information about a specific pod, including its status, events, and resource usage, use:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl describe pod <span class="o">[</span>pod-name] <span class="nt">-n</span> <span class="o">[</span>namespace-name]
-</code></pre></div></div>
-
-<p>Replace <code class="language-plaintext highlighter-rouge">[pod-name]</code> and <code class="language-plaintext highlighter-rouge">[namespace-name]</code> with the appropriate pod and namespace names. This command provides a wealth of information useful for debugging and monitoring.</p>
-
-<h4 id="2-describing-a-node">2. Describing a Node</h4>
-<p>To investigate the details of a specific node, especially when facing infrastructure issues, run:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl describe node <span class="o">[</span>node-name]
-</code></pre></div></div>
-
-<p>This command provides comprehensive information about the node, including its conditions, capacity, and recent events.</p>
-
-<hr />
-
-<h2 id="15-checking-versions">1.5 Checking Versions</h2>
-
-<p>Knowing the versions of both your Kubectl client and Kubernetes server is crucial, especially when managing clusters with different versions.</p>
-
-<h4 id="1-checking-kubectl-and-kubernetes-versions">1. Checking Kubectl and Kubernetes Versions</h4>
-<p>To see the version of your Kubectl client and the Kubernetes server, use:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl version
-</code></pre></div></div>
-
-<p>This command outputs the client version (Kubectl) and the server version (Kubernetes cluster).</p>
-
-<hr />
-
-<p>Deployments</p>
+<h1 id="32-kubernetes-deployment">3.2 Kubernetes Deployment</h1>
 
 <p>https://youtu.be/DMpEZEakYVc</p>
+
+<p>In the ever-evolving landscape of software development and deployment, Kubernetes has become a cornerstone for managing containerized applications at scale. In this guide, we will dive into the basics of Kubernetes deployments, exploring how they enable the management of desired states and how to effectively use Kubernetes tools to ensure smooth operations.</p>
+
+<h2 id="1-introduction-to-kubernetes-deployments">1. Introduction to Kubernetes Deployments</h2>
+
+<p>Kubernetes is a powerful tool for automating the deployment, scaling, and management of containerized applications. In previous discussions, we explored setting up Kubernetes on Docker for Windows and using the command-line utility <code class="language-plaintext highlighter-rouge">kubectl</code> to interact with Kubernetes clusters. Now, with Kubernetes running and <code class="language-plaintext highlighter-rouge">kubectl</code> at our disposal, we’ll focus on the Kubernetes deployment object—a key component that allows us to configure and manage application deployments effectively.</p>
+
+<h2 id="2-what-is-a-kubernetes-deployment">2. What is a Kubernetes Deployment?</h2>
+
+<p>A Kubernetes deployment is an object that defines the desired state of your application and the deployment strategy to achieve that state. The deployment controller in Kubernetes ensures that the actual state of your application aligns with the desired state, adjusting the infrastructure as needed.</p>
+
+<p>To understand the concept of deployment in Kubernetes, consider the traditional approach to managing production servers. Typically, this involves load-balanced servers running various scripts to maintain health and functionality. However, scripts are inherently fragile—they execute steps sequentially, and failure at any point can leave the system in an unstable state.</p>
+
+<h2 id="3-the-power-of-desired-state">3. The Power of Desired State</h2>
+
+<p>Kubernetes addresses the shortcomings of traditional scripting by leveraging the concept of desired state. Instead of relying on scripts to set up and manage servers, Kubernetes allows you to define the desired state of your application in a deployment file. For example, you might specify that version 1 of your application should always have at least two instances running for high availability and load balancing. Kubernetes then takes on the responsibility of ensuring that this desired state is maintained.</p>
+
+<p>This approach offers numerous advantages, including automatic handling of updates, seamless rollouts, and infrastructure resilience. Kubernetes can gracefully upgrade your application by draining traffic from the old version before introducing the new one. It can also automatically recover from infrastructure failures by redeploying your application on healthy nodes. Moreover, Kubernetes allows you to scale your application up or down to meet demand without worrying about port conflicts or underlying infrastructure.</p>
+
+<h2 id="4-defining-a-kubernetes-deployment">4. Defining a Kubernetes Deployment</h2>
+
+<p>A Kubernetes deployment is defined using a YAML file that specifies the desired state of your application. Key elements of a deployment YAML file include:</p>
+
+<ul>
+  <li><strong>Application Version</strong>: The version of your application to deploy.</li>
+  <li><strong>Replicas</strong>: The number of instances (pods) to run for high availability.</li>
+  <li><strong>Strategy</strong>: The deployment strategy, such as a rolling update, which ensures a smooth transition between application versions.</li>
+  <li><strong>Ports</strong>: The ports to expose for your application.</li>
+  <li><strong>Liveliness Probe</strong>: A health check that allows Kubernetes to monitor the application and restart it if necessary.</li>
+  <li><strong>Resource Limits</strong>: The CPU and memory limits that Kubernetes uses to make intelligent scheduling decisions and manage resources effectively.</li>
+</ul>
+
+<h2 id="5-understanding-pods-in-kubernetes">5. Understanding Pods in Kubernetes</h2>
+
+<p>At the core of Kubernetes is the concept of a pod. A pod is the smallest deployable unit in Kubernetes and can be thought of as a virtual machine hosting your application. A pod can contain one or more containers, which run the actual processes (applications) you want to deploy. For example, a pod might contain your main application along with a Redis cache and a monitoring agent, all working together in the same environment.</p>
+
+<h2 id="6-deploying-with-kubectl">6. Deploying with <code class="language-plaintext highlighter-rouge">kubectl</code></h2>
+
+<p>To deploy your application using Kubernetes, you use the <code class="language-plaintext highlighter-rouge">kubectl</code> command-line tool. The basic process involves applying your deployment YAML file with the command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl apply <span class="nt">-f</span> &lt;path-to-deployment-yaml&gt;
+</code></pre></div></div>
+
+<p>This command sends your desired state to Kubernetes, which then manages the deployment process, ensuring that your application is running as specified.</p>
+
+<p>You can also monitor and troubleshoot deployments using commands like:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">kubectl get deployments</code> to check the status of your deployment.</li>
+  <li><code class="language-plaintext highlighter-rouge">kubectl describe deployment &lt;deployment-name&gt;</code> to get detailed information about your deployment, including statuses, resource usage, and events.</li>
+  <li><code class="language-plaintext highlighter-rouge">kubectl get pods</code> to view the status of individual pods.</li>
+  <li><code class="language-plaintext highlighter-rouge">kubectl logs &lt;pod-name&gt;</code> to view logs for troubleshooting application errors.</li>
+</ul>
+
+<h1 id="33-example">3.3 Example</h1>
+
+<p>Here’s an example of a simple Kubernetes Deployment YAML file that defines a deployment for an Nginx web server. This YAML file describes how Kubernetes should create and manage the pods running the Nginx container.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">nginx-deployment</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">3</span>  <span class="c1"># Number of desired pods</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>  <span class="c1"># Label selector for pods</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>  <span class="c1"># Label applied to pods</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:1.21.6</span>  <span class="c1"># Image version</span>
+        <span class="na">ports</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="m">80</span>  <span class="c1"># Exposing port 80</span>
+        <span class="na">livenessProbe</span><span class="pi">:</span>
+          <span class="na">httpGet</span><span class="pi">:</span>
+            <span class="na">path</span><span class="pi">:</span> <span class="s">/</span>
+            <span class="na">port</span><span class="pi">:</span> <span class="m">80</span>
+          <span class="na">initialDelaySeconds</span><span class="pi">:</span> <span class="m">5</span>
+          <span class="na">periodSeconds</span><span class="pi">:</span> <span class="m">10</span>
+        <span class="na">resources</span><span class="pi">:</span>
+          <span class="na">limits</span><span class="pi">:</span>
+            <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">256Mi"</span>
+            <span class="na">cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">500m"</span>
+          <span class="na">requests</span><span class="pi">:</span>
+            <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">128Mi"</span>
+            <span class="na">cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">250m"</span>
+</code></pre></div></div>
+
+<h4 id="breakdown-of-the-deployment-yaml-file">Breakdown of the Deployment YAML File</h4>
+
+<ul>
+  <li><strong>apiVersion:</strong> Specifies the API version of the Kubernetes object (in this case, <code class="language-plaintext highlighter-rouge">apps/v1</code> is used for Deployments).</li>
+  <li><strong>kind:</strong> Defines the type of Kubernetes object (<code class="language-plaintext highlighter-rouge">Deployment</code>).</li>
+  <li><strong>metadata:</strong> Contains information about the deployment, including its name (<code class="language-plaintext highlighter-rouge">nginx-deployment</code>) and labels (<code class="language-plaintext highlighter-rouge">app: nginx</code>).</li>
+  <li><strong>spec:</strong> Describes the desired state of the deployment.
+    <ul>
+      <li><strong>replicas:</strong> The number of pod replicas (3) that should be running.</li>
+      <li><strong>selector:</strong> A label selector to identify the pods managed by this deployment.</li>
+      <li><strong>template:</strong> The pod template that describes the pods to be created.
+        <ul>
+          <li><strong>metadata:</strong> Contains labels for the pods.</li>
+          <li><strong>spec:</strong> Defines the containers to run inside the pod.
+            <ul>
+              <li><strong>containers:</strong> Specifies the container to run:
+                <ul>
+                  <li><strong>name:</strong> The name of the container.</li>
+                  <li><strong>image:</strong> The container image to use (<code class="language-plaintext highlighter-rouge">nginx:1.21.6</code>).</li>
+                  <li><strong>ports:</strong> The ports to expose (<code class="language-plaintext highlighter-rouge">containerPort: 80</code>).</li>
+                  <li><strong>livenessProbe:</strong> Defines a probe that checks if the container is healthy. If the probe fails, Kubernetes will restart the container.</li>
+                  <li><strong>resources:</strong> Specifies resource requests and limits:
+                    <ul>
+                      <li><strong>limits:</strong> The maximum resources the container can use.</li>
+                      <li><strong>requests:</strong> The minimum resources the container needs.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="how-to-apply-this-deployment">How to Apply This Deployment</h4>
+
+<p>To deploy this YAML file, save it as <code class="language-plaintext highlighter-rouge">nginx-deployment.yaml</code> and use the following command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl apply <span class="nt">-f</span> nginx-deployment.yaml
+</code></pre></div></div>
+
+<p>This command will create the deployment, and Kubernetes will start managing the pods as specified.</p>
+
+<h1 id="34-example-redis-client-server">3.4 Example Redis Client Server</h1>
+
+<p>To set up a Redis client and server using Kubernetes Deployments, you can define two separate Deployment YAML files: one for the Redis server and another for a simple Redis client. Here’s how to do it:</p>
+
+<h2 id="1-redis-server-deployment">1. Redis Server Deployment</h2>
+
+<p>This Deployment creates a Redis server that listens on port 6379.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">redis-server</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">redis</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">redis</span>
+      <span class="na">tier</span><span class="pi">:</span> <span class="s">backend</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">app</span><span class="pi">:</span> <span class="s">redis</span>
+        <span class="na">tier</span><span class="pi">:</span> <span class="s">backend</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">redis</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">redis:6.2.6</span>  <span class="c1"># Redis image version</span>
+        <span class="na">ports</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="m">6379</span>  <span class="c1"># Exposing Redis port</span>
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Service</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">redis-service</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">redis</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">redis</span>
+    <span class="na">tier</span><span class="pi">:</span> <span class="s">backend</span>
+  <span class="na">ports</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">protocol</span><span class="pi">:</span> <span class="s">TCP</span>
+    <span class="na">port</span><span class="pi">:</span> <span class="m">6379</span>
+    <span class="na">targetPort</span><span class="pi">:</span> <span class="m">6379</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">ClusterIP</span>  <span class="c1"># Internal access only</span>
+</code></pre></div></div>
+
+<h2 id="2-redis-client-deployment">2. Redis Client Deployment</h2>
+
+<p>This Deployment creates a simple Redis client that can connect to the Redis server.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">redis-client</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">redis-client</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">redis-client</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">app</span><span class="pi">:</span> <span class="s">redis-client</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">redis-client</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">redis:6.2.6</span>  <span class="c1"># Using the Redis image to access the Redis CLI</span>
+        <span class="na">command</span><span class="pi">:</span> <span class="pi">[</span> <span class="s2">"</span><span class="s">sh"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">-c"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">while</span><span class="nv"> </span><span class="s">true;</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">sleep</span><span class="nv"> </span><span class="s">30;</span><span class="nv"> </span><span class="s">done;"</span> <span class="pi">]</span>  <span class="c1"># Keeps the pod running</span>
+</code></pre></div></div>
+
+<h2 id="3-how-to-connect-the-client-to-the-server">3. How to Connect the Client to the Server</h2>
+
+<p>After deploying both the Redis server and client, you can connect to the Redis client pod and use the Redis CLI to connect to the Redis server. Here’s how:</p>
+
+<ol>
+  <li>Get the name of the Redis client pod:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods <span class="nt">-l</span> <span class="nv">app</span><span class="o">=</span>redis-client
+</code></pre></div>    </div>
+  </li>
+  <li>Use <code class="language-plaintext highlighter-rouge">kubectl exec</code> to open a shell in the Redis client pod:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl <span class="nb">exec</span> <span class="nt">-it</span> &lt;redis-client-pod-name&gt; <span class="nt">--</span> /bin/sh
+</code></pre></div>    </div>
+  </li>
+  <li>From within the client pod, use the Redis CLI to connect to the Redis server:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli <span class="nt">-h</span> redis-service
+</code></pre></div>    </div>
+
+    <p>The <code class="language-plaintext highlighter-rouge">-h redis-service</code> flag tells the Redis client to connect to the Redis server using the service name <code class="language-plaintext highlighter-rouge">redis-service</code>.</p>
+  </li>
+</ol>
+
+<h4 id="breakdown-of-the-yaml-files">Breakdown of the YAML Files</h4>
+
+<ul>
+  <li><strong>Redis Server Deployment:</strong>
+    <ul>
+      <li>The Redis server is deployed with one replica.</li>
+      <li>The server is exposed internally within the cluster using a <code class="language-plaintext highlighter-rouge">ClusterIP</code> service.</li>
+    </ul>
+  </li>
+  <li><strong>Redis Client Deployment:</strong>
+    <ul>
+      <li>The Redis client is deployed with one replica.</li>
+      <li>The client pod contains the Redis CLI, which can be used to connect to the Redis server.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>By running these Deployments, you’ll have a Redis server and a client running in your Kubernetes cluster, allowing you to test Redis interactions within the cluster.</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -975,7 +1094,7 @@
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-12 23:10:13 +0800"
+        "time": "2024-08-15 23:24:03 +0800"
     },
     "basePath": "/dev/os",
     "book": {

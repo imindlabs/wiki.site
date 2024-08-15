@@ -388,7 +388,7 @@
                 </a>
                 
                 
-                <ul><li><a href="#deployments" onclick="mobilePageScrollToAnchor(this)" >Deployments</a></li><li><a href="#configuration-management" onclick="mobilePageScrollToAnchor(this)" >Configuration management</a><ul><li><a href="#year-10-advanced-mathematics-exam" onclick="mobilePageScrollToAnchor(this)" >Year 10 Advanced Mathematics Exam</a></li><li><a href="#year-9-advanced-mathematics-exam" onclick="mobilePageScrollToAnchor(this)" >Year 9 Advanced Mathematics Exam</a></li></ul></li></ul></li></ul>
+                <ul><li><a href="#1-config" onclick="mobilePageScrollToAnchor(this)" >1. <code class="language-plaintext highlighter-rouge">config</code></a><ul><li><a href="#11-configuring-kubectl-for-multiple-clusters" onclick="mobilePageScrollToAnchor(this)" >1.1 Configuring Kubectl for Multiple Clusters</a></li><li><a href="#12-retrieving-kubernetes-resources" onclick="mobilePageScrollToAnchor(this)" >1.2 Retrieving Kubernetes Resources</a></li><li><a href="#13-working-with-namespaces" onclick="mobilePageScrollToAnchor(this)" >1.3 Working with Namespaces</a></li><li><a href="#14-describing-resources" onclick="mobilePageScrollToAnchor(this)" >1.4 Describing Resources</a></li><li><a href="#15-checking-versions" onclick="mobilePageScrollToAnchor(this)" >1.5 Checking Versions</a></li></ul></li></ul>
 
                 
                 
@@ -401,7 +401,7 @@
             <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_3_deployments/">
                 
                 <a href="/dev/os/docker/3_kube_3_deployments/" onclick="pageScrollToTop(this)">
-                    2. kubectl
+                    3. Deployments
                 </a>
                 
                 
@@ -482,348 +482,228 @@
                         <h1 id="/docker/3_kube_2_kubectl">2. kubectl</h1>
                     
 
-                    <h1 id="deployments">Deployments</h1>
+                    <h1 id="1-config">1. <code class="language-plaintext highlighter-rouge">config</code></h1>
 
-<p>https://youtu.be/DMpEZEakYVc</p>
+<style>  
 
-<h1 id="configuration-management">Configuration management</h1>
+  #vid_kube_kubectl.flex-container {
+      display: flex;
+      flex-direction: row;
+  }
+  #vid_kube_kubectl.flex-container > div {
+    width: 100%;
+    height: 440px;
+    margin: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
 
-<p>https://youtu.be/o-gXx7r7Rz4</p>
+  
 
-<p>To make the Year 10 maths paper more challenging, I will incorporate more complex algebraic manipulations, higher-level trigonometry, and multi-step problem-solving questions. The questions will require deeper understanding and application of mathematical concepts.</p>
+  
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 800px) {
 
-<hr />
+    #vid_kube_kubectl.flex-container {
+      flex-direction: column;
+    }
+    #vid_kube_kubectl.flex-container > div {
+      width: 100%;
+      height: 250px;
+    }
+  }
+</style>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\begin{enumerate}
-\item 
-    \begin{enumerate}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
-    \setlength\itemsep{1em}
-    \item \setstretch{1.5}\$20,000 is invested for 3 years. Calculate interest earned on each of the following to find which would give the best return.
-        \begin{enumerate}
-        \item 5\% p.a compounded quarterly
-        \item 4.5\% p.a compounded every 2 months
-        \item 4\% p.a compounded monthly
-        \end{enumerate}
-    \item Do you think the size of the investment would alter which option in part (a) would give the best return
-    \item Prove your answer to part (b) algebraically by redoing part (a) with \$P in place of \$20,000, and expressing your answer as a percentage of \$P
-    \end{enumerate}
+<div id="vid_kube_kubectl" class="flex-container">
+  
+  <div><iframe style="border-radius: 10px; overflow: hidden; border: 2px solid #7a7a7a; box-shadow: 1px 2px 5px #b4b4b4;" width="100%" height="100%" src="https://www.youtube.com/embed/feLpGydQVio" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
+  
+</div>
 
-\item \setstretch{1.5} 'The more frequent the compounding, the greater the interest' Explain what this statement means. Use a principal of \$10,000 invested at 8\% p.a for 5 years and three different compounding periods (such as weekly, quarterly  or monthly) to help demonstrate your answer. Express the percentage increase correct to 1 decimal place.
-\end{enumerate}
+<p>we’ll explore how to use Kubectl to manage your Kubernetes clusters, focusing on configuration, retrieving resources, working with namespaces, describing resources, and checking versions.</p>
 
+<h2 id="11-configuring-kubectl-for-multiple-clusters">1.1 Configuring Kubectl for Multiple Clusters</h2>
 
+<p>Kubectl can point to multiple Kubernetes clusters, making it easy to switch between development, staging, and production environments. The configuration is managed through contexts, which are stored in a <code class="language-plaintext highlighter-rouge">kubeconfig</code> file. Here’s how you can configure and switch contexts:</p>
 
+<h4 id="1-checking-your-current-context">1. Checking Your Current Context</h4>
+<p>To find out which Kubernetes cluster your Kubectl is currently pointing to, use the following command:</p>
 
-\begin{enumerate}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
-\setlength\itemsep{1em}
-\item The number of earthworms in a compost heap after \eq{d} days is given by \eq[1]{100 - 4d - d^2}. 
-    \begin{enumerate}
-    \item How many earthworms were there originally?
-    \item Factorize the expression for the number of earthworms.
-    \item Use your factorization to show that when \eq[1]{d = 2(\sqrt{26} - 1)}, no earthworms remain. 
-    \item \setstretch{1.5} Evaluate \eq[1]{2(\sqrt{26} - 1)} and round to 2 decimal places to find on which day the number of earthworms is reduced to zero.
-    \item A second colony of earthworms is now in another compost heap. Their population is given by \eq[1]{64 - 2n - n^2}.
-        \begin{enumerate}
-        \item Factorize the expression.            
-        \item \setstretch{1.5} Use this factorization to show that no earthworms remain when \eq[1]{n = \sqrt{65} - 1}
-        \end{enumerate}  
-    \item Use your answer in (c) and (e)(ii) to decide which colony stayed longer in their respective compost heaps.
-    \end{enumerate}    
-\end{enumerate}  
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl config current-context
 </code></pre></div></div>
 
-<p>To make the Year 10 maths paper more challenging, I will incorporate more complex algebraic manipulations, higher-level trigonometry, and multi-step problem-solving questions. The questions will require deeper understanding and application of mathematical concepts.</p>
+<p>This command outputs the name of the current context, <strong>indicating the active cluster we are pointing at</strong>.</p>
+
+<blockquote class="block-tip">
+  <h4 id="in-kubernetes">In Kubernetes</h4>
+
+  <ul>
+    <li><strong>cluster</strong>: http end point</li>
+    <li><strong>context</strong>: the cluster and the user for the cluster</li>
+  </ul>
+
+  <p>the <code class="language-plaintext highlighter-rouge">kubeconfig</code> file can be found in <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;\.kube</code></p>
+</blockquote>
+
+<h4 id="2-listing-all-available-contexts">2. Listing All Available Contexts</h4>
+
+<p>To see all the contexts available in your <code class="language-plaintext highlighter-rouge">kubeconfig</code> file, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl config get-contexts
+</code></pre></div></div>
+
+<p>This command displays a table of all contexts, clusters, and users, with a <code class="language-plaintext highlighter-rouge">*</code> next to the currently active context.</p>
+
+<p>Output:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CURRENT   NAME             CLUSTER          AUTHINFO         NAMESPACE
+<span class="k">*</span>         docker-desktop   docker-desktop   docker-desktop
+</code></pre></div></div>
+
+<h4 id="3-switching-to-a-different-context">3. Switching to a Different Context</h4>
+<p>To switch to another context, such as a production environment, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl config use-context <span class="o">[</span>context-name]
+</code></pre></div></div>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">[context-name]</code> with the name of the context you want to switch to. This command changes the active cluster to the specified context.</p>
+
+<h4 id="4-using-multiple-kubeconfig-files">4. Using Multiple Kubeconfig Files</h4>
+<p>If you manage multiple clusters with different configuration files, you can temporarily set the KUBECONFIG environment variable:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">KUBECONFIG</span><span class="o">=</span><span class="nv">$HOME</span>/.kube/config:<span class="nv">$HOME</span>/.kube/config2
+</code></pre></div></div>
+
+<p>This command merges the configurations from both files, allowing Kubectl to use them simultaneously.</p>
 
 <hr />
 
-<h3 id="year-10-advanced-mathematics-exam">Year 10 Advanced Mathematics Exam</h3>
+<h2 id="12-retrieving-kubernetes-resources">1.2 Retrieving Kubernetes Resources</h2>
 
-<p><strong>Time Allowed: 2 Hours</strong><br />
-<strong>Total Marks: 100</strong><br />
-<strong>Instructions:</strong></p>
-<ol>
-  <li>Write all your answers in the space provided.</li>
-  <li>Show all working for full marks.</li>
-  <li>Calculators are allowed.</li>
-  <li>Check your answers carefully.</li>
-</ol>
+<p>One of the primary tasks in managing Kubernetes clusters is retrieving information about the resources. Kubectl provides several commands for this purpose:</p>
 
-<hr />
+<h4 id="1-listing-pods">1. Listing Pods</h4>
+<p>To list all pods in the current namespace, use:</p>
 
-<h4 id="section-a-multiple-choice-20-marks"><strong>Section A: Multiple Choice (20 marks)</strong></h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods
+</code></pre></div></div>
 
-<ol>
-  <li>
-    <p>Simplify the expression:<br />
-[
-\frac{3x^2 - 12}{x - 2} + \frac{2x^2 - 8x + 8}{x - 2}
-]<br />
-a) ( 5x + 2 )<br />
-b) ( x + 2 )<br />
-c) ( 5x - 2 )<br />
-d) ( 5x - 4 )<br />
-(1 mark)</p>
-  </li>
-  <li>
-    <p>Solve the equation for ( x ):<br />
-[
-\sqrt{2x + 5} = x - 3
-]<br />
-a) ( x = 4 )<br />
-b) ( x = 5 )<br />
-c) ( x = 1 )<br />
-d) ( x = -1 )<br />
-(1 mark)</p>
-  </li>
-  <li>
-    <p>The area of a sector of a circle with radius 10 cm and angle ( 60^\circ ) is:<br />
-a) ( \frac{100\pi}{3} ) cm²<br />
-b) ( \frac{50\pi}{3} ) cm²<br />
-c) ( \frac{25\pi}{3} ) cm²<br />
-d) ( \frac{100\pi}{6} ) cm²<br />
-(1 mark)</p>
-  </li>
-  <li>
-    <p>If ( f(x) = 3x^2 - 2x + 1 ), what is the value of ( f’(x) ) at ( x = 2 )?<br />
-a) 10<br />
-b) 4<br />
-c) 12<br />
-d) 8<br />
-(1 mark)</p>
-  </li>
-  <li>
-    <p>The probability of rolling a sum of 8 with two dice is:<br />
-a) ( \frac{5}{36} )<br />
-b) ( \frac{7}{36} )<br />
-c) ( \frac{1}{6} )<br />
-d) ( \frac{1}{8} )<br />
-(1 mark)</p>
-  </li>
-</ol>
+<p>This command outputs a table with pod names, statuses, and other details.</p>
+
+<h4 id="2-listing-deployments">2. Listing Deployments</h4>
+<p>To list all deployments in the current namespace, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get deployments
+</code></pre></div></div>
+
+<p>This command provides information about all deployments, including the number of replicas and their current status.</p>
+
+<h4 id="3-listing-services">3. Listing Services</h4>
+<p>To see all services running in the current namespace, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get services
+</code></pre></div></div>
+
+<p>This command displays a table listing each service’s name, type, cluster IP, external IP, and ports.</p>
+
+<h4 id="4-listing-configmaps">4. Listing ConfigMaps</h4>
+<p>To list all config maps, which store non-confidential data in key-value pairs, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get configmaps
+</code></pre></div></div>
+
+<p>This command shows a table with all config maps in the current namespace.</p>
+
+<h4 id="5-listing-secrets">5. Listing Secrets</h4>
+<p>To view all secrets, which store sensitive information like passwords and tokens, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get secrets
+</code></pre></div></div>
+
+<p>This command outputs a table of all secrets, showing their names and types.</p>
 
 <hr />
 
-<h4 id="section-b-short-answer-40-marks"><strong>Section B: Short Answer (40 marks)</strong></h4>
+<h2 id="13-working-with-namespaces">1.3 Working with Namespaces</h2>
 
-<ol>
-  <li>
-    <p>Simplify the expression and factor completely:<br />
-[
-x^4 - 16
-]
-(4 marks)</p>
-  </li>
-  <li>
-    <p>Solve the simultaneous equations:<br />
-[
-\begin{aligned}
-3x + 4y &amp;= 18 <br />
-5x - 2y &amp;= 4
-\end{aligned}
-]
-(6 marks)</p>
-  </li>
-  <li>
-    <p>A triangle has sides of lengths 7 cm, 24 cm, and 25 cm. Prove whether it is a right-angled triangle, and find the area.<br />
-(5 marks)</p>
-  </li>
-  <li>
-    <p>Calculate the exact value of ( \sin(75^\circ) ) using trigonometric identities.<br />
-(4 marks)</p>
-  </li>
-  <li>
-    <p>The sum of the roots of the quadratic equation ( ax^2 + bx + c = 0 ) is 7, and the product of the roots is 12. Find the values of ( a ), ( b ), and ( c ).<br />
-(6 marks)</p>
-  </li>
-  <li>
-    <p>In a geometric sequence, the 3rd term is 24, and the 6th term is 192. Find the first term and the common ratio.<br />
-(5 marks)</p>
-  </li>
-</ol>
+<p>Namespaces in Kubernetes allow you to create virtual clusters within a physical cluster, enabling better resource management and isolation.</p>
 
-<hr />
+<h4 id="1-listing-all-namespaces">1. Listing All Namespaces</h4>
+<p>To see all namespaces in your cluster, use:</p>
 
-<h4 id="section-c-extended-response-40-marks"><strong>Section C: Extended Response (40 marks)</strong></h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get namespaces
+</code></pre></div></div>
 
-<ol>
-  <li>
-    <p>A rectangle is inscribed in a circle of radius 10 cm.<br />
-a) Express the area of the rectangle as a function of the length of one side, ( x ).<br />
-b) If the perimeter of the rectangle is 40 cm, find the dimensions of the rectangle that maximize its area.<br />
-(12 marks)</p>
-  </li>
-  <li>
-    <p>A student invested $1000 at an interest rate of 5% per annum, compounded annually.<br />
-a) Write the formula for the amount ( A ) after ( n ) years.<br />
-b) Calculate the time taken for the investment to double in value.<br />
-c) How long would it take to triple the investment?<br />
-(10 marks)</p>
-  </li>
-  <li>
-    <p>The following data represents the scores of students in a test:<br />
-56, 63, 72, 80, 85, 90, 92, 96, 98, 100.<br />
-a) Calculate the standard deviation of the data.<br />
-b) If two students who scored 110 and 115 are added to the data, how does the mean and standard deviation change?<br />
-(10 marks)</p>
-  </li>
-  <li>
-    <p>A water tank is in the shape of a cone with a height of 12 m and a base radius of 5 m.<br />
-a) Calculate the volume of the tank.<br />
-b) If water is being pumped into the tank at a rate of 2 cubic meters per minute, how long will it take to fill the tank?<br />
-c) If the tank is only partially filled to a depth of 6 m, calculate the volume of water inside.<br />
-(8 marks)</p>
-  </li>
-</ol>
+<p>This command lists all namespaces, showing their names and statuses.</p>
+
+<h4 id="2-creating-a-new-namespace">2. Creating a New Namespace</h4>
+<p>To create a new namespace called <code class="language-plaintext highlighter-rouge">test</code>, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create namespace <span class="nb">test</span>
+</code></pre></div></div>
+
+<p>This command creates a new namespace that can be used to isolate resources.</p>
+
+<h4 id="3-listing-pods-in-a-specific-namespace">3. Listing Pods in a Specific Namespace</h4>
+<p>To list all pods within a specific namespace, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods <span class="nt">-n</span> <span class="o">[</span>namespace-name]
+</code></pre></div></div>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">[namespace-name]</code> with the name of the namespace you’re interested in. This command outputs a table of pod details for the specified namespace.</p>
+
+<h5 id="example">Example</h5>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS&gt; kubectl get pods <span class="nt">-n</span> kube-system
+
+NAME                                     READY   STATUS    RESTARTS   AGE  
+coredns-76f75df574-45v4c                 1/1     Running   0          6d14h
+coredns-76f75df574-mqxf4                 1/1     Running   0          6d14h
+etcd-docker-desktop                      1/1     Running   0          6d14h
+kube-apiserver-docker-desktop            1/1     Running   0          6d14h
+kube-controller-manager-docker-desktop   1/1     Running   0          6d14h
+kube-proxy-6k46f                         1/1     Running   0          6d14h
+kube-scheduler-docker-desktop            1/1     Running   0          6d14h
+storage-provisioner                      1/1     Running   0          6d14h
+vpnkit-controller                        1/1     Running   0          6d14h
+</code></pre></div></div>
 
 <hr />
 
-<p><strong>End of Paper</strong></p>
+<h2 id="14-describing-resources">1.4 Describing Resources</h2>
+
+<p>For a more in-depth look at the state and events related to specific resources, Kubectl’s <code class="language-plaintext highlighter-rouge">describe</code> command is invaluable.</p>
+
+<h4 id="1-describing-a-pod">1. Describing a Pod</h4>
+<p>To get detailed information about a specific pod, including its status, events, and resource usage, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl describe pod <span class="o">[</span>pod-name] <span class="nt">-n</span> <span class="o">[</span>namespace-name]
+</code></pre></div></div>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">[pod-name]</code> and <code class="language-plaintext highlighter-rouge">[namespace-name]</code> with the appropriate pod and namespace names. This command provides a wealth of information useful for debugging and monitoring.</p>
+
+<h4 id="2-describing-a-node">2. Describing a Node</h4>
+<p>To investigate the details of a specific node, especially when facing infrastructure issues, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl describe node <span class="o">[</span>node-name]
+</code></pre></div></div>
+
+<p>This command provides comprehensive information about the node, including its conditions, capacity, and recent events.</p>
 
 <hr />
 
-<p>This advanced version of the Year 10 maths paper includes more challenging algebra, trigonometry, and problem-solving questions that require a deeper understanding and the ability to apply mathematical concepts in a more complex and integrated manner.</p>
+<h2 id="15-checking-versions">1.5 Checking Versions</h2>
 
-<p>Here’s a challenging Year 9 mathematics exam designed to test students’ understanding of higher-level concepts while still aligning with the curriculum expectations:</p>
+<p>Knowing the versions of both your Kubectl client and Kubernetes server is crucial, especially when managing clusters with different versions.</p>
 
-<hr />
+<h4 id="1-checking-kubectl-and-kubernetes-versions">1. Checking Kubectl and Kubernetes Versions</h4>
+<p>To see the version of your Kubectl client and the Kubernetes server, use:</p>
 
-<h3 id="year-9-advanced-mathematics-exam">Year 9 Advanced Mathematics Exam</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl version
+</code></pre></div></div>
 
-<p><strong>Time Allowed: 2 Hours</strong><br />
-<strong>Total Marks: 100</strong><br />
-<strong>Instructions:</strong></p>
-<ol>
-  <li>Write all your answers in the space provided.</li>
-  <li>Show all working for full marks.</li>
-  <li>Calculators are allowed.</li>
-  <li>Check your answers carefully.</li>
-</ol>
+<p>This command outputs the client version (Kubectl) and the server version (Kubernetes cluster).</p>
 
 <hr />
-
-<h4 id="section-a-multiple-choice-20-marks-1"><strong>Section A: Multiple Choice (20 marks)</strong></h4>
-
-<ol>
-  <li>
-    <p>Simplify the expression:<br />
-[
-\frac{2x^2 - 8}{x - 2} + \frac{3x^2 - 18}{x - 3}
-]<br />
-a) ( 5x + 1 )<br />
-b) ( 5x - 1 )<br />
-c) ( 5x + 2 )<br />
-d) ( 5x - 2 )<br />
-(1 mark)</p>
-  </li>
-  <li>
-    <p>If ( f(x) = 2x^2 - 3x + 5 ), what is the value of ( f(2) )?<br />
-a) 11<br />
-b) 13<br />
-c) 9<br />
-d) 7<br />
-(1 mark)</p>
-
-    <p>(1 mark)</p>
-  </li>
-  <li>
-    <p>The probability of drawing a red ball from a bag containing 5 red balls, 7 blue balls, and 8 green balls is:<br />
-a) ( \frac{1}{4} )<br />
-b) ( \frac{1}{5} )<br />
-c) ( \frac{1}{3} )<br />
-d) ( \frac{5}{20} )<br />
-(1 mark)</p>
-  </li>
-</ol>
-
-<hr />
-
-<h4 id="section-b-short-answer-40-marks-1"><strong>Section B: Short Answer (40 marks)</strong></h4>
-
-<ol>
-  <li>
-    <p>Expand and simplify the expression:<br />
-[
-(2x - 3)(x^2 + x - 2)
-]
-(6 marks)</p>
-  </li>
-  <li>
-    <p>Solve the simultaneous equations:<br />
-[
-\begin{aligned}
-2x + 3y &amp;= 7 <br />
-5x - 2y &amp;= -1
-\end{aligned}
-]
-(6 marks)</p>
-  </li>
-  <li>
-    <p>A triangle has sides of lengths 9 cm, 12 cm, and 15 cm. Prove that the triangle is right-angled and find its area.<br />
-(5 marks)</p>
-  </li>
-  <li>
-    <p>Calculate the exact value of ( \cos(45^\circ) \times \tan(30^\circ) ).<br />
-(4 marks)</p>
-  </li>
-  <li>
-    <p>A quadratic equation has roots ( x = 2 ) and ( x = -3 ). Form the quadratic equation in standard form.<br />
-(4 marks)</p>
-  </li>
-  <li>
-    <p>In a geometric sequence, the first term is 5 and the common ratio is 3. What is the 5th term of the sequence?<br />
-(4 marks)</p>
-  </li>
-  <li>
-    <p>The sum of the first ( n ) terms of an arithmetic sequence is given by ( S_n = 3n^2 + 2n ). Find the 10th term of the sequence.<br />
-(5 marks)</p>
-  </li>
-  <li>
-    <p>A rectangular garden has a length of ( (3x + 4) ) meters and a width of ( (2x - 1) ) meters. If the area of the garden is 150 m², find the value of ( x ).<br />
-(6 marks)</p>
-  </li>
-</ol>
-
-<hr />
-
-<h4 id="section-c-extended-response-40-marks-1"><strong>Section C: Extended Response (40 marks)</strong></h4>
-
-<ol>
-  <li>
-    <p>A water tank is in the shape of a cylinder with a height of 10 m and a radius of 3 m.<br />
-a) Calculate the volume of the tank.<br />
-b) If the tank is filled to 60% of its capacity, how much water is in the tank?<br />
-c) If water is being added to the tank at a rate of 2 cubic meters per minute, how long will it take to fill the tank completely from its current level?<br />
-(12 marks)</p>
-  </li>
-  <li>
-    <p>The following data shows the number of hours students spent studying for a test: 2, 4, 6, 6, 8, 10, 12.<br />
-a) Calculate the mean and median of the data.<br />
-b) If a student who studied for 14 hours is added to the data, how does the mean change?<br />
-c) Calculate the standard deviation of the original data set.<br />
-(10 marks)</p>
-  </li>
-  <li>
-    <p>A rectangle is inscribed in a circle of radius 7 cm.<br />
-a) Express the area of the rectangle as a function of the length of one side, ( x ).<br />
-b) If the perimeter of the rectangle is 40 cm, find the dimensions of the rectangle that maximize its area.<br />
-(10 marks)</p>
-  </li>
-  <li>
-    <p>A box contains 3 red, 4 blue, and 5 green marbles.<br />
-a) If two marbles are drawn at random without replacement, what is the probability that both marbles are red?<br />
-b) What is the probability that one marble is red and the other is green?<br />
-c) If three marbles are drawn at random without replacement, what is the probability that all three are of different colors?<br />
-(8 marks)</p>
-  </li>
-</ol>
-
-<hr />
-
-<p><strong>End of Paper</strong></p>
-
-<hr />
-
-<p>This Year 9 maths paper is designed to challenge students with complex problem-solving and higher-order thinking questions, while still being accessible to those who have mastered the Year 9 curriculum.</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -994,7 +874,7 @@ c) If three marbles are drawn at random without replacement, what is the probabi
                     
 
                     
-                        <a href="/dev/os/docker/3_kube_3_deployments/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. kubectl"> <!-- class="hide_element" -->
+                        <a href="/dev/os/docker/3_kube_3_deployments/" class="navigation navigation-next navigation-unique" aria-label="Next page: 3. Deployments"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-right"></i>
                         </a>
                     
@@ -1037,7 +917,7 @@ c) If three marbles are drawn at random without replacement, what is the probabi
         "depth": 1,
         
         "next": {
-            "title": "2. kubectl",
+            "title": "3. Deployments",
             "level": "1.2",
             "depth": 1,
             "path": "_4_containerization/3_kube_3_deployments.md",
@@ -1139,7 +1019,7 @@ c) If three marbles are drawn at random without replacement, what is the probabi
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-12 23:10:13 +0800"
+        "time": "2024-08-15 23:24:03 +0800"
     },
     "basePath": "/dev/os",
     "book": {
