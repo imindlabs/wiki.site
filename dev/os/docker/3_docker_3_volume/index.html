@@ -344,7 +344,7 @@
                 </a>
                 
                 
-                <ul><li><a href="#1-creation-of-volume" onclick="mobilePageScrollToAnchor(this)" >1. Creation of Volume</a><ul><li><a href="#11-mount-a-folder" onclick="mobilePageScrollToAnchor(this)" >1.1 Mount a folder</a></li><li><a href="#12-named-volume" onclick="mobilePageScrollToAnchor(this)" >1.2 Named Volume</a></li><li><a href="#13-create-a-named-volume-on-the-fly" onclick="mobilePageScrollToAnchor(this)" >1.3 Create a named volume on the fly</a></li><li><a href="#14-additional-tips" onclick="mobilePageScrollToAnchor(this)" >1.4 Additional Tips</a></li></ul></li><li><a href="#2-shared-volume" onclick="mobilePageScrollToAnchor(this)" >2. Shared Volume</a><ul><li><a href="#21-method-01" onclick="mobilePageScrollToAnchor(this)" >2.1 Method 01</a></li><li><a href="#22-method-02" onclick="mobilePageScrollToAnchor(this)" >2.2 Method 02</a></li><li><a href="#23-detach--remove-a-volume" onclick="mobilePageScrollToAnchor(this)" >2.3 Detach / Remove a Volume</a><ul><li><a href="#note" onclick="mobilePageScrollToAnchor(this)" >Note:</a></li></ul></li><li><a href="#24-attach-a-volume" onclick="mobilePageScrollToAnchor(this)" >2.4 Attach a Volume</a></li></ul></li><li><a href="#3-additional-tips" onclick="mobilePageScrollToAnchor(this)" >3. Additional Tips:</a></li></ul>
+                <ul><li><a href="#11-creation-of-volume" onclick="mobilePageScrollToAnchor(this)" >1.1 Creation of Volume</a><ul><li><a href="#1-mount-a-folder" onclick="mobilePageScrollToAnchor(this)" >1. Mount a folder</a></li><li><a href="#2-named-volume" onclick="mobilePageScrollToAnchor(this)" >2. Named Volume</a></li><li><a href="#3-create-a-named-volume-on-the-fly" onclick="mobilePageScrollToAnchor(this)" >3. Create a named volume on the fly</a></li><li><a href="#4-additional-tips" onclick="mobilePageScrollToAnchor(this)" >4. Additional Tips</a></li></ul></li><li><a href="#12-shared-volume" onclick="mobilePageScrollToAnchor(this)" >1.2 Shared Volume</a><ul><li><a href="#1-method-01" onclick="mobilePageScrollToAnchor(this)" >1. Method 01</a></li><li><a href="#2-method-02" onclick="mobilePageScrollToAnchor(this)" >2. Method 02</a></li><li><a href="#3-detach--remove-a-volume" onclick="mobilePageScrollToAnchor(this)" >3. Detach / Remove a Volume</a><ul><li><a href="#note" onclick="mobilePageScrollToAnchor(this)" >Note:</a></li></ul></li><li><a href="#4-attach-a-volume" onclick="mobilePageScrollToAnchor(this)" >4. Attach a Volume</a></li></ul></li><li><a href="#13-additional-tips" onclick="mobilePageScrollToAnchor(this)" >1.3 Additional Tips:</a></li><li><a href="#14-read-only-volumes" onclick="mobilePageScrollToAnchor(this)" >1.4 Read Only Volumes</a></li><li><a href="#15-anonymous-volume" onclick="mobilePageScrollToAnchor(this)" >1.5 Anonymous Volume</a><ul><li><a href="#1-key-characteristics-of-anonymous-volumes" onclick="mobilePageScrollToAnchor(this)" >1. Key Characteristics of Anonymous Volumes</a></li><li><a href="#2-usage-example" onclick="mobilePageScrollToAnchor(this)" >2. Usage Example</a></li><li><a href="#3-listing-anonymous-volumes" onclick="mobilePageScrollToAnchor(this)" >3. Listing Anonymous Volumes</a></li><li><a href="#4-identifying-anonymous-volumes" onclick="mobilePageScrollToAnchor(this)" >4. Identifying Anonymous Volumes</a></li><li><a href="#5-data-persistence" onclick="mobilePageScrollToAnchor(this)" >5. Data Persistence</a></li><li><a href="#6-clean-up" onclick="mobilePageScrollToAnchor(this)" >6. Clean-Up</a></li><li><a href="#7-use-cases" onclick="mobilePageScrollToAnchor(this)" >7. Use Cases</a></li></ul></li></ul>
 
                 
                 
@@ -358,6 +358,20 @@
                 
                 <a href="/dev/os/docker/3_docker_4_networking/" onclick="pageScrollToTop(this)">
                     4. Networking
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_5_compose/">
+                
+                <a href="/dev/os/docker/3_docker_5_compose/" onclick="pageScrollToTop(this)">
+                    5. Docker Compose
                 </a>
                 
                 
@@ -402,6 +416,34 @@
                 
                 <a href="/dev/os/docker/3_kube_3_deployments/" onclick="pageScrollToTop(this)">
                     3. Deployments
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_4_services/">
+                
+                <a href="/dev/os/docker/3_kube_4_services/" onclick="pageScrollToTop(this)">
+                    3. Deployments
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_5_config_secret/">
+                
+                <a href="/dev/os/docker/3_kube_5_config_secret/" onclick="pageScrollToTop(this)">
+                    3. Config and Secret Management
                 </a>
                 
                 
@@ -482,11 +524,11 @@
                         <h1 id="/docker/3_docker_3_volume">3. Volumes</h1>
                     
 
-                    <h1 id="1-creation-of-volume">1. Creation of Volume</h1>
+                    <h1 id="11-creation-of-volume">1.1 Creation of Volume</h1>
 
 <p>Following methods are available to persist data in docker</p>
 
-<h2 id="11-mount-a-folder">1.1 Mount a folder</h2>
+<h2 id="1-mount-a-folder">1. Mount a folder</h2>
 
 <p>If you need to persist data, you can mount a volume using the <code class="language-plaintext highlighter-rouge">-v</code> flag:
 You can mount a folder in a host PC to the container as a volume</p>
@@ -494,7 +536,7 @@ You can mount a folder in a host PC to the container as a volume</p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> <span class="nt">-v</span> /host/path:/container/path alpine-bash
 </code></pre></div></div>
 
-<h2 id="12-named-volume">1.2 Named Volume</h2>
+<h2 id="2-named-volume">2. Named Volume</h2>
 
 <p>First create the volume and then mount it.</p>
 
@@ -512,7 +554,7 @@ docker run <span class="nt">-dit</span> <span class="nt">--name</span> ubuntu-na
   <p>The named volume created will stay in docker (not on the host PC). You can import content to the name volume created via docker and access it inside the container (vice versa).</p>
 </blockquote>
 
-<h2 id="13-create-a-named-volume-on-the-fly">1.3 Create a named volume on the fly</h2>
+<h2 id="3-create-a-named-volume-on-the-fly">3. Create a named volume on the fly</h2>
 
 <p>Docker creates the <strong>named volume</strong> on the fly and mount it. How</p>
 
@@ -523,7 +565,7 @@ docker run <span class="nt">-dit</span> <span class="nt">--name</span> ubuntu-na
 docker run <span class="nt">-dit</span> <span class="nt">--name</span> ubuntu-named-vol <span class="nt">-v</span> named-volume:/volume-mounted-from-host ubuntu:latest
 </code></pre></div></div>
 
-<h2 id="14-additional-tips">1.4 Additional Tips</h2>
+<h2 id="4-additional-tips">4. Additional Tips</h2>
 
 <h4 id="mount-a-volume-onto-an-existing-directory">Mount a volume onto an existing directory</h4>
 
@@ -532,11 +574,11 @@ docker run <span class="nt">-dit</span> <span class="nt">--name</span> ubuntu-na
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-dit</span> <span class="nt">--name</span> ubuntu-named-vol <span class="nt">-v</span> named-volume:/var ubuntu:latest
 </code></pre></div></div>
 
-<h1 id="2-shared-volume">2. Shared Volume</h1>
+<h1 id="12-shared-volume">1.2 Shared Volume</h1>
 
 <p>To share a volume between two Docker containers, you can create a Docker volume and then mount it to both containers. This allows the containers to read from and write to the same storage location, enabling them to share data.</p>
 
-<h2 id="21-method-01">2.1 Method 01</h2>
+<h2 id="1-method-01">1. Method 01</h2>
 
 <h4 id="1-create-a-docker-volume">1. <strong>Create a Docker Volume:</strong></h4>
 <p>First, create a Docker volume that will be shared between the containers.</p>
@@ -578,7 +620,7 @@ docker run <span class="nt">-dit</span> <span class="nt">--name</span> ubuntu-na
 
 <p>This is useful in various scenarios, such as when you want two services running in separate containers to share configuration files, logs, or any other data.</p>
 
-<h2 id="22-method-02">2.2 Method 02</h2>
+<h2 id="2-method-02">2. Method 02</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a volume on the fly</span>
 docker run <span class="nt">-it</span> <span class="nt">--name</span><span class="o">=</span>Container1 <span class="nt">-v</span> named-volume:/shared-data-vol ubuntu
@@ -590,7 +632,7 @@ docker run <span class="nt">-it</span> <span class="nt">--name</span><span class
 
 <p><code class="language-plaintext highlighter-rouge">--volumes-from &lt;source_container&gt;</code>: Specifies the container from which volumes should be mounted. This is the container that has the volumes you want to share.</p>
 
-<h2 id="23-detach--remove-a-volume">2.3 Detach / Remove a Volume</h2>
+<h2 id="3-detach--remove-a-volume">3. Detach / Remove a Volume</h2>
 
 <p>To detach a volume from a Docker container, you generally need to stop the container first and then <strong>remove the container</strong>. If you just want to detach the volume without removing it, you can do this by <strong>removing the container without deleting the associated volume</strong>. Steps are described below:</p>
 
@@ -647,7 +689,7 @@ docker run <span class="nt">-it</span> <span class="nt">--name</span><span class
 
 <p>This approach allows you to detach a volume from one container and re-attach it to another, keeping the data intact and available.</p>
 
-<h2 id="24-attach-a-volume">2.4 Attach a Volume</h2>
+<h2 id="4-attach-a-volume">4. Attach a Volume</h2>
 
 <blockquote class="block-tip">
   <h5 id="important-1">IMPORTANT</h5>
@@ -718,7 +760,7 @@ docker run <span class="nt">-it</span> <span class="nt">--name</span><span class
 
 <p>This method essentially involves replicating the existing container with the addition of the new volume. While it’s not a direct modification of the existing container, it achieves the same result by creating a new container with the desired configuration.</p>
 
-<h1 id="3-additional-tips">3. Additional Tips:</h1>
+<h1 id="13-additional-tips">1.3 Additional Tips:</h1>
 
 <p>You can list all your Docker volumes using:</p>
 
@@ -731,6 +773,74 @@ docker run <span class="nt">-it</span> <span class="nt">--name</span><span class
 </code></pre></div></div>
 
 <p>This will show you where the volume is stored on your host system and other details.</p>
+
+<h1 id="14-read-only-volumes">1.4 Read Only Volumes</h1>
+
+<p>To map a volume in Docker where changes to a host folder do not affect the corresponding folder inside the container, you need to use a <strong>read-only bind mount</strong>. This ensures that the container can read from the host folder but cannot modify it, and changes on the host do not reflect in the container.</p>
+
+<p>Here’s how to do it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-v</span> /host/folder:/container/folder:ro &lt;image_name&gt;
+</code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/host/folder</code>: The directory on your host machine.</li>
+  <li><code class="language-plaintext highlighter-rouge">/container/folder</code>: The directory inside the container.</li>
+  <li><code class="language-plaintext highlighter-rouge">:ro</code>: Stands for “read-only”. This flag makes the bind mount read-only inside the container.</li>
+</ul>
+
+<h4 id="example-1">Example:</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-v</span> /home/user/data:/app/data:ro my-container
+</code></pre></div></div>
+<p>In this example:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/home/user/data</code> is the folder on your host.</li>
+  <li><code class="language-plaintext highlighter-rouge">/app/data</code> is the folder inside the container.</li>
+  <li><code class="language-plaintext highlighter-rouge">:ro</code> makes the <code class="language-plaintext highlighter-rouge">/app/data</code> folder read-only in the container, preventing changes inside the container from affecting the host.</li>
+</ul>
+
+<p>This setup ensures that the container can read from the host folder, but changes to the host folder will not automatically sync to the container during runtime. However, any updates in the host folder before the container starts will be reflected when it starts.</p>
+
+<h1 id="15-anonymous-volume">1.5 Anonymous Volume</h1>
+
+<p>In Docker, an <strong>anonymous volume</strong> is a type of volume that is created automatically by Docker without a specific name. These volumes are used primarily when you want to persist data outside the container’s filesystem but don’t need to reference the volume by name later.</p>
+
+<h2 id="1-key-characteristics-of-anonymous-volumes">1. Key Characteristics of Anonymous Volumes</h2>
+
+<p><strong>1. No Explicit Name</strong>: Unlike named volumes, anonymous volumes are not given a specific name by the user. Docker generates a unique name for them automatically.</p>
+
+<p><strong>2. Persistence</strong>: The data stored in an anonymous volume persists even after the container is removed. However, since the volume doesn’t have a name, it can be difficult to locate or reuse manually.</p>
+
+<p><strong>3. Automatic Creation</strong>: Docker creates anonymous volumes when you use the <code class="language-plaintext highlighter-rouge">VOLUME</code> instruction in a Dockerfile or when you bind a directory inside a container without specifying a host path.</p>
+
+<h2 id="2-usage-example">2. Usage Example</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-v</span> /container/data busybox
+</code></pre></div></div>
+<p>In this example:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-v /container/data</code> creates an anonymous volume mounted to the <code class="language-plaintext highlighter-rouge">/container/data</code> directory inside the container.</li>
+  <li>Docker creates and manages this volume automatically.</li>
+</ul>
+
+<h2 id="3-listing-anonymous-volumes">3. Listing Anonymous Volumes</h2>
+<p>You can list all volumes (including anonymous ones) with:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume <span class="nb">ls</span>
+</code></pre></div></div>
+
+<h2 id="4-identifying-anonymous-volumes">4. Identifying Anonymous Volumes</h2>
+<p>Anonymous volumes have randomly generated names like <code class="language-plaintext highlighter-rouge">5a2e85b1a5dfd10e2b9ef77d497</code>.</p>
+
+<h2 id="5-data-persistence">5. Data Persistence</h2>
+<p>Even if you remove the container, the data in this anonymous volume will persist until the volume itself is removed. However, since it’s anonymous, the volume is hard to reuse without its randomly generated name.</p>
+
+<h2 id="6-clean-up">6. Clean-Up</h2>
+<p>Since anonymous volumes can accumulate and consume disk space over time, you might want to clean them up using:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm</span> <span class="nt">-f</span> &lt;container_id&gt;
+docker volume prune
+</code></pre></div></div>
+<p>This command removes all unused volumes, including anonymous ones no longer referenced by any container.</p>
+
+<h2 id="7-use-cases">7. Use Cases</h2>
+<p>Anonymous volumes are handy when you need to persist data temporarily or for single-use containers, without worrying about volume management afterward. For long-term or shared data storage, named volumes are typically preferred.</p>
 
 </section>
             </div><div class="search-results">
@@ -1047,7 +1157,7 @@ docker run <span class="nt">-it</span> <span class="nt">--name</span><span class
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-15 23:24:03 +0800"
+        "time": "2024-08-19 09:10:45 +0800"
     },
     "basePath": "/dev/os",
     "book": {

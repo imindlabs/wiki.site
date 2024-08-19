@@ -1,0 +1,1325 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. C Basics · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/cs/lang_c2/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/cs/lang_c2/assets/gitbook/style.css">
+<link rel="stylesheet" href="/cs/lang_c2/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/cs/lang_c2/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/cs/lang_c2/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/cs/lang_c2/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/cs/lang_c2/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/cs/lang_c2/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/cs/lang_c2/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/cs/lang_c2/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/cs/lang_c2/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/cs/lang_c2/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/cs/lang_c2/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/cs/lang_c2/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/cs/lang_c2/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/cs/lang_c2/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/cs/lang_c2/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/cs/lang_c2/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/cs/lang_c2/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/cs/lang_c2/" />
+        
+
+        
+            <link rel="next" href="/cs/lang_c2/fundamental/2_pre-processing/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/cs/lang_c2/">
+            <img class="logo zoom" src="/cs/lang_c2/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/cs/lang_c2/">
+            <img class="logo zoom" src="/cs/lang_c2/" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/cs/lang_c2/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_c2">
+                
+                <a href="/cs/lang_c2/" onclick="pageScrollToTop(this)">
+                    Wiki | C-Language
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_fundamentals</p> -->
+            
+                <p class="collection-title">Fundamentals</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/cs/lang_c2/fundamental/1_c-basics/">
+                
+                <a href="/cs/lang_c2/fundamental/1_c-basics/" onclick="pageScrollToTop(this)">
+                    1. C Basics
+                </a>
+                
+                
+                <ul><li><a href="#1-c89-vs-c99-standards" onclick="mobilePageScrollToAnchor(this)" >1. C89 vs C99 Standards</a></li><li><a href="#2-hello-world-in-c" onclick="mobilePageScrollToAnchor(this)" >2. Hello World in C</a></li><li><a href="#3-gcc-flags" onclick="mobilePageScrollToAnchor(this)" >3. GCC Flags</a></li><li><a href="#4-type-of-errors" onclick="mobilePageScrollToAnchor(this)" >4. Type of Errors</a><ul><li><a href="#41-compile-time-errorswarnings" onclick="mobilePageScrollToAnchor(this)" >4.1 Compile-time Errors/Warnings</a></li><li><a href="#42-runtime-errors-exceptions---program-crash" onclick="mobilePageScrollToAnchor(this)" >4.2 Runtime Errors (Exceptions) - Program Crash</a></li><li><a href="#43-runtime-errors-logical-bugs---unexpected-behaviours" onclick="mobilePageScrollToAnchor(this)" >4.3 Runtime Errors (Logical Bugs) - Unexpected behaviours</a></li></ul></li><li><a href="#faq" onclick="mobilePageScrollToAnchor(this)" >FAQ</a><ul><li><a href="#1-what-are-variable-declarations-definitions-initializations-assignments-function-declarations-definitions-invocations-what-other-terminology-is-there-in-c-programming" onclick="mobilePageScrollToAnchor(this)" >1. What are variable declarations, definitions, initializations, assignments, function declarations, definitions, invocations? What other terminology is there in C programming?</a></li><li><a href="#2-what-happens-if-a-variable-is-declared-but-not-initialized-any-implications" onclick="mobilePageScrollToAnchor(this)" >2. What happens if a variable is declared but not initialized? Any implications?</a></li><li><a href="#3-do-i-need-to-know-function-recursion" onclick="mobilePageScrollToAnchor(this)" >3. Do I need to know function recursion?</a></li><li><a href="#4-difference-between-int-main-and-void-main" onclick="mobilePageScrollToAnchor(this)" >4. Difference between int main() and void main()</a></li><li><a href="#5-what-are-d-c-etc-symbols" onclick="mobilePageScrollToAnchor(this)" >5. What are %d, %c, etc symbols?</a></li><li><a href="#6-what-happens-if-the-user-inputs-a-character-when-an-integer-d-is-expected" onclick="mobilePageScrollToAnchor(this)" >6. What happens if the user inputs a character when an integer (%d) is expected?</a></li><li><a href="#7-why-do-we-need-to-use-variable_name-in-scanf-but-not-in-printf" onclick="mobilePageScrollToAnchor(this)" >7. Why do we need to use &amp;variable_name in scanf but not in printf?</a></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_c2/fundamental/2_pre-processing/">
+                
+                <a href="/cs/lang_c2/fundamental/2_pre-processing/" onclick="pageScrollToTop(this)">
+                    2. Preprocessing
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_c2/fundamental/3_pointers/">
+                
+                <a href="/cs/lang_c2/fundamental/3_pointers/" onclick="pageScrollToTop(this)">
+                    3. Pointers
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_c2/fundamental/4_arrays/">
+                
+                <a href="/cs/lang_c2/fundamental/4_arrays/" onclick="pageScrollToTop(this)">
+                    4. Arrays
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_c2/fundamental/5_fileio/">
+                
+                <a href="/cs/lang_c2/fundamental/5_fileio/" onclick="pageScrollToTop(this)">
+                    5. Input/Output
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_c2/fundamental/6_struct/">
+                
+                <a href="/cs/lang_c2/fundamental/6_struct/" onclick="pageScrollToTop(this)">
+                    6. Structures
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>2_test_and_debug</p> -->
+            
+                <p class="collection-title">Testing / Debugging</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_c2/test_debug/1_gdb/">
+                
+                <a href="/cs/lang_c2/test_debug/1_gdb/" onclick="pageScrollToTop(this)">
+                    1. Testing and Debugging
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>3_advance_c</p> -->
+            
+                <p class="collection-title">Advance C</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_c2/advance_c/1_adv-c/">
+                
+                <a href="/cs/lang_c2/advance_c/1_adv-c/" onclick="pageScrollToTop(this)">
+                    1. Advance C
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >1. C Basics</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/fundamental/1_c-basics">1. C Basics</h1>
+                    
+
+                    <p>Welcome to our Data Science Wiki, your ultimate resource for delving into the intricate world of machine learning, advanced machine learning, deep learning, numerical optimization, and advance optimization techniques, and the mathematics that underpin these fields. Our wiki is a comprehensive repository of knowledge, meticulously curated to provide insights, techniques, and resources for learners and practitioners alike.</p>
+
+<h1 id="1-c89-vs-c99-standards">1. C89 vs C99 Standards</h1>
+
+<p>C89 and C99 refer to different standards of the C programming language, released by the International Organization for Standardization (ISO). Here are the key differences between them:</p>
+
+<p><strong>1. Release Year:</strong></p>
+<ul>
+  <li>C89 (also known as ANSI C or ISO C90): Released in 1989.</li>
+  <li>C99: Released in 1999.</li>
+</ul>
+
+<p><strong>2. Feature Set:</strong></p>
+<ul>
+  <li>C89: It introduced the basic features of the C language, including functions, loops, conditionals, data types, and standard libraries like stdio.h and stdlib.h.</li>
+  <li>C99: It introduced several new features and improvements over C89, such as:
+– New data types like long long int and bool.
+– Inline functions.
+– Variable-length arrays.
+– Support for one-line comments beginning with //.
+– New standard library functions like stdint.h, tgmath.h, and stdbool.h.
+– More flexible declarations, including mixing variable declarations with statements.</li>
+</ul>
+
+<p><strong>3. Complex Numbers:</strong></p>
+<ul>
+  <li>C99 introduced native support for complex numbers and associated mathematical functions through the complex.h header.</li>
+</ul>
+
+<p><strong>4. Designated Initializers:</strong></p>
+<ul>
+  <li>C99 introduced designated initializers, allowing elements of structures and arrays to be initialized by specifying their indices or field names.</li>
+</ul>
+
+<p><strong>5. Flexible Array Members:</strong></p>
+<ul>
+  <li>
+    <p>C99 allows the last member of a structure to be an array of unspecified size, known as a flexible array member.
+Variable Declarations:</p>
+  </li>
+  <li>
+    <p>C99 allows variable declarations to appear anywhere in a block, whereas C89 requires them to appear only at the beginning of a block.</p>
+  </li>
+</ul>
+
+<p><strong>6. Standardization of Certain Previously Common Extensions:</strong></p>
+<ul>
+  <li>C99 standardized certain features that were previously common extensions in various C compilers, such as inline functions and variable-length arrays.</li>
+</ul>
+
+<p><strong>7. Compatibility:</strong></p>
+<ul>
+  <li>While C99 introduced significant improvements, it also maintained a high level of compatibility with C89. Most valid C89 code should also be valid under C99, though some older compilers may not fully support C99 features.</li>
+</ul>
+
+<p>C99 introduced several new features and improvements over C89, making it a more versatile and expressive language. However, due to the existing codebase and compatibility concerns, adoption of C99 features might vary depending on the specific project and toolchain requirements.</p>
+
+<h1 id="2-hello-world-in-c">2. Hello World in C</h1>
+
+<p><strong>1. Create a New Source File:</strong></p>
+
+<ul>
+  <li>Open a text editor or an integrated development environment (IDE) like Visual Studio Code, Atom, Sublime Text, or any other of your choice.</li>
+  <li>Create a new file and save it with a .c extension. For example, you could name it hello_world.c</li>
+</ul>
+
+<pre class="line-numbers "><code class="language-c match-braces">#include &lt;stdio&gt;
+    int main() {
+        printf("Hello, World!\n");
+        return 0;
+    }
+    </code></pre>
+
+<p><strong>2. In the newly created file, write the above C code:</strong></p>
+
+<ul>
+  <li>
+    <p>This code includes the standard input-output header file <code class="language-c highlighter-rouge"><span class="o">&lt;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span></code> which provides the printf function for printing text to the console.</p>
+  </li>
+  <li>
+    <p>The <code class="language-c highlighter-rouge"><span class="n">main</span><span class="p">()</span></code> function is the entry point of the program. It’s where the execution of the program begins.</p>
+  </li>
+  <li>
+    <p>Inside <code class="language-c highlighter-rouge"><span class="n">main</span><span class="p">()</span></code>, <code class="language-c highlighter-rouge"><span class="n">printf</span><span class="p">(</span><span class="s">"Hello, World!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span></code> prints “Hello, World!” to the console followed by a newline character \n.</p>
+  </li>
+  <li>
+    <p><code class="language-c highlighter-rouge"><span class="k">return</span> <span class="mi">0</span><span class="p">;</span></code> indicates successful completion of the program.</p>
+  </li>
+</ul>
+
+<p><strong>3. Compile the Program:</strong></p>
+<ul>
+  <li>Open a terminal or command prompt.</li>
+  <li>Navigate to the directory where your .c file is located.</li>
+  <li>Compile the program using a C compiler such as gcc (GNU Compiler Collection).</li>
+</ul>
+
+<pre class="line-numbers "><code class="language-sh match-braces">gcc -o hello_world hello_world.c</code></pre>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This command tells the compiler (gcc) to compile the source file hello_world.c and generate an executable file named hello_world.
+</code></pre></div></div>
+
+<p><strong>4. Run the Program:</strong></p>
+
+<ul>
+  <li>
+    <p>After successful compilation, you’ll have an executable file named hello_world (or whatever name you specified with the -o option).</p>
+  </li>
+  <li>
+    <p>Execute the program by typing its name in the terminal and pressing Enter:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./hello_world
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>You should see the output:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, World!
+</code></pre></div>    </div>
+
+    <p>Congratulations! You’ve successfully created and executed a “Hello, World!” program in C!</p>
+
+    <h1 id="3-gcc-flags">3. GCC Flags</h1>
+  </li>
+</ul>
+
+<p><code class="language-bash highlighter-rouge">gcc <span class="nt">-Wall</span> <span class="nt">-ansi</span> <span class="nt">-pedantic</span> <span class="nt">-Werror</span></code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-Wall</code> = show all warnings</li>
+  <li><code class="language-plaintext highlighter-rouge">-ansi</code> -pedantic = ensures the code is C89 compliant</li>
+  <li><code class="language-plaintext highlighter-rouge">-Werror</code> = treat all warnings as errors!</li>
+  <li><code class="language-plaintext highlighter-rouge">-Werror</code> flag is optional and you may avoid using it since you are expected to know the difference between hard line errors and warnings. If you use <code class="language-plaintext highlighter-rouge">-Werror</code> flag, you will not see any warnings since all warnings will be treated as errors. Btw, make sure you fix all your warnings, errors in the code during assignment submissions.</li>
+</ul>
+
+<h1 id="4-type-of-errors">4. Type of Errors</h1>
+
+<ol>
+  <li>Compile-time Errors/Warnings (syntax errors, etc. detectable during compile-time)</li>
+  <li>Runtime Errors (Exceptions - Program crash)</li>
+  <li>Runtime Errors (Logical bugs due to wrong logic)</li>
+</ol>
+
+<h2 id="41-compile-time-errorswarnings">4.1 Compile-time Errors/Warnings</h2>
+
+<p>During compilation you may encounter:</p>
+
+<p><strong>Errors:</strong> Remember errors are hardline bugs in your code (i.e. syntax errors) and you will not be able to successfully compile the code with errors. The executable file (output file) will not be created.</p>
+
+<p><strong>Warnings:</strong> These are soft errors but not bugs. They have the potential to introduce runtime issues (runtime exceptions and logical bugs). Also, fixing the warnings will help you to improve the readability and the maintainability of the code. i.e.</p>
+
+<pre class="line-numbers "><code class="language-c match-braces">int main()
+{
+    int num = 1; 
+    /* WARNING: unused variable */
+    return 0;
+}
+
+/* It is always the best to remove unused variables to improve the
+redability of the code and avoid being into some nasty logical issues 
+in the code */
+</code></pre>
+
+<h2 id="42-runtime-errors-exceptions---program-crash">4.2 Runtime Errors (Exceptions) - Program Crash</h2>
+
+<p>These are the errors you will encounter during the runtime of the program. You will be able to compile the code successfully, but during the runtime of the program due to not handling some specific condition, you may end up with a program crash! (crash due to an exception). These bugs are harder to detect compared to the compile-time errors since the compiler will not help you to spot them. But fixing some warnings may help you to mitigate some of these nasty runtime issues. gdb debugger can be used to debug the run time errors most of the time. We strongly recommend you to get your hands on gdb debugger from week 3 onwards when writing code. It is taught in detail in Week 07, but you may refer to the following link for quick tips.</p>
+
+<p>Divide by zero is a perfect example of a runtime error. Later, with pointers introduced in week 03, you will encounter a lot of bugs in this category.</p>
+
+<style>
+
+
+
+:root {
+/* Tab: Error color scheme */
+--tabex-tag-bg-color-err: #ffc8c8;
+--tabex-tag-color-err: black;
+
+--tabex-tag-bg-color-err-active: #cf2121;
+--tabex-tag-color-err-active: white;
+
+/* Tab: Warning color scheme */
+--tabex-tag-bg-color-wrn: #ffe8a8; 
+--tabex-tag-color-wrn: black;
+
+--tabex-tag-bg-color-wrn-active: #ffb900;
+--tabex-tag-color-wrn-active: white;
+
+/* Tab: Correct color scheme */
+--tabex-tag-bg-color-crt: #d4ffd4; 
+--tabex-tag-color-crt: black;
+
+--tabex-tag-bg-color-crt-active: #009400;
+--tabex-tag-color-crt-active: white;
+
+/* Tab: Grey color scheme */
+--tabex-tag-bg-color-grey: #eeeeee;
+--tabex-tag-color-grey: black;
+
+--tabex-tag-bg-color-grey-active: #c7c7c7;
+--tabex-tag-color-grey-active: black;
+}
+
+#myTab1-tabs {
+    --bs-nav-tabs-border-width: 0px;
+}
+#myTab1-tabContent .tab-pane{
+    border-radius: 5px;
+}
+
+
+
+    /* When tab header is not selected */
+    #myTab1-tabs #myTab1-tab0 {
+        background-color: var(--tabex-tag-bg-color-wrn);
+        color: var(--tabex-tag-color-wrn);
+        border-radius: 7px 7px 0px 0px;
+    }
+
+    /* When tab header is selected */
+    #myTab1-tabs #myTab1-tab0.active {
+        background-color: var(--tabex-tag-bg-color-wrn-active);
+        color: var(--tabex-tag-color-wrn-active);
+    }
+
+    /* Tab body */
+    #myTab1-tabContent.tab-content #myTab1-content0{
+        background-color: var(--tabex-tag-bg-color-wrn-active);
+        color: var(--tabex-tag-color-wrn-active);
+    }
+
+  
+
+
+    /* When tab header is not selected */
+    #myTab1-tabs #myTab1-tab1 {
+      background-color: var(--tabex-tag-bg-color-crt);
+      color: var(--tabex-tag-color-crt);
+      border-radius: 7px 7px 0px 0px;
+    }
+
+    /* When tab header is selected */
+    #myTab1-tabs #myTab1-tab1.active {
+        background-color: var(--tabex-tag-bg-color-crt-active);
+        color: var(--tabex-tag-color-crt-active);
+    }
+
+    /* Tab body */
+    #myTab1-tabContent.tab-content #myTab1-content1{
+        background-color: var(--tabex-tag-bg-color-crt-active);
+        color: var(--tabex-tag-color-crt-active);
+    }
+
+  
+
+
+
+</style>
+
+<ul class="nav nav-tabs mb-0" id="myTab1-tabs" role="tablist">
+<li class="nav-item" role="presentation">
+
+    
+    
+    
+    <button class="nav-link active" id="myTab1-tab0" data-bs-toggle="tab" data-bs-target="#myTab1-content0" type="button" role="tab" aria-controls="myTab1-tab-content0" aria-selected="true">Example 01</button>
+  </li>
+<li class="nav-item" role="presentation">
+
+    
+    
+    
+    <button class="nav-link " id="myTab1-tab1" data-bs-toggle="tab" data-bs-target="#myTab1-content1" type="button" role="tab" aria-controls="myTab1-tab-content1" aria-selected="false">Example 02</button>
+  </li>
+
+</ul>
+
+<div class="tab-content" id="myTab1-tabContent">
+
+  
+
+  
+  <div class="code-tab-padding tab-pane show active" id="myTab1-content0" role="tabpanel" aria-labelledby="myTab1-tab0">
+    
+
+<pre class="line-numbers mb-0"><code class="language-c match-braces">int main()
+{
+    int num1, num2;
+    scanf("%d %d", &amp;num1, &amp;num2);
+    printf("Division: %f", num1 / num2);
+    return 0;
+}
+/* This program will successfully compile but will fail in runtime */
+</code></pre>
+
+
+
+  </div>  
+  
+  
+
+  
+  <div class="code-tab-padding tab-pane " id="myTab1-content1" role="tabpanel" aria-labelledby="myTab1-tab1">
+    
+
+<pre class="line-numbers mb-0"><code class="language-c match-braces">int main()
+{
+    int num1, num2;
+    scanf("%d %d", &amp;num1, &amp;num2);
+
+    if (num2 != 0)
+        printf("Division: %f", num1 / num2);
+        
+    return 0;
+}
+
+/* This program will successfully compile but will not fail in runtime */
+</code></pre>
+
+
+
+  </div>  
+  
+</div>
+
+<h2 id="43-runtime-errors-logical-bugs---unexpected-behaviours">4.3 Runtime Errors (Logical Bugs) - Unexpected behaviours</h2>
+
+<p>These are the bugs due to your logic being wrong. No compilation errors, no runtime crashes (hopefully), but your program does not provide the expected output. Hence, your program will show unexpected behaviour where you expect something else. These are worst nightmare grade bugs and there is no way to detect them unless you review the logic of the code from A-Z. gdb debugger can be used to some extent to figure out where the logical bug is, but depending on your experience in coding, it will take few minutes to few hours and few days to troubleshoot the logical bug. The more you code, the more you gain in coding experience so keep it up!</p>
+
+<style>
+
+
+
+</style>
+
+<ul class="nav nav-tabs mb-0" id="myTab2-tabs" role="tablist">
+<li class="nav-item" role="presentation">
+
+    
+    
+    
+    <button class="nav-link active" id="myTab2-tab0" data-bs-toggle="tab" data-bs-target="#myTab2-content0" type="button" role="tab" aria-controls="myTab2-tab-content0" aria-selected="true">Example 01</button>
+  </li>
+<li class="nav-item" role="presentation">
+
+    
+    
+    
+    <button class="nav-link " id="myTab2-tab1" data-bs-toggle="tab" data-bs-target="#myTab2-content1" type="button" role="tab" aria-controls="myTab2-tab-content1" aria-selected="false">Example 02</button>
+  </li>
+
+</ul>
+
+<div class="tab-content" id="myTab2-tabContent">
+
+  
+
+  
+  <div class="text-tab-padding tab-pane show active" id="myTab2-content0" role="tabpanel" aria-labelledby="myTab2-tab0">
+    
+
+<pre class="line-numbers mb-0"><code class="language-c match-braces">int main()
+{
+    int num1, num2;
+    scanf("%d %d", &amp;num1, &amp;num2);
+    printf("Addition: %d", num1 - num2);
+    return 0;
+}
+
+/* This program will successfully compile, no runtime-crashes, 
+but logically wrong! */
+
+/* Addition does not add two number but taking the difference. 
+Therefore, you need to fix the logic of the code. */
+</code></pre>
+
+
+
+  </div>  
+  
+  
+
+  
+  <div class="text-tab-padding tab-pane " id="myTab2-content1" role="tabpanel" aria-labelledby="myTab2-tab1">
+    
+
+<pre class="line-numbers mb-0"><code class="language-c match-braces">int main()
+{
+    int num1, num2;
+    scanf("%d %d", &amp;num1, &amp;num2);
+    printf("Addition: %d", num1 + num2); /* FIXED */
+    return 0;
+}
+</code></pre>
+
+
+
+  </div>  
+  
+</div>
+
+<h1 id="faq">FAQ</h1>
+
+<h2 id="1-what-are-variable-declarations-definitions-initializations-assignments-function-declarations-definitions-invocations-what-other-terminology-is-there-in-c-programming">1. What are variable declarations, definitions, initializations, assignments, function declarations, definitions, invocations? What other terminology is there in C programming?</h2>
+
+<p>Please refer to the “Glossary” in Blackboard for the terminology that you need to be aware of in C programming. Getting the right terminology is very important in UCP to understand the advanced concepts of C programming in the later weeks. So make sure you know the terms right!</p>
+
+<h2 id="2-what-happens-if-a-variable-is-declared-but-not-initialized-any-implications">2. What happens if a variable is declared but not initialized? Any implications?</h2>
+
+<p>During variable declaration, the variable will be allocated memory depending on the variable type (In a 64-bit O/S,  int - 32 bits, float - 32 bits, double - 64 bits, etc). Since the variable is not initialized, the value it would contain is the value that already exists in the location where the memory is allocated. This is some random garbage value.</p>
+
+<h2 id="3-do-i-need-to-know-function-recursion">3. Do I need to know function recursion?</h2>
+
+<blockquote>
+  <p>I’m not from a programming background, but I do have a fair bit of understanding of programming constructs such as if, while, etc. I find it difficult to understand function recursion to perform the lab practical? is it really necessary?</p>
+</blockquote>
+
+<p>No, it’s not mandatory to know function recursion as long as you know the control structures such as if, while, do-while well in C programming. Function recursion is an alternate way to perform certain tasks easier and faster than writing a while loop.</p>
+
+<h2 id="4-difference-between-int-main-and-void-main">4. Difference between int main() and void main()</h2>
+
+<p>Like any other function, main is also a function but with a special characteristic that the program execution always starts from the ‘main’. ‘int’ and ‘void’ are its return type. So, let’s discuss all of the three one by one.
+void main – The ANSI standard says “no” to the ‘void main’ and thus using it can be considered wrong. One should stop using the ‘void main’ if doing so.
+int main – ‘int main’ means that our function needs to return some integer at the end of the execution and we do so by returning 0 at the end of the program. 0 is the standard for the “successful execution of the program”. 
+This is an indication to the underlying O/S which in fact calls the entry point (main() function) in your program.
+main – In C89, the unspecified return type defaults to int. So, the main is equivalent to int main in C89. But in C99, this is not allowed and thus one must use int main. So, the preferred way is int main.</p>
+
+<h2 id="5-what-are-d-c-etc-symbols">5. What are %d, %c, etc symbols?</h2>
+
+<p>Those are called format specifiers for printf and scanf functions in C. Acts as a place holder and will be replaced with the actual value of the variable when used in printf(…). You will learn more about it in “Arrays and Strings” Lecture.</p>
+
+<pre class="line-numbers "><code class="language-c match-braces">int num = 10;
+pritnf("%d", num); /* num is an integer */
+</code></pre>
+
+<p>Some of the format specifiers are:
+%d - int (same as %i) 
+%ld - long int (same as %li) 
+%lu - long unsinged int 
+%f - float 
+%lf , %g - double 
+%c - char 
+%s - string 
+%x - hexadecimal</p>
+
+<p><strong>Reference:</strong></p>
+
+<p><img src="https://en.wikibooks.org/static/images/project-logos/enwikibooks.png" alt="Image info" height="36px" width="36px" />
+<a href="https://en.wikibooks.org/wiki/C_Programming/Simple_input_and_output" target="_blank">C Programming/Simple input and output</a></p>
+
+<p>Also, refer to “Input / Output” lecture for more details.</p>
+
+<h2 id="6-what-happens-if-the-user-inputs-a-character-when-an-integer-d-is-expected">6. What happens if the user inputs a character when an integer (%d) is expected?</h2>
+
+<p>Basically, it will not set the character to the integer variable. The variable will be left untouched. Therefore it is important to use the correct placeholder (format specifier) for the right input data type.</p>
+
+<style>
+
+
+
+</style>
+
+<ul class="nav nav-tabs mb-0" id="myTab3-tabs" role="tablist">
+<li class="nav-item" role="presentation">
+
+    
+    
+    
+    <button class="nav-link active" id="myTab3-tab0" data-bs-toggle="tab" data-bs-target="#myTab3-content0" type="button" role="tab" aria-controls="myTab3-tab-content0" aria-selected="true">Example 01</button>
+  </li>
+<li class="nav-item" role="presentation">
+
+    
+    
+    
+    <button class="nav-link " id="myTab3-tab1" data-bs-toggle="tab" data-bs-target="#myTab3-content1" type="button" role="tab" aria-controls="myTab3-tab-content1" aria-selected="false">Example 02</button>
+  </li>
+
+</ul>
+
+<div class="tab-content" id="myTab3-tabContent">
+
+  
+
+  
+  <div class="text-tab-padding tab-pane show active" id="myTab3-content0" role="tabpanel" aria-labelledby="myTab3-tab0">
+    
+
+<pre class="line-numbers "><code class="language-c match-braces">int num = 0; /* Initialize the variable to 0 */
+scanf("%d", &amp;num); /* if user inputs character 'A' */
+print("%d", num); /* num will still be 0 */
+</code></pre>
+
+
+
+  </div>  
+  
+  
+
+  
+  <div class="text-tab-padding tab-pane " id="myTab3-content1" role="tabpanel" aria-labelledby="myTab3-tab1">
+    
+
+<pre class="line-numbers "><code class="language-c match-braces">int num; /* num contains some garbage value = 42098 */
+scanf("%d", &amp;num); /* if user inputs character 'A' */
+print("%d", num); /* num will be 65 (ASCII value of 'A') */
+</code></pre>
+
+
+
+  </div>  
+  
+</div>
+
+<h2 id="7-why-do-we-need-to-use-variable_name-in-scanf-but-not-in-printf">7. Why do we need to use &amp;variable_name in scanf but not in printf?</h2>
+
+<p>Variable has 4 important parts.</p>
+<ul>
+  <li>Memory allocation (depends on the variable type)</li>
+  <li>Memory address where the memory allocation is</li>
+  <li>Name (alias to refer to the allocated memory)</li>
+  <li>Value</li>
+  <li>&amp; sign will fetch the memory address of a variable given the variable name. Since scanf stores a value from the user in a variable, it needs to know the actual memory address of the variable to locate the location in the memory.</li>
+</ul>
+
+<pre class="line-numbers "><code class="language-c match-braces">int num;
+char ch;
+scanf("%d", &amp;num);
+scanf(" %c", &amp;ch); 
+/* make sure to keep a space " %c" to consume all the whitespaces 
+preeding the user input character. In contrast, "%d" consumes all 
+whitespaces by default.
+Ref: https://eecs.wsu.edu/~cs150/reading/scanf.htm
+*/
+</code></pre>
+
+<p><i class="fa fa-link" style="font-size: 20px"></i>
+<a href="https://eecs.wsu.edu/~cs150/reading/scanf.htm">Input and the scanf function</a></p>
+
+<p>i.e.</p>
+
+<pre class="line-numbers "><code class="language-sh match-braces">Ask for int:
+buffer: 1\n
+int is read %d
+buffer: \n
+ask for char
+buffer: \na\n
+read char or string, \n is read
+buffer: a\n (left in buffer)
+</code></pre>
+
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/cs/lang_c2/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/cs/lang_c2/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/cs/lang_c2/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    // Adding script tags to externally link js
+        keyName = `bootstrap_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'bootstrap');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `bootstrap_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'bootstrap')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", bootstrap, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `bootstrap_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `bootstrap_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'bootstrap');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `bootstrap_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'bootstrap')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `bootstrap_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/cs/lang_c2/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Wiki | C-Language"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/cs/lang_c2/fundamental/2_pre-processing/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. Preprocessing"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "2. Preprocessing",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_1_fundamentals/2_pre-processing.md",
+            "ref": "_1_fundamentals/2_pre-processing.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | C-Language",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_1_fundamentals/1_c-basics.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-08-16 11:19:23 +0800"
+    },
+    "basePath": "/cs/lang_c2",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/cs/lang_c2/assets/gitbook/gitbook.js"></script>
+<script src="/cs/lang_c2/assets/gitbook/theme.js"></script>
+
+<script src="/cs/lang_c2/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/cs/lang_c2/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/cs/lang_c2/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/cs/lang_c2/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/cs/lang_c2/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/cs/lang_c2/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/cs/lang_c2/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/cs/lang_c2/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>
