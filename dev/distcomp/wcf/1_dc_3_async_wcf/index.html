@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. Fundamentals · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>3. Async WCF · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -52,11 +52,9 @@
 
 
 <!-- trackers -->
-            <link rel="prev" href="/dev/distcomp/" />
+            <link rel="prev" href="/dev/distcomp/wcf/1_dc_2_service_and_data_contract/" />
         
 
-        
-            <link rel="next" href="/dev/distcomp/c_sharp/1_cs_2_advance/" />
         
     </head>
     <body>         
@@ -127,15 +125,12 @@
             
             
             
-            <li class="chapter active" data-level="1.2" data-path="/dev/distcomp/c_sharp/1_cs_1_fundamentals/">
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/c_sharp/1_cs_1_fundamentals/">
                 
                 <a href="/dev/distcomp/c_sharp/1_cs_1_fundamentals/" onclick="pageScrollToTop(this)">
                     1. Fundamentals
                 </a>
                 
-                
-                <ul><li><a href="#11-visual-studio-project-types" onclick="mobilePageScrollToAnchor(this)" >1.1 Visual Studio Project Types</a><ul><li><a href="#1-console-app-net-framework" onclick="mobilePageScrollToAnchor(this)" >1. Console App (.NET Framework)</a></li><li><a href="#2-console-app-aka-net-5-net-6-net-7-net-8-etc" onclick="mobilePageScrollToAnchor(this)" >2. Console App (aka .NET 5, .NET 6, .NET 7, .NET 8, etc.)</a></li><li><a href="#3-key-differences" onclick="mobilePageScrollToAnchor(this)" >3. Key Differences</a></li><li><a href="#3-which-one-should-you-choose" onclick="mobilePageScrollToAnchor(this)" >3. Which One Should You Choose?</a></li></ul></li><li><a href="#2-creating-a-dll-dynamic-link-library" onclick="mobilePageScrollToAnchor(this)" >2. Creating a DLL (Dynamic Link Library)</a><ul><li><a href="#21-example" onclick="mobilePageScrollToAnchor(this)" >2.1 Example</a></li></ul></li></ul>
-
                 
                 
             </li>
@@ -216,12 +211,15 @@
             
             
             
-            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/wcf/1_dc_3_async_wcf/">
+            <li class="chapter active" data-level="1.2" data-path="/dev/distcomp/wcf/1_dc_3_async_wcf/">
                 
                 <a href="/dev/distcomp/wcf/1_dc_3_async_wcf/" onclick="pageScrollToTop(this)">
                     3. Async WCF
                 </a>
                 
+                
+                <ul><li><a href="#31-client-using-iasync-result" onclick="mobilePageScrollToAnchor(this)" >3.1 Client Using IAsync Result</a></li></ul>
+
                 
                 
             </li>
@@ -278,7 +276,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >1. Fundamentals</a>
+                            <a href="." >3. Async WCF</a>
                         
                     </h1>
                 </div>
@@ -297,270 +295,142 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/c_sharp/1_cs_1_fundamentals">1. Fundamentals</h1>
+                        <h1 id="/wcf/1_dc_3_async_wcf">3. Async WCF</h1>
                     
 
-                    <h1 id="11-visual-studio-project-types">1.1 Visual Studio Project Types</h1>
+                    <h1 id="31-client-using-iasync-result">3.1 Client Using IAsync Result</h1>
 
-<p>When working with Visual Studio 2022, you’ll notice that you can create different types of Console Applications. The two main options are:</p>
+<p>This C# WPF application connects to a student database service using WCF and allows users to search for student records asynchronously. It retrieves and displays student details, updating the UI safely across threads. The code uses a delegate for asynchronous searches, ensuring proper resource management by checking if EndInvoke has been called before invoking it to avoid errors.</p>
 
-<p><strong>1. Console App (.NET Framework)</strong>
-<strong>2. Console App</strong></p>
-
-<h2 id="1-console-app-net-framework">1. Console App (.NET Framework)</h2>
-
-<ul>
-  <li>
-    <p><strong>Target Framework</strong>: This type of project targets the .NET Framework, which is a Windows-specific framework that has been around since the early 2000s. It’s primarily used for building Windows desktop applications, Windows services, and web applications using ASP.NET Web Forms or ASP.NET MVC.</p>
-  </li>
-  <li>
-    <p><strong>Compatibility</strong>: The .NET Framework is only compatible with Windows. It is not cross-platform, meaning it won’t run natively on macOS, Linux, or other non-Windows operating systems.</p>
-  </li>
-  <li>
-    <p><strong>Libraries</strong>: You have access to the full suite of .NET Framework libraries, which include Windows-specific APIs like WPF, Windows Forms, and many legacy libraries that may not be available or fully supported in .NET Core or .NET 5/6/7/8+.</p>
-  </li>
-  <li>
-    <p><strong>Project File Format</strong>: The project file (<code class="language-plaintext highlighter-rouge">.csproj</code>) in .NET Framework projects is often more complex and uses an older format compared to .NET Core/.NET projects.</p>
-  </li>
-  <li>
-    <p><strong>Deployment</strong>: Applications built with .NET Framework typically require the target .NET Framework version to be installed on the machine where the application is running.</p>
-  </li>
-</ul>
-
-<h2 id="2-console-app-aka-net-5-net-6-net-7-net-8-etc">2. Console App (aka .NET 5, .NET 6, .NET 7, .NET 8, etc.)</h2>
-
-<ul>
-  <li>
-    <p><strong>Target Framework</strong>: This type of project targets the .NET runtime (previously known as .NET Core), which is a modern, cross-platform, open-source framework. Starting from .NET 5, the name was unified to just “.NET” (e.g., .NET 5, .NET 6, .NET 7, .NET 8).</p>
-  </li>
-  <li>
-    <p><strong>Cross-Platform</strong>: Applications built using this template can run on Windows, macOS, and Linux. This is one of the key benefits of the .NET runtime compared to the .NET Framework.</p>
-  </li>
-  <li>
-    <p><strong>Performance</strong>: .NET applications tend to have better performance and smaller deployment footprints compared to .NET Framework applications due to the optimizations in the runtime and the ability to deploy as self-contained applications.</p>
-  </li>
-  <li>
-    <p><strong>Modern APIs</strong>: The .NET runtime is actively developed, and new features and APIs are added with each release. It also includes modern libraries and supports the latest C# language features more rapidly than the .NET Framework.</p>
-  </li>
-  <li>
-    <p><strong>Project File Format</strong>: The project file (<code class="language-plaintext highlighter-rouge">.csproj</code>) in .NET projects is simpler and uses a more streamlined, SDK-style format. This format is easier to read and manage, especially in source control systems.</p>
-  </li>
-  <li>
-    <p><strong>Deployment</strong>: You can create self-contained deployments that include the .NET runtime, so the target machine doesn’t need to have the runtime installed. This is in contrast to the .NET Framework, where the correct version of the framework must be installed on the target machine.</p>
-  </li>
-</ul>
-
-<h2 id="3-key-differences">3. Key Differences</h2>
-
-<p><strong>1. Platform Support</strong>:</p>
-<ul>
-  <li><strong>.NET Framework Console App</strong>: Windows-only.</li>
-  <li><strong>.NET Console App</strong>: Cross-platform (Windows, macOS, Linux).</li>
-</ul>
-
-<p><strong>2. Development and Deployment</strong>:</p>
-<ul>
-  <li><strong>.NET Framework</strong>: Requires the specific version of .NET Framework to be installed on the target machine.</li>
-  <li><strong>.NET</strong>: Can be deployed as a self-contained application, bundling the runtime with the app.</li>
-</ul>
-
-<p><strong>3. Project Structure</strong>:</p>
-<ul>
-  <li><strong>.NET Framework</strong>: Uses an older, more complex project file format.</li>
-  <li><strong>.NET</strong>: Uses a simpler, SDK-style project file.</li>
-</ul>
-
-<p><strong>4. API Availability</strong>:</p>
-<ul>
-  <li><strong>.NET Framework</strong>: Includes legacy APIs and Windows-specific libraries.</li>
-  <li><strong>.NET</strong>: Focuses on modern APIs and cross-platform development.</li>
-</ul>
-
-<p><strong>5. Performance</strong>:</p>
-<ul>
-  <li><strong>.NET Framework</strong>: May have higher memory and performance overhead compared to .NET.</li>
-  <li><strong>.NET</strong>: Generally more optimized for performance and has better support for modern hardware.</li>
-</ul>
-
-<h2 id="3-which-one-should-you-choose">3. Which One Should You Choose?</h2>
-
-<ul>
-  <li><strong>Choose Console App (.NET Framework)</strong> if**:
-    <ul>
-      <li>You need to use libraries or APIs that are only available in the .NET Framework.</li>
-      <li>You’re maintaining or extending a legacy application that was built on the .NET Framework.</li>
-    </ul>
-  </li>
-  <li><strong>Choose Console App (.NET)</strong> if**:
-    <ul>
-      <li>You want to build cross-platform applications.</li>
-      <li>You need to use the latest features of C# and .NET.</li>
-      <li>You are starting a new project and want to take advantage of the modern, high-performance features of the .NET runtime.</li>
-      <li>You prefer a simpler and more modern project structure and tooling.</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="2-creating-a-dll-dynamic-link-library">2. Creating a DLL (Dynamic Link Library)</h1>
-
-<style>  
-
-  #dll-video.flex-container {
-      display: flex;
-      flex-direction: row;
-  }
-  #dll-video.flex-container > div {
-    width: 100%;
-    height: 440px;
-    margin: auto;
-    padding: 5px;
-    margin-bottom: 10px;
-  }
-
-  
-
-  
-  /* Responsive layout - makes a one column layout instead of a two-column layout */
-  @media (max-width: 800px) {
-
-    #dll-video.flex-container {
-      flex-direction: column;
-    }
-    #dll-video.flex-container > div {
-      width: 100%;
-      height: 250px;
-    }
-  }
-</style>
-
-<div id="dll-video" class="flex-container">
-  
-  <div><iframe style="border-radius: 10px; overflow: hidden; border: 2px solid #7a7a7a; box-shadow: 1px 2px 5px #b4b4b4;" width="100%" height="100%" src="https://www.youtube.com/embed/xu7vT2MQV7c" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
-  
-</div>
-
-<p>A <strong>DLL (Dynamic Link Library)</strong> is a file that contains code and data that can be used by multiple programs simultaneously. It helps in modularizing applications and reduces memory and disk space usage since the code can be shared. DLLs are commonly used in the Windows operating system for providing reusable functions, procedures, and data structures.</p>
-
-<p>Certainly! Let’s go through an example of creating a simple DLL in C# using Visual Studio.</p>
-
-<h2 id="21-example">2.1 Example</h2>
-
-<p>We’ll create a DLL that contains a class <code class="language-plaintext highlighter-rouge">MathLibrary</code> with a method <code class="language-plaintext highlighter-rouge">Add</code> that adds two integers.</p>
-
-<h4 id="1-create-a-new-project">1. Create a New Project</h4>
-
-<ul>
-  <li>Open Visual Studio.</li>
-  <li>Go to <code class="language-plaintext highlighter-rouge">File</code> &gt; <code class="language-plaintext highlighter-rouge">New</code> &gt; <code class="language-plaintext highlighter-rouge">Project...</code>.</li>
-  <li>In the “Create a new project” dialog, search for <code class="language-plaintext highlighter-rouge">"Class Library (.Net Framework)"</code> and select “Class Library” under the C# language.</li>
-  <li>Name the project <code class="language-plaintext highlighter-rouge">MathLibrary</code> and choose a location. Click <code class="language-plaintext highlighter-rouge">Create</code>.</li>
-</ul>
-
-<h4 id="2-write-the-code">2. Write the Code</h4>
-
-<ul>
-  <li>Visual Studio will create a default class file named <code class="language-plaintext highlighter-rouge">Class1.cs</code>. Rename this file to <code class="language-plaintext highlighter-rouge">MathLibrary.cs</code>.</li>
-  <li>
-    <p>Modify the contents of the <code class="language-plaintext highlighter-rouge">MathLibrary.cs</code> file:</p>
-
-    <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-
-<span class="k">namespace</span> <span class="nn">MathLibrary</span>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nn">AsyncClient</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">class</span> <span class="nc">MathOperations</span>
+    <span class="k">public</span> <span class="k">delegate</span> <span class="n">Student</span> <span class="nf">Search</span><span class="p">(</span><span class="kt">string</span> <span class="k">value</span><span class="p">);</span> <span class="c1">//delegate for searching</span>
+
+    <span class="c1">/// &lt;summary&gt;</span>
+    <span class="c1">/// Interaction logic for MainWindow.xaml</span>
+    <span class="c1">/// &lt;/summary&gt;</span>
+    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MainWindow</span> <span class="p">:</span> <span class="n">Window</span>
     <span class="p">{</span>
-        <span class="k">public</span> <span class="kt">int</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+        <span class="c1">// Server contract for the client to create a channel</span>
+        <span class="k">private</span> <span class="n">StudentBusinessInterface</span> <span class="n">foob</span><span class="p">;</span>
+        <span class="k">private</span> <span class="n">Search</span> <span class="n">search</span><span class="p">;</span> <span class="c1">//reference to method</span>
+       
+        <span class="k">public</span> <span class="nf">MainWindow</span><span class="p">()</span>
         <span class="p">{</span>
-            <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">;</span>
+                   <span class="nf">InitializeComponent</span><span class="p">();</span>
+                   <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">StudentBusinessInterface</span><span class="p">&gt;</span> <span class="n">foobFactory</span><span class="p">;</span>
+                   <span class="n">NetTcpBinding</span> <span class="n">tcp</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">NetTcpBinding</span><span class="p">();</span>
+                   <span class="c1">//Set the URL and create the connection!</span>
+                   <span class="kt">string</span> <span class="n">URL</span> <span class="p">=</span> <span class="s">"net.tcp://localhost:8200/StudentBusinessService"</span><span class="p">;</span>
+                   <span class="n">foobFactory</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ChannelFactory</span><span class="p">&lt;</span><span class="n">StudentBusinessInterface</span><span class="p">&gt;(</span><span class="n">tcp</span><span class="p">,</span> <span class="n">URL</span><span class="p">);</span>
+                   <span class="n">foob</span> <span class="p">=</span> <span class="n">foobFactory</span><span class="p">.</span><span class="nf">CreateChannel</span><span class="p">();</span>
+                   <span class="c1">//Also, tell me how many entries are in the DB.</span>
+                   <span class="n">TotalNum</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">foob</span><span class="p">.</span><span class="nf">GetNumEntries</span><span class="p">().</span><span class="nf">ToString</span><span class="p">();</span>
+           
         <span class="p">}</span>
 
-        <span class="k">public</span> <span class="kt">int</span> <span class="nf">Subtract</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">SearchButthon_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="k">return</span> <span class="n">a</span> <span class="p">-</span> <span class="n">b</span><span class="p">;</span>
+            <span class="n">search</span> <span class="p">=</span> <span class="n">SearchDB</span><span class="p">;</span>
+
+            <span class="c1">// Set the callback</span>
+            <span class="n">AsyncCallback</span> <span class="n">callback</span><span class="p">;</span>
+            <span class="n">callback</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">OnSearchCompletion</span><span class="p">;</span>
+
+            <span class="c1">// Call the delegate asynchronously</span>
+            <span class="n">IAsyncResult</span> <span class="n">result</span> <span class="p">=</span> <span class="n">search</span><span class="p">.</span><span class="nf">BeginInvoke</span><span class="p">(</span><span class="n">SearchBox</span><span class="p">.</span><span class="n">Text</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+
+            <span class="c1">// search.EndInoke must be called (and once only) for search.BeginInoke</span>
+            <span class="c1">// In the callback method retrieve the delete object 'search' and call search.Endinvoke</span>
+
+        <span class="p">}</span>
+
+        <span class="c1">// This method will be called asynchronously on SearchButthon_Click()</span>
+        <span class="k">private</span> <span class="n">Student</span> <span class="nf">SearchDB</span><span class="p">(</span><span class="kt">string</span> <span class="k">value</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">id</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+            <span class="kt">string</span> <span class="n">universityName</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+            <span class="n">foob</span><span class="p">.</span><span class="nf">GetValuesForSearch</span><span class="p">(</span><span class="k">value</span><span class="p">,</span> <span class="k">out</span> <span class="n">name</span><span class="p">,</span> <span class="k">out</span> <span class="n">id</span><span class="p">,</span> <span class="k">out</span> <span class="n">universityName</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">id</span> <span class="p">!=</span> <span class="m">0</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">Student</span> <span class="n">aStudent</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Student</span><span class="p">();</span>
+                <span class="n">aStudent</span><span class="p">.</span><span class="n">Name</span><span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+                <span class="n">aStudent</span><span class="p">.</span><span class="n">Id</span><span class="p">=</span> <span class="n">id</span><span class="p">;</span>
+                <span class="n">aStudent</span><span class="p">.</span><span class="n">University</span> <span class="p">=</span> <span class="n">universityName</span><span class="p">;</span>
+                <span class="k">return</span> <span class="n">aStudent</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+
+            <span class="c1">// Once the value is returned the callback (which is set in SearchButthon_Click) will be called</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">UpdateGui</span><span class="p">(</span><span class="n">Student</span> <span class="n">aStudent</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Update the GUI Asynchronously</span>
+            <span class="c1">// This method is called in a different thread</span>
+            
+            <span class="c1">// Queue the updates for GUI elements</span>
+            <span class="c1">// This is because, GUI elements cannot be updated apart from the GUI thread (main thread) </span>
+            <span class="n">SiD</span><span class="p">.</span><span class="n">Dispatcher</span><span class="p">.</span><span class="nf">Invoke</span><span class="p">(</span><span class="k">new</span> <span class="nf">Action</span><span class="p">(()</span> <span class="p">=&gt;</span><span class="n">SiD</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">aStudent</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()));</span>
+            <span class="n">SName</span><span class="p">.</span><span class="n">Dispatcher</span><span class="p">.</span><span class="nf">Invoke</span><span class="p">(</span><span class="k">new</span> <span class="nf">Action</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="n">SName</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">aStudent</span><span class="p">.</span><span class="n">Name</span><span class="p">));</span>
+            <span class="n">SUni</span><span class="p">.</span><span class="n">Dispatcher</span><span class="p">.</span><span class="nf">Invoke</span><span class="p">(</span><span class="k">new</span> <span class="nf">Action</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="n">SUni</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">aStudent</span><span class="p">.</span><span class="n">University</span><span class="p">));</span>
+           
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">OnSearchCompletion</span><span class="p">(</span><span class="n">IAsyncResult</span> <span class="n">asyncResult</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Student</span> <span class="n">iStudent</span><span class="p">=</span><span class="k">null</span><span class="p">;</span>
+            <span class="n">Search</span> <span class="n">search</span><span class="p">=</span><span class="k">null</span><span class="p">;</span>
+            <span class="n">AsyncResult</span> <span class="n">asyncobj</span> <span class="p">=</span> <span class="p">(</span><span class="n">AsyncResult</span><span class="p">)</span><span class="n">asyncResult</span><span class="p">;</span>
+            
+            <span class="c1">// Check whether the EndInvoke is called already (if EndInvoke is called twice, it will show an error)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">asyncobj</span><span class="p">.</span><span class="n">EndInvokeCalled</span> <span class="p">==</span> <span class="k">false</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// Retreieve the delegate object 'search'</span>
+                <span class="n">search</span> <span class="p">=</span> <span class="p">(</span><span class="n">Search</span><span class="p">)</span><span class="n">asyncobj</span><span class="p">.</span><span class="n">AsyncDelegate</span><span class="p">;</span>
+
+                <span class="c1">// Call the EndInvoke on the delegate object</span>
+                <span class="c1">// Retrieve the student object returned in function ('SearchDB') pointed by the delegate 'search'</span>
+                <span class="n">iStudent</span> <span class="p">=</span> <span class="n">search</span><span class="p">.</span><span class="nf">EndInvoke</span><span class="p">(</span><span class="n">asyncobj</span><span class="p">);</span>
+                
+                <span class="c1">// Update the GUI (Remember, we are in a different thread, not the GUI thread)</span>
+                <span class="nf">UpdateGui</span><span class="p">(</span><span class="n">iStudent</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="n">asyncobj</span><span class="p">.</span><span class="n">AsyncWaitHandle</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+            
+
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>This example defines a class <code class="language-plaintext highlighter-rouge">MathOperations</code> within the <code class="language-plaintext highlighter-rouge">MathLibrary</code> namespace. The class has two methods: <code class="language-plaintext highlighter-rouge">Add</code> and <code class="language-plaintext highlighter-rouge">Subtract</code>.</li>
+</code></pre></div></div>
+
+<h4 id="explanation-of-asyncobjendinvokecalled--false">Explanation of <code class="language-plaintext highlighter-rouge">asyncobj.EndInvokeCalled == false</code></h4>
+
+<p>In the <code class="language-plaintext highlighter-rouge">OnSearchCompletion</code> method, the check for <code class="language-plaintext highlighter-rouge">asyncobj.EndInvokeCalled == false</code> ensures that the <code class="language-plaintext highlighter-rouge">EndInvoke</code> method is only called once on the asynchronous delegate.</p>
+
+<p>The check for <code class="language-plaintext highlighter-rouge">asyncobj.EndInvokeCalled == false</code> is a safeguard to avoid multiple invocations of <code class="language-plaintext highlighter-rouge">EndInvoke</code>, which could cause errors or resource leaks.</p>
+
+<p>Here’s why this is important:</p>
+
+<h5 id="understanding-iasyncresult-and-endinvoke">Understanding <code class="language-plaintext highlighter-rouge">IAsyncResult</code> and <code class="language-plaintext highlighter-rouge">EndInvoke</code>:</h5>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">IAsyncResult</code> is the interface returned by <code class="language-plaintext highlighter-rouge">BeginInvoke</code> when calling a method asynchronously using a delegate.</li>
+  <li>When the asynchronous operation completes, <code class="language-plaintext highlighter-rouge">EndInvoke</code> must be called to retrieve the result and to ensure that resources used during the asynchronous operation are properly cleaned up.</li>
 </ul>
 
-<h4 id="3-build-the-dll">3. Build the DLL</h4>
-
+<h5 id="the-purpose-of-the-endinvokecalled-check">The Purpose of the <code class="language-plaintext highlighter-rouge">EndInvokeCalled</code> Check:</h5>
 <ul>
-  <li>Save your changes.</li>
-  <li>Go to <code class="language-plaintext highlighter-rouge">Build</code> &gt; <code class="language-plaintext highlighter-rouge">Build Solution</code> (or press <code class="language-plaintext highlighter-rouge">Ctrl+Shift+B</code>). Visual Studio will compile the code and generate a DLL file.</li>
-  <li>The DLL will be located in the <code class="language-plaintext highlighter-rouge">bin\Debug\net6.0</code> (or similar) directory within your project folder, depending on the .NET version you’re targeting.</li>
+  <li><code class="language-plaintext highlighter-rouge">asyncobj.EndInvokeCalled</code> is a flag provided by the <code class="language-plaintext highlighter-rouge">AsyncResult</code> class that indicates whether <code class="language-plaintext highlighter-rouge">EndInvoke</code> has already been called on the delegate.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">EndInvoke</code> method should only be called once. If <code class="language-plaintext highlighter-rouge">EndInvoke</code> is called more than once, it can result in an <code class="language-plaintext highlighter-rouge">InvalidOperationException</code> or undefined behavior.</li>
+  <li>By checking <code class="language-plaintext highlighter-rouge">asyncobj.EndInvokeCalled == false</code>, the code ensures that <code class="language-plaintext highlighter-rouge">EndInvoke</code> is only executed if it hasn’t been called already. This prevents double-calling <code class="language-plaintext highlighter-rouge">EndInvoke</code>, which could otherwise lead to errors.</li>
 </ul>
 
-<h4 id="4-using-the-dll-in-another-project">4. Using the DLL in Another Project</h4>
-
-<p>To use this DLL in another project:</p>
-
+<h5 id="practical-implications">Practical Implications:</h5>
 <ul>
-  <li><strong>Create a new Console Application</strong> (or any other type of application):
-    <ul>
-      <li>Go to <code class="language-plaintext highlighter-rouge">File</code> &gt; <code class="language-plaintext highlighter-rouge">New</code> &gt; <code class="language-plaintext highlighter-rouge">Project...</code>.</li>
-      <li>Select “Console App” under C# and name it <code class="language-plaintext highlighter-rouge">MathClient</code>.</li>
-      <li>Click <code class="language-plaintext highlighter-rouge">Create</code>.</li>
-    </ul>
-  </li>
-  <li><strong>Add a Reference to the DLL</strong>:
-    <ul>
-      <li>In the Solution Explorer, right-click on the <code class="language-plaintext highlighter-rouge">MathClient</code> project and select <code class="language-plaintext highlighter-rouge">Add</code> &gt; <code class="language-plaintext highlighter-rouge">Reference...</code>.</li>
-      <li>In the Reference Manager, select <code class="language-plaintext highlighter-rouge">Browse</code> on the left side, then click the <code class="language-plaintext highlighter-rouge">Browse...</code> button.</li>
-      <li>Navigate to the <code class="language-plaintext highlighter-rouge">MathLibrary.dll</code> file you created, typically found in the <code class="language-plaintext highlighter-rouge">bin\Debug\net6.0</code> folder of the <code class="language-plaintext highlighter-rouge">MathLibrary</code> project. Select the DLL and click <code class="language-plaintext highlighter-rouge">Add</code>.</li>
-    </ul>
-  </li>
-</ul>
-
-<blockquote class="block-tip">
-  <h5 id="important">IMPORTANT</h5>
-
-  <p>Alternatively you can add the DLL project reference if the <code class="language-plaintext highlighter-rouge">MathClient</code> Project and the DLL project is in the same solution. This will be helpful when performing debugging the DLL projects via breakpoints</p>
-</blockquote>
-
-<ul>
-  <li><strong>Use the DLL in the Console Application</strong>:
-    <ul>
-      <li>In the <code class="language-plaintext highlighter-rouge">Program.cs</code> file of the <code class="language-plaintext highlighter-rouge">MathClient</code> project, add the following code:</li>
-    </ul>
-
-    <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">MathLibrary</span><span class="p">;</span>
-
-<span class="k">namespace</span> <span class="nn">MathClient</span>
-<span class="p">{</span>
-    <span class="k">class</span> <span class="nc">Program</span>
-    <span class="p">{</span>
-        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">MathOperations</span> <span class="n">math</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MathOperations</span><span class="p">();</span>
-
-            <span class="kt">int</span> <span class="n">sum</span> <span class="p">=</span> <span class="n">math</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
-            <span class="kt">int</span> <span class="n">difference</span> <span class="p">=</span> <span class="n">math</span><span class="p">.</span><span class="nf">Subtract</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
-
-            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Sum: </span><span class="p">{</span><span class="n">sum</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
-            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Difference: </span><span class="p">{</span><span class="n">difference</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>This code creates an instance of the <code class="language-plaintext highlighter-rouge">MathOperations</code> class from the <code class="language-plaintext highlighter-rouge">MathLibrary</code> DLL and calls its methods.</li>
-</ul>
-
-<h4 id="5-run-the-application">5. Run the Application</h4>
-
-<ul>
-  <li>Set the <code class="language-plaintext highlighter-rouge">MathClient</code> project as the startup project by right-clicking on it in Solution Explorer and selecting <code class="language-plaintext highlighter-rouge">Set as StartUp Project</code>.</li>
-  <li>
-    <p>Run the application (press <code class="language-plaintext highlighter-rouge">F5</code>). You should see the output:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sum: 8
-Difference: 2
-</code></pre></div>    </div>
-  </li>
+  <li><strong>Safety:</strong> This check ensures that the code remains safe and stable, particularly in complex scenarios where multiple asynchronous operations might be managed or when the callback could potentially be invoked multiple times.</li>
+  <li><strong>Resource Management:</strong> Properly handling <code class="language-plaintext highlighter-rouge">EndInvoke</code> ensures that all resources tied to the asynchronous call are released correctly.</li>
 </ul>
 </section>
             </div><div class="search-results">
@@ -726,15 +596,11 @@ Difference: 2
 </script>
 
 
-                        <a href="/dev/distcomp/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Wiki | Distributed - Computing"> <!-- class="hide_element" -->
+                        <a href="/dev/distcomp/wcf/1_dc_2_service_and_data_contract/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2. Contracts"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
-                    
-                        <a href="/dev/distcomp/c_sharp/1_cs_2_advance/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. Advance"> <!-- class="hide_element" -->
-                            <i class="fa fa-angle-right"></i>
-                        </a>
                     
                     <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
                 </div>
@@ -773,15 +639,6 @@ Difference: 2
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "2. Advance",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_1_net_distcomp/1_cs_2_advance.md",
-            "ref": "_1_net_distcomp/1_cs_2_advance.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -871,7 +728,7 @@ Difference: 2
         "gitbook": "*"
     },
     "file": {
-        "path": "_1_net_distcomp/1_cs_1_fundamentals.md",
+        "path": "_1_net_distcomp/1_dc_3_async_wcf.md",
         "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },
