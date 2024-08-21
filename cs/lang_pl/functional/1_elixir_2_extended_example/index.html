@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. Fundamentals · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2. Extended Examples · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -52,7 +52,7 @@
 
 
 <!-- trackers -->
-            <link rel="prev" href="/cs/lang_pl/" />
+            <link rel="prev" href="/cs/lang_pl/functional/1_elixir_1_basics/" />
         
 
         
@@ -265,12 +265,15 @@
             
             
             
-            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/1_elixir_2_extended_example/">
+            <li class="chapter active" data-level="1.2" data-path="/cs/lang_pl/functional/1_elixir_2_extended_example/">
                 
                 <a href="/cs/lang_pl/functional/1_elixir_2_extended_example/" onclick="pageScrollToTop(this)">
                     2. Extended Examples
                 </a>
                 
+                
+                <ul><li><a href="#21-example-01" onclick="mobilePageScrollToAnchor(this)" >2.1 Example 01</a><ul><li><a href="#q1-latest-reading" onclick="mobilePageScrollToAnchor(this)" >Q1: Latest Reading</a></li><li><a href="#q2-max-reading" onclick="mobilePageScrollToAnchor(this)" >Q2: Max Reading</a><ul><li><a href="#--using-recursion" onclick="mobilePageScrollToAnchor(this)" >- Using Recursion:</a></li></ul></li><li><a href="#q3-rising-reading" onclick="mobilePageScrollToAnchor(this)" >Q3: Rising Reading</a></li><li><a href="#q4-danger-reading" onclick="mobilePageScrollToAnchor(this)" >Q4: Danger Reading</a><ul><li><a href="#--using-recursion-1" onclick="mobilePageScrollToAnchor(this)" >- Using Recursion</a></li></ul></li><li><a href="#q5-fire-reading" onclick="mobilePageScrollToAnchor(this)" >Q5: Fire Reading</a></li></ul></li></ul>
+
                 
                 
             </li>
@@ -321,15 +324,12 @@
             
             
             
-            <li class="chapter active" data-level="1.2" data-path="/cs/lang_pl/scripting/1_basics/">
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/scripting/1_basics/">
                 
                 <a href="/cs/lang_pl/scripting/1_basics/" onclick="pageScrollToTop(this)">
                     1. Fundamentals
                 </a>
                 
-                
-                
-
                 
                 
             </li>
@@ -358,7 +358,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >1. Fundamentals</a>
+                            <a href="." >2. Extended Examples</a>
                         
                     </h1>
                 </div>
@@ -377,10 +377,207 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/scripting/1_basics">1. Fundamentals</h1>
+                        <h1 id="/functional/1_elixir_2_extended_example">2. Extended Examples</h1>
                     
 
-                    
+                    <h1 id="21-example-01">2.1 Example 01</h1>
+
+<p>You are designing a system that monitors and regulates the turbine inlet temperature, oil temperature, and oil pressure for an aircraft engine. Every cycle a new reading is taken and appended to a list such as the following:</p>
+
+<p>[851, 841, 800, 756, 640, 390, 201]
+… where the head of the list is the latest reading taken. The componet you are building is tasked in monitoring for anomalous spikes or drops that may indicate mechanical failure.</p>
+
+<p>You may assume all readings are integers.</p>
+
+<h2 id="q1-latest-reading">Q1: Latest Reading</h2>
+
+<blockquote>
+  <p>Implement <code class="language-plaintext highlighter-rouge">EngineMonitor.latest/1</code> such that it returns the last reading taken from a given list.</p>
+</blockquote>
+
+<p>Here’s how you can implement <code class="language-plaintext highlighter-rouge">EngineMonitor.latest/1</code> in Elixir to return the last reading taken from a given list:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">EngineMonitor</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">latest</span><span class="p">([</span><span class="n">latest</span> <span class="o">|</span> <span class="n">_rest</span><span class="p">]),</span> <span class="k">do</span><span class="p">:</span> <span class="n">latest</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Given a list, this function extracts and returns the head, which is the latest reading.</p>
+
+<p>For example:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">readings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">851</span><span class="p">,</span> <span class="mi">841</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">756</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">201</span><span class="p">]</span>
+<span class="no">EngineMonitor</span><span class="o">.</span><span class="n">latest</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="c1"># returns 851</span>
+</code></pre></div></div>
+
+<h2 id="q2-max-reading">Q2: Max Reading</h2>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">EngineMonitor.max_reading/1</code> returns the maximum reading from a list:</p>
+</blockquote>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">EngineMonitor</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">max_reading</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">Enum</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Enum.max/1</code> finds the maximum value in the <code class="language-plaintext highlighter-rouge">readings</code> list.</li>
+  <li>The function returns the highest integer from the list.</li>
+</ul>
+
+<h4 id="example-usage">Example Usage:</h4>
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">readings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">851</span><span class="p">,</span> <span class="mi">841</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">756</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">201</span><span class="p">]</span>
+<span class="no">EngineMonitor</span><span class="o">.</span><span class="n">max_reading</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="c1"># Returns 851</span>
+</code></pre></div></div>
+
+<h3 id="--using-recursion">- Using Recursion:</h3>
+
+<p>To implement <code class="language-plaintext highlighter-rouge">EngineMonitor.max_reading/1</code> without using <code class="language-plaintext highlighter-rouge">Enum</code>, you can use recursion to find the maximum value in a list. Here’s how you can do it:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">EngineMonitor</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">max_reading</span><span class="p">([</span><span class="n">head</span> <span class="o">|</span> <span class="n">tail</span><span class="p">])</span> <span class="k">do</span>
+    <span class="n">max_reading</span><span class="p">(</span><span class="n">tail</span><span class="p">,</span> <span class="n">head</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">defp</span> <span class="n">max_reading</span><span class="p">([],</span> <span class="n">max</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="n">max</span>
+
+  <span class="k">defp</span> <span class="n">max_reading</span><span class="p">([</span><span class="n">head</span> <span class="o">|</span> <span class="n">tail</span><span class="p">],</span> <span class="n">max</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">new_max</span> <span class="o">=</span> <span class="k">if</span> <span class="n">head</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="n">head</span><span class="p">,</span> <span class="k">else</span><span class="p">:</span> <span class="n">max</span>
+    <span class="n">max_reading</span><span class="p">(</span><span class="n">tail</span><span class="p">,</span> <span class="n">new_max</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><strong>1. <code class="language-plaintext highlighter-rouge">max_reading([head | tail])</code></strong>: Starts the recursion with the first element of the list as the initial maximum value.
+<strong>2. <code class="language-plaintext highlighter-rouge">max_reading([], max)</code></strong>: Base case, returns the maximum value when the list is empty.
+<strong>3. <code class="language-plaintext highlighter-rouge">max_reading([head | tail], max)</code></strong>: Recursive case, updates the maximum value if the current element is greater, then proceeds with the rest of the list.</p>
+
+<h4 id="example-usage-1">Example Usage:</h4>
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">readings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">851</span><span class="p">,</span> <span class="mi">841</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">756</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">201</span><span class="p">]</span>
+<span class="no">EngineMonitor</span><span class="o">.</span><span class="n">max_reading</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="c1"># Returns 851</span>
+</code></pre></div></div>
+
+<h2 id="q3-rising-reading">Q3: Rising Reading</h2>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">EngineMonitor.rising/1</code> returns the number of times a reading has risen in a given list, you can compare each element with the next one and count how many times the reading increases.</p>
+</blockquote>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">EngineMonitor</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">rising</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">readings</span>
+    <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">chunk_every</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:discard</span><span class="p">)</span>
+    <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="k">fn</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="k">end</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Enum.chunk_every(2, 1, :discard)</code>: Splits the list into overlapping pairs.</li>
+  <li><code class="language-plaintext highlighter-rouge">Enum.count(fn [a, b] -&gt; b &gt; a end)</code>: Counts how many pairs have a rising trend.</li>
+</ol>
+
+<h4 id="example-usage-2">Example Usage:</h4>
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">readings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">851</span><span class="p">,</span> <span class="mi">841</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">756</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">201</span><span class="p">]</span>
+<span class="no">EngineMonitor</span><span class="o">.</span><span class="n">rising</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="c1"># Returns 0</span>
+
+<span class="n">readings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">450</span><span class="p">]</span>
+<span class="no">EngineMonitor</span><span class="o">.</span><span class="n">rising</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="c1"># Returns 3</span>
+</code></pre></div></div>
+
+<p>This implementation counts how many times a reading has increased compared to the previous one.</p>
+
+<h2 id="q4-danger-reading">Q4: Danger Reading</h2>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">EngineMonitor.danger?/1</code> returns <code class="language-plaintext highlighter-rouge">true</code> if a dangerous spike or drop in readings (a change of <code class="language-plaintext highlighter-rouge">50</code> or more) is detected, you can compare consecutive readings and check if the difference between them is <code class="language-plaintext highlighter-rouge">50</code> or greater.</p>
+</blockquote>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">EngineMonitor</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">danger?</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">readings</span>
+    <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">chunk_every</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:discard</span><span class="p">)</span>
+    <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">any?</span><span class="p">(</span><span class="k">fn</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">50</span> <span class="k">end</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Enum.chunk_every(2, 1, :discard)</code>: Creates overlapping pairs of consecutive readings.</li>
+  <li><code class="language-plaintext highlighter-rouge">Enum.any?(fn [a, b] -&gt; abs(a - b) &gt;= 50 end)</code>: Checks if any pair has an absolute difference of <code class="language-plaintext highlighter-rouge">50</code> or more.</li>
+</ol>
+
+<h4 id="example-usage-3">Example Usage:</h4>
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">readings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">851</span><span class="p">,</span> <span class="mi">841</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">756</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">201</span><span class="p">]</span>
+<span class="no">EngineMonitor</span><span class="o">.</span><span class="n">danger?</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="c1"># Returns true (640 -&gt; 390 is a drop of 250)</span>
+
+<span class="n">readings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">245</span><span class="p">]</span>
+<span class="no">EngineMonitor</span><span class="o">.</span><span class="n">danger?</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="c1"># Returns false (no spike or drop of 50 or more)</span>
+</code></pre></div></div>
+
+<p>This implementation correctly identifies hazardous conditions based on the defined threshold.</p>
+
+<h3 id="--using-recursion-1">- Using Recursion</h3>
+
+<p>To implement <code class="language-plaintext highlighter-rouge">EngineMonitor.danger?/1</code> without using <code class="language-plaintext highlighter-rouge">Enum</code>, you can use recursion to check for dangerous spikes or drops. Here’s how you can do it:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">EngineMonitor</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">danger?</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">check_danger</span><span class="p">(</span><span class="n">readings</span><span class="p">,</span> <span class="no">nil</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">defp</span> <span class="n">check_danger</span><span class="p">([],</span> <span class="n">_previous</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="no">false</span>
+
+  <span class="k">defp</span> <span class="n">check_danger</span><span class="p">([</span><span class="n">current</span> <span class="o">|</span> <span class="n">rest</span><span class="p">],</span> <span class="no">nil</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">check_danger</span><span class="p">(</span><span class="n">rest</span><span class="p">,</span> <span class="n">current</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">defp</span> <span class="n">check_danger</span><span class="p">([</span><span class="n">current</span> <span class="o">|</span> <span class="n">rest</span><span class="p">],</span> <span class="n">previous</span><span class="p">)</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="n">abs</span><span class="p">(</span><span class="n">current</span> <span class="o">-</span> <span class="n">previous</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">50</span> <span class="k">do</span>
+      <span class="no">true</span>
+    <span class="k">else</span>
+      <span class="n">check_danger</span><span class="p">(</span><span class="n">rest</span><span class="p">,</span> <span class="n">current</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><strong>1. <code class="language-plaintext highlighter-rouge">danger?(readings)</code></strong>: Starts the recursion by calling <code class="language-plaintext highlighter-rouge">check_danger/2</code> with an initial value of <code class="language-plaintext highlighter-rouge">nil</code> for the previous reading.
+<strong>2. <code class="language-plaintext highlighter-rouge">check_danger([], _previous)</code></strong>: Base case, returns <code class="language-plaintext highlighter-rouge">false</code> when the list is empty (no dangerous changes found).
+<strong>3. <code class="language-plaintext highlighter-rouge">check_danger([current | rest], nil)</code></strong>: When starting with the first element, there’s no previous reading to compare to. Continue with the rest of the list.
+<strong>4. <code class="language-plaintext highlighter-rouge">check_danger([current | rest], previous)</code></strong>: Compares the current reading with the previous one. If the absolute difference is <code class="language-plaintext highlighter-rouge">50</code> or more, return <code class="language-plaintext highlighter-rouge">true</code>. Otherwise, continue checking the rest of the list.</p>
+
+<h4 id="example-usage-4">Example Usage:</h4>
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">readings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">851</span><span class="p">,</span> <span class="mi">841</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">756</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">201</span><span class="p">]</span>
+<span class="no">EngineMonitor</span><span class="o">.</span><span class="n">danger?</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="c1"># Returns true (640 -&gt; 390 is a drop of 250)</span>
+
+<span class="n">readings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">245</span><span class="p">]</span>
+<span class="no">EngineMonitor</span><span class="o">.</span><span class="n">danger?</span><span class="p">(</span><span class="n">readings</span><span class="p">)</span> <span class="c1"># Returns false (no spike or drop of 50 or more)</span>
+</code></pre></div></div>
+
+<p>This implementation uses recursion to traverse the list and identify any dangerous changes based on the specified threshold.</p>
+
+<h2 id="q5-fire-reading">Q5: Fire Reading</h2>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">EngineMonitor.fire?/1</code> detects whether the word “FIRE” appears in a string regardless of case, you can use <code class="language-plaintext highlighter-rouge">String.downcase/1</code> to convert the string to lowercase and then check for the presence of the lowercase equivalent of “FIRE”.</p>
+</blockquote>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">EngineMonitor</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">fire?</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">String</span><span class="o">.</span><span class="n">contains?</span><span class="p">(</span><span class="no">String</span><span class="o">.</span><span class="n">downcase</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="s2">"fire"</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><strong>1. <code class="language-plaintext highlighter-rouge">String.downcase(text)</code></strong>: Converts the entire input string to lowercase.
+<strong>2. <code class="language-plaintext highlighter-rouge">String.contains?(string, "fire")</code></strong>: Checks if the lowercase string contains the substring <code class="language-plaintext highlighter-rouge">"fire"</code>.</p>
+
+<h4 id="example-usage-5">Example Usage:</h4>
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">EngineMonitor</span><span class="o">.</span><span class="n">fire?</span><span class="p">(</span><span class="s2">"The alarm system detected a FIRE"</span><span class="p">)</span> <span class="c1"># Returns true</span>
+<span class="no">EngineMonitor</span><span class="o">.</span><span class="n">fire?</span><span class="p">(</span><span class="s2">"No fire detected"</span><span class="p">)</span> <span class="c1"># Returns true</span>
+<span class="no">EngineMonitor</span><span class="o">.</span><span class="n">fire?</span><span class="p">(</span><span class="s2">"Just a test"</span><span class="p">)</span> <span class="c1"># Returns false</span>
+</code></pre></div></div>
+
+<p>This implementation ensures that the check for the word “FIRE” is case-insensitive.</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -545,7 +742,7 @@
 </script>
 
 
-                        <a href="/cs/lang_pl/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Wiki | Programming Languages Evolution"> <!-- class="hide_element" -->
+                        <a href="/cs/lang_pl/functional/1_elixir_1_basics/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 1. Elixir"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
@@ -677,7 +874,7 @@
         "gitbook": "*"
     },
     "file": {
-        "path": "_6_scripting/1_basics.md",
+        "path": "_4_functional/1_elixir_2_extended_example.md",
         "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },
