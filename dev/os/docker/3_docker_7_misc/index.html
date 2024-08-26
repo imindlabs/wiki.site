@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. Ubuntu · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>7. Docker Misc · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -52,11 +52,11 @@
 
 
 <!-- trackers -->
-            <link rel="prev" href="/dev/os/" />
+            <link rel="prev" href="/dev/os/docker/3_docker_6_container_monitoring/" />
         
 
         
-            <link rel="next" href="/dev/os/linux/2_kali_linux/" />
+            <link rel="next" href="/dev/os/docker/3_kube_1_fundamentals/" />
         
     </head>
     <body>         
@@ -207,17 +207,30 @@
             
             
             
+            <p class="separator-title">Ubuntu</p>
             
             
-            <li class="chapter active" data-level="1.2" data-path="/dev/os/linux/1_ubuntu/">
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/linux/1_ubuntu_1_basics/">
                 
-                <a href="/dev/os/linux/1_ubuntu/" onclick="pageScrollToTop(this)">
-                    1. Ubuntu
+                <a href="/dev/os/linux/1_ubuntu_1_basics/" onclick="pageScrollToTop(this)">
+                    1. Ubuntu Basics
                 </a>
                 
                 
                 
-
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/linux/1_ubuntu_2_terminal_server/">
+                
+                <a href="/dev/os/linux/1_ubuntu_2_terminal_server/" onclick="pageScrollToTop(this)">
+                    2. Terminal Server
+                </a>
+                
                 
                 
             </li>
@@ -380,6 +393,37 @@
             
             
             
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_6_container_monitoring/">
+                
+                <a href="/dev/os/docker/3_docker_6_container_monitoring/" onclick="pageScrollToTop(this)">
+                    6. Container Monitoring
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/dev/os/docker/3_docker_7_misc/">
+                
+                <a href="/dev/os/docker/3_docker_7_misc/" onclick="pageScrollToTop(this)">
+                    7. Docker Misc
+                </a>
+                
+                
+                <ul><li><a href="#71-local-docker-registry" onclick="mobilePageScrollToAnchor(this)" >7.1 Local Docker Registry</a><ul><li><a href="#1-importance-of-a-local-docker-registry" onclick="mobilePageScrollToAnchor(this)" >1. Importance of a Local Docker Registry:</a></li></ul></li><li><a href="#2-setting-up-a-local-docker-registry" onclick="mobilePageScrollToAnchor(this)" >2. Setting Up a Local Docker Registry</a></li></ul></li><li><a href="#72-container-capabilities" onclick="mobilePageScrollToAnchor(this)" >7.2 Container Capabilities</a><ul><li><a href="#1-example-allowing-a-container-to-use-the-net_admin-capability" onclick="mobilePageScrollToAnchor(this)" >1. Example: Allowing a Container to Use the <code class="language-plaintext highlighter-rouge">NET_ADMIN</code> Capability</a></li><li><a href="#2-testing-the-capability" onclick="mobilePageScrollToAnchor(this)" >2. Testing the Capability:</a></li><li><a href="#3-dropping-unnecessary-capabilities" onclick="mobilePageScrollToAnchor(this)" >3. Dropping Unnecessary Capabilities</a></li></ul></li><li><a href="#73-windows-on-docker" onclick="mobilePageScrollToAnchor(this)" >7.3 Windows on Docker</a></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
             <p class="separator-title">Kubernetes</p>
             
             
@@ -502,7 +546,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >1. Ubuntu</a>
+                            <a href="." >7. Docker Misc</a>
                         
                     </h1>
                 </div>
@@ -521,10 +565,106 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/linux/1_ubuntu">1. Ubuntu</h1>
+                        <h1 id="/docker/3_docker_7_misc">7. Docker Misc</h1>
                     
 
-                    <p><strong>Content is Coming Soon…</strong></p>
+                    <h1 id="71-local-docker-registry">7.1 Local Docker Registry</h1>
+
+<p>A <strong>local Docker registry</strong> is a private storage location where Docker images are stored and managed. Unlike the default Docker Hub registry, a local registry is hosted on your infrastructure, giving you control over the images.</p>
+
+<p>This is a very important feature of Docker that enables faster operations especially on locally developed images and containers. The Docker registry works in a manner which is quite similar in many respects to that of Git. If you recall the workshop demonstration of the inspect and history commands, an image is a sequence of layers and each time one develops an image locally, the registry stores only the difference from the previous version. As a result, image development and distribution can be done efficiently.</p>
+
+<h3 id="1-importance-of-a-local-docker-registry">1. Importance of a Local Docker Registry:</h3>
+
+<p><strong>1. Security</strong>: Storing images locally reduces the risk of exposing sensitive images on public registries. You can control who accesses and pulls images.</p>
+
+<p><strong>2. Performance</strong>: A local registry speeds up the deployment process by reducing the time needed to pull images, especially in environments with limited internet connectivity or high network latency.</p>
+
+<p><strong>3. Customization</strong>: You can enforce policies on image storage, versioning, and access control. This is crucial for managing large-scale deployments.</p>
+
+<p><strong>4. Cost Efficiency</strong>: Avoid bandwidth and storage costs associated with public registries, especially when dealing with large images or many deployments.</p>
+
+<p><strong>5. Offline Access</strong>: A local registry allows you to work in environments without internet access, such as air-gapped systems.</p>
+
+<h2 id="2-setting-up-a-local-docker-registry">2. Setting Up a Local Docker Registry</h2>
+
+<p>You can easily set up a local Docker registry using the official Docker registry image:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="nt">-p</span> 5000:5000 <span class="nt">--name</span> registry registry:2
+</code></pre></div></div>
+
+<p>This command runs a local registry on port 5000. You can then push and pull images like this:</p>
+
+<ul>
+  <li><strong>Tag an image</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker tag my-image localhost:5000/my-image
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Push the image</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker push localhost:5000/my-image
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Pull the image</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull localhost:5000/my-image
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="tip">TIP</h5>
+
+  <p>A local Docker registry is crucial for secure, efficient, and controlled image management, especially in enterprise environments. It allows for faster deployments, better security, and lower costs by keeping images within your infrastructure.</p>
+</blockquote>
+
+<h1 id="72-container-capabilities">7.2 Container Capabilities</h1>
+
+<p>Docker allows you to specify the exact capabilities that a container can have by using the <code class="language-plaintext highlighter-rouge">--cap-add</code> and <code class="language-plaintext highlighter-rouge">--cap-drop</code> options. These options are part of Docker’s security model, which lets you grant or revoke Linux capabilities to containers, controlling what they can do.</p>
+
+<h2 id="1-example-allowing-a-container-to-use-the-net_admin-capability">1. Example: Allowing a Container to Use the <code class="language-plaintext highlighter-rouge">NET_ADMIN</code> Capability</h2>
+
+<p>Suppose you want to create a container with the ability to modify network settings. By default, containers don’t have this permission, but you can grant it using the <code class="language-plaintext highlighter-rouge">NET_ADMIN</code> capability.</p>
+
+<p>Here’s how to do it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="nt">--name</span> my-container <span class="nt">--cap-add</span> NET_ADMIN ubuntu <span class="nb">sleep </span>infinity
+</code></pre></div></div>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">--cap-add NET_ADMIN</code></strong>: This grants the <code class="language-plaintext highlighter-rouge">NET_ADMIN</code> capability, allowing the container to modify network interfaces, routing tables, etc.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">ubuntu</code></strong>: The base image used for the container.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">sleep infinity</code></strong>: Keeps the container running indefinitely for demonstration purposes.</li>
+</ul>
+
+<h2 id="2-testing-the-capability">2. Testing the Capability:</h2>
+
+<p>You can now execute a command within the container that requires <code class="language-plaintext highlighter-rouge">NET_ADMIN</code>, like setting up a new network interface:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> my-container ip <span class="nb">link </span>add dummy0 <span class="nb">type </span>dummy
+docker <span class="nb">exec</span> <span class="nt">-it</span> my-container ip <span class="nb">link </span>show dummy0
+</code></pre></div></div>
+
+<p>Without <code class="language-plaintext highlighter-rouge">--cap-add NET_ADMIN</code>, the first command would fail because the container would lack the necessary permission.</p>
+
+<h2 id="3-dropping-unnecessary-capabilities">3. Dropping Unnecessary Capabilities</h2>
+
+<p>If you want to run a more secure container by dropping capabilities, you can use <code class="language-plaintext highlighter-rouge">--cap-drop</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="nt">--name</span> secure-container <span class="nt">--cap-drop</span> ALL ubuntu <span class="nb">sleep </span>infinity
+</code></pre></div></div>
+
+<p>This command removes all default capabilities, running the container with minimal privileges.</p>
+
+<blockquote class="block-tip">
+  <h5 id="tip-1">TIP</h5>
+
+  <p>Using <code class="language-plaintext highlighter-rouge">--cap-add</code> and <code class="language-plaintext highlighter-rouge">--cap-drop</code>, Docker lets you tailor the security profile of a container by granting only the necessary Linux capabilities, enhancing security and reducing potential attack surfaces.</p>
+</blockquote>
+
+<h1 id="73-windows-on-docker">7.3 Windows on Docker</h1>
+
+<p>https://youtu.be/xhGYobuG508</p>
+
+<p>https://github.com/dockur/windows</p>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -571,9 +711,95 @@
     // Add the script tags before the following element
     var getbookStyleElement = document.getElementById("gitbook_style")
 
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
     
 
 </script>
+
 
 
 
@@ -603,13 +829,13 @@
 </script>
 
 
-                        <a href="/dev/os/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Wiki | O/S"> <!-- class="hide_element" -->
+                        <a href="/dev/os/docker/3_docker_6_container_monitoring/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 6. Container Monitoring"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
                     
-                        <a href="/dev/os/linux/2_kali_linux/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. Kali Linux"> <!-- class="hide_element" -->
+                        <a href="/dev/os/docker/3_kube_1_fundamentals/" class="navigation navigation-next navigation-unique" aria-label="Next page: 1. Fundamentals"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-right"></i>
                         </a>
                     
@@ -652,11 +878,11 @@
         "depth": 1,
         
         "next": {
-            "title": "2. Kali Linux",
+            "title": "1. Fundamentals",
             "level": "1.2",
             "depth": 1,
-            "path": "_2_unix/2_kali_linux.md",
-            "ref": "_2_unix/2_kali_linux.md",
+            "path": "_4_containerization/3_kube_1_fundamentals.md",
+            "ref": "_4_containerization/3_kube_1_fundamentals.md",
             "articles": []
         },
         
@@ -748,13 +974,13 @@
         "gitbook": "*"
     },
     "file": {
-        "path": "_2_unix/1_ubuntu.md",
+        "path": "_4_containerization/3_docker_7_misc.md",
         "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-20 09:08:22 +0800"
+        "time": "2024-08-26 10:32:47 +0800"
     },
     "basePath": "/dev/os",
     "book": {

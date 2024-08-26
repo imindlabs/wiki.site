@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>3. Config and Secret Management · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>6. Container Monitoring · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -52,9 +52,11 @@
 
 
 <!-- trackers -->
-            <link rel="prev" href="/dev/os/docker/3_kube_4_services/" />
+            <link rel="prev" href="/dev/os/docker/3_docker_5_compose/" />
         
 
+        
+            <link rel="next" href="/dev/os/docker/3_docker_7_misc/" />
         
     </head>
     <body>         
@@ -393,12 +395,15 @@
             
             
             
-            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_6_container_monitoring/">
+            <li class="chapter active" data-level="1.2" data-path="/dev/os/docker/3_docker_6_container_monitoring/">
                 
                 <a href="/dev/os/docker/3_docker_6_container_monitoring/" onclick="pageScrollToTop(this)">
                     6. Container Monitoring
                 </a>
                 
+                
+                <ul><li><a href="#61-container-monitoring-tools" onclick="mobilePageScrollToAnchor(this)" >6.1 Container Monitoring Tools</a><ul><li><a href="#1-monitoring-tools-details" onclick="mobilePageScrollToAnchor(this)" >1. Monitoring Tools Details</a></li><li><a href="#2-difference-from-docker-desktop" onclick="mobilePageScrollToAnchor(this)" >2. Difference from Docker Desktop</a></li></ul></li><li><a href="#62-prometheus" onclick="mobilePageScrollToAnchor(this)" >6.2 Prometheus</a><ul><li><a href="#2-simple-example" onclick="mobilePageScrollToAnchor(this)" >2. Simple Example</a><ul><li><a href="#21-create-a-configuration-file" onclick="mobilePageScrollToAnchor(this)" >2.1 Create a Configuration File</a></li><li><a href="#22-run-prometheus-using-docker" onclick="mobilePageScrollToAnchor(this)" >2.2 Run Prometheus Using Docker</a></li><li><a href="#3-access-prometheus" onclick="mobilePageScrollToAnchor(this)" >3. Access Prometheus</a></li><li><a href="#4-query-metrics" onclick="mobilePageScrollToAnchor(this)" >4. Query Metrics</a></li></ul></li></ul></li></ul>
+
                 
                 
             </li>
@@ -479,15 +484,12 @@
             
             
             
-            <li class="chapter active" data-level="1.2" data-path="/dev/os/docker/3_kube_5_config_secret/">
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_5_config_secret/">
                 
                 <a href="/dev/os/docker/3_kube_5_config_secret/" onclick="pageScrollToTop(this)">
                     3. Config and Secret Management
                 </a>
                 
-                
-                
-
                 
                 
             </li>
@@ -544,7 +546,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >3. Config and Secret Management</a>
+                            <a href="." >6. Container Monitoring</a>
                         
                     </h1>
                 </div>
@@ -563,14 +565,170 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/docker/3_kube_5_config_secret">3. Config and Secret Management</h1>
+                        <h1 id="/docker/3_docker_6_container_monitoring">6. Container Monitoring</h1>
                     
 
-                    <p>Config Management
-https://youtu.be/o-gXx7r7Rz4</p>
+                    <h1 id="61-container-monitoring-tools">6.1 Container Monitoring Tools</h1>
 
-<p>Secret Management
-https://youtu.be/o36yTfGDmZ0</p>
+<p><strong>Container monitoring tools</strong> are specialized software designed to track, analyze, and report on the performance, health, and resource usage of containers across an environment. These tools collect metrics like CPU, memory, network usage, and storage I/O, helping you to understand the state of your applications and infrastructure. They often provide alerts, dashboards, and logs to assist with troubleshooting and performance optimization.</p>
+
+<p>Examples of container monitoring tools include:</p>
+<ul>
+  <li><strong>Prometheus</strong>: Collects and stores metrics with powerful querying capabilities.</li>
+  <li><strong>Grafana</strong>: Visualizes data from various sources, including Prometheus.</li>
+  <li><strong>cAdvisor</strong>: Monitors resource usage and performance characteristics of containers.</li>
+  <li><strong>Datadog, New Relic, Zabbix</strong>: Provide comprehensive monitoring, including custom metrics, logs, and tracing.</li>
+</ul>
+
+<h2 id="1-monitoring-tools-details">1. Monitoring Tools Details</h2>
+
+<ol>
+  <li>
+    <p><strong>Prometheus</strong>: An open-source monitoring and alerting toolkit designed for reliability. Prometheus scrapes metrics from containers via HTTP endpoints and supports alerting and data visualization through Grafana.</p>
+  </li>
+  <li>
+    <p><strong>cAdvisor</strong>: Container Advisor (cAdvisor) is a Google-developed tool that provides insights into resource usage and performance characteristics of running containers. It can integrate with Prometheus to export metrics.</p>
+  </li>
+  <li>
+    <p><strong>Grafana</strong>: While primarily a visualization tool, Grafana works with Prometheus to visualize metrics from Docker containers in dashboards. It supports multiple data sources and is commonly paired with Prometheus.</p>
+  </li>
+  <li>
+    <p><strong>Datadog</strong>: A commercial monitoring and analytics tool that provides detailed insights into container performance, logs, and infrastructure. It offers integrations for Docker and Kubernetes with automated dashboards.</p>
+  </li>
+  <li>
+    <p><strong>Zabbix</strong>: An open-source monitoring solution that supports Docker monitoring via its agent. It provides alerts, dashboards, and analytics.</p>
+  </li>
+  <li>
+    <p><strong>New Relic</strong>: A commercial monitoring platform that provides real-time performance monitoring for Docker containers, offering insights into application performance, infrastructure, and logs.</p>
+  </li>
+</ol>
+
+<p>These tools help monitor the health, performance, and resource usage of Docker containers, ensuring that your applications run smoothly in a containerized environment.</p>
+
+<h2 id="2-difference-from-docker-desktop">2. Difference from Docker Desktop</h2>
+
+<p><strong>Docker Desktop</strong> is an application that provides a development environment for building, shipping, and running Docker containers on a local machine. It includes Docker Engine, Docker CLI, Docker Compose, and Kubernetes, enabling developers to run and manage containers on their desktops.</p>
+
+<p><strong>Key differences</strong>:</p>
+
+<p><strong>1. Purpose</strong>:</p>
+<ul>
+  <li><strong>Container Monitoring Tools</strong> focus on monitoring, alerting, and analyzing container performance across environments (production, staging, etc.).</li>
+  <li><strong>Docker Desktop</strong> is for local development, allowing you to build, run, and manage containers on your computer.</li>
+</ul>
+
+<p><strong>2. Scope</strong>:</p>
+<ul>
+  <li><strong>Monitoring Tools</strong> work across large-scale, distributed systems, monitoring many containers, often in cloud or on-premise environments.</li>
+  <li><strong>Docker Desktop</strong> is limited to managing and running containers locally, with some basic stats and management via its UI.</li>
+</ul>
+
+<p><strong>3. Usage</strong>:</p>
+<ul>
+  <li><strong>Monitoring Tools</strong> are essential for production environments where container performance, uptime, and health are critical.</li>
+  <li><strong>Docker Desktop</strong> is used for development, testing, and debugging applications before they are deployed to production.</li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="tip">TIP</h5>
+
+  <p>container monitoring tools are designed to manage and monitor containerized applications in large-scale environments, while Docker Desktop is a local development tool for working with containers on your machine.</p>
+</blockquote>
+
+<h1 id="62-prometheus">6.2 Prometheus</h1>
+
+<p>Prometheus can scrape metrics from other containers by using service discovery mechanisms or static configurations. Here’s how it works:</p>
+
+<ol>
+  <li>
+    <p><strong>Service Discovery</strong>: Prometheus can automatically discover targets using various service discovery methods like Kubernetes, Docker Swarm, Consul, etc. In the context of containers, if you’re using Kubernetes, Prometheus can discover pods, services, and endpoints automatically by labeling and annotating them. For Docker, Prometheus can discover containers by using the Docker daemon API.</p>
+  </li>
+  <li>
+    <p><strong>Static Configuration</strong>: If service discovery is not available, you can manually define the IP addresses and ports of the containers you want to monitor. This is less dynamic but straightforward for small environments.</p>
+  </li>
+  <li>
+    <p><strong>Prometheus Exporters</strong>: Containers typically expose their metrics via HTTP endpoints in a format that Prometheus understands (e.g., <code class="language-plaintext highlighter-rouge">/metrics</code>). You can either:</p>
+    <ul>
+      <li>Run applications with built-in Prometheus metrics endpoints.</li>
+      <li>Use Prometheus exporters like <code class="language-plaintext highlighter-rouge">node-exporter</code>, <code class="language-plaintext highlighter-rouge">cadvisor</code>, etc., to expose container metrics.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Example Configuration:</strong></p>
+
+<p>For Kubernetes, the Prometheus <code class="language-plaintext highlighter-rouge">prometheus.yml</code> might look like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">scrape_configs</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">kubernetes-pods'</span>
+    <span class="na">kubernetes_sd_configs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">role</span><span class="pi">:</span> <span class="s">pod</span>
+    <span class="na">relabel_configs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">source_labels</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">__meta_kubernetes_pod_label_app</span><span class="pi">]</span>
+        <span class="na">action</span><span class="pi">:</span> <span class="s">keep</span>
+        <span class="na">regex</span><span class="pi">:</span> <span class="s">myapp</span>
+</code></pre></div></div>
+
+<p>In this setup, Prometheus will discover all pods labeled with <code class="language-plaintext highlighter-rouge">app=myapp</code> and scrape their metrics.</p>
+
+<p>For Docker, you might configure Prometheus to scrape based on static IPs and ports:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">scrape_configs</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">my-docker-container'</span>
+    <span class="na">static_configs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">container_ip:port'</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>These configurations allow Prometheus to monitor and collect metrics from other containers.</p>
+
+<h2 id="2-simple-example">2. Simple Example</h2>
+
+<h3 id="21-create-a-configuration-file">2.1 Create a Configuration File</h3>
+
+<p>Create a file named <code class="language-plaintext highlighter-rouge">prometheus.yml</code> with the following content:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">global</span><span class="pi">:</span>
+  <span class="na">scrape_interval</span><span class="pi">:</span> <span class="s">15s</span>  <span class="c1"># How often to scrape targets</span>
+
+<span class="na">scrape_configs</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">prometheus'</span>
+    <span class="na">static_configs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">localhost:9090'</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>This configuration tells Prometheus to scrape metrics from itself (running on <code class="language-plaintext highlighter-rouge">localhost:9090</code>).</p>
+
+<h3 id="22-run-prometheus-using-docker">2.2 Run Prometheus Using Docker</h3>
+
+<p>Start Prometheus with Docker:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="se">\</span>
+  <span class="nt">--name</span><span class="o">=</span>prometheus <span class="se">\</span>
+  <span class="nt">-p</span> 9090:9090 <span class="se">\</span>
+  <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/prometheus.yml:/etc/prometheus/prometheus.yml <span class="se">\</span>
+  prom/prometheus
+</code></pre></div></div>
+
+<p>This command runs Prometheus, mapping port 9090 on your machine to the container, and uses the configuration file you created.</p>
+
+<h3 id="3-access-prometheus">3. Access Prometheus</h3>
+
+<p>Open your web browser and go to <a href="http://localhost:9090">http://localhost:9090</a>. You’ll see the Prometheus dashboard.</p>
+
+<h3 id="4-query-metrics">4. Query Metrics</h3>
+
+<p>In the Prometheus UI, you can run queries to see metrics. For example, try:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>up
+</code></pre></div></div>
+
+<p>This query shows if the Prometheus server itself is up and running.</p>
+
+<blockquote class="block-tip">
+  <h5 id="tip-1">TIP</h5>
+
+  <p>This example sets up Prometheus using Docker, monitors itself, and provides a web UI for querying metrics. You can extend this setup by adding more targets or exporters to monitor other services.</p>
+</blockquote>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -735,11 +893,15 @@ https://youtu.be/o36yTfGDmZ0</p>
 </script>
 
 
-                        <a href="/dev/os/docker/3_kube_4_services/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 3. Deployments"> <!-- class="hide_element" -->
+                        <a href="/dev/os/docker/3_docker_5_compose/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 5. Docker Compose"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
+                    
+                        <a href="/dev/os/docker/3_docker_7_misc/" class="navigation navigation-next navigation-unique" aria-label="Next page: 7. Docker Misc"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
                     
                     <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
                 </div>
@@ -778,6 +940,15 @@ https://youtu.be/o36yTfGDmZ0</p>
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+        "next": {
+            "title": "7. Docker Misc",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_4_containerization/3_docker_7_misc.md",
+            "ref": "_4_containerization/3_docker_7_misc.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -867,7 +1038,7 @@ https://youtu.be/o36yTfGDmZ0</p>
         "gitbook": "*"
     },
     "file": {
-        "path": "_4_containerization/3_kube_5_config_secret.md",
+        "path": "_4_containerization/3_docker_6_container_monitoring.md",
         "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },

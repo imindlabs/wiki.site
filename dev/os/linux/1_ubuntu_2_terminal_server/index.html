@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>3. Config and Secret Management · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2. Terminal Server · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -52,9 +52,11 @@
 
 
 <!-- trackers -->
-            <link rel="prev" href="/dev/os/docker/3_kube_4_services/" />
+            <link rel="prev" href="/dev/os/linux/1_ubuntu_1_basics/" />
         
 
+        
+            <link rel="next" href="/dev/os/linux/2_kali_linux/" />
         
     </head>
     <body>         
@@ -223,12 +225,15 @@
             
             
             
-            <li class="chapter" data-level="1.1" data-path="/dev/os/linux/1_ubuntu_2_terminal_server/">
+            <li class="chapter active" data-level="1.2" data-path="/dev/os/linux/1_ubuntu_2_terminal_server/">
                 
                 <a href="/dev/os/linux/1_ubuntu_2_terminal_server/" onclick="pageScrollToTop(this)">
                     2. Terminal Server
                 </a>
                 
+                
+                <ul><li><a href="#linux-terminal-server" onclick="mobilePageScrollToAnchor(this)" >Linux Terminal Server</a></li></ul>
+
                 
                 
             </li>
@@ -479,15 +484,12 @@
             
             
             
-            <li class="chapter active" data-level="1.2" data-path="/dev/os/docker/3_kube_5_config_secret/">
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_5_config_secret/">
                 
                 <a href="/dev/os/docker/3_kube_5_config_secret/" onclick="pageScrollToTop(this)">
                     3. Config and Secret Management
                 </a>
                 
-                
-                
-
                 
                 
             </li>
@@ -544,7 +546,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >3. Config and Secret Management</a>
+                            <a href="." >2. Terminal Server</a>
                         
                     </h1>
                 </div>
@@ -563,14 +565,12 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/docker/3_kube_5_config_secret">3. Config and Secret Management</h1>
+                        <h1 id="/linux/1_ubuntu_2_terminal_server">2. Terminal Server</h1>
                     
 
-                    <p>Config Management
-https://youtu.be/o-gXx7r7Rz4</p>
+                    <h1 id="linux-terminal-server">Linux Terminal Server</h1>
 
-<p>Secret Management
-https://youtu.be/o36yTfGDmZ0</p>
+<p>https://youtu.be/qdo5lMR1lX4</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -617,95 +617,9 @@ https://youtu.be/o36yTfGDmZ0</p>
     // Add the script tags before the following element
     var getbookStyleElement = document.getElementById("gitbook_style")
 
-    // Adding script tags to externally link js
-        keyName = `prism_js`
-
-        if (!window.scipts.get(keyName)) {
-
-            // Get the links from sciptsLib
-            jsLinks = window.sciptsLib.get( 'prism');
-
-            if (jsLinks instanceof Array) {
-            
-                let scriptTags = []            
-                
-                for (i in jsLinks) {
-                    scriptTag = document.createElement("script")
-                    scriptTag.src = jsLinks[i]['uri'];                    
-                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
-                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
-                    document.head.insertBefore(scriptTag, getbookStyleElement)
-                    
-                    scriptTags.push(scriptTag);
-                    console.log(scriptTag)
-                }
-
-                // Add script tags to window.scripts map object
-                window.scipts.set(keyName, scriptTags)
-            
-            } else if (window.sciptsLib.has( 'prism')) {
-
-                scriptTag = document.createElement("script");
-                // console.log("sadasd", prism, jsLinks);
-                scriptTag.src = jsLinks['uri'];
-                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
-                scriptTag.id =  `prism_js_${jsIdIdx++}`;
-                document.head.insertBefore(scriptTag, getbookStyleElement)
-                console.log(scriptTag)
-
-                // Add script tag to window.scripts map object
-                window.scipts.set(keyName, scriptTag);
-            }
-        }
-
-
-        // Adding link tags to externally link css
-        keyName = `prism_css`
-
-        if (!window.scipts.get(keyName)) {
-
-            // Get the links from cssLib
-            cssLinks = window.cssLib.get( 'prism');            
-            
-            if (cssLinks instanceof Array) {
-            
-                let cssLinkTags = []            
-                
-                for (i in cssLinks) {
-                    cssLinkTag = document.createElement("script")
-                    cssLinkTag.href = cssLinks[i]['uri'];
-                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
-                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
-                    cssLinkTag.rel = 'stylesheet';
-                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
-                    
-                    cssLinkTags.push(cssLinkTag);
-                    console.log(cssLinkTag)
-                }
-
-                // Add script tags to window.scripts map object
-                window.scipts.set(keyName, cssLinkTags)
-            
-            } else if (window.cssLib.has( 'prism')) {
-
-                cssLinkTag = document.createElement("link")
-                cssLinkTag.href = cssLinks['uri'];
-                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
-                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
-                cssLinkTag.rel = 'stylesheet';
-                document.head.insertBefore(cssLinkTag, getbookStyleElement)
-
-                console.log(cssLinkTag)
-
-                // Add script tag to window.scripts map object
-                window.scipts.set(keyName, cssLinkTag);
-            }
-        }    
-        
     
 
 </script>
-
 
 
 
@@ -735,11 +649,15 @@ https://youtu.be/o36yTfGDmZ0</p>
 </script>
 
 
-                        <a href="/dev/os/docker/3_kube_4_services/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 3. Deployments"> <!-- class="hide_element" -->
+                        <a href="/dev/os/linux/1_ubuntu_1_basics/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 1. Ubuntu Basics"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
+                    
+                        <a href="/dev/os/linux/2_kali_linux/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. Kali Linux"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
                     
                     <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
                 </div>
@@ -778,6 +696,15 @@ https://youtu.be/o36yTfGDmZ0</p>
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+        "next": {
+            "title": "2. Kali Linux",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_2_unix/2_kali_linux.md",
+            "ref": "_2_unix/2_kali_linux.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -867,7 +794,7 @@ https://youtu.be/o36yTfGDmZ0</p>
         "gitbook": "*"
     },
     "file": {
-        "path": "_4_containerization/3_kube_5_config_secret.md",
+        "path": "_2_unix/1_ubuntu_2_terminal_server.md",
         "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },

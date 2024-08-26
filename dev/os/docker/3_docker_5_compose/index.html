@@ -56,7 +56,7 @@
         
 
         
-            <link rel="next" href="/dev/os/docker/3_kube_1_fundamentals/" />
+            <link rel="next" href="/dev/os/docker/3_docker_6_container_monitoring/" />
         
     </head>
     <body>         
@@ -207,12 +207,28 @@
             
             
             
+            <p class="separator-title">Ubuntu</p>
             
             
-            <li class="chapter" data-level="1.1" data-path="/dev/os/linux/1_ubuntu/">
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/linux/1_ubuntu_1_basics/">
                 
-                <a href="/dev/os/linux/1_ubuntu/" onclick="pageScrollToTop(this)">
-                    1. Ubuntu
+                <a href="/dev/os/linux/1_ubuntu_1_basics/" onclick="pageScrollToTop(this)">
+                    1. Ubuntu Basics
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/linux/1_ubuntu_2_terminal_server/">
+                
+                <a href="/dev/os/linux/1_ubuntu_2_terminal_server/" onclick="pageScrollToTop(this)">
+                    2. Terminal Server
                 </a>
                 
                 
@@ -374,6 +390,34 @@
                 
                 <ul><li><a href="#51-introduction" onclick="mobilePageScrollToAnchor(this)" >5.1 Introduction</a><ul><li><a href="#1-key-features-of-docker-compose" onclick="mobilePageScrollToAnchor(this)" >1. Key Features of Docker Compose:</a></li><li><a href="#2-how-docker-compose-works" onclick="mobilePageScrollToAnchor(this)" >2. How Docker Compose Works:</a></li><li><a href="#3-example-use-case" onclick="mobilePageScrollToAnchor(this)" >3. Example Use Case:</a></li><li><a href="#4-basic-workflow" onclick="mobilePageScrollToAnchor(this)" >4 Basic Workflow:</a></li></ul></li><li><a href="#52-container-orchestration" onclick="mobilePageScrollToAnchor(this)" >5.2 Container Orchestration</a></li><li><a href="#53-example" onclick="mobilePageScrollToAnchor(this)" >5.3 Example</a></li><li><a href="#54-docker-compose-up" onclick="mobilePageScrollToAnchor(this)" >5.4 <code class="language-plaintext highlighter-rouge">docker-compose</code> <code class="language-plaintext highlighter-rouge">up</code></a><ul><li><a href="#1-how-services-work-with-docker-compose-up" onclick="mobilePageScrollToAnchor(this)" >1. How Services Work with <code class="language-plaintext highlighter-rouge">docker-compose</code> <code class="language-plaintext highlighter-rouge">up</code></a></li><li><a href="#2-independence-vs-interdependence" onclick="mobilePageScrollToAnchor(this)" >2. Independence vs. Interdependence</a></li></ul></li><li><a href="#55-share-volumes-in-compose" onclick="mobilePageScrollToAnchor(this)" >5.5 Share Volumes in Compose</a><ul><li><a href="#1-example-sharing-a-volume-between-containers" onclick="mobilePageScrollToAnchor(this)" >1. Example: Sharing a Volume Between Containers</a></li><li><a href="#2-is-volumes-section-mandatory-in-compose" onclick="mobilePageScrollToAnchor(this)" >2. Is <code class="language-plaintext highlighter-rouge">volumes</code> section mandatory in compose?</a><ul><li><a href="#21-without-volumes-section-anonymous-volume" onclick="mobilePageScrollToAnchor(this)" >2.1 Without <code class="language-plaintext highlighter-rouge">volumes</code> Section (Anonymous Volume):</a></li><li><a href="#22-with-volumes-section-named-volume" onclick="mobilePageScrollToAnchor(this)" >2.2 With <code class="language-plaintext highlighter-rouge">volumes</code> Section (Named Volume):</a></li><li><a href="#23-key-differences" onclick="mobilePageScrollToAnchor(this)" >2.3 Key Differences:</a></li></ul></li></ul></li><li><a href="#56-environment-variables" onclick="mobilePageScrollToAnchor(this)" >5.6 Environment variables</a><ul><li><a href="#1-env_file-section" onclick="mobilePageScrollToAnchor(this)" >1. <code class="language-plaintext highlighter-rouge">env_file</code> Section</a></li><li><a href="#2-environment-section" onclick="mobilePageScrollToAnchor(this)" >2. <code class="language-plaintext highlighter-rouge">environment</code> Section</a></li><li><a href="#3-key-differences" onclick="mobilePageScrollToAnchor(this)" >3. Key Differences:</a></li><li><a href="#4-example-of-using-both" onclick="mobilePageScrollToAnchor(this)" >4. Example of Using Both:</a></li></ul></li><li><a href="#57-docker-compose-command-sh--c" onclick="mobilePageScrollToAnchor(this)" >5.7 Docker compose <code class="language-plaintext highlighter-rouge">command</code> <code class="language-plaintext highlighter-rouge">sh</code> <code class="language-plaintext highlighter-rouge">-c</code></a><ul><li><a href="#1-direct-echo-command-example" onclick="mobilePageScrollToAnchor(this)" >1. Direct <code class="language-plaintext highlighter-rouge">echo</code> Command Example:</a></li><li><a href="#2-when-you-need-sh--c" onclick="mobilePageScrollToAnchor(this)" >2. When You Need <code class="language-plaintext highlighter-rouge">sh -c</code>:</a></li></ul></li><li><a href="#57-docker-compose-psuedo-terminal" onclick="mobilePageScrollToAnchor(this)" >5.7 Docker compose Psuedo Terminal</a><ul><li><a href="#1-using-docker-compose-run" onclick="mobilePageScrollToAnchor(this)" >1. Using <code class="language-plaintext highlighter-rouge">docker-compose</code> <code class="language-plaintext highlighter-rouge">run</code></a></li><li><a href="#2-docker-compose-exec" onclick="mobilePageScrollToAnchor(this)" >2. <code class="language-plaintext highlighter-rouge">docker-compose</code> <code class="language-plaintext highlighter-rouge">exec</code></a></li><li><a href="#3-differences-between-run-and-exec" onclick="mobilePageScrollToAnchor(this)" >3. Differences Between <code class="language-plaintext highlighter-rouge">run</code> and <code class="language-plaintext highlighter-rouge">exec</code>:</a></li></ul></li><li><a href="#58-interative-termial-in-docker-composeyaml" onclick="mobilePageScrollToAnchor(this)" >5.8 Interative Termial in <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code></a><ul><li><a href="#1-example-docker-composeyml-with-interactive-terminal" onclick="mobilePageScrollToAnchor(this)" >1. Example <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> with Interactive Terminal:</a></li><li><a href="#2-running-the-service" onclick="mobilePageScrollToAnchor(this)" >2. Running the Service:</a></li></ul></li></ul>
 
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_6_container_monitoring/">
+                
+                <a href="/dev/os/docker/3_docker_6_container_monitoring/" onclick="pageScrollToTop(this)">
+                    6. Container Monitoring
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_7_misc/">
+                
+                <a href="/dev/os/docker/3_docker_7_misc/" onclick="pageScrollToTop(this)">
+                    7. Docker Misc
+                </a>
+                
                 
                 
             </li>
@@ -1292,7 +1336,7 @@ docker-compose up <span class="nt">-d</span> <span class="c"># run in background
                     
 
                     
-                        <a href="/dev/os/docker/3_kube_1_fundamentals/" class="navigation navigation-next navigation-unique" aria-label="Next page: 1. Fundamentals"> <!-- class="hide_element" -->
+                        <a href="/dev/os/docker/3_docker_6_container_monitoring/" class="navigation navigation-next navigation-unique" aria-label="Next page: 6. Container Monitoring"> <!-- class="hide_element" -->
                             <i class="fa fa-angle-right"></i>
                         </a>
                     
@@ -1335,11 +1379,11 @@ docker-compose up <span class="nt">-d</span> <span class="c"># run in background
         "depth": 1,
         
         "next": {
-            "title": "1. Fundamentals",
+            "title": "6. Container Monitoring",
             "level": "1.2",
             "depth": 1,
-            "path": "_4_containerization/3_kube_1_fundamentals.md",
-            "ref": "_4_containerization/3_kube_1_fundamentals.md",
+            "path": "_4_containerization/3_docker_6_container_monitoring.md",
+            "ref": "_4_containerization/3_docker_6_container_monitoring.md",
             "articles": []
         },
         
@@ -1437,7 +1481,7 @@ docker-compose up <span class="nt">-d</span> <span class="c"># run in background
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-20 09:08:22 +0800"
+        "time": "2024-08-26 10:32:47 +0800"
     },
     "basePath": "/dev/os",
     "book": {
