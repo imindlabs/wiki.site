@@ -17,7 +17,7 @@
     "title": "4. Arrays",
     "keywords": "fundamental",
     "url": "/cs/lang_c/fundamental/4_arrays/",
-    "body": ""
+    "body": "Sample Code 01 #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;string.h&gt; void print(int *pArr, int len) { int i; printf(\"Printing the array:\\n\"); for (i = 0; i &lt; len; i++) { printf(\"%d \", pArr[i]); } printf(\"\\n\"); } int sum(int *pArr, int len) { int i; int total = 0; for (i = 0; i &lt; len; i++) { total += pArr[i]; } return total; } int max(int *pArr, int len) { int i; int cur_max = pArr[0]; int cur_max_i; for (i = 0; i &lt; len; i++) { if (pArr[i] &gt; cur_max) cur_max_i = i; } return cur_max_i; } /* Create a function pointer type */ typedef int (*PtrType)(int*, int); PtrType ProcessCommandLineArg(char* argv[]) { PtrType fptr; if (strcmp(argv[1], \"sum\") == 0) { fptr = &amp;sum; /* type =&gt; int (*)(int *, int); */ } else if (strcmp(argv[1], \"max\") == 0) { fptr = &amp;max; } return fptr; } int main(int argc, char *argv[]) { /* ./prog sum 10 20 30 40 50 60 */ int i; int len = argc - 2; int *pArr = malloc(sizeof(int) * len); /* Create a instance with the newly created type */ /* This instance is a function pointer which can poitn to functions like sum and max */ PtrType fptr; if (argc &lt; 3) { printf(\"Invalid number of args: usage: &lt;function_name&gt; &lt;arg1&gt; &lt;arg2&gt; &lt;arg3&gt; ...\\n\"); } else { /* Parse the numbers in the cmd line args into an integer array */ for (i = 2; i &lt; argc; i++) { pArr[i - 2] = atoi(argv[i]); } fptr = ProcessCommandLineArg(argv); printf(\"The result is: %d\\n\", (*fptr)(pArr, len)); } free(pArr); return 0; }"
   },"/cs/lang_c/fundamental/5_fileio/": {
     "title": "5. Input/Output",
     "keywords": "fundamental",
