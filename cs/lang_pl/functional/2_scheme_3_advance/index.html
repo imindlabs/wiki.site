@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Wiki | Programming Languages Evolution</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2. Advance · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -52,12 +52,12 @@
 
 
 <!-- trackers -->
+            <link rel="prev" href="/cs/lang_pl/functional/2_scheme_2_syntax/" />
+        
 
         
-            <link rel="next" href="/cs/lang_pl" />
-        
     </head>
-    <body>
+    <body>         
         <div class="book"><div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -309,12 +309,15 @@
             
             
             
-            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_3_advance/">
+            <li class="chapter active" data-level="1.2" data-path="/cs/lang_pl/functional/2_scheme_3_advance/">
                 
                 <a href="/cs/lang_pl/functional/2_scheme_3_advance/" onclick="pageScrollToTop(this)">
                     2. Advance
                 </a>
                 
+                
+                <ul><li><a href="#21-tree-using-pair-data-structure" onclick="mobilePageScrollToAnchor(this)" >2.1 Tree using <code class="language-plaintext highlighter-rouge">pair</code> data structure</a><ul><li><a href="#1-building-a-binary-tree" onclick="mobilePageScrollToAnchor(this)" >1. Building a Binary Tree</a></li><li><a href="#2-example-tree" onclick="mobilePageScrollToAnchor(this)" >2. Example Tree</a></li><li><a href="#3-accessing-tree-elements" onclick="mobilePageScrollToAnchor(this)" >3. Accessing Tree Elements</a></li><li><a href="#4-traversing-the-tree" onclick="mobilePageScrollToAnchor(this)" >4. Traversing the Tree</a></li></ul></li></ul>
+
                 
                 
             </li>
@@ -399,7 +402,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Wiki | Programming Languages Evolution</a>
+                            <a href="." >2. Advance</a>
                         
                     </h1>
                 </div>
@@ -418,29 +421,107 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="">Wiki | Programming Languages Evolution</h1>
+                        <h1 id="/functional/2_scheme_3_advance">2. Advance</h1>
                     
 
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h1 id="21-tree-using-pair-data-structure">2.1 Tree using <code class="language-plaintext highlighter-rouge">pair</code> data structure</h1>
 
-<div class="container">
-  <h1>404</h1>
+<p>In Scheme, you can use pairs to build tree structures by defining each node in the tree as a pair. Here’s a basic approach to creating and manipulating binary trees using pairs:</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<h2 id="1-building-a-binary-tree">1. Building a Binary Tree</h2>
+
+<p>A binary tree node can be represented as a pair where:</p>
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">car</code> part holds the value of the node.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">cdr</code> part is itself a pair, where the <code class="language-plaintext highlighter-rouge">car</code> of this second pair is the left subtree and the <code class="language-plaintext highlighter-rouge">cdr</code> is the right subtree.</li>
+</ul>
+
+<p>Here’s how you might define a simple binary tree:</p>
+
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">make-node</span> <span class="nv">value</span> <span class="nv">left</span> <span class="nv">right</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">cons</span> <span class="nv">value</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">left</span> <span class="nv">right</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p>In this definition:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">value</code> is the value of the current node.</li>
+  <li><code class="language-plaintext highlighter-rouge">left</code> is the left subtree (can be another node or <code class="language-plaintext highlighter-rouge">()</code> if there is no left child).</li>
+  <li><code class="language-plaintext highlighter-rouge">right</code> is the right subtree (can be another node or <code class="language-plaintext highlighter-rouge">()</code> if there is no right child).</li>
+</ul>
+
+<h2 id="2-example-tree">2. Example Tree</h2>
+
+<p>Consider a tree with the following structure:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     1
+    / \
+   2   3
+  / \
+ 4   5
+</code></pre></div></div>
+
+<p>You can represent this tree as follows:</p>
+
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">tree</span>
+  <span class="p">(</span><span class="nf">make-node</span> <span class="mi">1</span>
+             <span class="p">(</span><span class="nf">make-node</span> <span class="mi">2</span>
+                        <span class="p">(</span><span class="nf">make-node</span> <span class="mi">4</span> <span class="o">'</span><span class="p">()</span> <span class="o">'</span><span class="p">())</span>
+                        <span class="p">(</span><span class="nf">make-node</span> <span class="mi">5</span> <span class="o">'</span><span class="p">()</span> <span class="o">'</span><span class="p">()))</span>
+             <span class="p">(</span><span class="nf">make-node</span> <span class="mi">3</span> <span class="o">'</span><span class="p">()</span> <span class="o">'</span><span class="p">())))</span>
+</code></pre></div></div>
+
+<h2 id="3-accessing-tree-elements">3. Accessing Tree Elements</h2>
+
+<p>To access parts of the tree, you can use the <code class="language-plaintext highlighter-rouge">car</code> and <code class="language-plaintext highlighter-rouge">cdr</code> procedures:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">car</code> of the tree gives the root value.</li>
+  <li><code class="language-plaintext highlighter-rouge">cdr</code> gives a pair where:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">car</code> is the left subtree.</li>
+      <li><code class="language-plaintext highlighter-rouge">cdr</code> is the right subtree.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For example:</p>
+
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">root-value</span> <span class="nv">tree</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">car</span> <span class="nv">tree</span><span class="p">))</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">left-subtree</span> <span class="nv">tree</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">tree</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">right-subtree</span> <span class="nv">tree</span><span class="p">)</span>
+  <span class="p">(</span><span class="nb">cdr</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">tree</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<h2 id="4-traversing-the-tree">4. Traversing the Tree</h2>
+
+<p>You can write recursive functions to traverse the tree. Here’s an example of an in-order traversal:</p>
+
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">in-order-traversal</span> <span class="nv">tree</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">null?</span> <span class="nv">tree</span><span class="p">)</span>
+      <span class="o">'</span><span class="p">()</span>
+      <span class="p">(</span><span class="nb">append</span> <span class="p">(</span><span class="nf">in-order-traversal</span> <span class="p">(</span><span class="nf">left-subtree</span> <span class="nv">tree</span><span class="p">))</span>
+              <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nf">root-value</span> <span class="nv">tree</span><span class="p">))</span>
+              <span class="p">(</span><span class="nf">in-order-traversal</span> <span class="p">(</span><span class="nf">right-subtree</span> <span class="nv">tree</span><span class="p">)))))</span>
+</code></pre></div></div>
+
+<blockquote class="block-tip">
+  <h5 id="tip">TIP</h5>
+
+  <p>Using pairs to build trees in Scheme involves:</p>
+
+  <ol>
+    <li><strong>Creating nodes</strong>: Each node is a pair with a value and two subtrees.</li>
+    <li><strong>Accessing parts</strong>: Use <code class="language-plaintext highlighter-rouge">car</code> and <code class="language-plaintext highlighter-rouge">cdr</code> to access the node’s value and its subtrees.</li>
+    <li><strong>Manipulating</strong>: Write recursive functions to traverse or modify the tree.</li>
+  </ol>
+
+  <p>This approach provides a flexible and powerful way to work with hierarchical data structures in Scheme.</p>
+</blockquote>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -487,9 +568,95 @@
     // Add the script tags before the following element
     var getbookStyleElement = document.getElementById("gitbook_style")
 
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
     
 
 </script>
+
 
 
 
@@ -518,14 +685,12 @@
     }
 </script>
 
-<a href="/cs/lang_pl/" class="navigation navigation-pre navigation-unique"> <!-- class="hide_element" -->
-                        <i class="fa"></i>
-                    </a>
+
+                        <a href="/cs/lang_pl/functional/2_scheme_2_syntax/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2. Syntax"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
                     
-                    
-                    <a href="/cs/lang_pl" class="navigation navigation-next navigation-unique" aria-label="Next page: "> <!-- class="hide_element" -->
-                        <i class="fa fa-angle-right"></i>
-                    </a>
+
                     
                     <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
                 </div>
@@ -555,7 +720,7 @@
                     });
                 });
             </script>
-                
+
             <script>
             var gitbook = gitbook || [];
             gitbook.push(function() {
@@ -564,17 +729,6 @@
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-
-        
-        "next": {
-            "title": "",
-            "level": "1.2",
-            "depth": 1,
-            "path": "",
-            "ref": "",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -664,8 +818,8 @@
         "gitbook": "*"
     },
     "file": {
-        "path": "404.html",
-        "mtime": "",
+        "path": "_4_functional/2_scheme_3_advance.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
         "type": "markdown"
     },
     "gitbook": {
@@ -678,6 +832,7 @@
     }
 });
             });
+
             </script>
         </div><script src="/cs/lang_pl/assets/gitbook/gitbook.js"></script>
 <script src="/cs/lang_pl/assets/gitbook/theme.js"></script>

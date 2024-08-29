@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2. Scheme · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. Basics · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
 "><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
@@ -55,6 +55,8 @@
             <link rel="prev" href="/cs/lang_pl/functional/1_elixir_2_extended_example/" />
         
 
+        
+            <link rel="next" href="/cs/lang_pl/functional/2_scheme_2_syntax/" />
         
     </head>
     <body>         
@@ -284,12 +286,40 @@
             <li class="chapter active" data-level="1.2" data-path="/cs/lang_pl/functional/2_scheme_1_basics/">
                 
                 <a href="/cs/lang_pl/functional/2_scheme_1_basics/" onclick="pageScrollToTop(this)">
-                    2. Scheme
+                    1. Basics
                 </a>
                 
                 
-                <ul><li><a href="#21-introduction-lisp-and-scheme" onclick="mobilePageScrollToAnchor(this)" >2.1 Introduction (Lisp and Scheme)</a></li><li><a href="#22-simple-example" onclick="mobilePageScrollToAnchor(this)" >2.2 Simple Example</a><ul><li><a href="#1-install-mit-scheme" onclick="mobilePageScrollToAnchor(this)" >1. Install MIT Scheme</a></li><li><a href="#2-write-a-scheme-program" onclick="mobilePageScrollToAnchor(this)" >2. Write a Scheme Program</a></li><li><a href="#3-run-the-scheme-program" onclick="mobilePageScrollToAnchor(this)" >3. Run the Scheme Program</a></li><li><a href="#4-running-in-interactive-mode" onclick="mobilePageScrollToAnchor(this)" >4. Running in Interactive Mode</a></li></ul></li><li><a href="#23-control-structures" onclick="mobilePageScrollToAnchor(this)" >2.3 Control Structures</a><ul><li><a href="#1-conditional-expressions" onclick="mobilePageScrollToAnchor(this)" >1. <strong>Conditional Expressions</strong></a><ul><li><a href="#11-if" onclick="mobilePageScrollToAnchor(this)" >1.1 <code class="language-plaintext highlighter-rouge">if</code></a></li><li><a href="#12-cond" onclick="mobilePageScrollToAnchor(this)" >1.2 <code class="language-plaintext highlighter-rouge">cond</code></a></li></ul></li><li><a href="#2-iteration" onclick="mobilePageScrollToAnchor(this)" >2. <strong>Iteration</strong></a><ul><li><a href="#21-do" onclick="mobilePageScrollToAnchor(this)" >2.1 <code class="language-plaintext highlighter-rouge">do</code></a></li><li><a href="#22-let-used-with-recursion-for-iteration" onclick="mobilePageScrollToAnchor(this)" >2.2 <code class="language-plaintext highlighter-rouge">let</code> (used with recursion for iteration)</a></li></ul></li><li><a href="#3-logical-operators" onclick="mobilePageScrollToAnchor(this)" >3. <strong>Logical Operators</strong></a></li><li><a href="#4-sequencing" onclick="mobilePageScrollToAnchor(this)" >4. <strong>Sequencing</strong></a><ul><li><a href="#41-begin" onclick="mobilePageScrollToAnchor(this)" >4.1 <code class="language-plaintext highlighter-rouge">begin</code></a></li></ul></li></ul></li><li><a href="#24-data-structures" onclick="mobilePageScrollToAnchor(this)" >2.4 Data Structures</a><ul><li><a href="#1-pairs-and-lists" onclick="mobilePageScrollToAnchor(this)" >1. <strong>Pairs and Lists</strong></a><ul><li><a href="#11-pairs" onclick="mobilePageScrollToAnchor(this)" >1.1 <strong>Pairs</strong></a></li><li><a href="#12-lists" onclick="mobilePageScrollToAnchor(this)" >1.2 <strong>Lists</strong></a></li></ul></li><li><a href="#2-vectors" onclick="mobilePageScrollToAnchor(this)" >2. Vectors</a></li><li><a href="#3-strings" onclick="mobilePageScrollToAnchor(this)" >3. Strings</a></li><li><a href="#4-records" onclick="mobilePageScrollToAnchor(this)" >4. Records</a></li><li><a href="#5-association-lists-alists" onclick="mobilePageScrollToAnchor(this)" >5. Association Lists (Alists)</a></li><li><a href="#6-hash-table" onclick="mobilePageScrollToAnchor(this)" >6. Hash Table</a></li><li><a href="#7-queues-and-stacks" onclick="mobilePageScrollToAnchor(this)" >7. Queues and Stacks</a><ul><li><a href="#71-stack-lifo" onclick="mobilePageScrollToAnchor(this)" >7.1 Stack (LIFO)</a></li><li><a href="#72-queue-fifo" onclick="mobilePageScrollToAnchor(this)" >7.2 Queue (FIFO)</a></li></ul></li></ul></li><li><a href="#25-functions" onclick="mobilePageScrollToAnchor(this)" >2.5 Functions</a><ul><li><a href="#1-defining-a-function" onclick="mobilePageScrollToAnchor(this)" >1. Defining a Function</a></li><li><a href="#2-example-1-simple-function" onclick="mobilePageScrollToAnchor(this)" >2. Example 1: Simple Function</a></li><li><a href="#3-example-2-recursive-function" onclick="mobilePageScrollToAnchor(this)" >3. Example 2: Recursive Function</a></li><li><a href="#4-example-3-higher-order-function" onclick="mobilePageScrollToAnchor(this)" >4. Example 3: Higher-Order Function</a></li><li><a href="#5-lambda-expressions" onclick="mobilePageScrollToAnchor(this)" >5. Lambda Expressions</a></li></ul></li></ul>
+                <ul><li><a href="#21-background" onclick="mobilePageScrollToAnchor(this)" >2.1 Background</a><ul><li><a href="#1-comparing-functional-programming-languages-fpls-to-other-languages" onclick="mobilePageScrollToAnchor(this)" >1. Comparing Functional Programming Languages (FPLs) to Other Languages</a></li><li><a href="#2-referential-transparency" onclick="mobilePageScrollToAnchor(this)" >2. Referential Transparency:</a></li><li><a href="#3-side-effects" onclick="mobilePageScrollToAnchor(this)" >3. Side Effects:</a></li><li><a href="#4-functions-as-values-in-fpls" onclick="mobilePageScrollToAnchor(this)" >4. Functions as Values in FPLs</a></li><li><a href="#5-suitability-of-fpls-for-concurrent-systems" onclick="mobilePageScrollToAnchor(this)" >5. Suitability of FPLs for Concurrent Systems</a></li><li><a href="#6-tail-recursion-optimization-tro" onclick="mobilePageScrollToAnchor(this)" >6. Tail Recursion Optimization (TRO)</a></li><li><a href="#7-lambda-functions" onclick="mobilePageScrollToAnchor(this)" >7. Lambda Functions</a></li><li><a href="#8-closure" onclick="mobilePageScrollToAnchor(this)" >8. Closure</a></li><li><a href="#9-comparing-scheme-and-elixir" onclick="mobilePageScrollToAnchor(this)" >9. Comparing Scheme and Elixir</a></li><li><a href="#10-orthogonality-in-scheme" onclick="mobilePageScrollToAnchor(this)" >10. Orthogonality in Scheme</a></li><li><a href="#11-list-structures-in-elixir-and-scheme" onclick="mobilePageScrollToAnchor(this)" >11. List Structures in Elixir and Scheme</a></li><li><a href="#12-schemes-car-and-cdr-functions" onclick="mobilePageScrollToAnchor(this)" >12. Scheme’s <code class="language-plaintext highlighter-rouge">car</code> and <code class="language-plaintext highlighter-rouge">cdr</code> Functions</a></li><li><a href="#13-tail-recursive-factorial-function-in-scheme" onclick="mobilePageScrollToAnchor(this)" >13. Tail-Recursive Factorial Function in Scheme</a></li></ul></li><li><a href="#12-what-is-an-s-expression" onclick="mobilePageScrollToAnchor(this)" >1.2 What is an S-expression?</a><ul><li><a href="#1-visually-representing-s-expressions" onclick="mobilePageScrollToAnchor(this)" >1. <strong>Visually Representing S-expressions</strong></a></li><li><a href="#2-evaluating-s-expressions" onclick="mobilePageScrollToAnchor(this)" >2. <strong>Evaluating S-expressions</strong></a></li></ul></li></ul>
 
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_2_syntax/">
+                
+                <a href="/cs/lang_pl/functional/2_scheme_2_syntax/" onclick="pageScrollToTop(this)">
+                    2. Syntax
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_3_advance/">
+                
+                <a href="/cs/lang_pl/functional/2_scheme_3_advance/" onclick="pageScrollToTop(this)">
+                    2. Advance
+                </a>
+                
                 
                 
             </li>
@@ -374,7 +404,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >2. Scheme</a>
+                            <a href="." >1. Basics</a>
                         
                     </h1>
                 </div>
@@ -393,448 +423,265 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/functional/2_scheme_1_basics">2. Scheme</h1>
+                        <h1 id="/functional/2_scheme_1_basics">1. Basics</h1>
                     
 
-                    <h1 id="21-introduction-lisp-and-scheme">2.1 Introduction (Lisp and Scheme)</h1>
+                    <h1 id="21-background">2.1 Background</h1>
+
+<h2 id="1-comparing-functional-programming-languages-fpls-to-other-languages">1. Comparing Functional Programming Languages (FPLs) to Other Languages</h2>
+
+<ul>
+  <li>
+    <p><strong>Functional Programming Languages (FPLs)</strong>: FPLs like Haskell and Scheme emphasize functions as first-class citizens, immutability, and referential transparency. Functions are pure, meaning they don’t have side effects and their output is solely determined by their input.</p>
+  </li>
+  <li>
+    <p><strong>Imperative Languages</strong>: Languages like C and Java focus on changing state through statements and commands. They often rely on mutable data and have side effects. The focus is on the sequence of operations to achieve a result.</p>
+  </li>
+  <li>
+    <p><strong>Object-Oriented Languages</strong>: Languages like Python and Java incorporate encapsulation, inheritance, and polymorphism. They blend functional and imperative styles, allowing mutable state and side effects, but also support functions and methods.</p>
+  </li>
+</ul>
+
+<h2 id="2-referential-transparency">2. Referential Transparency:</h2>
+
+<p>Referential transparency means that an expression can be replaced with its value without changing the program’s behavior. This is a key property of pure functions in FPLs.</p>
+
+<ul>
+  <li><strong>Example</strong>: In a function <code class="language-plaintext highlighter-rouge">f(x) = x + 2</code>, you can replace <code class="language-plaintext highlighter-rouge">f(3)</code> with <code class="language-plaintext highlighter-rouge">5</code> because <code class="language-plaintext highlighter-rouge">f(3)</code> always evaluates to <code class="language-plaintext highlighter-rouge">5</code> given <code class="language-plaintext highlighter-rouge">x</code> is <code class="language-plaintext highlighter-rouge">3</code>.</li>
+</ul>
+
+<h2 id="3-side-effects">3. Side Effects:</h2>
+
+<p>A side effect is any change in state or observable interaction with the outside world that occurs during the execution of a function. This includes modifying a global variable, writing to a file, or printing to the console.</p>
+
+<ul>
+  <li><strong>In FPLs</strong>: Traditional FPLs avoid side effects by using pure functions. However, some FPLs allow controlled side effects, for example, in Haskell, through the <code class="language-plaintext highlighter-rouge">IO</code> monad.</li>
+</ul>
+
+<h2 id="4-functions-as-values-in-fpls">4. Functions as Values in FPLs</h2>
+
+<p>Yes, functions can be treated as values in FPLs. They can be passed as arguments to other functions, returned as results, and assigned to variables.</p>
+
+<h2 id="5-suitability-of-fpls-for-concurrent-systems">5. Suitability of FPLs for Concurrent Systems</h2>
+
+<p>FPLs are often suitable for concurrent systems due to their emphasis on immutability and stateless functions. These characteristics help avoid issues related to shared mutable state and make it easier to reason about concurrent execution.</p>
+
+<ul>
+  <li><strong>Example</strong>: Languages like Erlang and Elixir (based on the Erlang VM) use functional paradigms to manage concurrency and are designed to handle many concurrent processes efficiently.</li>
+</ul>
+
+<h2 id="6-tail-recursion-optimization-tro">6. Tail Recursion Optimization (TRO)</h2>
+
+<p>Tail recursion optimization is a technique where the compiler or interpreter optimizes tail-recursive functions to avoid growing the call stack. In a tail-recursive function, the recursive call is the last operation in the function.</p>
+
+<ul>
+  <li><strong>Example</strong>: The tail-recursive version of a factorial function avoids stack overflow issues by reusing the current function’s stack frame.</li>
+</ul>
+
+<h2 id="7-lambda-functions">7. Lambda Functions</h2>
+
+<p>Lambda functions are anonymous functions that are defined inline without a name. They are often used for short-lived, simple operations.</p>
+
+<ul>
+  <li><strong>Example in Python</strong>: <code class="language-plaintext highlighter-rouge">lambda x: x + 1</code> is a lambda function that adds 1 to its argument.</li>
+</ul>
+
+<h2 id="8-closure">8. Closure</h2>
+
+<p>A closure is a function that captures the lexical environment in which it was defined, allowing it to access variables from that scope even after the outer function has finished executing.</p>
+
+<ul>
+  <li><strong>Example in JavaScript</strong>:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">outer</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="nf">inner</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">closure</span> <span class="o">=</span> <span class="nf">outer</span><span class="p">();</span>
+<span class="nf">closure</span><span class="p">();</span> <span class="c1">// Logs 10</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="9-comparing-scheme-and-elixir">9. Comparing Scheme and Elixir</h2>
+
+<ul>
+  <li>
+    <p><strong>Scheme</strong>: A minimalist, functional Lisp dialect that emphasizes recursion and symbolic computation. It’s known for its simplicity and powerful macro system.</p>
+  </li>
+  <li>
+    <p><strong>Elixir</strong>: A functional language designed for concurrent, distributed systems. It runs on the Erlang VM and focuses on fault tolerance and scalability. Elixir has immutable data structures and a message-passing concurrency model.</p>
+  </li>
+</ul>
+
+<h4 id="lisp-and-scheme">Lisp and Scheme</h4>
 
 <p><strong>Lisp</strong> (short for “LISt Processing”) is a family of programming languages that has a long history in computer science, dating back to its creation by John McCarthy in 1958. Lisp is known for its simple and powerful syntax, where code and data share the same structure (both are represented as lists). This feature, called “homoiconicity,” allows Lisp programs to easily manipulate code as data, making it a popular choice for symbolic computation, AI research, and academic exploration.</p>
 
 <p><strong>Scheme</strong> is a dialect of Lisp, created in the 1970s by Guy L. Steele and Gerald Jay Sussman. Scheme was designed to be a simpler, more elegant, and minimalistic version of Lisp, emphasizing a small core of powerful features and a clean, consistent design. It introduced several key ideas to the Lisp family, such as first-class continuations and lexical scoping, which influenced many later programming languages.</p>
 
-<p>In summary:</p>
-
-<ul>
-  <li><strong>Lisp</strong>: A family of programming languages with a long history, known for its list-based syntax and powerful code-as-data capabilities.</li>
-  <li><strong>Scheme</strong>: A minimalist dialect of Lisp that emphasizes simplicity, elegance, and a small set of powerful features.</li>
-</ul>
-
-<h1 id="22-simple-example">2.2 Simple Example</h1>
-
-<p>To run a simple Scheme program in Ubuntu, you can use an interpreter like <strong>Gambit</strong>, <strong>MIT Scheme</strong>, or <strong>Racket</strong>. Here’s how you can do it using <strong>MIT Scheme</strong>:</p>
-
-<h2 id="1-install-mit-scheme">1. Install MIT Scheme</h2>
-
-<p>Open a terminal and run the following command to install MIT Scheme:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
-<span class="nb">sudo </span>apt-get <span class="nb">install </span>mit-scheme
-</code></pre></div></div>
-
-<h2 id="2-write-a-scheme-program">2. Write a Scheme Program</h2>
-
-<p>Create a new file with a <code class="language-plaintext highlighter-rouge">.scm</code> extension (e.g., <code class="language-plaintext highlighter-rouge">hello.scm</code>). You can use any text editor, such as <code class="language-plaintext highlighter-rouge">nano</code>, <code class="language-plaintext highlighter-rouge">vim</code>, or <code class="language-plaintext highlighter-rouge">gedit</code>:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano hello.scm
-</code></pre></div></div>
-
-<p>Write a simple Scheme program in the file:</p>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">display</span> <span class="s">"Hello, World!"</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">newline</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Save and exit the editor.</p>
-
-<h2 id="3-run-the-scheme-program">3. Run the Scheme Program</h2>
-
-<p>You can run the program using the MIT Scheme interpreter:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mit-scheme <span class="nt">--load</span> hello.scm
-</code></pre></div></div>
-
-<p>This will execute the <code class="language-plaintext highlighter-rouge">hello.scm</code> file and display “Hello, World!” in the terminal.</p>
-
-<h2 id="4-running-in-interactive-mode">4. Running in Interactive Mode</h2>
-
-<p>Alternatively, you can start the MIT Scheme interpreter in interactive mode by typing:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mit-scheme
-</code></pre></div></div>
-
-<p>Once in the interactive mode, you can type and run Scheme code directly:</p>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">display</span> <span class="s">"Hello, World!"</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">newline</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>To exit the interpreter, type:</p>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">exit</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>This setup should allow you to run simple Scheme programs on Ubuntu using MIT Scheme.</p>
-
-<h1 id="23-control-structures">2.3 Control Structures</h1>
-
-<p>Scheme, like other Lisp dialects, has a few core control structures for managing the flow of a program. Here are the most common ones:</p>
-
-<h2 id="1-conditional-expressions">1. <strong>Conditional Expressions</strong></h2>
-
-<h3 id="11-if">1.1 <code class="language-plaintext highlighter-rouge">if</code></h3>
-<ul>
-  <li>The <code class="language-plaintext highlighter-rouge">if</code> expression is the basic conditional construct.</li>
-  <li>Syntax: <code class="language-plaintext highlighter-rouge">(if condition then-expression else-expression)</code></li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">x</span> <span class="mi">10</span><span class="p">)</span>
-<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&gt;</span> <span class="nv">x</span> <span class="mi">5</span><span class="p">)</span>
-    <span class="p">(</span><span class="nb">display</span> <span class="s">"x is greater than 5"</span><span class="p">)</span>
-    <span class="p">(</span><span class="nb">display</span> <span class="s">"x is not greater than 5"</span><span class="p">))</span>
-</code></pre></div></div>
-
-<h3 id="12-cond">1.2 <code class="language-plaintext highlighter-rouge">cond</code></h3>
-<ul>
-  <li>The <code class="language-plaintext highlighter-rouge">cond</code> expression is used for multiple conditions, similar to a series of <code class="language-plaintext highlighter-rouge">if-else</code> statements.</li>
-  <li>Syntax:
-    <div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">cond</span>
-  <span class="p">(</span><span class="nf">condition1</span> <span class="nv">expression1</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">condition2</span> <span class="nv">expression2</span><span class="p">)</span>
-  <span class="o">...</span>
-  <span class="p">(</span><span class="k">else</span> <span class="nv">default-expression</span><span class="p">))</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">x</span> <span class="mi">3</span><span class="p">)</span>
-<span class="p">(</span><span class="k">cond</span>
-  <span class="p">((</span><span class="nb">=</span> <span class="nv">x</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nb">display</span> <span class="s">"x is one"</span><span class="p">))</span>
-  <span class="p">((</span><span class="nb">=</span> <span class="nv">x</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nb">display</span> <span class="s">"x is two"</span><span class="p">))</span>
-  <span class="p">((</span><span class="nb">=</span> <span class="nv">x</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="nb">display</span> <span class="s">"x is three"</span><span class="p">))</span>
-  <span class="p">(</span><span class="k">else</span> <span class="p">(</span><span class="nb">display</span> <span class="s">"x is something else"</span><span class="p">)))</span>
-</code></pre></div></div>
-
-<h2 id="2-iteration">2. <strong>Iteration</strong></h2>
-
-<h3 id="21-do">2.1 <code class="language-plaintext highlighter-rouge">do</code></h3>
-<ul>
-  <li>The <code class="language-plaintext highlighter-rouge">do</code> expression is used for looping, with an initialization part, a termination condition, and a body that is executed repeatedly.</li>
-  <li>Syntax:
-    <div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">do</span> <span class="p">((</span><span class="nf">var</span> <span class="nv">init</span> <span class="nv">step</span><span class="p">)</span> <span class="o">...</span><span class="p">)</span>
-    <span class="p">(</span><span class="nf">exit-condition</span> <span class="nv">result-expression</span><span class="p">)</span>
-  <span class="nv">body</span> <span class="o">...</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">do</span> <span class="p">((</span><span class="nf">i</span> <span class="mi">0</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">i</span> <span class="mi">1</span><span class="p">)))</span>
-    <span class="p">((</span><span class="nb">&gt;=</span> <span class="nv">i</span> <span class="mi">5</span><span class="p">)</span> <span class="p">(</span><span class="nb">display</span> <span class="s">"Done"</span><span class="p">))</span>
-  <span class="p">(</span><span class="nb">display</span> <span class="nv">i</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">newline</span><span class="p">))</span>
-</code></pre></div></div>
-<ul>
-  <li>This loop starts with <code class="language-plaintext highlighter-rouge">i</code> at 0 and increments it by 1 each time. The loop exits when <code class="language-plaintext highlighter-rouge">i</code> is 5 or greater.</li>
-</ul>
-
-<h3 id="22-let-used-with-recursion-for-iteration">2.2 <code class="language-plaintext highlighter-rouge">let</code> (used with recursion for iteration)</h3>
-<ul>
-  <li>Scheme often uses recursion for iteration, sometimes in combination with <code class="language-plaintext highlighter-rouge">let</code> for local variable binding.</li>
-  <li>Syntax for named <code class="language-plaintext highlighter-rouge">let</code> (useful for creating loops):
-    <div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">let</span> <span class="nv">loop</span> <span class="p">((</span><span class="nf">var1</span> <span class="nv">init1</span><span class="p">)</span> <span class="p">(</span><span class="nf">var2</span> <span class="nv">init2</span><span class="p">)</span> <span class="o">...</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">if</span> <span class="nv">condition</span>
-      <span class="nv">result</span>
-      <span class="p">(</span><span class="nf">loop</span> <span class="nv">new-var1</span> <span class="nv">new-var2</span> <span class="o">...</span><span class="p">)))</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">let</span> <span class="nv">loop</span> <span class="p">((</span><span class="nf">i</span> <span class="mi">0</span><span class="p">))</span>
-  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="nv">i</span> <span class="mi">5</span><span class="p">)</span>
-      <span class="p">(</span><span class="k">begin</span>
-        <span class="p">(</span><span class="nb">display</span> <span class="nv">i</span><span class="p">)</span>
-        <span class="p">(</span><span class="nb">newline</span><span class="p">)</span>
-        <span class="p">(</span><span class="nf">loop</span> <span class="p">(</span><span class="nb">+</span> <span class="nv">i</span> <span class="mi">1</span><span class="p">)))))</span>
-</code></pre></div></div>
-<ul>
-  <li>This example mimics a <code class="language-plaintext highlighter-rouge">for</code> loop, incrementing <code class="language-plaintext highlighter-rouge">i</code> from 0 to 4.</li>
-</ul>
-
-<h2 id="3-logical-operators">3. <strong>Logical Operators</strong></h2>
-
-<ul>
-  <li>
-    <p><strong><code class="language-plaintext highlighter-rouge">and</code></strong>: Evaluates expressions from left to right and returns the first <code class="language-plaintext highlighter-rouge">#f</code> (false) value, or the last value if all are true.</p>
-
-    <div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="k">and</span> <span class="p">(</span><span class="nb">&gt;</span> <span class="mi">3</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="mi">5</span> <span class="mi">10</span><span class="p">))</span>
-    <span class="p">(</span><span class="nb">display</span> <span class="s">"True"</span><span class="p">)</span>
-    <span class="p">(</span><span class="nb">display</span> <span class="s">"False"</span><span class="p">))</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p><strong><code class="language-plaintext highlighter-rouge">or</code></strong>: Evaluates expressions from left to right and returns the first non-<code class="language-plaintext highlighter-rouge">#f</code> (true) value, or <code class="language-plaintext highlighter-rouge">#f</code> if all are false.</p>
-
-    <div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="k">or</span> <span class="p">(</span><span class="nb">&gt;</span> <span class="mi">3</span> <span class="mi">5</span><span class="p">)</span> <span class="p">(</span><span class="nb">&lt;</span> <span class="mi">5</span> <span class="mi">10</span><span class="p">))</span>
-    <span class="p">(</span><span class="nb">display</span> <span class="s">"True"</span><span class="p">)</span>
-    <span class="p">(</span><span class="nb">display</span> <span class="s">"False"</span><span class="p">))</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h2 id="4-sequencing">4. <strong>Sequencing</strong></h2>
-
-<h3 id="41-begin">4.1 <code class="language-plaintext highlighter-rouge">begin</code></h3>
-<ul>
-  <li>The <code class="language-plaintext highlighter-rouge">begin</code> expression is used to sequence multiple expressions, where the expressions are evaluated in order and the value of the last expression is returned.</li>
-  <li>Syntax:
-    <div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">begin</span>
-  <span class="nv">expr1</span>
-  <span class="nv">expr2</span>
-  <span class="o">...</span>
-  <span class="nv">exprN</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">begin</span>
-  <span class="p">(</span><span class="nb">display</span> <span class="s">"Hello, "</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">display</span> <span class="s">"World!"</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">newline</span><span class="p">))</span>
-</code></pre></div></div>
-
-<p>These control structures are the building blocks for flow control in Scheme programs.</p>
-
-<h1 id="24-data-structures">2.4 Data Structures</h1>
-
-<p>In Scheme, data structures are often built using the language’s fundamental constructs like lists, pairs (cons cells), vectors, strings, and records. Here’s an overview of common data structures in Scheme:</p>
-
-<h2 id="1-pairs-and-lists">1. <strong>Pairs and Lists</strong></h2>
-
-<h3 id="11-pairs">1.1 <strong>Pairs</strong></h3>
-<ul>
-  <li>Scheme uses pairs (or cons cells) as a basic building block. A pair consists of two elements.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">cons</code></strong> creates a pair.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">car</code></strong> and <strong><code class="language-plaintext highlighter-rouge">cdr</code></strong> access the first and second elements of a pair, respectively.</li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">p</span> <span class="p">(</span><span class="nb">cons</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1">; p is a pair containing 1 and 2</span>
-<span class="p">(</span><span class="nb">car</span> <span class="nv">p</span><span class="p">)</span>  <span class="c1">; returns 1</span>
-<span class="p">(</span><span class="nb">cdr</span> <span class="nv">p</span><span class="p">)</span>  <span class="c1">; returns 2</span>
-</code></pre></div></div>
-
-<h3 id="12-lists">1.2 <strong>Lists</strong></h3>
-<ul>
-  <li>A list is a sequence of elements, typically implemented as a chain of pairs.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">'()</code></strong> is the empty list.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">list</code></strong> creates a list of elements.</li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">lst</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1">; lst is a list containing 1, 2, 3, 4</span>
-<span class="p">(</span><span class="nb">car</span> <span class="nv">lst</span><span class="p">)</span>  <span class="c1">; returns 1</span>
-<span class="p">(</span><span class="nb">cdr</span> <span class="nv">lst</span><span class="p">)</span>  <span class="c1">; returns (2 3 4)</span>
-</code></pre></div></div>
-
-<ul>
-  <li><strong>Nested Lists</strong>: Lists can contain other lists.</li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">nested-list</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">1</span> <span class="p">(</span><span class="nb">list</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">4</span><span class="p">))</span>
-<span class="c1">; nested-list is (1 (2 3) 4)</span>
-</code></pre></div></div>
-
-<h2 id="2-vectors">2. Vectors</h2>
-
-<ul>
-  <li><strong>Vectors</strong> are fixed-size, mutable arrays that allow constant-time access to elements.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">vector</code></strong> creates a vector.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">vector-ref</code></strong> accesses an element by index.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">vector-set!</code></strong> modifies an element.</li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">vec</span> <span class="p">(</span><span class="nb">vector</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1">; vec is a vector containing 1, 2, 3, 4</span>
-<span class="p">(</span><span class="nb">vector-ref</span> <span class="nv">vec</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">; returns 1</span>
-<span class="p">(</span><span class="nb">vector-set!</span> <span class="nv">vec</span> <span class="mi">0</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1">; sets the first element to 10</span>
-</code></pre></div></div>
-
-<h2 id="3-strings">3. Strings</h2>
-
-<ul>
-  <li><strong>Strings</strong> are sequences of characters.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">string</code></strong> creates a string.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">string-ref</code></strong> accesses a character by index.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">string-set!</code></strong> modifies a character.</li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">str</span> <span class="s">"Hello, World!"</span><span class="p">)</span>  <span class="c1">; str is a string</span>
-<span class="p">(</span><span class="nb">string-ref</span> <span class="nv">str</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">; returns #\H</span>
-</code></pre></div></div>
-
-<h2 id="4-records">4. Records</h2>
-
-<ul>
-  <li><strong>Records</strong> are structured data types with named fields.</li>
-  <li>Scheme doesn’t have a standard built-in record type, but many implementations provide a way to define records (like <code class="language-plaintext highlighter-rouge">define-record-type</code> in Racket or SRFI-9).</li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">define-record-type</span> <span class="nv">person</span>
-  <span class="p">(</span><span class="nf">make-person</span> <span class="nv">name</span> <span class="nv">age</span><span class="p">)</span>
-  <span class="nv">person?</span>
-  <span class="p">(</span><span class="nf">name</span> <span class="nv">person-name</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">age</span> <span class="nv">person-age</span><span class="p">))</span>
-
-<span class="p">(</span><span class="k">define</span> <span class="nv">p</span> <span class="p">(</span><span class="nf">make-person</span> <span class="s">"Alice"</span> <span class="mi">30</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">person-name</span> <span class="nv">p</span><span class="p">)</span>  <span class="c1">; returns "Alice"</span>
-<span class="p">(</span><span class="nf">person-age</span> <span class="nv">p</span><span class="p">)</span>  <span class="c1">; returns 30</span>
-</code></pre></div></div>
-
-<h2 id="5-association-lists-alists">5. Association Lists (Alists)</h2>
-
-<ul>
-  <li>An association list is a simple key-value store implemented as a list of pairs.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">assoc</code></strong> finds a key in an alist.</li>
-</ul>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">alist</span> <span class="o">'</span><span class="p">((</span><span class="nf">a</span> <span class="o">.</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nf">b</span> <span class="o">.</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nf">c</span> <span class="o">.</span> <span class="mi">3</span><span class="p">)))</span>
-<span class="p">(</span><span class="nb">assoc</span> <span class="ss">'b</span> <span class="nv">alist</span><span class="p">)</span>  <span class="c1">; returns (b . 2)</span>
-</code></pre></div></div>
-
-<h2 id="6-hash-table">6. Hash Table</h2>
-
-<ul>
-  <li>Hash tables are available in many Scheme implementations and provide efficient key-value storage.</li>
-</ul>
-
-<p>Example using Racket:</p>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">ht</span> <span class="p">(</span><span class="nf">make-hash</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">hash-set!</span> <span class="nv">ht</span> <span class="ss">'key1</span> <span class="s">"value1"</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">hash-ref</span> <span class="nv">ht</span> <span class="ss">'key1</span><span class="p">)</span>  <span class="c1">; returns "value1"</span>
-</code></pre></div></div>
-
-<h2 id="7-queues-and-stacks">7. Queues and Stacks</h2>
-
-<ul>
-  <li>Queues and stacks can be implemented using lists, pairs, or vectors.</li>
-</ul>
-
-<h3 id="71-stack-lifo">7.1 Stack (LIFO)</h3>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">stack</span> <span class="o">'</span><span class="p">())</span>
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">push</span> <span class="nv">stack</span> <span class="nv">elem</span><span class="p">)</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">elem</span> <span class="nv">stack</span><span class="p">))</span>
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">pop</span> <span class="nv">stack</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">stack</span><span class="p">))</span>
-</code></pre></div></div>
-
-<h3 id="72-queue-fifo">7.2 Queue (FIFO)</h3>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="nv">queue</span> <span class="o">'</span><span class="p">())</span>
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">enqueue</span> <span class="nv">queue</span> <span class="nv">elem</span><span class="p">)</span> <span class="p">(</span><span class="nb">append</span> <span class="nv">queue</span> <span class="p">(</span><span class="nb">list</span> <span class="nv">elem</span><span class="p">)))</span>
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">dequeue</span> <span class="nv">queue</span><span class="p">)</span> <span class="p">(</span><span class="nb">cdr</span> <span class="nv">queue</span><span class="p">))</span>
-</code></pre></div></div>
-
 <blockquote class="block-tip">
   <h5 id="tip">TIP</h5>
 
   <ul>
-    <li><strong>Pairs and Lists</strong>: Basic building blocks for many other data structures.</li>
-    <li><strong>Vectors</strong>: Mutable arrays with constant-time access.</li>
-    <li><strong>Strings</strong>: Sequences of characters.</li>
-    <li><strong>Records</strong>: Structured data types with named fields.</li>
-    <li><strong>Association Lists</strong>: Simple key-value pairs stored in lists.</li>
-    <li><strong>Hash Tables</strong>: Efficient key-value stores (available in some Scheme implementations).</li>
-    <li><strong>Queues and Stacks</strong>: Easily implemented using lists or pairs.</li>
+    <li><strong>Lisp</strong>: A family of programming languages with a long history, known for its list-based syntax and powerful code-as-data capabilities.</li>
+    <li><strong>Scheme</strong>: A minimalist dialect of Lisp that emphasizes simplicity, elegance, and a small set of powerful features.</li>
   </ul>
-
-  <p>These data structures cover most of the typical needs in Scheme programming, allowing for a wide range of algorithms and applications.</p>
 </blockquote>
 
-<h1 id="25-functions">2.5 Functions</h1>
+<h2 id="10-orthogonality-in-scheme">10. Orthogonality in Scheme</h2>
 
-<p>In Scheme, functions are first-class citizens, and defining a function is straightforward. Here’s a basic overview of how to write a function in Scheme:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Scheme is considered orthogonal because its features are independent and can be combined in a modular way. For example, functions and conditionals can be combined without restrictions.
 
-<h2 id="1-defining-a-function">1. Defining a Function</h2>
-
-<p>To define a function, you use the <code class="language-plaintext highlighter-rouge">define</code> keyword, followed by the function name, a list of parameters, and the function body.</p>
-
-<p><strong>Syntax:</strong></p>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">function-name</span> <span class="nv">parameter1</span> <span class="nv">parameter2</span> <span class="o">...</span><span class="p">)</span>
-  <span class="nv">body-expressions</span><span class="p">)</span>
+- **Example**: You can use functions and conditionals together:
+  ```scheme
+  (define (max a b)
+    (if (&gt; a b) a b))
+  ```
 </code></pre></div></div>
 
-<h2 id="2-example-1-simple-function">2. Example 1: Simple Function</h2>
+<h2 id="11-list-structures-in-elixir-and-scheme">11. List Structures in Elixir and Scheme</h2>
 
-<p>Here’s a simple function that adds two numbers:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Both languages use lists as fundamental data structures. 
 
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">add</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
-  <span class="p">(</span><span class="nb">+</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">))</span>
+- **Scheme**:
+  ```scheme
+  (define my-list (list 1 2 3))
+  ```
+
+- **Elixir**:
+  ```elixir
+  my_list = [1, 2, 3]
+  ```
 </code></pre></div></div>
+
+<h2 id="12-schemes-car-and-cdr-functions">12. Scheme’s <code class="language-plaintext highlighter-rouge">car</code> and <code class="language-plaintext highlighter-rouge">cdr</code> Functions</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- **`car`**: Returns the first element of a list.
+  ```scheme
+  (car (list 1 2 3)) ; Returns 1
+  ```
+
+- **`cdr`**: Returns the rest of the list after removing the first element.
+  ```scheme
+  (cdr (list 1 2 3)) ; Returns (2 3)
+  ```
+</code></pre></div></div>
+
+<h2 id="13-tail-recursive-factorial-function-in-scheme">13. Tail-Recursive Factorial Function in Scheme</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To transform the given factorial function into a tail-recursive version:
+
+```scheme
+(define (fact x)
+  (define (fact-tail x acc)
+    (if (= x 0)
+        acc
+        (fact-tail (- x 1) (* x acc))))
+  (fact-tail x 1))
+```
+
+Here, `fact-tail` is the tail-recursive helper function, and `acc` accumulates the result.
+</code></pre></div></div>
+
+<h1 id="12-what-is-an-s-expression">1.2 What is an S-expression?</h1>
+
+<p>An S-expression (symbolic expression) is a notation used in Lisp and its dialects to represent both code and data. It is a way to write nested lists using a simple parenthesis-based syntax. S-expressions are used to encode structured data and code in a uniform format.</p>
 
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">define</code></strong>: This keyword defines a new function.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">add</code></strong>: This is the name of the function.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">a</code>, <code class="language-plaintext highlighter-rouge">b</code></strong>: These are parameters for the function.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">(+ a b)</code></strong>: This is the body of the function, which returns the sum of <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>.</li>
+  <li><strong>Basic Structure</strong>:
+    <ul>
+      <li><strong>Atoms</strong>: Basic elements that are indivisible, such as numbers, symbols (e.g., <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">foo</code>), or strings.</li>
+      <li><strong>Lists</strong>: Ordered sequences of S-expressions enclosed in parentheses. For example, <code class="language-plaintext highlighter-rouge">(+ 1 2)</code> is a list where <code class="language-plaintext highlighter-rouge">+</code> is the operator and <code class="language-plaintext highlighter-rouge">1</code> and <code class="language-plaintext highlighter-rouge">2</code> are operands.</li>
+    </ul>
+
+    <p><strong>Example</strong>:</p>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">(+ 1 2)</code> is a list with the operator <code class="language-plaintext highlighter-rouge">+</code> and two operands <code class="language-plaintext highlighter-rouge">1</code> and <code class="language-plaintext highlighter-rouge">2</code>.</li>
+      <li><code class="language-plaintext highlighter-rouge">(define (square x) (* x x))</code> is a list representing a function definition.</li>
+    </ul>
+  </li>
 </ul>
 
-<p><strong>Usage:</strong></p>
+<h2 id="1-visually-representing-s-expressions">1. <strong>Visually Representing S-expressions</strong></h2>
 
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">add</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1">; returns 7</span>
-</code></pre></div></div>
-
-<h2 id="3-example-2-recursive-function">3. Example 2: Recursive Function</h2>
-
-<p>Here’s a function that calculates the factorial of a number recursively:</p>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">factorial</span> <span class="nv">n</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">=</span> <span class="nv">n</span> <span class="mi">0</span><span class="p">)</span>
-      <span class="mi">1</span>
-      <span class="p">(</span><span class="nb">*</span> <span class="nv">n</span> <span class="p">(</span><span class="nf">factorial</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)))))</span>
-</code></pre></div></div>
+<p>A visual representation of S-expressions often uses a tree structure where:</p>
 
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">factorial</code></strong>: This function calculates the factorial of <code class="language-plaintext highlighter-rouge">n</code>.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">if</code></strong>: Checks if <code class="language-plaintext highlighter-rouge">n</code> is 0; if true, returns 1 (base case). Otherwise, it multiplies <code class="language-plaintext highlighter-rouge">n</code> by the factorial of <code class="language-plaintext highlighter-rouge">n-1</code>.</li>
+  <li><strong>Nodes</strong>: Represent individual elements or sub-expressions.</li>
+  <li><strong>Edges</strong>: Represent the hierarchical relationship between elements.</li>
 </ul>
 
-<p><strong>Usage:</strong></p>
+<p><strong>Example Visualization:</strong></p>
 
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">factorial</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1">; returns 120</span>
+<p>For the S-expression <code class="language-plaintext highlighter-rouge">(+ 1 2)</code>, the tree representation is:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    +
+   / \
+  1   2
 </code></pre></div></div>
 
-<h2 id="4-example-3-higher-order-function">4. Example 3: Higher-Order Function</h2>
+<p>For a more complex S-expression like <code class="language-plaintext highlighter-rouge">(define (square x) (* x x))</code>, the tree representation is:</p>
 
-<p>Functions in Scheme can take other functions as arguments or return functions. Here’s an example of a higher-order function that takes a function and applies it twice:</p>
-
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">apply-twice</span> <span class="nv">f</span> <span class="nv">x</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">f</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)))</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEFINE
+   /  \
+SQUARE  (* x x)
+   / \       / \
+  x   (* x x)
+        / \
+       x   x
 </code></pre></div></div>
 
+<h2 id="2-evaluating-s-expressions">2. <strong>Evaluating S-expressions</strong></h2>
+
+<p>The evaluation of an S-expression in Lisp involves the following steps:</p>
+
+<p><strong>1. Check for Atom or List</strong>:</p>
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">apply-twice</code></strong>: Takes a function <code class="language-plaintext highlighter-rouge">f</code> and an argument <code class="language-plaintext highlighter-rouge">x</code>, and applies <code class="language-plaintext highlighter-rouge">f</code> to <code class="language-plaintext highlighter-rouge">x</code> twice.</li>
+  <li>If the S-expression is an <strong>atom</strong>, it is either a constant value or a variable. Constants evaluate to themselves, and variables are looked up in the environment.</li>
+  <li>If the S-expression is a <strong>list</strong>, further evaluation is required.</li>
 </ul>
 
-<p><strong>Usage:</strong></p>
+<p><strong>2. Evaluate the Function Call</strong>:</p>
+<ul>
+  <li><strong>Function Name</strong>: The first element of the list is typically the function to be called. This element is evaluated to determine the actual function.</li>
+  <li><strong>Arguments</strong>: The remaining elements of the list are the arguments to the function. Each argument is evaluated in the current environment.</li>
+</ul>
 
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">square</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">x</span> <span class="nv">x</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">apply-twice</span> <span class="nv">square</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1">; returns 16</span>
-</code></pre></div></div>
+<p><strong>3. Apply the Function</strong>:</p>
+<ul>
+  <li>After evaluating the function name and arguments, the function is applied to the arguments. The result of the function application is the result of the S-expression.</li>
+</ul>
 
-<h2 id="5-lambda-expressions">5. Lambda Expressions</h2>
+<p><strong>Example Evaluation:</strong></p>
 
-<p>You can also define anonymous functions (lambda expressions) without naming them:</p>
+<p>Evaluate <code class="language-plaintext highlighter-rouge">(+ 1 2)</code>:</p>
 
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">add-square</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span>
-  <span class="p">((</span><span class="k">lambda</span> <span class="p">(</span><span class="nf">a</span> <span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="nb">+</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">a</span> <span class="nv">a</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">b</span> <span class="nv">b</span><span class="p">)))</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
-</code></pre></div></div>
+<p><strong>1. Identify</strong>: <code class="language-plaintext highlighter-rouge">+</code> is a function, <code class="language-plaintext highlighter-rouge">1</code> and <code class="language-plaintext highlighter-rouge">2</code> are arguments.
+<strong>2. Evaluate</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">+</code> is the function that performs addition.</li>
+  <li><code class="language-plaintext highlighter-rouge">1</code> evaluates to <code class="language-plaintext highlighter-rouge">1</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">2</code> evaluates to <code class="language-plaintext highlighter-rouge">2</code>.
+<strong>3. Apply</strong>: Perform the addition: <code class="language-plaintext highlighter-rouge">1 + 2 = 3</code>.</li>
+</ul>
 
-<p>Here, the lambda function takes two arguments and returns the sum of their squares.</p>
+<p><strong>Another Example:</strong></p>
 
-<p><strong>Usage:</strong></p>
+<p>Evaluate <code class="language-plaintext highlighter-rouge">(define (square x) (* x x))</code>:</p>
 
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">add-square</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1">; returns 25</span>
-</code></pre></div></div>
+<p><strong>1. Identify</strong>: <code class="language-plaintext highlighter-rouge">define</code> is a special form for defining functions.
+<strong>2. Evaluate</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">square</code> is the function name.</li>
+  <li><code class="language-plaintext highlighter-rouge">x</code> is the parameter.</li>
+  <li><code class="language-plaintext highlighter-rouge">(* x x)</code> is the body of the function.
+<strong>3. Apply</strong>: In Lisp, this will define a function <code class="language-plaintext highlighter-rouge">square</code> that takes one argument <code class="language-plaintext highlighter-rouge">x</code> and returns <code class="language-plaintext highlighter-rouge">(* x x)</code>.</li>
+</ul>
 
-<blockquote class="block-tip">
-  <h5 id="tip-1">TIP</h5>
+<p>Thus, the evaluation process involves interpreting the list structure, applying functions, and using the results to compute the final value.</p>
 
-  <ul>
-    <li><strong><code class="language-plaintext highlighter-rouge">define</code></strong>: Used to create named functions.</li>
-    <li><strong><code class="language-plaintext highlighter-rouge">lambda</code></strong>: Used to create anonymous functions.</li>
-    <li><strong>Function Body</strong>: Contains expressions that are evaluated when the function is called.</li>
-    <li><strong>Higher-Order Functions</strong>: Functions that take or return other functions.</li>
-  </ul>
-
-  <p>These are the basic steps to define and use functions in Scheme.</p>
-</blockquote>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -1005,6 +852,10 @@
                     
 
                     
+                        <a href="/cs/lang_pl/functional/2_scheme_2_syntax/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. Syntax"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
                     <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
                 </div>
             </div>
@@ -1042,6 +893,15 @@
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+        "next": {
+            "title": "2. Syntax",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_4_functional/2_scheme_2_syntax.md",
+            "ref": "_4_functional/2_scheme_2_syntax.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -1137,7 +997,7 @@
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-29 07:32:42 +0800"
+        "time": "2024-08-29 10:51:24 +0800"
     },
     "basePath": "/cs/lang_pl",
     "book": {
