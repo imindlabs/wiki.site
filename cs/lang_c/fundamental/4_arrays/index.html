@@ -174,7 +174,7 @@
                 </a>
                 
                 
-                <ul><li><a href="#sample-code-01-arrays" onclick="mobilePageScrollToAnchor(this)" >Sample Code 01 (Arrays)</a></li><li><a href="#sample-code-02-file-io" onclick="mobilePageScrollToAnchor(this)" >Sample Code 02 (File IO)</a><ul><li><a href="#input-file-inputtxt" onclick="mobilePageScrollToAnchor(this)" >Input File (<code class="language-plaintext highlighter-rouge">input.txt</code>)</a></li><li><a href="#input-file-input2txt" onclick="mobilePageScrollToAnchor(this)" >Input File (<code class="language-plaintext highlighter-rouge">input2.txt</code>)</a></li></ul></li></ul>
+                <ul><li><a href="#sample-code-01-arrays--function-pointers" onclick="mobilePageScrollToAnchor(this)" >Sample Code 01 (Arrays &amp; Function Pointers)</a></li></ul>
 
                 
                 
@@ -310,7 +310,7 @@
                         <h1 id="/fundamental/4_arrays">4. Arrays</h1>
                     
 
-                    <h1 id="sample-code-01-arrays">Sample Code 01 (Arrays)</h1>
+                    <h1 id="sample-code-01-arrays--function-pointers">Sample Code 01 (Arrays &amp; Function Pointers)</h1>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
@@ -405,104 +405,6 @@
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 
-</code></pre></div></div>
-
-<h1 id="sample-code-02-file-io">Sample Code 02 (File IO)</h1>
-
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
-#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
-</span>
-<span class="cp">#define BUFFER_SIZE 100
-</span>
-<span class="kt">void</span> <span class="nf">q2</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="kt">FILE</span><span class="o">*</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"input.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
-    <span class="kt">char</span> <span class="n">zDesc</span><span class="p">[</span><span class="n">BUFFER_SIZE</span><span class="p">];</span>
-    <span class="kt">char</span> <span class="n">zMonth</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
-    <span class="kt">int</span> <span class="n">date</span><span class="p">,</span> <span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">seconds</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="n">zProcessName</span><span class="p">[</span><span class="mi">51</span><span class="p">];</span>
-    <span class="kt">int</span> <span class="n">nRead</span><span class="p">;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">fp</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">perror</span><span class="p">(</span><span class="s">"File could not be opened!"</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="p">{</span>
-
-        <span class="k">do</span> <span class="p">{</span>
-            <span class="n">nRead</span> <span class="o">=</span> <span class="n">fscanf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s">"%3s %d %d:%d:%d %50s"</span><span class="p">,</span> 
-                        <span class="n">zMonth</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">date</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hour</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">minute</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">seconds</span><span class="p">,</span> <span class="n">zProcessName</span><span class="p">);</span>
-            <span class="n">fgets</span><span class="p">(</span><span class="n">zDesc</span><span class="p">,</span> <span class="n">BUFFER_SIZE</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span>
-
-            <span class="k">if</span> <span class="p">(</span><span class="n">nRead</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">printf</span><span class="p">(</span><span class="s">"Detials: %s %d %d:%d:%d %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">zMonth</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="p">,</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">zProcessName</span><span class="p">);</span>
-                <span class="n">printf</span><span class="p">(</span><span class="s">"Desciption: %s"</span><span class="p">,</span> <span class="n">zDesc</span><span class="p">);</span>
-            <span class="p">}</span>
-
-        <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">nRead</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">);</span>
-
-        <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-
-
-<span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">pArr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span>
-
-    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">"Printing the Array:</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">"%d-"</span><span class="p">,</span> <span class="n">pArr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    <span class="p">}</span> 
-    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-<span class="p">}</span>
-
-
-<span class="kt">void</span> <span class="nf">q3</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="kt">FILE</span><span class="o">*</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"input2.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">nRead</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">len</span><span class="p">;</span>
-    <span class="kt">int</span><span class="o">*</span> <span class="n">pArr</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">fp</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">perror</span><span class="p">(</span><span class="s">"File could not be opened!"</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="p">{</span>
-
-        <span class="n">fscanf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">len</span><span class="p">);</span>
-        <span class="n">pArr</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">len</span><span class="p">);</span>
-        
-        <span class="k">do</span> <span class="p">{</span>            
-            <span class="n">nRead</span> <span class="o">=</span> <span class="n">fscanf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">pArr</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
-            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-
-        <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span> <span class="o">&amp;&amp;</span> <span class="n">nRead</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">);</span>
-
-        <span class="n">print</span><span class="p">(</span><span class="n">pArr</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
-
-        <span class="n">free</span><span class="p">(</span><span class="n">pArr</span><span class="p">);</span>
-        <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="n">q3</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="input-file-inputtxt">Input File (<code class="language-plaintext highlighter-rouge">input.txt</code>)</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Aug 20 10:20:57 kernel: ata3: SATA <span class="nb">link </span>down
-Aug 21 10:20:57 kernel2: ata3: SATA <span class="nb">link </span>down
-Aug 22 10:20:57 kernel3: ata3: SATA <span class="nb">link </span>down
-</code></pre></div></div>
-
-<h2 id="input-file-input2txt">Input File (<code class="language-plaintext highlighter-rouge">input2.txt</code>)</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
-10 20 40 50 60
 </code></pre></div></div>
 </section>
             </div><div class="search-results">
@@ -905,7 +807,7 @@ Aug 22 10:20:57 kernel3: ata3: SATA <span class="nb">link </span>down
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-08-29 17:12:42 +0800"
+        "time": "2024-08-29 17:17:30 +0800"
     },
     "basePath": "/cs/lang_c",
     "book": {
