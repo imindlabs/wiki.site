@@ -1,0 +1,1176 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>3. Edge Detectors · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/ds/aml/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/ds/aml/assets/gitbook/style.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/ds/aml/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/ds/aml/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/ds/aml/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/ds/aml/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/ds/aml/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/ds/aml/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/ds/aml/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/ds/aml/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/ds/aml/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/ds/aml/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/ds/aml/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/ds/aml/image_analysis/1_ima_2_filters/" />
+        
+
+        
+            <link rel="next" href="/ds/aml/image_analysis/1_ima_4_corner_detectors/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/ds/aml/">
+            <img class="logo zoom" src="/ds/aml/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/ds/aml/">
+            <img class="logo zoom" src="/ds/aml/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/ds/aml/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml">
+                
+                <a href="/ds/aml/" onclick="pageScrollToTop(this)">
+                    Wiki | Advance Machine Learning
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_learning_domains</p> -->
+            
+                <p class="collection-title">Learning Domains</p>
+            
+            
+            
+
+            
+
+            
+            
+            
+            <!-- <p>2_dataset_preparation</p> -->
+            
+                <p class="collection-title">Dataset Preparation</p>
+            
+            
+            
+
+            
+
+            
+            
+            
+            <!-- <p>3_feature_analysis</p> -->
+            
+                <p class="collection-title">Feature Analysis</p>
+            
+            
+            
+
+            
+
+            
+            
+            
+            <!-- <p>4_problem_domains</p> -->
+            
+                <p class="collection-title">Problem Domains</p>
+            
+            
+            
+
+            
+            
+            
+            <p class="separator-title">Image Processing</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/basics/1_ima_1_basics/">
+                
+                <a href="/ds/aml/basics/1_ima_1_basics/" onclick="pageScrollToTop(this)">
+                    1. Introduction
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/image_analysis/1_ima_2_filters/">
+                
+                <a href="/ds/aml/image_analysis/1_ima_2_filters/" onclick="pageScrollToTop(this)">
+                    2. Filters
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/ds/aml/image_analysis/1_ima_3_edge_detectors/">
+                
+                <a href="/ds/aml/image_analysis/1_ima_3_edge_detectors/" onclick="pageScrollToTop(this)">
+                    3. Edge Detectors
+                </a>
+                
+                
+                <ul><li><a href="#1-prewitt-and-sobel-kernels" onclick="mobilePageScrollToAnchor(this)" >1. Prewitt and Sobel Kernels</a><ul><li><a href="#11-prewitt-operator" onclick="mobilePageScrollToAnchor(this)" >1.1 Prewitt Operator</a></li><li><a href="#12-sobel-operator" onclick="mobilePageScrollToAnchor(this)" >1.2 Sobel Operator</a></li><li><a href="#13-edge-detection-process" onclick="mobilePageScrollToAnchor(this)" >1.3 Edge Detection Process</a></li><li><a href="#14-usage" onclick="mobilePageScrollToAnchor(this)" >1.4 Usage</a></li><li><a href="#15-key-points" onclick="mobilePageScrollToAnchor(this)" >1.5 Key Points</a></li></ul></li><li><a href="#2--canny-edge-detection" onclick="mobilePageScrollToAnchor(this)" >2.  Canny Edge Detection</a><ul><li><a href="#21-steps-in-the-canny-edge-detection-algorithm" onclick="mobilePageScrollToAnchor(this)" >2.1 Steps in the Canny Edge Detection Algorithm:</a></li><li><a href="#22-usage" onclick="mobilePageScrollToAnchor(this)" >2.2 Usage</a></li><li><a href="#23-keypoints" onclick="mobilePageScrollToAnchor(this)" >2.3 Keypoints</a></li></ul></li><li><a href="#3-hough-transform-line-detector" onclick="mobilePageScrollToAnchor(this)" >3 Hough Transform Line Detector</a><ul><li><a href="#31-concept-of-hough-transform-for-line-detection" onclick="mobilePageScrollToAnchor(this)" >3.1 Concept of Hough Transform for Line Detection:</a><ul><li><a href="#1-equation-of-a-line" onclick="mobilePageScrollToAnchor(this)" >1. Equation of a Line</a></li><li><a href="#2-hough-space-accumulator-array" onclick="mobilePageScrollToAnchor(this)" >2. Hough Space (Accumulator Array)</a></li><li><a href="#3-detecting-lines" onclick="mobilePageScrollToAnchor(this)" >3. Detecting Lines</a></li></ul></li><li><a href="#32-usage" onclick="mobilePageScrollToAnchor(this)" >3.2 Usage</a></li><li><a href="#33-variations-of-the-hough-transform" onclick="mobilePageScrollToAnchor(this)" >3.3 Variations of the Hough Transform:</a></li><li><a href="#34-keypoints" onclick="mobilePageScrollToAnchor(this)" >3.4 Keypoints</a></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/image_analysis/1_ima_4_corner_detectors/">
+                
+                <a href="/ds/aml/image_analysis/1_ima_4_corner_detectors/" onclick="pageScrollToTop(this)">
+                    4. Corner Detectors
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/image_analysis/1_ima_5_region_detectors/">
+                
+                <a href="/ds/aml/image_analysis/1_ima_5_region_detectors/" onclick="pageScrollToTop(this)">
+                    5. Region Detectors
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/image_analysis/1_ima_6_keypoints/">
+                
+                <a href="/ds/aml/image_analysis/1_ima_6_keypoints/" onclick="pageScrollToTop(this)">
+                    6. Keypoint Detectors
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Regression</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/basics/1_regression_1_cv/">
+                
+                <a href="/ds/aml/basics/1_regression_1_cv/" onclick="pageScrollToTop(this)">
+                    1. Computer Vision
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/ds/aml/basics/1_regression_1_nlp/">
+                
+                <a href="/ds/aml/basics/1_regression_1_nlp/" onclick="pageScrollToTop(this)">
+                    2. Natural Language Processing
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >3. Edge Detectors</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/image_analysis/1_ima_3_edge_detectors">3. Edge Detectors</h1>
+                    
+
+                    <h1 id="1-prewitt-and-sobel-kernels">1. Prewitt and Sobel Kernels</h1>
+
+<p>Edge detection is a fundamental operation in image processing that identifies significant intensity changes in an image, which typically correspond to object boundaries. Two popular methods for edge detection are the Prewitt and Sobel operators, which are both based on convolution with specific kernels designed to highlight edges in different directions.</p>
+
+<h2 id="11-prewitt-operator">1.1 Prewitt Operator</h2>
+
+<p>The Prewitt operator is a simpler method for detecting edges. It uses two 3x3 convolution kernels to approximate the first derivative of the image intensity in the horizontal and vertical directions.</p>
+
+<ul>
+  <li>
+    <p><strong>Prewitt Kernel for Horizontal Edges (\(G_x\)):</strong>
+\(G_x = \begin{bmatrix}
+-1 &amp; 0 &amp; 1 \\
+-1 &amp; 0 &amp; 1 \\
+-1 &amp; 0 &amp; 1
+\end{bmatrix}\)</p>
+  </li>
+  <li>
+    <p><strong>Prewitt Kernel for Vertical Edges (\(G_y\)):</strong>
+\(G_y = \begin{bmatrix}
+-1 &amp; -1 &amp; -1 \\
+ 0 &amp;  0 &amp;  0 \\
+ 1 &amp;  1 &amp;  1
+\end{bmatrix}\)</p>
+  </li>
+</ul>
+
+<h2 id="12-sobel-operator">1.2 Sobel Operator</h2>
+
+<p>The Sobel operator is similar to the Prewitt operator but includes a smoothing effect by incorporating a weight of 2 in the center row/column. This makes it more robust to noise and gives it a better edge response.</p>
+
+<ul>
+  <li>
+    <p><strong>Sobel Kernel for Horizontal Edges (\(G_x\)):</strong>
+\(G_x = \begin{bmatrix}
+-1 &amp; 0 &amp; 1 \\
+-2 &amp; 0 &amp; 2 \\
+-1 &amp; 0 &amp; 1
+\end{bmatrix}\)</p>
+  </li>
+  <li>
+    <p><strong>Sobel Kernel for Vertical Edges (\(G_y\)):</strong>
+\(G_y = \begin{bmatrix}
+-1 &amp; -2 &amp; -1 \\
+ 0 &amp;  0 &amp;  0 \\
+ 1 &amp;  2 &amp;  1
+\end{bmatrix}\)</p>
+  </li>
+</ul>
+
+<h2 id="13-edge-detection-process">1.3 Edge Detection Process</h2>
+
+<ol>
+  <li><strong>Apply Convolution:</strong>
+    <ul>
+      <li>Convolve the image with \(G_x\) to detect horizontal edges.</li>
+      <li>Convolve the image with \(G_y\) to detect vertical edges.</li>
+    </ul>
+  </li>
+  <li><strong>Compute Gradient Magnitude:</strong>
+    <ul>
+      <li>After obtaining \(G_x\) and \(G_y\), the gradient magnitude at each pixel is calculated as:
+\(G = \sqrt{G_x^2 + G_y^2}\)</li>
+      <li>Alternatively, a faster but less precise approximation can be used:
+\(G = |G_x| + |G_y|\)</li>
+      <li>The magnitude \(G\) represents the strength of the edge.</li>
+    </ul>
+  </li>
+  <li><strong>Thresholding (Optional):</strong>
+    <ul>
+      <li>To highlight significant edges, a threshold can be applied to the gradient magnitude. Pixels with \(G\) above a certain threshold are considered part of an edge.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="14-usage">1.4 Usage</h2>
+
+<p>Here’s how you can implement edge detection using both the Prewitt and Sobel operators in Python:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># Load the image in grayscale
+</span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="sh">'</span><span class="s">path_to_your_image.jpg</span><span class="sh">'</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+
+<span class="c1"># Define Prewitt kernels
+</span><span class="n">prewitt_kernel_x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
+                             <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
+                             <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">prewitt_kernel_y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> 
+                             <span class="p">[</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">],</span> 
+                             <span class="p">[</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Apply Prewitt operator
+</span><span class="n">prewitt_x</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">prewitt_kernel_x</span><span class="p">)</span>
+<span class="n">prewitt_y</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">prewitt_kernel_y</span><span class="p">)</span>
+<span class="n">prewitt</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">magnitude</span><span class="p">(</span><span class="n">prewitt_x</span><span class="p">,</span> <span class="n">prewitt_y</span><span class="p">)</span>
+
+<span class="c1"># Apply Sobel operator using OpenCV built-in functions
+</span><span class="n">sobel_x</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nc">Sobel</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CV_64F</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ksize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sobel_y</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nc">Sobel</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">CV_64F</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ksize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sobel</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">magnitude</span><span class="p">(</span><span class="n">sobel_x</span><span class="p">,</span> <span class="n">sobel_y</span><span class="p">)</span>
+
+<span class="c1"># Display the results
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">gray</span><span class="sh">'</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">Original Image</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">prewitt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">gray</span><span class="sh">'</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">Prewitt Edge Detection</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">sobel</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">gray</span><span class="sh">'</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">Sobel Edge Detection</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="15-key-points">1.5 Key Points</h2>
+
+<ul>
+  <li><strong>Prewitt Operator:</strong>
+    <ul>
+      <li>Simpler and computationally less expensive.</li>
+      <li>Less robust to noise compared to the Sobel operator.</li>
+    </ul>
+  </li>
+  <li><strong>Sobel Operator:</strong>
+    <ul>
+      <li>Adds smoothing, making it more effective at detecting edges in noisy images.</li>
+      <li>Widely used due to its balance between simplicity and performance.</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="important">IMPORTANT</h5>
+
+  <p>Both Prewitt and Sobel operators are fundamental tools for detecting edges in an image. The choice between them often depends on the specific requirements of the task, with Sobel being preferred in most practical applications due to its enhanced noise resistance and edge-detection capability.</p>
+</blockquote>
+
+<h1 id="2--canny-edge-detection">2.  Canny Edge Detection</h1>
+
+<p>Canny Edge Detection is a popular and widely used algorithm for detecting edges in an image. Developed by John F. Canny in 1986, the algorithm is designed to be an optimal edge detector, providing good detection, accurate localization, and minimal response to noise. The Canny edge detection algorithm is more complex than simpler edge detectors like Prewitt and Sobel, but it produces more accurate and reliable results.</p>
+
+<h2 id="21-steps-in-the-canny-edge-detection-algorithm">2.1 Steps in the Canny Edge Detection Algorithm:</h2>
+
+<p>The Canny Edge Detection algorithm consists of the following steps:</p>
+
+<p><strong>1. Noise Reduction:</strong></p>
+<ul>
+  <li>The first step is to reduce noise in the image, as noise can cause false edge detection. This is typically done using a Gaussian filter, which smooths the image by averaging pixel values with their neighbors.</li>
+  <li>The Gaussian kernel is applied to the image using convolution:
+\(G(x, y) = \frac{1}{2\pi\sigma^2} \exp\left(-\frac{x^2 + y^2}{2\sigma^2}\right)\)</li>
+  <li>The parameter \(\sigma\) controls the amount of smoothing.</li>
+</ul>
+
+<p><strong>2. Gradient Calculation:</strong></p>
+<ul>
+  <li>The algorithm computes the intensity gradient of the smoothed image using a method such as the Sobel operator. This produces two gradient images, \(G_x\) and \(G_y\), representing the gradient in the \(x\) and \(y\) directions, respectively.</li>
+  <li>The gradient magnitude and direction are then calculated:
+\(G = \sqrt{G_x^2 + G_y^2}\)
+\(\theta = \arctan\left(\frac{G_y}{G_x}\right)\)</li>
+</ul>
+
+<p><strong>3. Non-Maximum Suppression:</strong></p>
+<ul>
+  <li>Non-maximum suppression is applied to thin out the edges. It suppresses any pixel that is not considered to be part of an edge, leaving only the local maxima in the gradient direction.</li>
+  <li>For each pixel, the algorithm checks whether it is a local maximum by comparing it with its neighbors in the gradient direction. If it is not the maximum, it is set to zero.</li>
+</ul>
+
+<p><strong>4. Double Thresholding:</strong></p>
+<ul>
+  <li>After non-maximum suppression, the algorithm applies a double threshold to classify pixels as strong, weak, or non-relevant edges:
+    <ul>
+      <li><strong>Strong edges</strong>: Pixels with a gradient magnitude greater than the high threshold.</li>
+      <li><strong>Weak edges</strong>: Pixels with a gradient magnitude between the low and high thresholds.</li>
+      <li><strong>Non-relevant</strong>: Pixels with a gradient magnitude below the low threshold are suppressed.</li>
+    </ul>
+  </li>
+  <li>This step helps to distinguish between true edges and noise.</li>
+</ul>
+
+<p><strong>5. Edge Tracking by Hysteresis:</strong></p>
+<ul>
+  <li>In the final step, weak edges are either included in the final edge map or discarded based on their connectivity to strong edges.</li>
+  <li>A weak edge pixel is retained if it is connected to a strong edge pixel; otherwise, it is suppressed. This helps to ensure that only valid edges are preserved.</li>
+</ul>
+
+<h2 id="22-usage">2.2 Usage</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># Load the image in grayscale
+</span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="sh">'</span><span class="s">path_to_your_image.jpg</span><span class="sh">'</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+
+<span class="c1"># Apply Canny edge detection
+</span><span class="n">edges</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nc">Canny</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">threshold1</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">threshold2</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># Display the results
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">gray</span><span class="sh">'</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">Original Image</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">gray</span><span class="sh">'</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">Canny Edge Detection</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">threshold1</code></strong> and <strong><code class="language-plaintext highlighter-rouge">threshold2</code></strong>: These are the low and high thresholds used in the double thresholding step. Edges with gradient values above <code class="language-plaintext highlighter-rouge">threshold2</code> are considered strong edges, while those between <code class="language-plaintext highlighter-rouge">threshold1</code> and <code class="language-plaintext highlighter-rouge">threshold2</code> are considered weak edges.</li>
+  <li>The choice of these thresholds significantly affects the output; a lower threshold results in more detected edges, while a higher threshold reduces the number of detected edges.</li>
+</ul>
+
+<h2 id="23-keypoints">2.3 Keypoints</h2>
+<ul>
+  <li><strong>Canny Edge Detection</strong>: A multi-step process that provides a more accurate and reliable method for detecting edges in images.</li>
+  <li><strong>Steps</strong>: Includes noise reduction, gradient calculation, non-maximum suppression, double thresholding, and edge tracking by hysteresis.</li>
+  <li><strong>Applications</strong>: Widely used in various computer vision tasks, such as object detection, image segmentation, and feature extraction.</li>
+  <li>Canny Edge Detection is known for its robustness and is commonly used in real-world applications due to its ability to detect edges even in noisy images while minimizing false detections.</li>
+</ul>
+
+<h1 id="3-hough-transform-line-detector">3 Hough Transform Line Detector</h1>
+
+<p>The Hough Transform is a powerful technique used in computer vision and image processing to detect lines, circles, or other parametric shapes in an image. The method is particularly robust for detecting features in noisy images or where the shapes are only partially visible.</p>
+
+<h2 id="31-concept-of-hough-transform-for-line-detection">3.1 Concept of Hough Transform for Line Detection:</h2>
+
+<p>The basic idea behind the Hough Transform for line detection is to transform the points in the image space into a parameter space, where a line can be represented by a point. The transform accumulates evidence for all possible lines that could pass through each point in the image.</p>
+
+<style>  
+
+  #hough_transform.flex-container {
+      display: flex;
+      flex-direction: row;
+  }
+  #hough_transform.flex-container > div {
+    width: 100%;
+    height: 440px;
+    margin: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  
+
+  
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 800px) {
+
+    #hough_transform.flex-container {
+      flex-direction: column;
+    }
+    #hough_transform.flex-container > div {
+      width: 100%;
+      height: 250px;
+    }
+  }
+</style>
+
+<div id="hough_transform" class="flex-container">
+  
+  <div><iframe style="border-radius: 10px; overflow: hidden; border: 2px solid #7a7a7a; box-shadow: 1px 2px 5px #b4b4b4;" width="100%" height="100%" src="https://www.youtube.com/embed/XRBc_xkZREg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>
+  
+</div>
+
+<h3 id="1-equation-of-a-line">1. Equation of a Line</h3>
+<p>In the image space (Cartesian coordinates), a line can be represented as:
+\(y = mx + c\)
+where \(m\) is the slope and \(c\) is the y-intercept.</p>
+
+<p>However, this representation is not ideal for the Hough Transform because vertical lines would require infinite slope. Instead, the Hough Transform uses the polar representation of a line:
+\(\rho = x \cos \theta + y \sin \theta\)
+where:</p>
+<ul>
+  <li>\(\rho\) is the perpendicular distance from the origin to the line.</li>
+  <li>\(\theta\) is the angle of the perpendicular from the origin to the line.</li>
+</ul>
+
+<h3 id="2-hough-space-accumulator-array">2. Hough Space (Accumulator Array)</h3>
+<p>In the Hough Transform, each point \((x, y)\) in the image corresponds to a sinusoidal curve in the \((\rho, \theta)\) parameter space. Every point on this curve represents a potential line passing through \((x, y)\).</p>
+
+<ul>
+  <li><strong>Voting in Hough Space</strong>: Each point in the image votes for all the possible lines (\(\rho, \theta\)) that could pass through it. The votes are accumulated in an array known as the accumulator.</li>
+  <li>The dimension of the accumulator array corresponds to the range of possible values of \(\rho\) and \(\theta\).</li>
+</ul>
+
+<h3 id="3-detecting-lines">3. Detecting Lines</h3>
+<p>After all points in the image have voted, peaks in the accumulator array indicate the presence of lines. These peaks correspond to the \(\rho\) and \(\theta\) values of the lines in the image.</p>
+
+<h2 id="32-usage">3.2 Usage</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">cv2</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># Load the image in grayscale
+</span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">imread</span><span class="p">(</span><span class="sh">'</span><span class="s">path_to_your_image.jpg</span><span class="sh">'</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+
+<span class="c1"># Apply Canny Edge Detection
+</span><span class="n">edges</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nc">Canny</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">apertureSize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Perform Hough Line Transform
+</span><span class="n">lines</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nc">HoughLines</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># Draw the lines on the image
+</span><span class="n">output_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_GRAY2BGR</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">rho</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">rho</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">rho</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="mi">1000</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="p">))</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">y0</span> <span class="o">+</span> <span class="mi">1000</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="p">))</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">x0</span> <span class="o">-</span> <span class="mi">1000</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="p">))</span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">y0</span> <span class="o">-</span> <span class="mi">1000</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="p">))</span>
+    <span class="n">cv2</span><span class="p">.</span><span class="nf">line</span><span class="p">(</span><span class="n">output_img</span><span class="p">,</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Display the results
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">gray</span><span class="sh">'</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">Original Image</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">output_img</span><span class="p">),</span> <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">Hough Line Detection</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">cv2.HoughLines()</code></strong>: This function performs the Hough Line Transform. The parameters are:
+    <ul>
+      <li><strong>edges</strong>: The output from the Canny edge detector.</li>
+      <li><strong>1</strong>: The resolution of the parameter \(\rho\) in pixels.</li>
+      <li><strong>np.pi/180</strong>: The resolution of the parameter \(\theta\) in radians.</li>
+      <li><strong>200</strong>: The threshold parameter. Only lines with votes greater than this value are considered.</li>
+    </ul>
+  </li>
+  <li><strong>Drawing Lines</strong>: The detected lines are drawn on the image using the calculated \(\rho\) and \(\theta\) values.</li>
+</ul>
+
+<h2 id="33-variations-of-the-hough-transform">3.3 Variations of the Hough Transform:</h2>
+
+<ol>
+  <li><strong>Standard Hough Transform</strong>:
+    <ul>
+      <li>Works well for detecting lines but can be computationally expensive due to the size of the accumulator array.</li>
+    </ul>
+  </li>
+  <li><strong>Probabilistic Hough Transform</strong>:
+    <ul>
+      <li>A more efficient variant that randomly samples points to reduce computational load.</li>
+      <li>Implemented in OpenCV as <code class="language-plaintext highlighter-rouge">cv2.HoughLinesP()</code>. It returns the start and end points of the detected lines, making it faster and more suitable for real-time applications.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="example-of-probabilistic-hough-transform">Example of Probabilistic Hough Transform:</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Perform Probabilistic Hough Line Transform
+</span><span class="n">lines</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nc">HoughLinesP</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">minLineLength</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">maxLineGap</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Draw the lines on the image
+</span><span class="n">output_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="p">.</span><span class="nf">cvtColor</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">cv2</span><span class="p">.</span><span class="n">COLOR_GRAY2BGR</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cv2</span><span class="p">.</span><span class="nf">line</span><span class="p">(</span><span class="n">output_img</span><span class="p">,</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Display the results
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">output_img</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">Probabilistic Hough Line Detection</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">cv2.HoughLinesP()</code></strong>: The probabilistic variant, which returns the endpoints of line segments.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">minLineLength</code></strong>: The minimum length of a line segment to be detected.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">maxLineGap</code></strong>: The maximum allowed gap between points on the same line to link them together.</li>
+</ul>
+
+<h2 id="34-keypoints">3.4 Keypoints</h2>
+<ul>
+  <li><strong>Hough Transform</strong>: A technique for detecting lines in an image by transforming points in the image space to the parameter space and finding peaks in the accumulator array.</li>
+  <li><strong>Standard Hough Transform</strong>: Detects all lines in an image but is computationally intensive.</li>
+  <li><strong>Probabilistic Hough Transform</strong>: A more efficient variant that detects line segments and is faster.</li>
+  <li><strong>Applications</strong>: Widely used in applications like lane detection in autonomous vehicles, detecting lines in documents, and more.</li>
+  <li>The Hough Transform is robust and versatile, making it a fundamental tool in many computer vision and image processing tasks.</li>
+</ul>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/ds/aml/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/ds/aml/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/ds/aml/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    // Adding script tags to externally link js
+        keyName = `mathjax_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'mathjax');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `mathjax_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'mathjax')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", mathjax, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `mathjax_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `mathjax_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'mathjax');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `mathjax_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'mathjax')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `mathjax_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script
+  type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/ds/aml/image_analysis/1_ima_2_filters/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2. Filters"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/ds/aml/image_analysis/1_ima_4_corner_detectors/" class="navigation navigation-next navigation-unique" aria-label="Next page: 4. Corner Detectors"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "4. Corner Detectors",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_4_problem_domains/1_ima_4_corner_detectors.md",
+            "ref": "_4_problem_domains/1_ima_4_corner_detectors.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | Advance Machine Learning",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_4_problem_domains/1_ima_3_edge_detectors.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-08-20 15:29:14 +0800"
+    },
+    "basePath": "/ds/aml",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/ds/aml/assets/gitbook/gitbook.js"></script>
+<script src="/ds/aml/assets/gitbook/theme.js"></script>
+
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/ds/aml/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/ds/aml/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>

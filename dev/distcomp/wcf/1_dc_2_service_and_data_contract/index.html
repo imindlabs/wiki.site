@@ -1,0 +1,1073 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2. Contracts · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/dev/distcomp/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/dev/distcomp/assets/gitbook/style.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/dev/distcomp/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/dev/distcomp/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/dev/distcomp/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/dev/distcomp/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/dev/distcomp/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/distcomp/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/dev/distcomp/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/distcomp/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/dev/distcomp/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/dev/distcomp/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/dev/distcomp/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/dev/distcomp/wcf/1_dc_1_fundamentals/" />
+        
+
+        
+            <link rel="next" href="/dev/distcomp/wcf/1_dc_3_async_wcf/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/dev/distcomp/">
+            <img class="logo zoom" src="/dev/distcomp/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/dev/distcomp/">
+            <img class="logo zoom" src="/dev/distcomp/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/dev/distcomp/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp">
+                
+                <a href="/dev/distcomp/" onclick="pageScrollToTop(this)">
+                    Wiki | Distributed - Computing
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_net_distcomp</p> -->
+            
+                <p class="collection-title">.Net Distributed Computing</p>
+            
+            
+            
+
+            
+            
+            
+            <p class="separator-title">C#</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/c_sharp/1_cs_1_fundamentals/">
+                
+                <a href="/dev/distcomp/c_sharp/1_cs_1_fundamentals/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/c_sharp/1_cs_2_advance/">
+                
+                <a href="/dev/distcomp/c_sharp/1_cs_2_advance/" onclick="pageScrollToTop(this)">
+                    2. Advance
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/c_sharp/1_cs_3_async_task/">
+                
+                <a href="/dev/distcomp/c_sharp/1_cs_3_async_task/" onclick="pageScrollToTop(this)">
+                    3. Async Task
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/c_sharp/1_cs_4_delegate/">
+                
+                <a href="/dev/distcomp/c_sharp/1_cs_4_delegate/" onclick="pageScrollToTop(this)">
+                    4. Delegate
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Distributed Computing</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/wcf/1_dc_1_fundamentals/">
+                
+                <a href="/dev/distcomp/wcf/1_dc_1_fundamentals/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/dev/distcomp/wcf/1_dc_2_service_and_data_contract/">
+                
+                <a href="/dev/distcomp/wcf/1_dc_2_service_and_data_contract/" onclick="pageScrollToTop(this)">
+                    2. Contracts
+                </a>
+                
+                
+                <ul><li><a href="#21-service-contract" onclick="mobilePageScrollToAnchor(this)" >2.1 Service Contract</a><ul><li><a href="#1-key-points-about-servicecontract" onclick="mobilePageScrollToAnchor(this)" >1. Key Points about <code class="language-plaintext highlighter-rouge">ServiceContract</code></a></li><li><a href="#2-example-of-a-service-contract" onclick="mobilePageScrollToAnchor(this)" >2. Example of a Service Contract</a></li></ul></li><li><a href="#22-data-contract" onclick="mobilePageScrollToAnchor(this)" >2.2 Data Contract</a><ul><li><a href="#1-key-points-about-data-contracts" onclick="mobilePageScrollToAnchor(this)" >1. Key Points about Data Contracts</a></li><li><a href="#2-example-of-a-data-contract" onclick="mobilePageScrollToAnchor(this)" >2. Example of a Data Contract</a></li><li><a href="#3-using-data-contracts-in-services" onclick="mobilePageScrollToAnchor(this)" >3. Using Data Contracts in Services</a></li><li><a href="#4-data-contract-considerations" onclick="mobilePageScrollToAnchor(this)" >4. Data Contract Considerations</a></li><li><a href="#5-private-members-in-datacontract" onclick="mobilePageScrollToAnchor(this)" >5. Private Members in DataContract?</a><ul><li><a href="#51-why-private-members-arent-included" onclick="mobilePageScrollToAnchor(this)" >5.1 Why Private Members Aren’t Included</a></li><li><a href="#52-workarounds" onclick="mobilePageScrollToAnchor(this)" >5.2 Workarounds</a></li></ul></li></ul></li><li><a href="#23-serializing-methods" onclick="mobilePageScrollToAnchor(this)" >2.3 Serializing Methods</a><ul><li><a href="#1-what-gets-serialized" onclick="mobilePageScrollToAnchor(this)" >1. What Gets Serialized</a></li><li><a href="#2-example-of-a-data-contract-1" onclick="mobilePageScrollToAnchor(this)" >2. Example of a Data Contract</a></li><li><a href="#3-why-methods-arent-serialized" onclick="mobilePageScrollToAnchor(this)" >3. Why Methods Aren’t Serialized</a></li><li><a href="#4-access-methods-of-a-serialized-object" onclick="mobilePageScrollToAnchor(this)" >4. Access Methods of a Serialized Object?</a><ul><li><a href="#41-keypoints" onclick="mobilePageScrollToAnchor(this)" >4.1 Keypoints</a></li><li><a href="#42-myserviceclient-proxy-class" onclick="mobilePageScrollToAnchor(this)" >4.2 <code class="language-plaintext highlighter-rouge">MyServiceClient</code> Proxy Class</a></li></ul></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/wcf/1_dc_3_async_wcf/">
+                
+                <a href="/dev/distcomp/wcf/1_dc_3_async_wcf/" onclick="pageScrollToTop(this)">
+                    3. Async WCF
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>2_java_distcomp</p> -->
+            
+                <p class="collection-title">Java Distributed Computing</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/distcomp/java/1_basics/">
+                
+                <a href="/dev/distcomp/java/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Basics
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >2. Contracts</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/wcf/1_dc_2_service_and_data_contract">2. Contracts</h1>
+                    
+
+                    <h1 id="21-service-contract">2.1 Service Contract</h1>
+
+<p>In Windows Communication Foundation (WCF), the <code class="language-plaintext highlighter-rouge">ServiceContract</code> attribute is used to define a service contract. A service contract in WCF specifies the operations that a service exposes and provides a way to describe how the service can be called and interacted with by clients.</p>
+
+<h2 id="1-key-points-about-servicecontract">1. Key Points about <code class="language-plaintext highlighter-rouge">ServiceContract</code></h2>
+
+<p><strong>1. Definition of Service Interface</strong>:
+   The <code class="language-plaintext highlighter-rouge">ServiceContract</code> attribute is applied to an interface, which defines the methods that the service will expose to clients. These methods must be decorated with the <code class="language-plaintext highlighter-rouge">OperationContract</code> attribute to be part of the service contract.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="p">[</span><span class="n">ServiceContract</span><span class="p">]</span>
+   <span class="k">public</span> <span class="k">interface</span> <span class="nc">IMyService</span>
+   <span class="p">{</span>
+       <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
+       <span class="kt">string</span> <span class="nf">SayHello</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">);</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>2. Declarative Metadata</strong>:
+   By using <code class="language-plaintext highlighter-rouge">ServiceContract</code>, you are providing metadata about the service that WCF uses to generate the necessary communication infrastructure, such as service endpoints, bindings, and contracts.</p>
+
+<p><strong>3. Configuration</strong>:
+   The service contract is used in conjunction with other WCF configurations to set up how the service is hosted and how it communicates with clients. This is typically specified in configuration files or programmatically.</p>
+
+<p><strong>4. Data Contracts</strong>:
+   To define the data types that are exchanged between the service and clients, you also use the <code class="language-plaintext highlighter-rouge">DataContract</code> attribute on classes and the <code class="language-plaintext highlighter-rouge">DataMember</code> attribute on properties or fields.</p>
+
+<h2 id="2-example-of-a-service-contract">2. Example of a Service Contract</h2>
+
+<p>Here’s a simple example of a WCF service contract:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.ServiceModel</span><span class="p">;</span>
+
+<span class="p">[</span><span class="n">ServiceContract</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">ICalculatorService</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
+    <span class="kt">int</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
+    <span class="kt">int</span> <span class="nf">Subtract</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">ICalculatorService</code> interface is marked with the <code class="language-plaintext highlighter-rouge">ServiceContract</code> attribute, indicating that it defines a WCF service contract.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">Add</code> and <code class="language-plaintext highlighter-rouge">Subtract</code> methods are marked with the <code class="language-plaintext highlighter-rouge">OperationContract</code> attribute, indicating that they are operations that clients can invoke.</li>
+</ul>
+
+<h4 id="implementing-the-service-contract">Implementing the Service Contract</h4>
+
+<p>To implement this contract, you create a class that implements the interface:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">CalculatorService</span> <span class="p">:</span> <span class="n">ICalculatorService</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="nf">Subtract</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="p">-</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this implementation, the <code class="language-plaintext highlighter-rouge">CalculatorService</code> class provides the logic for the operations defined in the <code class="language-plaintext highlighter-rouge">ICalculatorService</code> contract.</p>
+
+<h1 id="22-data-contract">2.2 Data Contract</h1>
+
+<p>In Windows Communication Foundation (WCF), a <strong>Data Contract</strong> is used to define the structure of data that is exchanged between a service and its clients. It specifies how data is serialized and deserialized, ensuring that both the service and client understand the format of the data being transferred.</p>
+
+<h2 id="1-key-points-about-data-contracts">1. Key Points about Data Contracts</h2>
+
+<p><strong>1. Definition of Data Structures</strong>:
+   A Data Contract is applied to a class or struct and describes the data that will be transferred between the service and client. You use the <code class="language-plaintext highlighter-rouge">DataContract</code> attribute to mark the class or struct, and <code class="language-plaintext highlighter-rouge">DataMember</code> attributes to specify which members of the class or struct are included in the contract.</p>
+
+<p><strong>2. Serialization</strong>:
+   Data Contracts define how data is serialized into XML or JSON (depending on the binding) for transmission over the network. This serialization is necessary because WCF needs a standardized way to represent data for communication.</p>
+
+<p><strong>3. Consistency</strong>:
+   Data Contracts ensure that both the service and the client use the same data format. Any changes to the data contract in the service must be compatible with the contract expected by the client to avoid communication issues.</p>
+
+<p><strong>4. Optional and Required Members</strong>:
+   Data members in a Data Contract can be optional or required. By default, members are optional, and you can use the <code class="language-plaintext highlighter-rouge">IsRequired</code> property of the <code class="language-plaintext highlighter-rouge">DataMember</code> attribute to specify if a member is required.</p>
+
+<h2 id="2-example-of-a-data-contract">2. Example of a Data Contract</h2>
+
+<p>Here is an example of how you define a Data Contract in WCF:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Runtime.Serialization</span><span class="p">;</span>
+
+<span class="p">[</span><span class="n">DataContract</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">DataMember</span><span class="p">]</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">FirstName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="p">[</span><span class="n">DataMember</span><span class="p">]</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">LastName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="p">[</span><span class="nf">DataMember</span><span class="p">(</span><span class="n">IsRequired</span> <span class="p">=</span> <span class="k">true</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this example:</p>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">Person</code> class is decorated with the <code class="language-plaintext highlighter-rouge">[DataContract]</code> attribute, indicating that it is a data contract.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">FirstName</code>, <code class="language-plaintext highlighter-rouge">LastName</code>, and <code class="language-plaintext highlighter-rouge">Age</code> properties are decorated with the <code class="language-plaintext highlighter-rouge">[DataMember]</code> attribute, indicating that these properties are part of the data contract and will be serialized/deserialized.</li>
+</ul>
+
+<h2 id="3-using-data-contracts-in-services">3. Using Data Contracts in Services</h2>
+
+<p>When defining a WCF service, you can use data contracts as method parameters and return values:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">ServiceContract</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">IPersonService</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
+    <span class="n">Person</span> <span class="nf">GetPersonInfo</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this service contract, the <code class="language-plaintext highlighter-rouge">GetPersonInfo</code> method returns a <code class="language-plaintext highlighter-rouge">Person</code> object, which is defined by the data contract.</p>
+
+<h2 id="4-data-contract-considerations">4. Data Contract Considerations</h2>
+
+<ul>
+  <li><strong>Versioning</strong>: If the structure of your data contract changes, you should consider how these changes might affect clients. Adding new members with default values is typically safe, but removing or renaming members can cause issues.</li>
+  <li><strong>Inheritance</strong>: Data Contracts support inheritance, allowing derived classes to be used with WCF services. Ensure that derived classes are also properly decorated with <code class="language-plaintext highlighter-rouge">DataContract</code> and <code class="language-plaintext highlighter-rouge">DataMember</code> attributes.</li>
+</ul>
+
+<p>Data Contracts play a crucial role in WCF by providing a way to define and control the structure of data exchanged between services and clients, ensuring compatibility and consistency in communication.</p>
+
+<h2 id="5-private-members-in-datacontract">5. Private Members in DataContract?</h2>
+
+<p>In WCF, private members of a class cannot be directly passed using a Data Contract. The Data Contract mechanism requires that only public members (properties or fields) be included in the serialization process.</p>
+
+<blockquote class="block-tip">
+  <h5 id="important">IMPORTANT</h5>
+
+  <p>In WCF Data Contracts, only public members are included in serialization. Private members must be accessed through public properties or other public interfaces if you need them to be part of the data contract. This approach ensures that the contract remains clear and manageable, while still allowing you to control the visibility and access of your data.</p>
+</blockquote>
+
+<p>Here’s a breakdown of why this is the case and how you can work around it:</p>
+
+<h3 id="51-why-private-members-arent-included">5.1 Why Private Members Aren’t Included</h3>
+
+<p><strong>1. Serialization</strong>: WCF’s serialization process relies on accessing public members to convert them into a format suitable for transmission (like XML or JSON). Private members are not accessible during serialization because they are not part of the public interface of the class.</p>
+
+<p><strong>2. Data Contract Specification</strong>: The Data Contract model is designed to be explicit about what data is serialized and deserialized. By focusing on public members, WCF ensures that only the intended data is included in the contract.</p>
+
+<h3 id="52-workarounds">5.2 Workarounds</h3>
+
+<p>If you need to include data that is not directly accessible through public members, you can use the following approaches:</p>
+
+<p><strong>1. Expose Data via Public Properties</strong>:
+   Define public properties in your Data Contract class that internally access private fields. This way, you control the exposure of the data while still adhering to the Data Contract model.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="p">[</span><span class="n">DataContract</span><span class="p">]</span>
+   <span class="k">public</span> <span class="k">class</span> <span class="nc">Person</span>
+   <span class="p">{</span>
+       <span class="k">private</span> <span class="kt">string</span> <span class="n">_firstName</span><span class="p">;</span>
+       <span class="k">private</span> <span class="kt">string</span> <span class="n">_lastName</span><span class="p">;</span>
+
+       <span class="p">[</span><span class="n">DataMember</span><span class="p">]</span>
+       <span class="k">public</span> <span class="kt">string</span> <span class="n">FirstName</span>
+       <span class="p">{</span>
+           <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_firstName</span><span class="p">;</span> <span class="p">}</span>
+           <span class="k">set</span> <span class="p">{</span> <span class="n">_firstName</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span>
+       <span class="p">}</span>
+
+       <span class="p">[</span><span class="n">DataMember</span><span class="p">]</span>
+       <span class="k">public</span> <span class="kt">string</span> <span class="n">LastName</span>
+       <span class="p">{</span>
+           <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_lastName</span><span class="p">;</span> <span class="p">}</span>
+           <span class="k">set</span> <span class="p">{</span> <span class="n">_lastName</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>2. Use Data Members with Properties</strong>:
+   You can also use properties to control the serialization of private data. Define properties with both <code class="language-plaintext highlighter-rouge">get</code> and <code class="language-plaintext highlighter-rouge">set</code> accessors for serialization, and use private fields to store the actual data.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="p">[</span><span class="n">DataContract</span><span class="p">]</span>
+   <span class="k">public</span> <span class="k">class</span> <span class="nc">Person</span>
+   <span class="p">{</span>
+       <span class="p">[</span><span class="n">DataMember</span><span class="p">]</span>
+       <span class="k">public</span> <span class="kt">string</span> <span class="n">FirstName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+       <span class="p">[</span><span class="n">DataMember</span><span class="p">]</span>
+       <span class="k">public</span> <span class="kt">string</span> <span class="n">LastName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+       <span class="c1">// Private field not exposed directly but used internally</span>
+       <span class="k">private</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>3. Custom Serialization</strong>:
+   For more control, you can implement custom serialization logic by using <code class="language-plaintext highlighter-rouge">IDataContractSurrogate</code> to customize how data is serialized and deserialized. However, this is more advanced and generally not required for standard use cases.</p>
+
+<h1 id="23-serializing-methods">2.3 Serializing Methods</h1>
+
+<p>No, methods of a class do not get serialized in WCF Data Contracts. Serialization in WCF is concerned with the data that is being exchanged between the service and the client, not with the behavior or operations of the class.</p>
+
+<blockquote class="block-danger">
+  <h5 id="important-1">IMPORTANT</h5>
+
+  <p>In WCF, only public data members marked with the <code class="language-plaintext highlighter-rouge">[DataMember]</code> attribute are serialized. Methods of the class are not part of the serialization process, as serialization is focused on the exchange of data rather than behavior or operations.</p>
+</blockquote>
+
+<h2 id="1-what-gets-serialized">1. What Gets Serialized</h2>
+
+<p><strong>1. Data Members</strong>: Only public properties or fields that are decorated with the <code class="language-plaintext highlighter-rouge">[DataMember]</code> attribute in a Data Contract are included in the serialization process. These are the data elements that are transferred between the client and the service.</p>
+
+<p><strong>2. Class Structure</strong>: The class structure, including its data members, is serialized into XML or JSON format (depending on the binding) so that it can be transmitted over the network. Methods, however, are not part of this process.</p>
+
+<h2 id="2-example-of-a-data-contract-1">2. Example of a Data Contract</h2>
+
+<p>Here’s a simple example of a Data Contract:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">DataContract</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">DataMember</span><span class="p">]</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">FirstName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="p">[</span><span class="n">DataMember</span><span class="p">]</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">LastName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">// This method will not be serialized</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="nf">GetFullName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s">$"</span><span class="p">{</span><span class="n">FirstName</span><span class="p">}</span><span class="s"> </span><span class="p">{</span><span class="n">LastName</span><span class="p">}</span><span class="s">"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">FirstName</code> and <code class="language-plaintext highlighter-rouge">LastName</code> properties are data members and will be serialized.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">GetFullName</code> method is a behavior of the class and will not be serialized. It is used for processing data but does not participate in the serialization process.</li>
+</ul>
+
+<h2 id="3-why-methods-arent-serialized">3. Why Methods Aren’t Serialized</h2>
+
+<p><strong>1. Focus on Data</strong>: Serialization is focused on the data being exchanged, not on the operations or logic of the class. Including methods in serialization would complicate the data exchange model and is generally unnecessary for most communication scenarios.</p>
+
+<p><strong>2. Behavior vs. Data</strong>: Methods represent the behavior of the class, while serialization is concerned with transferring the state (data) of the class. The client and service typically communicate using data, and methods are used to process or manipulate that data on the client or server side.</p>
+
+<h2 id="4-access-methods-of-a-serialized-object">4. Access Methods of a Serialized Object?</h2>
+
+<p>In WCF, when you serialize and send an object from a service to a client, only the data members of the object (i.e., the properties or fields marked with the <code class="language-plaintext highlighter-rouge">[DataMember]</code> attribute) are transferred. Methods, which define behavior, are not serialized. Therefore, the client receives only the data, not the methods or behavior associated with the object.</p>
+
+<p>To access methods and perform operations on the serialized data on the client side, you need to follow a different approach:</p>
+
+<p><strong>1. Define Service Contracts</strong>:
+   Methods that clients need to call should be part of the WCF service contract. The service contract defines what operations (methods) are available to clients and how they can interact with the service.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="p">[</span><span class="n">ServiceContract</span><span class="p">]</span>
+   <span class="k">public</span> <span class="k">interface</span> <span class="nc">IMyService</span>
+   <span class="p">{</span>
+       <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
+       <span class="n">Person</span> <span class="nf">GetPersonInfo</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this example, <code class="language-plaintext highlighter-rouge">GetPersonInfo</code> is a method exposed by the service, and it returns a <code class="language-plaintext highlighter-rouge">Person</code> object.</p>
+
+<p><strong>2. Implement Service Methods</strong>:
+   On the server side, implement the service contract and provide logic for the methods:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">public</span> <span class="k">class</span> <span class="nc">MyService</span> <span class="p">:</span> <span class="n">IMyService</span>
+   <span class="p">{</span>
+       <span class="k">public</span> <span class="n">Person</span> <span class="nf">GetPersonInfo</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span>
+       <span class="p">{</span>
+           <span class="c1">// Retrieve and return Person object</span>
+           <span class="k">return</span> <span class="k">new</span> <span class="n">Person</span> <span class="p">{</span> <span class="n">FirstName</span> <span class="p">=</span> <span class="s">"John"</span><span class="p">,</span> <span class="n">LastName</span> <span class="p">=</span> <span class="s">"Doe"</span> <span class="p">};</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>3. Client-Side Access</strong>:
+   On the client side, you interact with the service through a proxy that WCF generates based on the service contract. The client does not directly access methods of the <code class="language-plaintext highlighter-rouge">Person</code> class but rather uses the service’s methods to get data and then operates on the data.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="c1">// Create a client proxy to communicate with the service</span>
+   <span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MyServiceClient</span><span class="p">();</span>
+
+   <span class="c1">// Call the service method</span>
+   <span class="n">Person</span> <span class="n">person</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">GetPersonInfo</span><span class="p">(</span><span class="m">123</span><span class="p">);</span>
+
+   <span class="c1">// Use the data received from the service</span>
+   <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Name: </span><span class="p">{</span><span class="n">person</span><span class="p">.</span><span class="n">FirstName</span><span class="p">}</span><span class="s"> </span><span class="p">{</span><span class="n">person</span><span class="p">.</span><span class="n">LastName</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">MyServiceClient</code> is a proxy class generated by WCF. <a href="#42-myserviceclient-proxy-class">Refer blow (next section)</a> for more details.</p>
+
+<p><strong>4. Client Methods and Logic</strong>:
+   After receiving the data on the client side, you can implement your own logic or methods to work with the data. For example, you might have methods to process or display the <code class="language-plaintext highlighter-rouge">Person</code> data:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">public</span> <span class="k">class</span> <span class="nc">PersonHandler</span>
+   <span class="p">{</span>
+       <span class="k">public</span> <span class="k">void</span> <span class="nf">DisplayPersonInfo</span><span class="p">(</span><span class="n">Person</span> <span class="n">person</span><span class="p">)</span>
+       <span class="p">{</span>
+           <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Name: </span><span class="p">{</span><span class="n">person</span><span class="p">.</span><span class="n">FirstName</span><span class="p">}</span><span class="s"> </span><span class="p">{</span><span class="n">person</span><span class="p">.</span><span class="n">LastName</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+       <span class="p">}</span>
+
+       <span class="k">public</span> <span class="kt">string</span> <span class="nf">GetFullName</span><span class="p">(</span><span class="n">Person</span> <span class="n">person</span><span class="p">)</span>
+       <span class="p">{</span>
+           <span class="k">return</span> <span class="s">$"</span><span class="p">{</span><span class="n">person</span><span class="p">.</span><span class="n">FirstName</span><span class="p">}</span><span class="s"> </span><span class="p">{</span><span class="n">person</span><span class="p">.</span><span class="n">LastName</span><span class="p">}</span><span class="s">"</span><span class="p">;</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this example, <code class="language-plaintext highlighter-rouge">PersonHandler</code> is a client-side class that provides additional functionality related to <code class="language-plaintext highlighter-rouge">Person</code> objects.</p>
+
+<h3 id="41-keypoints">4.1 Keypoints</h3>
+
+<ul>
+  <li><strong>Service Contracts</strong>: Define the methods available for interaction between client and server.</li>
+  <li><strong>Service Implementation</strong>: Provides the actual logic for these methods on the server side.</li>
+  <li><strong>Client Proxy</strong>: Uses the service contract to call methods and receive data.</li>
+  <li><strong>Client-Side Logic</strong>: Implements additional functionality to work with the data received.</li>
+  <li>By designing your WCF service and client interactions this way, you ensure that the client can access and use the methods and logic required to work with the data, even though the methods themselves are not serialized.</li>
+</ul>
+
+<h3 id="42-myserviceclient-proxy-class">4.2 <code class="language-plaintext highlighter-rouge">MyServiceClient</code> Proxy Class</h3>
+
+<p><code class="language-plaintext highlighter-rouge">MyServiceClient</code> is a proxy class generated by WCF that allows a client application to interact with a WCF service. It is not defined by you directly but is created by the WCF tooling based on the service contract defined on the server side.</p>
+
+<h4 id="how-myserviceclient-is-created">How <code class="language-plaintext highlighter-rouge">MyServiceClient</code> is Created</h4>
+
+<p><strong>1. Service Reference</strong>:
+   When you add a service reference to your client application, Visual Studio (or another tool) generates a client proxy class, such as <code class="language-plaintext highlighter-rouge">MyServiceClient</code>, based on the service contract (<code class="language-plaintext highlighter-rouge">IMyService</code>) defined on the server.</p>
+
+<ul>
+  <li>
+    <p><strong>In Visual Studio</strong>: You can add a service reference by right-clicking your project, selecting <strong>Add Service Reference</strong>, and providing the address of the WCF service. Visual Studio generates the proxy classes and configuration needed to communicate with the service.</p>
+  </li>
+  <li>
+    <p><strong>In .NET Core/.NET 5+</strong>: You can use the <code class="language-plaintext highlighter-rouge">dotnet-svcutil</code> tool or the <code class="language-plaintext highlighter-rouge">Connected Services</code> feature in Visual Studio to generate the client proxy.</p>
+  </li>
+</ul>
+
+<p><strong>2. Generated Proxy Class</strong>:
+   The generated <code class="language-plaintext highlighter-rouge">MyServiceClient</code> class implements the service contract interface (<code class="language-plaintext highlighter-rouge">IMyService</code>) and provides methods that correspond to the service operations. It handles the communication details between the client and the WCF service.</p>
+
+<p>For example, if you have the following service contract:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="p">[</span><span class="n">ServiceContract</span><span class="p">]</span>
+   <span class="k">public</span> <span class="k">interface</span> <span class="nc">IMyService</span>
+   <span class="p">{</span>
+       <span class="p">[</span><span class="n">OperationContract</span><span class="p">]</span>
+       <span class="n">Person</span> <span class="nf">GetPersonInfo</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">MyServiceClient</code> class will have a method <code class="language-plaintext highlighter-rouge">GetPersonInfo</code> that you can call to interact with the service:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">public</span> <span class="k">class</span> <span class="nc">MyServiceClient</span> <span class="p">:</span> <span class="n">ClientBase</span><span class="p">&lt;</span><span class="n">IMyService</span><span class="p">&gt;,</span> <span class="n">IMyService</span>
+   <span class="p">{</span>
+       <span class="k">public</span> <span class="n">Person</span> <span class="nf">GetPersonInfo</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span>
+       <span class="p">{</span>
+           <span class="k">return</span> <span class="n">Channel</span><span class="p">.</span><span class="nf">GetPersonInfo</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p>This class is auto-generated and should be used to call service methods.</p>
+
+<h4 id="using-the-generated-client-proxy">Using the Generated Client Proxy</h4>
+
+<p>Here’s how you typically use the generated <code class="language-plaintext highlighter-rouge">MyServiceClient</code> class in your client application:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create an instance of the client proxy</span>
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MyServiceClient</span><span class="p">();</span>
+
+<span class="c1">// Call the service method</span>
+<span class="n">Person</span> <span class="n">person</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">GetPersonInfo</span><span class="p">(</span><span class="m">123</span><span class="p">);</span>
+
+<span class="c1">// Use the data received from the service</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Name: </span><span class="p">{</span><span class="n">person</span><span class="p">.</span><span class="n">FirstName</span><span class="p">}</span><span class="s"> </span><span class="p">{</span><span class="n">person</span><span class="p">.</span><span class="n">LastName</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+<span class="c1">// Optionally, close the client when done</span>
+<span class="n">client</span><span class="p">.</span><span class="nf">Close</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h4 id="keypoints">Keypoints</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">MyServiceClient</code> is a proxy class generated by WCF tools based on the service contract.</li>
+  <li>It is automatically created when you add a service reference to your client application.</li>
+  <li>You use this proxy class to call methods on the WCF service, which handles the communication details between the client and server.</li>
+  <li>The client proxy provides a convenient way to interact with WCF services without having to deal with low-level communication details.</li>
+</ul>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/dev/distcomp/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/dev/distcomp/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/dev/distcomp/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/dev/distcomp/wcf/1_dc_1_fundamentals/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 1. Fundamentals"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/dev/distcomp/wcf/1_dc_3_async_wcf/" class="navigation navigation-next navigation-unique" aria-label="Next page: 3. Async WCF"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "3. Async WCF",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_1_net_distcomp/1_dc_3_async_wcf.md",
+            "ref": "_1_net_distcomp/1_dc_3_async_wcf.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | Distributed - Computing",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_1_net_distcomp/1_dc_2_service_and_data_contract.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-08-20 09:36:39 +0800"
+    },
+    "basePath": "/dev/distcomp",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/dev/distcomp/assets/gitbook/gitbook.js"></script>
+<script src="/dev/distcomp/assets/gitbook/theme.js"></script>
+
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/dev/distcomp/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/dev/distcomp/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>

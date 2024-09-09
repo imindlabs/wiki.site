@@ -1,0 +1,1131 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. Fundamentals · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/cs/lang_pl/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/cs/lang_pl/assets/gitbook/style.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/cs/lang_pl/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/cs/lang_pl/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/cs/lang_pl/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/cs/lang_pl/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/cs/lang_pl/" />
+        
+
+        
+            <link rel="next" href="/cs/lang_pl/algol/2_programming_basics/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/cs/lang_pl/">
+            <img class="logo zoom" src="/cs/lang_pl/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/cs/lang_pl/">
+            <img class="logo zoom" src="/cs/lang_pl/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/cs/lang_pl/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl">
+                
+                <a href="/cs/lang_pl/" onclick="pageScrollToTop(this)">
+                    Wiki | Programming Languages Evolution
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_evolution</p> -->
+            
+                <p class="collection-title">PL Evolution</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/plevolution/1_basics/">
+                
+                <a href="/cs/lang_pl/plevolution/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>2_fortran</p> -->
+            
+                <p class="collection-title">Fortran</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/algol/1_background/">
+                
+                <a href="/cs/lang_pl/algol/1_background/" onclick="pageScrollToTop(this)">
+                    1. Background
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/fortran/2_basics/">
+                
+                <a href="/cs/lang_pl/fortran/2_basics/" onclick="pageScrollToTop(this)">
+                    2. Basics
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/fortran/3_programming_basics/">
+                
+                <a href="/cs/lang_pl/fortran/3_programming_basics/" onclick="pageScrollToTop(this)">
+                    3. Programming Basics
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>3_algol</p> -->
+            
+                <p class="collection-title">Algol</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/cs/lang_pl/algol/1_basics/">
+                
+                <a href="/cs/lang_pl/algol/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                <ul><li><a href="#11-major-contributions-of-algol-60" onclick="mobilePageScrollToAnchor(this)" >1.1 Major Contributions of ALGOL-60</a></li><li><a href="#12-differences-between-call-by-value-call-by-reference-and-call-by-name" onclick="mobilePageScrollToAnchor(this)" >1.2 Differences Between ‘Call by Value’, ‘Call by Reference’, and ‘Call by Name’</a></li><li><a href="#13-issues-with-call-by-name" onclick="mobilePageScrollToAnchor(this)" >1.3 Issues with ‘Call by Name’</a></li><li><a href="#14-fortrans-continued-use-despite-algol-60s-contributions" onclick="mobilePageScrollToAnchor(this)" >1.4 FORTRAN’s Continued Use Despite ALGOL-60’s Contributions</a></li><li><a href="#15-difference-between-dynamic-and-static-scoping" onclick="mobilePageScrollToAnchor(this)" >1.5 Difference Between Dynamic and Static Scoping</a></li><li><a href="#16-differences-between-strong-and-weak-typing" onclick="mobilePageScrollToAnchor(this)" >1.6 Differences Between Strong and Weak Typing</a></li><li><a href="#17-issue-in-the-c-code-snippet" onclick="mobilePageScrollToAnchor(this)" >1.7 Issue in the C Code Snippet</a></li><li><a href="#18-how-algol-60-addresses-the-issue" onclick="mobilePageScrollToAnchor(this)" >1.8 How ALGOL-60 Addresses the Issue</a></li><li><a href="#19-two-forms-of-type-equivalence" onclick="mobilePageScrollToAnchor(this)" >1.9 Two Forms of Type Equivalence</a></li><li><a href="#110-information-stored-in-an-activation-record" onclick="mobilePageScrollToAnchor(this)" >1.10 Information Stored in an Activation Record</a></li><li><a href="#111-order-of-procedure-calls" onclick="mobilePageScrollToAnchor(this)" >1.11 Order of Procedure Calls</a></li><li><a href="#112-stack-depiction-of-static-and-dynamic-chains-at-position-1" onclick="mobilePageScrollToAnchor(this)" >1.12 Stack Depiction of Static and Dynamic Chains at Position 1</a></li><li><a href="#113-pascals-control-structures-advantageous" onclick="mobilePageScrollToAnchor(this)" >1.13 Pascal’s Control Structures: Advantageous?</a></li><li><a href="#114-pascals-implementation-of-arrays" onclick="mobilePageScrollToAnchor(this)" >1.14 Pascal’s Implementation of Arrays</a></li><li><a href="#115-pascals-handling-of-integer-and-real-assignments" onclick="mobilePageScrollToAnchor(this)" >1.15 Pascal’s Handling of Integer and Real Assignments</a></li><li><a href="#116-functionality-of-recursion-and-nested-subprograms" onclick="mobilePageScrollToAnchor(this)" >1.16 Functionality of Recursion and Nested Subprograms</a><ul><li><a href="#1-requirements-for-allowing-nested-subprograms" onclick="mobilePageScrollToAnchor(this)" >1. Requirements for Allowing Nested Subprograms</a></li><li><a href="#2-requirements-for-implementing-recursion" onclick="mobilePageScrollToAnchor(this)" >2. Requirements for Implementing Recursion</a></li><li><a href="#3-consideration-of-functionality-with-respect-to-programming-language-characteristics" onclick="mobilePageScrollToAnchor(this)" >3. Consideration of Functionality with Respect to Programming Language Characteristics</a></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/algol/2_programming_basics/">
+                
+                <a href="/cs/lang_pl/algol/2_programming_basics/" onclick="pageScrollToTop(this)">
+                    2. Programming Basics
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>4_functional</p> -->
+            
+                <p class="collection-title">Functional Languages</p>
+            
+            
+            
+
+            
+            
+            
+            <p class="separator-title">Elixir</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/1_elixir_1_basics/">
+                
+                <a href="/cs/lang_pl/functional/1_elixir_1_basics/" onclick="pageScrollToTop(this)">
+                    1. Elixir
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/1_elixir_2_extended_example/">
+                
+                <a href="/cs/lang_pl/functional/1_elixir_2_extended_example/" onclick="pageScrollToTop(this)">
+                    2. Extended Examples
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Scheme</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_1_basics/">
+                
+                <a href="/cs/lang_pl/functional/2_scheme_1_basics/" onclick="pageScrollToTop(this)">
+                    1. Basics
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_2_syntax/">
+                
+                <a href="/cs/lang_pl/functional/2_scheme_2_syntax/" onclick="pageScrollToTop(this)">
+                    2. Syntax
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_3_advance/">
+                
+                <a href="/cs/lang_pl/functional/2_scheme_3_advance/" onclick="pageScrollToTop(this)">
+                    2. Advance
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>5_logical</p> -->
+            
+                <p class="collection-title">Logical Languages</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/logical/1_basics/">
+                
+                <a href="/cs/lang_pl/logical/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>6_scripting</p> -->
+            
+                <p class="collection-title">Scripting</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/scripting/1_basics/">
+                
+                <a href="/cs/lang_pl/scripting/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >1. Fundamentals</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/algol/1_basics">1. Fundamentals</h1>
+                    
+
+                    <h1 id="11-major-contributions-of-algol-60">1.1 Major Contributions of ALGOL-60</h1>
+
+<p>ALGOL-60 (Algorithmic Language 1960) made significant contributions to the field of computer science and programming languages:</p>
+
+<ul>
+  <li>
+    <p><strong>Block Structure</strong>: Introduced the concept of block structure, allowing nested blocks and local variables, which led to better-organized and more readable code.</p>
+  </li>
+  <li>
+    <p><strong>Formal Syntax Description</strong>: Introduced the Backus-Naur Form (BNF) for describing the syntax of programming languages, a notation that has been widely adopted.</p>
+  </li>
+  <li>
+    <p><strong>Structured Programming</strong>: ALGOL-60 laid the groundwork for structured programming by supporting recursive procedures and introducing control structures like <code class="language-plaintext highlighter-rouge">if-then-else</code> and <code class="language-plaintext highlighter-rouge">for</code> loops.</p>
+  </li>
+  <li>
+    <p><strong>Call by Value and Call by Name</strong>: Supported different parameter passing mechanisms, specifically call by value and call by name, providing flexibility in how arguments were passed to procedures.</p>
+  </li>
+  <li>
+    <p><strong>Influence on Later Languages</strong>: Many later programming languages, including Pascal, C, and Ada, were heavily influenced by ALGOL-60’s structure and design principles.</p>
+  </li>
+</ul>
+
+<h1 id="12-differences-between-call-by-value-call-by-reference-and-call-by-name">1.2 Differences Between ‘Call by Value’, ‘Call by Reference’, and ‘Call by Name’</h1>
+
+<ul>
+  <li>
+    <p><strong>Call by Value</strong>: The actual value of the argument is passed to the function. Inside the function, the parameter is a copy of the argument, so changes made to the parameter do not affect the original argument.</p>
+  </li>
+  <li>
+    <p><strong>Call by Reference</strong>: A reference (or address) of the argument is passed to the function. Inside the function, the parameter acts as an alias for the argument, so changes made to the parameter directly affect the original argument.</p>
+  </li>
+  <li>
+    <p><strong>Call by Name</strong>: The argument is not evaluated when the function is called. Instead, the expression itself is passed, and it is evaluated every time the parameter is used within the function. This can lead to multiple evaluations and potentially unexpected behavior.</p>
+  </li>
+</ul>
+
+<h1 id="13-issues-with-call-by-name">1.3 Issues with ‘Call by Name’</h1>
+
+<ul>
+  <li>
+    <p><strong>Repeated Evaluation</strong>: The argument expression is evaluated every time it is used within the function, which can lead to inefficiency, especially if the expression is complex or if it involves side effects.</p>
+  </li>
+  <li>
+    <p><strong>Complexity</strong>: Understanding and debugging code that uses call by name can be more challenging, as the behavior may be less predictable than with call by value or call by reference.</p>
+  </li>
+  <li>
+    <p><strong>Side Effects</strong>: If the expression involves side effects (e.g., modifying a global variable), these side effects can occur multiple times, potentially leading to unintended behavior.</p>
+  </li>
+</ul>
+
+<h1 id="14-fortrans-continued-use-despite-algol-60s-contributions">1.4 FORTRAN’s Continued Use Despite ALGOL-60’s Contributions</h1>
+
+<p>FORTRAN (FORmula TRANslation) remained in use and still is today for several reasons:</p>
+
+<ul>
+  <li>
+    <p><strong>Early Adoption</strong>: FORTRAN was one of the first high-level programming languages and became the standard for scientific and engineering computations. Its early adoption established a strong user base.</p>
+  </li>
+  <li>
+    <p><strong>Performance</strong>: FORTRAN was designed for numerical computation and optimized for performance, making it a preferred choice in fields where execution speed is critical.</p>
+  </li>
+  <li>
+    <p><strong>Extensive Libraries</strong>: Over time, FORTRAN accumulated a vast number of libraries for scientific and numerical computing, making it difficult for other languages to displace it in these areas.</p>
+  </li>
+  <li>
+    <p><strong>Backward Compatibility</strong>: FORTRAN maintained backward compatibility with earlier versions, which encouraged continued use and prevented the need for rewriting large amounts of legacy code.</p>
+  </li>
+</ul>
+
+<h1 id="15-difference-between-dynamic-and-static-scoping">1.5 Difference Between Dynamic and Static Scoping</h1>
+
+<ul>
+  <li>
+    <p><strong>Static Scoping (Lexical Scoping)</strong>: The scope of a variable is determined by the structure of the program code and the location where the variable is declared. The binding of variables to values occurs at compile time. Most modern programming languages, including C, Java, and Python, use static scoping.</p>
+  </li>
+  <li>
+    <p><strong>Dynamic Scoping</strong>: The scope of a variable is determined at runtime based on the calling sequence of functions. The binding of variables to values occurs during execution, and the most recent binding in the call stack is used. Dynamic scoping is less common and is found in languages like early versions of Lisp.</p>
+  </li>
+</ul>
+
+<h1 id="16-differences-between-strong-and-weak-typing">1.6 Differences Between Strong and Weak Typing</h1>
+
+<ul>
+  <li>
+    <p><strong>Strong Typing</strong>: In a strongly typed language, the type of a variable is enforced, meaning you cannot perform operations on incompatible types without explicit conversion. Errors are more likely to be caught at compile time. Examples include Java and Python.</p>
+  </li>
+  <li>
+    <p><strong>Weak Typing</strong>: In a weakly typed language, type conversions are more flexible, and the language may automatically convert between types. This can lead to more subtle bugs that are harder to detect. Examples include JavaScript and PHP.</p>
+  </li>
+</ul>
+
+<h1 id="17-issue-in-the-c-code-snippet">1.7 Issue in the C Code Snippet</h1>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">x</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="n">y</span><span class="o">++</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><strong>Issue</strong>: The problem with this code snippet is related to ambiguity in the <code class="language-plaintext highlighter-rouge">else</code> clause. The <code class="language-plaintext highlighter-rouge">else</code> statement is associated with the nearest <code class="language-plaintext highlighter-rouge">if</code>, so it pairs with <code class="language-plaintext highlighter-rouge">if(y == 0)</code> instead of <code class="language-plaintext highlighter-rouge">if(x == 0)</code>. This might not be the intended behavior.</p>
+
+<h1 id="18-how-algol-60-addresses-the-issue">1.8 How ALGOL-60 Addresses the Issue</h1>
+
+<p>ALGOL-60 addresses this issue by introducing the concept of <strong>explicit block structuring</strong> and requiring the use of <code class="language-plaintext highlighter-rouge">begin</code> and <code class="language-plaintext highlighter-rouge">end</code> to define blocks. In ALGOL-60, the <code class="language-plaintext highlighter-rouge">else</code> statement would clearly associate with the intended <code class="language-plaintext highlighter-rouge">if</code> due to the enforced block structure, removing ambiguity.</p>
+
+<h1 id="19-two-forms-of-type-equivalence">1.9 Two Forms of Type Equivalence</h1>
+
+<ul>
+  <li>
+    <p><strong>Name Equivalence</strong>: Two variables are considered equivalent if they have the same type name. The type name explicitly defines the type, and variables must share this name to be considered of the same type.</p>
+  </li>
+  <li>
+    <p><strong>Structural Equivalence</strong>: Two variables are considered equivalent if they have the same structure or content, even if their type names are different. The actual composition of the type determines equivalence, not the name.</p>
+  </li>
+</ul>
+
+<h1 id="110-information-stored-in-an-activation-record">1.10 Information Stored in an Activation Record</h1>
+
+<p>An activation record (also known as a stack frame) typically contains the following information:</p>
+
+<ul>
+  <li><strong>Return Address</strong>: The address to which control should return after the function execution is complete.</li>
+  <li><strong>Parameters</strong>: The arguments passed to the function.</li>
+  <li><strong>Local Variables</strong>: The variables that are local to the function.</li>
+  <li><strong>Saved Registers</strong>: The state of certain CPU registers before the function call.</li>
+  <li><strong>Control Link</strong>: A reference to the previous activation record (used in dynamic scoping).</li>
+  <li><strong>Access Link</strong>: A reference to the activation record of the lexically enclosing function (used in static scoping).</li>
+  <li><strong>Temporary Data</strong>: Space for storing intermediate results or temporary values.</li>
+</ul>
+
+<h1 id="111-order-of-procedure-calls">1.11 Order of Procedure Calls</h1>
+
+<p>Given the code provided:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PROCEDURE S
+    PROCEDURE A
+        PROCEDURE B
+            PROCEDURE D
+            BEGIN
+                …
+            END; //Procedure D
+        BEGIN
+        __Position 1;__
+        END; //Procedure B
+        PROCEDURE C;
+        BEGIN
+            B;
+        END; //Procedure C
+    BEGIN
+        C;
+    END; //Procedure A
+BEGIN
+A; 
+END; //Procedure S
+</code></pre></div></div>
+
+<p>The order of procedure calls is as follows:</p>
+
+<ol>
+  <li><strong>S</strong> is called (as it is the main procedure).</li>
+  <li><strong>A</strong> is called from within <strong>S</strong>.</li>
+  <li><strong>C</strong> is called from within <strong>A</strong>.</li>
+  <li><strong>B</strong> is called from within <strong>C</strong>.</li>
+  <li>Execution reaches <strong>Position 1</strong> within <strong>B</strong>.</li>
+</ol>
+
+<p>So, the order of calls is: <strong>S → A → C → B</strong>.</p>
+
+<h1 id="112-stack-depiction-of-static-and-dynamic-chains-at-position-1">1.12 Stack Depiction of Static and Dynamic Chains at Position 1</h1>
+
+<p><strong>Static Chain</strong>: The static chain links an activation record to its lexically enclosing procedure’s activation record.</p>
+
+<p><strong>Dynamic Chain</strong>: The dynamic chain links an activation record to the activation record of the procedure that called it.</p>
+
+<p>At <strong>Position 1</strong>, the stack would look like this:</p>
+
+<ul>
+  <li><strong>Top of Stack (B’s Activation Record)</strong>
+    <ul>
+      <li><strong>Static Link</strong>: Points to <strong>A</strong> (since <strong>A</strong> lexically encloses <strong>B</strong>).</li>
+      <li><strong>Dynamic Link</strong>: Points to <strong>C</strong> (since <strong>C</strong> dynamically called <strong>B</strong>).</li>
+    </ul>
+  </li>
+  <li><strong>A’s Activation Record</strong>
+    <ul>
+      <li><strong>Static Link</strong>: Points to <strong>S</strong> (since <strong>S</strong> lexically encloses <strong>A</strong>).</li>
+      <li><strong>Dynamic Link</strong>: Points to <strong>S</strong> (since <strong>S</strong> dynamically called <strong>A</strong>).</li>
+    </ul>
+  </li>
+  <li><strong>C’s Activation Record</strong>
+    <ul>
+      <li><strong>Static Link</strong>: Points to <strong>A</strong> (since <strong>A</strong> lexically encloses <strong>C</strong>).</li>
+      <li><strong>Dynamic Link</strong>: Points to <strong>A</strong> (since <strong>A</strong> dynamically called <strong>C</strong>).</li>
+    </ul>
+  </li>
+  <li><strong>Bottom of Stack (S’s Activation Record)</strong>
+    <ul>
+      <li><strong>Static Link</strong>: Points to <strong>Global Frame</strong> (since there is no enclosing procedure for <strong>S</strong>).</li>
+      <li><strong>Dynamic Link</strong>: Points to the <strong>Global Frame</strong> or <code class="language-plaintext highlighter-rouge">null</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="113-pascals-control-structures-advantageous">1.13 Pascal’s Control Structures: Advantageous?</h1>
+
+<p>Pascal provides a variety of control structures, such as <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">case</code>, <code class="language-plaintext highlighter-rouge">for</code>, <code class="language-plaintext highlighter-rouge">while</code>, and <code class="language-plaintext highlighter-rouge">repeat-until</code>. This richness in control structures can be advantageous:</p>
+
+<ul>
+  <li>
+    <p><strong>Expressiveness</strong>: Allows for more expressive and readable code, as different constructs can be used for different scenarios.</p>
+  </li>
+  <li>
+    <p><strong>Clarity</strong>: Each control structure is designed for a specific type of task (e.g., <code class="language-plaintext highlighter-rouge">case</code> for multi-way branching), which can lead to clearer and more maintainable code.</p>
+  </li>
+  <li>
+    <p><strong>Error Reduction</strong>: The use of specific control structures can reduce errors by making the programmer’s intentions more explicit.</p>
+  </li>
+</ul>
+
+<p>However, it could also lead to <strong>complexity</strong> if overused or used inappropriately, making the code harder to follow.</p>
+
+<h1 id="114-pascals-implementation-of-arrays">1.14 Pascal’s Implementation of Arrays</h1>
+
+<p>Pascal implements arrays in a way that was more rigid and structured compared to other contemporary languages:</p>
+
+<ul>
+  <li>
+    <p><strong>Fixed Bounds</strong>: The bounds of Pascal arrays are fixed at compile time, which means the size of the array cannot be changed dynamically. This ensures type safety but reduces flexibility.</p>
+  </li>
+  <li>
+    <p><strong>Strict Type Checking</strong>: Pascal enforces strict type checking for arrays, ensuring that operations on arrays are type-safe, which prevents many common programming errors.</p>
+  </li>
+  <li>
+    <p><strong>Static vs. Dynamic Arrays</strong>: Pascal originally only supported static arrays (size fixed at compile time). Some later implementations introduced dynamic arrays, but this was not part of the original language.</p>
+  </li>
+</ul>
+
+<p>In comparison, languages like C provide more flexibility (e.g., dynamic memory allocation for arrays using pointers), but at the cost of less safety and potentially more errors.</p>
+
+<h1 id="115-pascals-handling-of-integer-and-real-assignments">1.15 Pascal’s Handling of Integer and Real Assignments</h1>
+
+<p>Pascal allows integers to be assigned to real variables but not the other way around. This reflects certain characteristics of the language:</p>
+
+<ul>
+  <li>
+    <p><strong>Type Safety</strong>: By not allowing real variables to be assigned to integers, Pascal enforces type safety, avoiding the loss of precision that could occur when converting from a real number to an integer.</p>
+  </li>
+  <li>
+    <p><strong>Implicit Type Conversion</strong>: Allowing integers to be assigned to real variables without explicit conversion is an example of implicit type conversion, making it easier for the programmer but still safe since no precision is lost.</p>
+  </li>
+  <li>
+    <p><strong>Design Philosophy</strong>: This decision aligns with Pascal’s design philosophy of promoting safe and structured programming, preventing potential bugs and ensuring that data types are used correctly.</p>
+  </li>
+</ul>
+
+<h1 id="116-functionality-of-recursion-and-nested-subprograms">1.16 Functionality of Recursion and Nested Subprograms</h1>
+
+<p>The functionality of recursion and nested subprograms is highly worthwhile in a programming language. These features enhance the language’s expressiveness, modularity, and abstraction capabilities, making it easier to write clear and maintainable code for complex problems. However, the language and its runtime environment must be designed to handle the potential performance and memory management challenges that recursion introduces. Despite these challenges, the benefits generally outweigh the drawbacks, especially in languages designed for structured and algorithmic programming, as seen in ALGOL-60.</p>
+
+<h2 id="1-requirements-for-allowing-nested-subprograms">1. Requirements for Allowing Nested Subprograms</h2>
+
+<p>To support nested subprograms (procedures or functions within other procedures or functions), a programming language must provide:</p>
+
+<ul>
+  <li>
+    <p><strong>Lexical Scoping</strong>: The language must support lexical scoping, where the scope of variables is determined by their position in the source code. This allows variables declared in an outer block to be accessible in inner blocks.</p>
+  </li>
+  <li>
+    <p><strong>Static Chain</strong>: The implementation needs a mechanism to maintain the static chain (also known as the lexical chain), which links an activation record (stack frame) of a procedure to the activation record of its lexically enclosing procedure. This allows nested subprograms to access variables from their enclosing scope.</p>
+  </li>
+  <li>
+    <p><strong>Activation Record Management</strong>: The runtime system must correctly manage activation records to handle variables and control links, ensuring that the correct variables and procedures are referenced during execution.</p>
+  </li>
+  <li>
+    <p><strong>Name Resolution</strong>: The language must resolve names based on the nesting structure, meaning that when an inner subprogram refers to a variable, the compiler or interpreter must be able to find that variable in the appropriate enclosing scope.</p>
+  </li>
+</ul>
+
+<h2 id="2-requirements-for-implementing-recursion">2. Requirements for Implementing Recursion</h2>
+
+<p>To implement recursion in a programming language, the following are necessary:</p>
+
+<ul>
+  <li>
+    <p><strong>Stack-based Activation Records</strong>: Each invocation of a recursive procedure must have its own activation record on the stack. This ensures that local variables and parameters of each recursive call do not interfere with those of other calls.</p>
+  </li>
+  <li>
+    <p><strong>Dynamic Chain</strong>: The language must maintain a dynamic chain (call chain) linking activation records in the order they were called. This allows the program to return to the correct point after a recursive call completes.</p>
+  </li>
+  <li>
+    <p><strong>Return Address Handling</strong>: The runtime must correctly manage return addresses for each activation record so that after a recursive call completes, the program can return to the appropriate point in the calling procedure.</p>
+  </li>
+  <li>
+    <p><strong>Base Case Identification</strong>: For recursion to terminate properly, the language or programmer must identify a base case or stopping condition to prevent infinite recursion.</p>
+  </li>
+</ul>
+
+<h2 id="3-consideration-of-functionality-with-respect-to-programming-language-characteristics">3. Consideration of Functionality with Respect to Programming Language Characteristics</h2>
+
+<p><strong>Worthwhile Aspects:</strong></p>
+
+<ul>
+  <li>
+    <p><strong>Expressiveness</strong>: Recursion and nested subprograms enhance the expressiveness of a language, allowing programmers to solve complex problems more naturally, such as in cases involving tree traversal, mathematical computations (like factorials or Fibonacci sequences), and divide-and-conquer algorithms.</p>
+  </li>
+  <li>
+    <p><strong>Modularity and Abstraction</strong>: Nested subprograms allow for better modularity and encapsulation. By nesting procedures, a programmer can define helper functions within the scope where they are needed, reducing the chance of name clashes and improving code organization.</p>
+  </li>
+  <li>
+    <p><strong>Reusability</strong>: Recursion can lead to more reusable code. Recursive solutions often mirror the problem’s structure, making them easier to understand and reuse across different parts of a program.</p>
+  </li>
+</ul>
+
+<p><strong>Challenges:</strong></p>
+
+<ul>
+  <li>
+    <p><strong>Performance Considerations</strong>: Recursive functions can be less efficient due to the overhead of multiple function calls and the potential for deep recursion, leading to stack overflow. Iterative solutions might be more efficient in some cases.</p>
+  </li>
+  <li>
+    <p><strong>Complexity and Readability</strong>: While recursion can simplify the code in some scenarios, it can also make it harder to understand, especially for those who are not familiar with the concept. Debugging recursive code can also be more challenging.</p>
+  </li>
+  <li>
+    <p><strong>Memory Management</strong>: Recursive calls require careful memory management, particularly in languages with limited stack space. Some languages implement tail recursion optimization to mitigate this, but not all recursive functions can be optimized in this way.</p>
+  </li>
+</ul>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/cs/lang_pl/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/cs/lang_pl/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/cs/lang_pl/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/cs/lang_pl/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Wiki | Programming Languages Evolution"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/cs/lang_pl/algol/2_programming_basics/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. Programming Basics"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "2. Programming Basics",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_3_algol/2_programming_basics.md",
+            "ref": "_3_algol/2_programming_basics.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | Programming Languages Evolution",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_3_algol/1_basics.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-08-29 10:51:24 +0800"
+    },
+    "basePath": "/cs/lang_pl",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/cs/lang_pl/assets/gitbook/gitbook.js"></script>
+<script src="/cs/lang_pl/assets/gitbook/theme.js"></script>
+
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>

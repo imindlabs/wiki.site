@@ -1,0 +1,1258 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>3. Deployments · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/dev/os/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/dev/os/assets/gitbook/style.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/dev/os/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/dev/os/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/dev/os/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/dev/os/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/dev/os/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/dev/os/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/os/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/dev/os/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dev/os/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/dev/os/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/dev/os/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/dev/os/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/dev/os/docker/3_kube_2_kubectl/" />
+        
+
+        
+            <link rel="next" href="/dev/os/docker/3_kube_4_services/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/dev/os/">
+            <img class="logo zoom" src="/dev/os/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/dev/os/">
+            <img class="logo zoom" src="/dev/os/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/dev/os/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os">
+                
+                <a href="/dev/os/" onclick="pageScrollToTop(this)">
+                    Wiki | O/S
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_windows</p> -->
+            
+                <p class="collection-title">Windows</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/1_windows10/">
+                
+                <a href="/dev/os/windows/1_windows10/" onclick="pageScrollToTop(this)">
+                    1. Windows 10
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/2_windows_server2019/">
+                
+                <a href="/dev/os/windows/2_windows_server2019/" onclick="pageScrollToTop(this)">
+                    2. Windows Server 2019
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/3.1_mingw/">
+                
+                <a href="/dev/os/windows/3.1_mingw/" onclick="pageScrollToTop(this)">
+                    3.1. MinGW
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/3.2_cygwin/">
+                
+                <a href="/dev/os/windows/3.2_cygwin/" onclick="pageScrollToTop(this)">
+                    3.2. Cygwin
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/windows/3_wsl/">
+                
+                <a href="/dev/os/windows/3_wsl/" onclick="pageScrollToTop(this)">
+                    3. Linux for Windows (WSL)
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>2_unix</p> -->
+            
+                <p class="collection-title">Unix Distribution</p>
+            
+            
+            
+
+            
+            
+            
+            <p class="separator-title">Ubuntu</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/linux/1_ubuntu_1_basics/">
+                
+                <a href="/dev/os/linux/1_ubuntu_1_basics/" onclick="pageScrollToTop(this)">
+                    1. Ubuntu Basics
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/linux/1_ubuntu_2_terminal_server/">
+                
+                <a href="/dev/os/linux/1_ubuntu_2_terminal_server/" onclick="pageScrollToTop(this)">
+                    2. Terminal Server
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/linux/2_kali_linux/">
+                
+                <a href="/dev/os/linux/2_kali_linux/" onclick="pageScrollToTop(this)">
+                    2. Kali Linux
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>3_vmachines</p> -->
+            
+                <p class="collection-title">Virtual Machines</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/vmmachine/1_vmworkstation/">
+                
+                <a href="/dev/os/vmmachine/1_vmworkstation/" onclick="pageScrollToTop(this)">
+                    1. VM Workstation
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/vmmachine/2_windows_hyper_v/">
+                
+                <a href="/dev/os/vmmachine/2_windows_hyper_v/" onclick="pageScrollToTop(this)">
+                    2. Windows Hyper-V
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>4_containerization</p> -->
+            
+                <p class="collection-title">Containerization</p>
+            
+            
+            
+
+            
+            
+            
+            <p class="separator-title">Docker</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_0_images/">
+                
+                <a href="/dev/os/docker/3_docker_0_images/" onclick="pageScrollToTop(this)">
+                    0. Images to Download
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_1_fundamentals/">
+                
+                <a href="/dev/os/docker/3_docker_1_fundamentals/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_2_workflow/">
+                
+                <a href="/dev/os/docker/3_docker_2_workflow/" onclick="pageScrollToTop(this)">
+                    2. Workflow
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_3_volume/">
+                
+                <a href="/dev/os/docker/3_docker_3_volume/" onclick="pageScrollToTop(this)">
+                    3. Volumes
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_4_networking/">
+                
+                <a href="/dev/os/docker/3_docker_4_networking/" onclick="pageScrollToTop(this)">
+                    4. Networking
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_5_compose/">
+                
+                <a href="/dev/os/docker/3_docker_5_compose/" onclick="pageScrollToTop(this)">
+                    5. Docker Compose
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_6_container_monitoring/">
+                
+                <a href="/dev/os/docker/3_docker_6_container_monitoring/" onclick="pageScrollToTop(this)">
+                    6. Container Monitoring
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_docker_7_misc/">
+                
+                <a href="/dev/os/docker/3_docker_7_misc/" onclick="pageScrollToTop(this)">
+                    7. Docker Misc
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Kubernetes</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_1_fundamentals/">
+                
+                <a href="/dev/os/docker/3_kube_1_fundamentals/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_2_kubectl/">
+                
+                <a href="/dev/os/docker/3_kube_2_kubectl/" onclick="pageScrollToTop(this)">
+                    2. kubectl
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/dev/os/docker/3_kube_3_deployments/">
+                
+                <a href="/dev/os/docker/3_kube_3_deployments/" onclick="pageScrollToTop(this)">
+                    3. Deployments
+                </a>
+                
+                
+                <ul><li><a href="#31-understanding-nodes-and-pods-in-kubernetes" onclick="mobilePageScrollToAnchor(this)" >3.1 Understanding Nodes and Pods in Kubernetes</a><ul><li><a href="#1-what-is-a-node-in-kubernetes" onclick="mobilePageScrollToAnchor(this)" >1. What is a Node in Kubernetes?</a></li><li><a href="#2-what-is-a-pod-in-kubernetes" onclick="mobilePageScrollToAnchor(this)" >2. What is a Pod in Kubernetes?</a></li><li><a href="#3-how-nodes-and-pods-work-together" onclick="mobilePageScrollToAnchor(this)" >3. How Nodes and Pods Work Together</a></li><li><a href="#4-keypoints" onclick="mobilePageScrollToAnchor(this)" >4. Keypoints</a></li></ul></li><li><a href="#32-kubernetes-deployment" onclick="mobilePageScrollToAnchor(this)" >3.2 Kubernetes Deployment</a><ul><li><a href="#1-introduction-to-kubernetes-deployments" onclick="mobilePageScrollToAnchor(this)" >1. Introduction to Kubernetes Deployments</a></li><li><a href="#2-what-is-a-kubernetes-deployment" onclick="mobilePageScrollToAnchor(this)" >2. What is a Kubernetes Deployment?</a></li><li><a href="#3-the-power-of-desired-state" onclick="mobilePageScrollToAnchor(this)" >3. The Power of Desired State</a></li><li><a href="#4-defining-a-kubernetes-deployment" onclick="mobilePageScrollToAnchor(this)" >4. Defining a Kubernetes Deployment</a></li><li><a href="#5-understanding-pods-in-kubernetes" onclick="mobilePageScrollToAnchor(this)" >5. Understanding Pods in Kubernetes</a></li><li><a href="#6-deploying-with-kubectl" onclick="mobilePageScrollToAnchor(this)" >6. Deploying with <code class="language-plaintext highlighter-rouge">kubectl</code></a></li></ul></li><li><a href="#33-example" onclick="mobilePageScrollToAnchor(this)" >3.3 Example</a></li><li><a href="#34-example-redis-client-server" onclick="mobilePageScrollToAnchor(this)" >3.4 Example Redis Client Server</a><ul><li><a href="#1-redis-server-deployment" onclick="mobilePageScrollToAnchor(this)" >1. Redis Server Deployment</a></li><li><a href="#2-redis-client-deployment" onclick="mobilePageScrollToAnchor(this)" >2. Redis Client Deployment</a></li><li><a href="#3-how-to-connect-the-client-to-the-server" onclick="mobilePageScrollToAnchor(this)" >3. How to Connect the Client to the Server</a></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_4_services/">
+                
+                <a href="/dev/os/docker/3_kube_4_services/" onclick="pageScrollToTop(this)">
+                    3. Deployments
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/docker/3_kube_5_config_secret/">
+                
+                <a href="/dev/os/docker/3_kube_5_config_secret/" onclick="pageScrollToTop(this)">
+                    3. Config and Secret Management
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>5_iotplatforms</p> -->
+            
+                <p class="collection-title">IoT Platform</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/dev/os/iotplatform/1_tensorboard/">
+                
+                <a href="/dev/os/iotplatform/1_tensorboard/" onclick="pageScrollToTop(this)">
+                    1. Home Assistant
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >3. Deployments</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/docker/3_kube_3_deployments">3. Deployments</h1>
+                    
+
+                    <h1 id="31-understanding-nodes-and-pods-in-kubernetes">3.1 Understanding Nodes and Pods in Kubernetes</h1>
+
+<p>Kubernetes, often referred to as K8s, is a powerful system for automating the deployment, scaling, and management of containerized applications. Two of the most fundamental concepts in Kubernetes are <strong>nodes</strong> and <strong>pods</strong>. Let’s break these down to understand their roles and how they work together within a Kubernetes cluster.</p>
+
+<h2 id="1-what-is-a-node-in-kubernetes">1. What is a Node in Kubernetes?</h2>
+
+<p>A <strong>node</strong> is a worker machine in Kubernetes. It can be either a physical server or a virtual machine, depending on the environment in which Kubernetes is running. Each node in a Kubernetes cluster runs the services necessary to manage the networking between the containers, the communication with the master, and the assigned workloads.</p>
+
+<p><strong>Key components of a node include:</strong></p>
+<ul>
+  <li><strong>Kubelet:</strong> An agent that runs on each node and ensures that the containers are running in a pod.</li>
+  <li><strong>Kube-proxy:</strong> A network proxy that runs on each node, maintaining network rules and enabling communication between different parts of the cluster.</li>
+  <li><strong>Container Runtime:</strong> The software responsible for running containers. Docker is the most commonly used runtime, but alternatives like containerd or CRI-O can also be used.</li>
+</ul>
+
+<p><strong>Example:</strong>
+Imagine you have a Kubernetes cluster running on three virtual machines (VMs). Each VM represents a node in the cluster. When you deploy an application, Kubernetes schedules the application’s components (containers) to run on one or more of these nodes.</p>
+
+<h2 id="2-what-is-a-pod-in-kubernetes">2. What is a Pod in Kubernetes?</h2>
+
+<p>A <strong>pod</strong> is the smallest and simplest Kubernetes object. It represents a single instance of a running process in your cluster. Pods are the unit of deployment in Kubernetes and can contain one or more tightly coupled containers. All containers in a pod share the same network namespace (IP address and port space) and can communicate with each other directly using <code class="language-plaintext highlighter-rouge">localhost</code>.</p>
+
+<p><strong>Key characteristics of a pod:</strong></p>
+<ul>
+  <li><strong>Single or Multiple Containers:</strong> A pod can run a single container, but it can also run multiple containers that need to work together (e.g., a web server container and a logging container).</li>
+  <li><strong>Shared Resources:</strong> Containers within a pod share storage volumes and a network IP, allowing them to communicate easily and efficiently.</li>
+  <li><strong>Lifecycle Management:</strong> Pods are ephemeral, meaning they can be created and destroyed as needed. Kubernetes ensures that the desired number of pods are running at all times.</li>
+</ul>
+
+<p><strong>Example:</strong>
+Consider an e-commerce application where you have a web server and a Redis cache. You might deploy both the web server and Redis in a single pod. Since they share the same IP address, the web server can easily connect to Redis using <code class="language-plaintext highlighter-rouge">localhost</code>. If the web server fails, Kubernetes can restart the pod to ensure that the application remains available.</p>
+
+<h2 id="3-how-nodes-and-pods-work-together">3. How Nodes and Pods Work Together</h2>
+
+<p>When you deploy an application in Kubernetes, the platform schedules pods to run on nodes. For example, if you have three nodes and deploy an application that requires five instances (pods), Kubernetes might place two pods on the first node, two on the second node, and one on the third node, depending on resource availability and other factors like load balancing.</p>
+
+<p><strong>Example Scenario:</strong>
+Suppose you have a Kubernetes cluster with three nodes. You want to deploy a microservice-based application that has the following components:</p>
+<ul>
+  <li><strong>Frontend</strong> (web server)</li>
+  <li><strong>Backend</strong> (API server)</li>
+  <li><strong>Database</strong> (PostgreSQL)</li>
+</ul>
+
+<p>You define each of these components as a separate pod. Kubernetes schedules these pods across the available nodes. If one of the nodes goes down, Kubernetes can reschedule the pods to run on the remaining healthy nodes, ensuring the application remains up and running.</p>
+
+<h2 id="4-keypoints">4. Keypoints</h2>
+
+<ul>
+  <li><strong>Nodes</strong> are the worker machines in a Kubernetes cluster that run your applications.</li>
+  <li><strong>Pods</strong> are the smallest deployable units in Kubernetes, representing a single instance of a running process.</li>
+</ul>
+
+<p>Nodes and pods are the building blocks that Kubernetes uses to manage, scale, and ensure the high availability of applications. Understanding these concepts is crucial for anyone working with Kubernetes, as they are fundamental to how the platform operates and handles containerized workloads.</p>
+
+<h1 id="32-kubernetes-deployment">3.2 Kubernetes Deployment</h1>
+
+<p>https://youtu.be/DMpEZEakYVc</p>
+
+<p>In the ever-evolving landscape of software development and deployment, Kubernetes has become a cornerstone for managing containerized applications at scale. In this guide, we will dive into the basics of Kubernetes deployments, exploring how they enable the management of desired states and how to effectively use Kubernetes tools to ensure smooth operations.</p>
+
+<h2 id="1-introduction-to-kubernetes-deployments">1. Introduction to Kubernetes Deployments</h2>
+
+<p>Kubernetes is a powerful tool for automating the deployment, scaling, and management of containerized applications. In previous discussions, we explored setting up Kubernetes on Docker for Windows and using the command-line utility <code class="language-plaintext highlighter-rouge">kubectl</code> to interact with Kubernetes clusters. Now, with Kubernetes running and <code class="language-plaintext highlighter-rouge">kubectl</code> at our disposal, we’ll focus on the Kubernetes deployment object—a key component that allows us to configure and manage application deployments effectively.</p>
+
+<h2 id="2-what-is-a-kubernetes-deployment">2. What is a Kubernetes Deployment?</h2>
+
+<p>A Kubernetes deployment is an object that defines the desired state of your application and the deployment strategy to achieve that state. The deployment controller in Kubernetes ensures that the actual state of your application aligns with the desired state, adjusting the infrastructure as needed.</p>
+
+<p>To understand the concept of deployment in Kubernetes, consider the traditional approach to managing production servers. Typically, this involves load-balanced servers running various scripts to maintain health and functionality. However, scripts are inherently fragile—they execute steps sequentially, and failure at any point can leave the system in an unstable state.</p>
+
+<h2 id="3-the-power-of-desired-state">3. The Power of Desired State</h2>
+
+<p>Kubernetes addresses the shortcomings of traditional scripting by leveraging the concept of desired state. Instead of relying on scripts to set up and manage servers, Kubernetes allows you to define the desired state of your application in a deployment file. For example, you might specify that version 1 of your application should always have at least two instances running for high availability and load balancing. Kubernetes then takes on the responsibility of ensuring that this desired state is maintained.</p>
+
+<p>This approach offers numerous advantages, including automatic handling of updates, seamless rollouts, and infrastructure resilience. Kubernetes can gracefully upgrade your application by draining traffic from the old version before introducing the new one. It can also automatically recover from infrastructure failures by redeploying your application on healthy nodes. Moreover, Kubernetes allows you to scale your application up or down to meet demand without worrying about port conflicts or underlying infrastructure.</p>
+
+<h2 id="4-defining-a-kubernetes-deployment">4. Defining a Kubernetes Deployment</h2>
+
+<p>A Kubernetes deployment is defined using a YAML file that specifies the desired state of your application. Key elements of a deployment YAML file include:</p>
+
+<ul>
+  <li><strong>Application Version</strong>: The version of your application to deploy.</li>
+  <li><strong>Replicas</strong>: The number of instances (pods) to run for high availability.</li>
+  <li><strong>Strategy</strong>: The deployment strategy, such as a rolling update, which ensures a smooth transition between application versions.</li>
+  <li><strong>Ports</strong>: The ports to expose for your application.</li>
+  <li><strong>Liveliness Probe</strong>: A health check that allows Kubernetes to monitor the application and restart it if necessary.</li>
+  <li><strong>Resource Limits</strong>: The CPU and memory limits that Kubernetes uses to make intelligent scheduling decisions and manage resources effectively.</li>
+</ul>
+
+<h2 id="5-understanding-pods-in-kubernetes">5. Understanding Pods in Kubernetes</h2>
+
+<p>At the core of Kubernetes is the concept of a pod. A pod is the smallest deployable unit in Kubernetes and can be thought of as a virtual machine hosting your application. A pod can contain one or more containers, which run the actual processes (applications) you want to deploy. For example, a pod might contain your main application along with a Redis cache and a monitoring agent, all working together in the same environment.</p>
+
+<h2 id="6-deploying-with-kubectl">6. Deploying with <code class="language-plaintext highlighter-rouge">kubectl</code></h2>
+
+<p>To deploy your application using Kubernetes, you use the <code class="language-plaintext highlighter-rouge">kubectl</code> command-line tool. The basic process involves applying your deployment YAML file with the command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl apply <span class="nt">-f</span> &lt;path-to-deployment-yaml&gt;
+</code></pre></div></div>
+
+<p>This command sends your desired state to Kubernetes, which then manages the deployment process, ensuring that your application is running as specified.</p>
+
+<p>You can also monitor and troubleshoot deployments using commands like:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">kubectl get deployments</code> to check the status of your deployment.</li>
+  <li><code class="language-plaintext highlighter-rouge">kubectl describe deployment &lt;deployment-name&gt;</code> to get detailed information about your deployment, including statuses, resource usage, and events.</li>
+  <li><code class="language-plaintext highlighter-rouge">kubectl get pods</code> to view the status of individual pods.</li>
+  <li><code class="language-plaintext highlighter-rouge">kubectl logs &lt;pod-name&gt;</code> to view logs for troubleshooting application errors.</li>
+</ul>
+
+<h1 id="33-example">3.3 Example</h1>
+
+<p>Here’s an example of a simple Kubernetes Deployment YAML file that defines a deployment for an Nginx web server. This YAML file describes how Kubernetes should create and manage the pods running the Nginx container.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">nginx-deployment</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">3</span>  <span class="c1"># Number of desired pods</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>  <span class="c1"># Label selector for pods</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">app</span><span class="pi">:</span> <span class="s">nginx</span>  <span class="c1"># Label applied to pods</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:1.21.6</span>  <span class="c1"># Image version</span>
+        <span class="na">ports</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="m">80</span>  <span class="c1"># Exposing port 80</span>
+        <span class="na">livenessProbe</span><span class="pi">:</span>
+          <span class="na">httpGet</span><span class="pi">:</span>
+            <span class="na">path</span><span class="pi">:</span> <span class="s">/</span>
+            <span class="na">port</span><span class="pi">:</span> <span class="m">80</span>
+          <span class="na">initialDelaySeconds</span><span class="pi">:</span> <span class="m">5</span>
+          <span class="na">periodSeconds</span><span class="pi">:</span> <span class="m">10</span>
+        <span class="na">resources</span><span class="pi">:</span>
+          <span class="na">limits</span><span class="pi">:</span>
+            <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">256Mi"</span>
+            <span class="na">cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">500m"</span>
+          <span class="na">requests</span><span class="pi">:</span>
+            <span class="na">memory</span><span class="pi">:</span> <span class="s2">"</span><span class="s">128Mi"</span>
+            <span class="na">cpu</span><span class="pi">:</span> <span class="s2">"</span><span class="s">250m"</span>
+</code></pre></div></div>
+
+<h4 id="breakdown-of-the-deployment-yaml-file">Breakdown of the Deployment YAML File</h4>
+
+<ul>
+  <li><strong>apiVersion:</strong> Specifies the API version of the Kubernetes object (in this case, <code class="language-plaintext highlighter-rouge">apps/v1</code> is used for Deployments).</li>
+  <li><strong>kind:</strong> Defines the type of Kubernetes object (<code class="language-plaintext highlighter-rouge">Deployment</code>).</li>
+  <li><strong>metadata:</strong> Contains information about the deployment, including its name (<code class="language-plaintext highlighter-rouge">nginx-deployment</code>) and labels (<code class="language-plaintext highlighter-rouge">app: nginx</code>).</li>
+  <li><strong>spec:</strong> Describes the desired state of the deployment.
+    <ul>
+      <li><strong>replicas:</strong> The number of pod replicas (3) that should be running.</li>
+      <li><strong>selector:</strong> A label selector to identify the pods managed by this deployment.</li>
+      <li><strong>template:</strong> The pod template that describes the pods to be created.
+        <ul>
+          <li><strong>metadata:</strong> Contains labels for the pods.</li>
+          <li><strong>spec:</strong> Defines the containers to run inside the pod.
+            <ul>
+              <li><strong>containers:</strong> Specifies the container to run:
+                <ul>
+                  <li><strong>name:</strong> The name of the container.</li>
+                  <li><strong>image:</strong> The container image to use (<code class="language-plaintext highlighter-rouge">nginx:1.21.6</code>).</li>
+                  <li><strong>ports:</strong> The ports to expose (<code class="language-plaintext highlighter-rouge">containerPort: 80</code>).</li>
+                  <li><strong>livenessProbe:</strong> Defines a probe that checks if the container is healthy. If the probe fails, Kubernetes will restart the container.</li>
+                  <li><strong>resources:</strong> Specifies resource requests and limits:
+                    <ul>
+                      <li><strong>limits:</strong> The maximum resources the container can use.</li>
+                      <li><strong>requests:</strong> The minimum resources the container needs.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="how-to-apply-this-deployment">How to Apply This Deployment</h4>
+
+<p>To deploy this YAML file, save it as <code class="language-plaintext highlighter-rouge">nginx-deployment.yaml</code> and use the following command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl apply <span class="nt">-f</span> nginx-deployment.yaml
+</code></pre></div></div>
+
+<p>This command will create the deployment, and Kubernetes will start managing the pods as specified.</p>
+
+<h1 id="34-example-redis-client-server">3.4 Example Redis Client Server</h1>
+
+<p>To set up a Redis client and server using Kubernetes Deployments, you can define two separate Deployment YAML files: one for the Redis server and another for a simple Redis client. Here’s how to do it:</p>
+
+<h2 id="1-redis-server-deployment">1. Redis Server Deployment</h2>
+
+<p>This Deployment creates a Redis server that listens on port 6379.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">redis-server</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">redis</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">redis</span>
+      <span class="na">tier</span><span class="pi">:</span> <span class="s">backend</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">app</span><span class="pi">:</span> <span class="s">redis</span>
+        <span class="na">tier</span><span class="pi">:</span> <span class="s">backend</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">redis</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">redis:6.2.6</span>  <span class="c1"># Redis image version</span>
+        <span class="na">ports</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="m">6379</span>  <span class="c1"># Exposing Redis port</span>
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Service</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">redis-service</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">redis</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">redis</span>
+    <span class="na">tier</span><span class="pi">:</span> <span class="s">backend</span>
+  <span class="na">ports</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">protocol</span><span class="pi">:</span> <span class="s">TCP</span>
+    <span class="na">port</span><span class="pi">:</span> <span class="m">6379</span>
+    <span class="na">targetPort</span><span class="pi">:</span> <span class="m">6379</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">ClusterIP</span>  <span class="c1"># Internal access only</span>
+</code></pre></div></div>
+
+<h2 id="2-redis-client-deployment">2. Redis Client Deployment</h2>
+
+<p>This Deployment creates a simple Redis client that can connect to the Redis server.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Deployment</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">redis-client</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">redis-client</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">replicas</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">app</span><span class="pi">:</span> <span class="s">redis-client</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">app</span><span class="pi">:</span> <span class="s">redis-client</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">redis-client</span>
+        <span class="na">image</span><span class="pi">:</span> <span class="s">redis:6.2.6</span>  <span class="c1"># Using the Redis image to access the Redis CLI</span>
+        <span class="na">command</span><span class="pi">:</span> <span class="pi">[</span> <span class="s2">"</span><span class="s">sh"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">-c"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">while</span><span class="nv"> </span><span class="s">true;</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">sleep</span><span class="nv"> </span><span class="s">30;</span><span class="nv"> </span><span class="s">done;"</span> <span class="pi">]</span>  <span class="c1"># Keeps the pod running</span>
+</code></pre></div></div>
+
+<h2 id="3-how-to-connect-the-client-to-the-server">3. How to Connect the Client to the Server</h2>
+
+<p>After deploying both the Redis server and client, you can connect to the Redis client pod and use the Redis CLI to connect to the Redis server. Here’s how:</p>
+
+<ol>
+  <li>Get the name of the Redis client pod:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods <span class="nt">-l</span> <span class="nv">app</span><span class="o">=</span>redis-client
+</code></pre></div>    </div>
+  </li>
+  <li>Use <code class="language-plaintext highlighter-rouge">kubectl exec</code> to open a shell in the Redis client pod:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl <span class="nb">exec</span> <span class="nt">-it</span> &lt;redis-client-pod-name&gt; <span class="nt">--</span> /bin/sh
+</code></pre></div>    </div>
+  </li>
+  <li>From within the client pod, use the Redis CLI to connect to the Redis server:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>redis-cli <span class="nt">-h</span> redis-service
+</code></pre></div>    </div>
+
+    <p>The <code class="language-plaintext highlighter-rouge">-h redis-service</code> flag tells the Redis client to connect to the Redis server using the service name <code class="language-plaintext highlighter-rouge">redis-service</code>.</p>
+  </li>
+</ol>
+
+<h4 id="breakdown-of-the-yaml-files">Breakdown of the YAML Files</h4>
+
+<ul>
+  <li><strong>Redis Server Deployment:</strong>
+    <ul>
+      <li>The Redis server is deployed with one replica.</li>
+      <li>The server is exposed internally within the cluster using a <code class="language-plaintext highlighter-rouge">ClusterIP</code> service.</li>
+    </ul>
+  </li>
+  <li><strong>Redis Client Deployment:</strong>
+    <ul>
+      <li>The Redis client is deployed with one replica.</li>
+      <li>The client pod contains the Redis CLI, which can be used to connect to the Redis server.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>By running these Deployments, you’ll have a Redis server and a client running in your Kubernetes cluster, allowing you to test Redis interactions within the cluster.</p>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/dev/os/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/dev/os/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/dev/os/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/dev/os/docker/3_kube_2_kubectl/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 2. kubectl"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/dev/os/docker/3_kube_4_services/" class="navigation navigation-next navigation-unique" aria-label="Next page: 3. Deployments"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "3. Deployments",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_4_containerization/3_kube_4_services.md",
+            "ref": "_4_containerization/3_kube_4_services.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | O/S",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_4_containerization/3_kube_3_deployments.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-08-26 10:32:47 +0800"
+    },
+    "basePath": "/dev/os",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/dev/os/assets/gitbook/gitbook.js"></script>
+<script src="/dev/os/assets/gitbook/theme.js"></script>
+
+<script src="/dev/os/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/dev/os/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/dev/os/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/dev/os/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>

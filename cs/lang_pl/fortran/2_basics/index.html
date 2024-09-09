@@ -1,0 +1,1063 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>2. Basics · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/cs/lang_pl/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/cs/lang_pl/assets/gitbook/style.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/cs/lang_pl/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/cs/lang_pl/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/cs/lang_pl/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/cs/lang_pl/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/cs/lang_pl/algol/1_background/" />
+        
+
+        
+            <link rel="next" href="/cs/lang_pl/fortran/3_programming_basics/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/cs/lang_pl/">
+            <img class="logo zoom" src="/cs/lang_pl/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/cs/lang_pl/">
+            <img class="logo zoom" src="/cs/lang_pl/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/cs/lang_pl/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl">
+                
+                <a href="/cs/lang_pl/" onclick="pageScrollToTop(this)">
+                    Wiki | Programming Languages Evolution
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_evolution</p> -->
+            
+                <p class="collection-title">PL Evolution</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/plevolution/1_basics/">
+                
+                <a href="/cs/lang_pl/plevolution/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>2_fortran</p> -->
+            
+                <p class="collection-title">Fortran</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/algol/1_background/">
+                
+                <a href="/cs/lang_pl/algol/1_background/" onclick="pageScrollToTop(this)">
+                    1. Background
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/cs/lang_pl/fortran/2_basics/">
+                
+                <a href="/cs/lang_pl/fortran/2_basics/" onclick="pageScrollToTop(this)">
+                    2. Basics
+                </a>
+                
+                
+                <ul><li><a href="#1-characteristics-of-fortran77" onclick="mobilePageScrollToAnchor(this)" >1. Characteristics of Fortran77</a><ul><li><a href="#11-fixed-form-source-code" onclick="mobilePageScrollToAnchor(this)" >1.1 Fixed-Form Source Code</a></li><li><a href="#12-implicit-typing" onclick="mobilePageScrollToAnchor(this)" >1.2 Implicit Typing</a></li><li><a href="#13-improved-control-structures" onclick="mobilePageScrollToAnchor(this)" >1.3 Improved Control Structures</a></li><li><a href="#14-data-types" onclick="mobilePageScrollToAnchor(this)" >1.4 Data Types</a></li><li><a href="#15-array-handling" onclick="mobilePageScrollToAnchor(this)" >1.5 Array Handling</a></li><li><a href="#16-common-blocks" onclick="mobilePageScrollToAnchor(this)" >1.6 COMMON Blocks</a></li><li><a href="#17-intrinsic-functions" onclick="mobilePageScrollToAnchor(this)" >1.7 Intrinsic Functions</a></li><li><a href="#18-portability" onclick="mobilePageScrollToAnchor(this)" >1.8 Portability</a></li><li><a href="#19-formatted-and-unformatted-io" onclick="mobilePageScrollToAnchor(this)" >1.9 Formatted and Unformatted I/O</a></li><li><a href="#110-subroutines-and-functions" onclick="mobilePageScrollToAnchor(this)" >1.10 Subroutines and Functions</a></li><li><a href="#111-example-code" onclick="mobilePageScrollToAnchor(this)" >1.11 Example Code</a></li></ul></li><li><a href="#2-limitations" onclick="mobilePageScrollToAnchor(this)" >2. Limitations</a><ul><li><a href="#21-fixed-form-source-code" onclick="mobilePageScrollToAnchor(this)" >2.1 Fixed-Form Source Code</a></li><li><a href="#22-limited-modern-programming-constructs" onclick="mobilePageScrollToAnchor(this)" >2.2 Limited Modern Programming Constructs</a></li><li><a href="#23-lack-of-modular-programming-features" onclick="mobilePageScrollToAnchor(this)" >2.3 Lack of Modular Programming Features</a></li><li><a href="#24-primitive-error-handling" onclick="mobilePageScrollToAnchor(this)" >2.4 Primitive Error Handling</a></li><li><a href="#25-limited-string-handling" onclick="mobilePageScrollToAnchor(this)" >2.5 Limited String Handling</a></li><li><a href="#26-verbosity-and-readability" onclick="mobilePageScrollToAnchor(this)" >2.6 Verbosity and Readability</a></li><li><a href="#27-no-built-in-support-for-parallelism" onclick="mobilePageScrollToAnchor(this)" >2.7 No Built-In Support for Parallelism</a></li><li><a href="#28-poor-standard-library-support" onclick="mobilePageScrollToAnchor(this)" >2.8 Poor Standard Library Support</a></li><li><a href="#29-maintenance-and-portability-issues" onclick="mobilePageScrollToAnchor(this)" >2.9 Maintenance and Portability Issues</a></li><li><a href="#210-example-illustrating-some-downsides" onclick="mobilePageScrollToAnchor(this)" >2.10. Example Illustrating Some Downsides</a></li></ul></li><li><a href="#3-goto-statement" onclick="mobilePageScrollToAnchor(this)" >3. <code class="language-plaintext highlighter-rouge">GOTO</code> Statement</a><ul><li><a href="#31-pros-of-using-goto" onclick="mobilePageScrollToAnchor(this)" >3.1 Pros of Using <code class="language-plaintext highlighter-rouge">GOTO</code></a></li><li><a href="#32-cons-of-using-goto" onclick="mobilePageScrollToAnchor(this)" >3.2 Cons of Using <code class="language-plaintext highlighter-rouge">GOTO</code></a></li><li><a href="#33-example-of-goto-usage" onclick="mobilePageScrollToAnchor(this)" >3.3 Example of <code class="language-plaintext highlighter-rouge">GOTO</code> Usage</a></li><li><a href="#34-analysis" onclick="mobilePageScrollToAnchor(this)" >3.4 Analysis</a></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/fortran/3_programming_basics/">
+                
+                <a href="/cs/lang_pl/fortran/3_programming_basics/" onclick="pageScrollToTop(this)">
+                    3. Programming Basics
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>3_algol</p> -->
+            
+                <p class="collection-title">Algol</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/algol/1_basics/">
+                
+                <a href="/cs/lang_pl/algol/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/algol/2_programming_basics/">
+                
+                <a href="/cs/lang_pl/algol/2_programming_basics/" onclick="pageScrollToTop(this)">
+                    2. Programming Basics
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>4_functional</p> -->
+            
+                <p class="collection-title">Functional Languages</p>
+            
+            
+            
+
+            
+            
+            
+            <p class="separator-title">Elixir</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/1_elixir_1_basics/">
+                
+                <a href="/cs/lang_pl/functional/1_elixir_1_basics/" onclick="pageScrollToTop(this)">
+                    1. Elixir
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/1_elixir_2_extended_example/">
+                
+                <a href="/cs/lang_pl/functional/1_elixir_2_extended_example/" onclick="pageScrollToTop(this)">
+                    2. Extended Examples
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Scheme</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_1_basics/">
+                
+                <a href="/cs/lang_pl/functional/2_scheme_1_basics/" onclick="pageScrollToTop(this)">
+                    1. Basics
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_2_syntax/">
+                
+                <a href="/cs/lang_pl/functional/2_scheme_2_syntax/" onclick="pageScrollToTop(this)">
+                    2. Syntax
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_3_advance/">
+                
+                <a href="/cs/lang_pl/functional/2_scheme_3_advance/" onclick="pageScrollToTop(this)">
+                    2. Advance
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>5_logical</p> -->
+            
+                <p class="collection-title">Logical Languages</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/logical/1_basics/">
+                
+                <a href="/cs/lang_pl/logical/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>6_scripting</p> -->
+            
+                <p class="collection-title">Scripting</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/scripting/1_basics/">
+                
+                <a href="/cs/lang_pl/scripting/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >2. Basics</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/fortran/2_basics">2. Basics</h1>
+                    
+
+                    <h1 id="1-characteristics-of-fortran77">1. Characteristics of Fortran77</h1>
+
+<p>Fortran 77 is a significant version of the Fortran programming language, which introduced several features and improvements over its predecessor, Fortran 66. Here are the key characteristics of Fortran 77:</p>
+
+<h2 id="11-fixed-form-source-code">1.1 Fixed-Form Source Code</h2>
+<ul>
+  <li>Fortran 77 uses fixed-form source code format, where specific columns in the code have particular meanings. For example, columns 1-5 are used for statement labels, column 6 for continuation characters, and columns 7-72 for code.</li>
+</ul>
+
+<h2 id="12-implicit-typing">1.2 Implicit Typing</h2>
+<ul>
+  <li>Variables starting with the letters I through N are implicitly integers, while all other variables are implicitly real numbers, unless explicitly declared otherwise. The <code class="language-plaintext highlighter-rouge">IMPLICIT NONE</code> statement can be used to disable implicit typing, forcing all variables to be explicitly declared.</li>
+</ul>
+
+<h2 id="13-improved-control-structures">1.3 Improved Control Structures</h2>
+<ul>
+  <li>Fortran 77 introduced the <code class="language-plaintext highlighter-rouge">IF-THEN-ELSE</code> construct for more readable and flexible conditional branching.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">DO</code> loop construct was enhanced, allowing more complex looping structures.</li>
+</ul>
+
+<h2 id="14-data-types">1.4 Data Types</h2>
+<ul>
+  <li>Fortran 77 supports basic data types: <code class="language-plaintext highlighter-rouge">INTEGER</code>, <code class="language-plaintext highlighter-rouge">REAL</code>, <code class="language-plaintext highlighter-rouge">DOUBLE PRECISION</code>, <code class="language-plaintext highlighter-rouge">COMPLEX</code>, <code class="language-plaintext highlighter-rouge">LOGICAL</code>, and <code class="language-plaintext highlighter-rouge">CHARACTER</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">CHARACTER</code> data type was introduced, enabling better handling of strings.</li>
+</ul>
+
+<h2 id="15-array-handling">1.5 Array Handling</h2>
+<ul>
+  <li>Fortran 77 allows multi-dimensional arrays, enhancing the language’s capability to handle mathematical and scientific computations involving matrices and tensors.</li>
+</ul>
+
+<h2 id="16-common-blocks">1.6 COMMON Blocks</h2>
+<ul>
+  <li>COMMON blocks in Fortran 77 allow sharing of variables between program units (such as the main program and subroutines). This feature enables global variables and facilitates modular programming.</li>
+</ul>
+
+<h2 id="17-intrinsic-functions">1.7 Intrinsic Functions</h2>
+<ul>
+  <li>Fortran 77 includes a rich set of intrinsic functions for mathematical operations, character manipulation, and logical operations. Examples include <code class="language-plaintext highlighter-rouge">SIN</code>, <code class="language-plaintext highlighter-rouge">COS</code>, <code class="language-plaintext highlighter-rouge">LOG</code>, <code class="language-plaintext highlighter-rouge">EXP</code>, <code class="language-plaintext highlighter-rouge">SQRT</code>, <code class="language-plaintext highlighter-rouge">ABS</code>, and <code class="language-plaintext highlighter-rouge">LEN</code>.</li>
+</ul>
+
+<h2 id="18-portability">1.8 Portability</h2>
+<ul>
+  <li>Fortran 77 code is highly portable across different computing platforms, which was a significant improvement over Fortran 66. This standardization helped in the widespread adoption of the language in scientific computing.</li>
+</ul>
+
+<h2 id="19-formatted-and-unformatted-io">1.9 Formatted and Unformatted I/O</h2>
+<ul>
+  <li>Fortran 77 provides comprehensive input/output (I/O) capabilities, including both formatted and unformatted I/O operations. The <code class="language-plaintext highlighter-rouge">READ</code>, <code class="language-plaintext highlighter-rouge">WRITE</code>, and <code class="language-plaintext highlighter-rouge">FORMAT</code> statements allow detailed control over data input and output.</li>
+</ul>
+
+<h2 id="110-subroutines-and-functions">1.10 Subroutines and Functions</h2>
+<ul>
+  <li>Fortran 77 supports the use of subroutines and functions to promote code reuse and modularity. Subroutines are defined using the <code class="language-plaintext highlighter-rouge">SUBROUTINE</code> keyword, and functions using the <code class="language-plaintext highlighter-rouge">FUNCTION</code> keyword.</li>
+</ul>
+
+<h2 id="111-example-code">1.11 Example Code</h2>
+
+<p>Here is a simple example of a Fortran 77 program that demonstrates some of its features:</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">HelloWorld</span><span class="w">
+      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Hello, World!'</span><span class="w">
+      </span><span class="k">END</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="example-with-control-structures-and-arrays">Example with Control Structures and Arrays</h4>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">ArrayExample</span><span class="w">
+      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">
+      </span><span class="k">PARAMETER</span><span class="w"> </span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="w">
+      </span><span class="kt">REAL</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="w">
+      
+      </span><span class="c1">! Initialize arrays</span><span class="w">
+      </span><span class="k">DO</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">
+         </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w">
+         </span><span class="n">B</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w">
+ </span><span class="mi">10</span><span class="w">   </span><span class="k">CONTINUE</span><span class="w">
+
+      </span><span class="c1">! Print results</span><span class="w">
+      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Array A:'</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w">
+      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Array B:'</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w">
+
+      </span><span class="k">END</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="explanation">Explanation</h4>
+
+<ul>
+  <li>The program defines two arrays, <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">B</code>, each of size <code class="language-plaintext highlighter-rouge">N</code> (which is set to 5).</li>
+  <li>It initializes the array <code class="language-plaintext highlighter-rouge">A</code> with values 1 through 5 and computes the square of each element, storing the results in array <code class="language-plaintext highlighter-rouge">B</code>.</li>
+  <li>Finally, it prints the contents of both arrays.</li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="important">IMPORTANT</h5>
+  <p>Fortran 77 played a crucial role in the evolution of Fortran, providing a solid foundation for scientific and numerical computing with its array handling, control structures, and intrinsic functions. Despite its limitations, it remains an important version of the language, particularly for legacy scientific and engineering codebases.</p>
+</blockquote>
+
+<h1 id="2-limitations">2. Limitations</h1>
+
+<p>Fortran 77, while a significant advancement in the Fortran language, also has several downsides and limitations. Here are some of the key disadvantages:</p>
+
+<h2 id="21-fixed-form-source-code">2.1 Fixed-Form Source Code</h2>
+<ul>
+  <li><strong>Column Dependency</strong>: The fixed-form source code format is rigid and prone to errors. For example, specific columns have designated purposes, and accidental misalignment can lead to syntax errors.</li>
+  <li><strong>Line Length</strong>: Code lines are limited to 72 characters, which can lead to cumbersome code formatting and the need for continuation lines.</li>
+</ul>
+
+<h2 id="22-limited-modern-programming-constructs">2.2 Limited Modern Programming Constructs</h2>
+<ul>
+  <li><strong>No Dynamic Memory Allocation</strong>: Fortran 77 does not support dynamic memory allocation. All arrays and variables must have fixed sizes defined at compile time, which limits flexibility in handling data of varying sizes.</li>
+  <li><strong>No Recursive Procedures</strong>: Fortran 77 does not support recursive procedures, which are essential for many modern algorithms and programming techniques.</li>
+</ul>
+
+<h2 id="23-lack-of-modular-programming-features">2.3 Lack of Modular Programming Features</h2>
+<ul>
+  <li><strong>No Modules</strong>: Fortran 77 does not have modules, making it difficult to encapsulate and organize code. Instead, it relies heavily on COMMON blocks, which can lead to namespace pollution and make code maintenance challenging.</li>
+  <li><strong>No Derived Types</strong>: The language does not support user-defined data types (derived types), limiting the ability to create complex data structures.</li>
+</ul>
+
+<h2 id="24-primitive-error-handling">2.4 Primitive Error Handling</h2>
+<ul>
+  <li>Fortran 77 has very basic error handling capabilities. There are no sophisticated mechanisms for catching and handling runtime errors, which can make debugging and developing robust applications more difficult.</li>
+</ul>
+
+<h2 id="25-limited-string-handling">2.5 Limited String Handling</h2>
+<ul>
+  <li>String manipulation capabilities in Fortran 77 are quite limited compared to modern languages. The CHARACTER data type was introduced in Fortran 77, but string operations are still cumbersome and less powerful.</li>
+</ul>
+
+<h2 id="26-verbosity-and-readability">2.6 Verbosity and Readability</h2>
+<ul>
+  <li>Fortran 77 code tends to be verbose, making it harder to read and write compared to more modern programming languages. The syntax can be less intuitive, especially for new programmers.</li>
+</ul>
+
+<h2 id="27-no-built-in-support-for-parallelism">2.7 No Built-In Support for Parallelism</h2>
+<ul>
+  <li>While Fortran is used extensively in high-performance computing, Fortran 77 does not have built-in support for parallel programming. Extensions like MPI and OpenMP must be used to achieve parallelism, which can add complexity.</li>
+</ul>
+
+<h2 id="28-poor-standard-library-support">2.8 Poor Standard Library Support</h2>
+<ul>
+  <li>The standard library in Fortran 77 is minimal, offering limited built-in functions and utilities. This lack of extensive libraries can make it harder to perform common tasks without writing substantial amounts of code from scratch.</li>
+</ul>
+
+<h2 id="29-maintenance-and-portability-issues">2.9 Maintenance and Portability Issues</h2>
+<ul>
+  <li>Due to its age and the evolution of programming practices, maintaining and updating Fortran 77 code can be challenging. Porting legacy Fortran 77 code to more modern systems or integrating it with contemporary software can also be problematic.</li>
+</ul>
+
+<h2 id="210-example-illustrating-some-downsides">2.10. Example Illustrating Some Downsides</h2>
+
+<p>Here is a simple example highlighting the fixed-form layout and the limitations in handling dynamic arrays:</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">Example</span><span class="w">
+      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w">
+      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="n">I</span><span class="w">
+
+      </span><span class="k">DO</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w">
+         </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w">
+         </span><span class="n">B</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="w">
+ </span><span class="mi">10</span><span class="w">   </span><span class="k">CONTINUE</span><span class="w">
+
+      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Array A:'</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="w">
+      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Array B:'</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w">
+      </span><span class="k">END</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="downsides-illustrated">Downsides Illustrated</h4>
+<ul>
+  <li><strong>Fixed-Form Layout</strong>: The strict column-based format and the need for continuation lines can make the code less readable and more error-prone.</li>
+  <li><strong>No Dynamic Arrays</strong>: The arrays <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">B</code> must have fixed sizes defined at compile time, limiting flexibility.</li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="important-1">IMPORTANT</h5>
+  <p>While Fortran 77 was a significant step forward for numerical and scientific computing at its time, it has notable limitations and downsides by today’s standards. These include its rigid syntax, lack of modern programming constructs, and limited error handling and string manipulation capabilities. As a result, more recent versions of Fortran and other modern programming languages have largely supplanted Fortran 77 in many areas.</p>
+</blockquote>
+
+<h1 id="3-goto-statement">3. <code class="language-plaintext highlighter-rouge">GOTO</code> Statement</h1>
+
+<p>The <code class="language-plaintext highlighter-rouge">GOTO</code> statement in Fortran 77, as in many programming languages, is a control flow statement that causes the program to jump to a specified label. It is often considered a controversial feature. Here are the pros and cons of using the <code class="language-plaintext highlighter-rouge">GOTO</code> statement in Fortran 77:</p>
+
+<h2 id="31-pros-of-using-goto">3.1 Pros of Using <code class="language-plaintext highlighter-rouge">GOTO</code></h2>
+
+<ol>
+  <li><strong>Simplicity</strong>:
+    <ul>
+      <li>Fortran 77 does not have some of the more advanced control structures found in modern languages. In certain simple scenarios, using <code class="language-plaintext highlighter-rouge">GOTO</code> can make the code straightforward and easy to write.</li>
+    </ul>
+  </li>
+  <li><strong>Compatibility</strong>:
+    <ul>
+      <li>Since Fortran 77 and its predecessors used <code class="language-plaintext highlighter-rouge">GOTO</code> extensively, older codebases often rely on it. Understanding and maintaining such code may require familiarity with <code class="language-plaintext highlighter-rouge">GOTO</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Fine Control</strong>:
+    <ul>
+      <li>In certain low-level programming scenarios, <code class="language-plaintext highlighter-rouge">GOTO</code> can provide fine-grained control over the flow of execution that might be cumbersome to achieve with higher-level constructs.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="32-cons-of-using-goto">3.2 Cons of Using <code class="language-plaintext highlighter-rouge">GOTO</code></h2>
+
+<ol>
+  <li><strong>Readability and Maintainability</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">GOTO</code> can make the code hard to read and understand, as it creates non-linear flow. This is often referred to as “spaghetti code.”</li>
+      <li>Code with many <code class="language-plaintext highlighter-rouge">GOTO</code> statements can be challenging to debug and maintain, especially in larger programs.</li>
+    </ul>
+  </li>
+  <li><strong>Structured Programming</strong>:
+    <ul>
+      <li>Structured programming principles advocate for control structures like loops (<code class="language-plaintext highlighter-rouge">DO</code>), conditionals (<code class="language-plaintext highlighter-rouge">IF-THEN-ELSE</code>), and subroutine calls to improve code readability and maintainability. Excessive use of <code class="language-plaintext highlighter-rouge">GOTO</code> undermines these principles.</li>
+    </ul>
+  </li>
+  <li><strong>Error-Prone</strong>:
+    <ul>
+      <li>The use of <code class="language-plaintext highlighter-rouge">GOTO</code> can lead to complex and error-prone code, making it easier to introduce bugs, such as infinite loops or jumping to incorrect labels.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="33-example-of-goto-usage">3.3 Example of <code class="language-plaintext highlighter-rouge">GOTO</code> Usage</h2>
+
+<p>Here’s a simple example of using <code class="language-plaintext highlighter-rouge">GOTO</code> in Fortran 77:</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">GotoExample</span><span class="w">
+      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="n">I</span><span class="w">
+      </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+
+</span><span class="nl">10</span><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">I</span><span class="w"> </span><span class="ow">.GT.</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">GOTO</span><span class="w"> </span><span class="mi">20</span><span class="w">
+      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'I ='</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="w">
+      </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="k">GOTO</span><span class="w"> </span><span class="mi">10</span><span class="w">
+
+</span><span class="nl">20</span><span class="w">    </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Loop finished.'</span><span class="w">
+      </span><span class="k">END</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="34-analysis">3.4 Analysis</h2>
+
+<ul>
+  <li><strong>Readability</strong>: The above example is relatively simple, but readability decreases with more complex code involving multiple <code class="language-plaintext highlighter-rouge">GOTO</code> statements and labels.</li>
+  <li><strong>Structured Alternative</strong>: The same logic can be achieved more readably using a <code class="language-plaintext highlighter-rouge">DO</code> loop:</li>
+</ul>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">DoLoopExample</span><span class="w">
+      </span><span class="kt">INTEGER</span><span class="w"> </span><span class="n">I</span><span class="w">
+      </span><span class="k">DO</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w">
+         </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'I ='</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="w">
+</span><span class="nl">10</span><span class="w">    </span><span class="k">CONTINUE</span><span class="w">
+      </span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Loop finished.'</span><span class="w">
+      </span><span class="k">END</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Using <code class="language-plaintext highlighter-rouge">GOTO</code> in Fortran 77 is generally discouraged except in cases where it simplifies the code or is necessary for compatibility with legacy code.</strong> The preference is to use structured programming constructs (like <code class="language-plaintext highlighter-rouge">DO</code> loops and <code class="language-plaintext highlighter-rouge">IF-THEN-ELSE</code> statements) to improve code readability, maintainability, and reliability. However, understanding <code class="language-plaintext highlighter-rouge">GOTO</code> is essential for maintaining and understanding legacy Fortran code.</p>
+
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/cs/lang_pl/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/cs/lang_pl/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/cs/lang_pl/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/cs/lang_pl/algol/1_background/" class="navigation navigation-prev navigation-unique hide_element" aria-label="Previous page: 1. Background"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/cs/lang_pl/fortran/3_programming_basics/" class="navigation navigation-next navigation-unique" aria-label="Next page: 3. Programming Basics"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "3. Programming Basics",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_2_fortran/3_programming_basics.md",
+            "ref": "_2_fortran/3_programming_basics.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | Programming Languages Evolution",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_2_fortran/2_basics.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-08-29 10:51:24 +0800"
+    },
+    "basePath": "/cs/lang_pl",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/cs/lang_pl/assets/gitbook/gitbook.js"></script>
+<script src="/cs/lang_pl/assets/gitbook/theme.js"></script>
+
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>

@@ -1,0 +1,1735 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>1. Elixir · Intelligent Mind Labs</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Wikis for Data Science, Computing, Software Development, Math, etc.
+"><!-- <meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"> --><meta name="author" content="Intelligent Mind Labs"><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
+<!-- For logo animation -->
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
+<link rel="stylesheet" href="/cs/lang_pl/assets/fonts/fa5.15/css/all.min.css">
+
+<link id="gitbook_style" rel="stylesheet" href="/cs/lang_pl/assets/gitbook/style.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+
+
+<!-- <link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/rouge/colorful.css"> -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+    
+
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/custom-local.css"><style>
+.img_url {
+    content: url("/cs/lang_pl/assets/images/wiki.imindlabs.grey.logo.png");
+}
+
+.book.color-theme-2 .img_url {
+    content: url("/cs/lang_pl/assets/images/wiki.imindlabs.logo.png");
+}
+</style><link rel="stylesheet" href="/cs/lang_pl/assets/gitbook/custom-local-child.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/cs/lang_pl/assets/gitbook/images/apple-touch-icon-precomposed-152.png"> -->
+<!-- <link rel="shortcut icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" type="image/x-icon"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/cs/lang_pl/wiki.imindlabs.favicon.png">
+<link rel="icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/cs/lang_pl/wiki.imindlabs.favicon.png" type="image/png">
+
+
+
+<!-- trackers -->
+            <link rel="prev" href="/cs/lang_pl/" />
+        
+
+        
+            <link rel="next" href="/cs/lang_pl/functional/1_elixir_2_extended_example/" />
+        
+    </head>
+    <body>         
+        <div class="book"><div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({ scrollTop: 0 });
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            
+            // ! BUG: Enable the following functionality on large screen sizes
+            // On sub menu item click the page did not navigate. Now it does.
+            //if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({ scrollTop: $($(element).attr('href')).get(0).offsetTop });
+            // }
+            return true;
+        }
+    </script>
+
+    <!-- <div style="text-align:center;" class="animate__animated animate__pulse animate__delay-1s">
+        <a href="/cs/lang_pl/">
+            <img class="logo zoom" src="/cs/lang_pl/assets/images/wiki.imindlabs.logo.png" alt="Intelligent Mind Labs wiki logo" />
+        </a>
+    </div> -->
+    <div style="text-align:center;" class="logo-wrap">
+        <a href="/cs/lang_pl/">
+            <img class="logo zoom" src="/cs/lang_pl/assets/images/wiki.imindlabs.logo_153x200.webp" alt="Intelligent Mind Labs wiki logo" width="153" height="200"/>
+        </a>
+    </div>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/cs/lang_pl/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl">
+                
+                <a href="/cs/lang_pl/" onclick="pageScrollToTop(this)">
+                    Wiki | Programming Languages Evolution
+                </a>
+            </li>
+
+            <!-- <li class="divider"></li> -->
+
+            
+            <!-- <p>1_evolution</p> -->
+            
+                <p class="collection-title">PL Evolution</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/plevolution/1_basics/">
+                
+                <a href="/cs/lang_pl/plevolution/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>2_fortran</p> -->
+            
+                <p class="collection-title">Fortran</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/algol/1_background/">
+                
+                <a href="/cs/lang_pl/algol/1_background/" onclick="pageScrollToTop(this)">
+                    1. Background
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/fortran/2_basics/">
+                
+                <a href="/cs/lang_pl/fortran/2_basics/" onclick="pageScrollToTop(this)">
+                    2. Basics
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/fortran/3_programming_basics/">
+                
+                <a href="/cs/lang_pl/fortran/3_programming_basics/" onclick="pageScrollToTop(this)">
+                    3. Programming Basics
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>3_algol</p> -->
+            
+                <p class="collection-title">Algol</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/algol/1_basics/">
+                
+                <a href="/cs/lang_pl/algol/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/algol/2_programming_basics/">
+                
+                <a href="/cs/lang_pl/algol/2_programming_basics/" onclick="pageScrollToTop(this)">
+                    2. Programming Basics
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>4_functional</p> -->
+            
+                <p class="collection-title">Functional Languages</p>
+            
+            
+            
+
+            
+            
+            
+            <p class="separator-title">Elixir</p>
+            
+            
+            
+            <li class="chapter active" data-level="1.2" data-path="/cs/lang_pl/functional/1_elixir_1_basics/">
+                
+                <a href="/cs/lang_pl/functional/1_elixir_1_basics/" onclick="pageScrollToTop(this)">
+                    1. Elixir
+                </a>
+                
+                
+                <ul><li><a href="#11-introduction" onclick="mobilePageScrollToAnchor(this)" >1.1 Introduction</a><ul><li><a href="#1-key-features-of-elixir" onclick="mobilePageScrollToAnchor(this)" >1. Key Features of Elixir:</a></li><li><a href="#2-pros-of-elixir" onclick="mobilePageScrollToAnchor(this)" >2. Pros of Elixir</a></li><li><a href="#3-cons-of-elixir" onclick="mobilePageScrollToAnchor(this)" >3. Cons of Elixir</a></li><li><a href="#4-comparison-between-elixir-and-c" onclick="mobilePageScrollToAnchor(this)" >4. Comparison Between Elixir and C:</a></li><li><a href="#5-key-differences" onclick="mobilePageScrollToAnchor(this)" >5. Key Differences:</a></li></ul></li><li><a href="#12-getting-started" onclick="mobilePageScrollToAnchor(this)" >1.2 Getting Started</a><ul><li><a href="#1-install-elixir" onclick="mobilePageScrollToAnchor(this)" >1. Install Elixir</a></li><li><a href="#2-verify-installation" onclick="mobilePageScrollToAnchor(this)" >2. Verify Installation</a></li><li><a href="#3-running-elixir-code" onclick="mobilePageScrollToAnchor(this)" >3. Running Elixir Code</a><ul><li><a href="#31-interactive-elixir-iex" onclick="mobilePageScrollToAnchor(this)" >3.1 Interactive Elixir (IEx)</a></li><li><a href="#32-running-a-script" onclick="mobilePageScrollToAnchor(this)" >3.2 Running a Script</a></li></ul></li></ul></li><li><a href="#13-data-structures-in-elixir" onclick="mobilePageScrollToAnchor(this)" >1.3 Data Structures in Elixir</a></li><li><a href="#14-control-structures-in-elixir" onclick="mobilePageScrollToAnchor(this)" >1.4 Control Structures in Elixir</a></li><li><a href="#15-data-structure---tuple" onclick="mobilePageScrollToAnchor(this)" >1.5 Data Structure - Tuple</a><ul><li><a href="#1-basic-tuple" onclick="mobilePageScrollToAnchor(this)" >1. Basic Tuple</a></li><li><a href="#2-pattern-matching-with-tuples" onclick="mobilePageScrollToAnchor(this)" >2. Pattern Matching with Tuples</a></li><li><a href="#3-returning-multiple-values-from-a-function" onclick="mobilePageScrollToAnchor(this)" >3. Returning Multiple Values from a Function</a></li><li><a href="#4-tagged-tuples" onclick="mobilePageScrollToAnchor(this)" >4. Tagged Tuples</a></li><li><a href="#5-storing-related-data" onclick="mobilePageScrollToAnchor(this)" >5. Storing Related Data</a></li><li><a href="#6-nested-tuples" onclick="mobilePageScrollToAnchor(this)" >6. Nested Tuples</a></li><li><a href="#7-updating-tuples" onclick="mobilePageScrollToAnchor(this)" >7. Updating Tuples</a></li><li><a href="#8-tuple-size" onclick="mobilePageScrollToAnchor(this)" >8. Tuple Size</a></li></ul></li><li><a href="#16-data-structure---list" onclick="mobilePageScrollToAnchor(this)" >1.6 Data Structure - List</a><ul><li><a href="#1-creating-and-accessing-lists" onclick="mobilePageScrollToAnchor(this)" >1. Creating and Accessing Lists</a></li><li><a href="#2-concatenating-lists" onclick="mobilePageScrollToAnchor(this)" >2. Concatenating Lists</a></li><li><a href="#3-subtracting-lists" onclick="mobilePageScrollToAnchor(this)" >3. Subtracting Lists</a></li><li><a href="#4-pattern-matching-with-lists" onclick="mobilePageScrollToAnchor(this)" >4. Pattern Matching with Lists</a></li><li><a href="#5-recursively-processing-lists" onclick="mobilePageScrollToAnchor(this)" >5. Recursively Processing Lists</a></li><li><a href="#6-list-comprehensions" onclick="mobilePageScrollToAnchor(this)" >6. List Comprehensions</a></li><li><a href="#7-filtering-lists" onclick="mobilePageScrollToAnchor(this)" >7. Filtering Lists</a></li><li><a href="#8-appending-elements-to-a-list" onclick="mobilePageScrollToAnchor(this)" >8. Appending Elements to a List</a></li><li><a href="#9-reversing-a-list" onclick="mobilePageScrollToAnchor(this)" >9. Reversing a List</a></li><li><a href="#10-finding-the-length-of-a-list" onclick="mobilePageScrollToAnchor(this)" >10. Finding the Length of a List</a></li><li><a href="#11-inserting-an-element-at-the-beginning-of-a-list" onclick="mobilePageScrollToAnchor(this)" >11. Inserting an Element at the Beginning of a List</a></li><li><a href="#12-checking-if-a-list-is-empty" onclick="mobilePageScrollToAnchor(this)" >12. Checking if a List is Empty</a></li></ul></li><li><a href="#17-control-structure---loops" onclick="mobilePageScrollToAnchor(this)" >1.7 Control Structure - Loops</a></li><li><a href="#18-functions" onclick="mobilePageScrollToAnchor(this)" >1.8 Functions</a><ul><li><a href="#1-writing-a-simple-function" onclick="mobilePageScrollToAnchor(this)" >1. Writing a simple Function</a></li><li><a href="#2-function-name-and-arity" onclick="mobilePageScrollToAnchor(this)" >2. Function name and Arity</a><ul><li><a href="#21-function-name" onclick="mobilePageScrollToAnchor(this)" >2.1 Function Name</a></li><li><a href="#22-arity" onclick="mobilePageScrollToAnchor(this)" >2.2 Arity</a></li></ul></li><li><a href="#3-help-on-functions" onclick="mobilePageScrollToAnchor(this)" >3. Help on Functions</a><ul><li><a href="#31-steps-to-get-help-for-a-function-in-elixir" onclick="mobilePageScrollToAnchor(this)" >3.1 Steps to Get Help for a Function in Elixir:</a></li><li><a href="#32-example-in-iex" onclick="mobilePageScrollToAnchor(this)" >3.2 Example in IEx:</a></li><li><a href="#33-additional-tips" onclick="mobilePageScrollToAnchor(this)" >3.3 Additional Tips:</a></li></ul></li></ul></li><li><a href="#19-pipe-operator" onclick="mobilePageScrollToAnchor(this)" >1.9 Pipe Operator</a><ul><li><a href="#1-how-the-pipe-operator-works" onclick="mobilePageScrollToAnchor(this)" >1. How the Pipe Operator Works</a></li><li><a href="#2-simple-example" onclick="mobilePageScrollToAnchor(this)" >2. Simple Example</a></li><li><a href="#3-explanation" onclick="mobilePageScrollToAnchor(this)" >3. Explanation</a></li><li><a href="#4-additional-example" onclick="mobilePageScrollToAnchor(this)" >4. Additional Example</a></li></ul></li></ul>
+
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/1_elixir_2_extended_example/">
+                
+                <a href="/cs/lang_pl/functional/1_elixir_2_extended_example/" onclick="pageScrollToTop(this)">
+                    2. Extended Examples
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            <p class="separator-title">Scheme</p>
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_1_basics/">
+                
+                <a href="/cs/lang_pl/functional/2_scheme_1_basics/" onclick="pageScrollToTop(this)">
+                    1. Basics
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_2_syntax/">
+                
+                <a href="/cs/lang_pl/functional/2_scheme_2_syntax/" onclick="pageScrollToTop(this)">
+                    2. Syntax
+                </a>
+                
+                
+                
+            </li>
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/functional/2_scheme_3_advance/">
+                
+                <a href="/cs/lang_pl/functional/2_scheme_3_advance/" onclick="pageScrollToTop(this)">
+                    2. Advance
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>5_logical</p> -->
+            
+                <p class="collection-title">Logical Languages</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/logical/1_basics/">
+                
+                <a href="/cs/lang_pl/logical/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>6_scripting</p> -->
+            
+                <p class="collection-title">Scripting</p>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            <li class="chapter" data-level="1.1" data-path="/cs/lang_pl/scripting/1_basics/">
+                
+                <a href="/cs/lang_pl/scripting/1_basics/" onclick="pageScrollToTop(this)">
+                    1. Fundamentals
+                </a>
+                
+                
+                
+            </li>
+            
+
+            
+            <!-- <li class="divider"></li> -->
+            
+            
+            
+            <!-- <p>posts</p> -->
+            
+            
+            
+
+            
+
+            
+            
+            
+        </ul>
+    </nav>
+</div><div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >1. Elixir</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <!-- <div class="spinner-container">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+
+    <div class="page-inner">
+        <div id="book-search-results"> <!-- class="hide_element" -->            
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/functional/1_elixir_1_basics">1. Elixir</h1>
+                    
+
+                    <h1 id="11-introduction">1.1 Introduction</h1>
+
+<p>Elixir is a dynamic, functional programming language designed for building scalable and maintainable applications. It runs on the Erlang Virtual Machine (BEAM), which is known for its low-latency, distributed, and fault-tolerant systems. Elixir is widely used for web development, real-time applications, and distributed systems due to its concurrency capabilities and fault-tolerance features.</p>
+
+<h2 id="1-key-features-of-elixir">1. Key Features of Elixir:</h2>
+
+<ul>
+  <li><strong>Functional Programming</strong>: Focuses on immutability and first-class functions.</li>
+  <li><strong>Concurrency</strong>: Uses lightweight processes to handle concurrent tasks efficiently.</li>
+  <li><strong>Fault Tolerance</strong>: Built on Erlang’s “let it crash” philosophy, allowing systems to recover from failures gracefully.</li>
+  <li><strong>Metaprogramming</strong>: Supports macros, allowing code to generate code.</li>
+  <li><strong>Scalability</strong>: Designed to handle large-scale distributed applications.</li>
+</ul>
+
+<h2 id="2-pros-of-elixir">2. Pros of Elixir</h2>
+
+<p><strong>1. Concurrency and Scalability</strong>:</p>
+<ul>
+  <li>Elixir excels in handling many concurrent processes due to its lightweight process model (inherited from Erlang). This makes it ideal for real-time applications, chat systems, IoT, and any situation requiring high concurrency.</li>
+</ul>
+
+<p><strong>2. Fault Tolerance</strong>:</p>
+<ul>
+  <li>Built on the Erlang VM (BEAM), Elixir inherits a “let it crash” philosophy. The language is designed for building fault-tolerant systems that can recover automatically from failures, making it suitable for highly reliable, distributed systems.</li>
+</ul>
+
+<p><strong>3. Functional Programming</strong>:</p>
+<ul>
+  <li>Elixir’s functional nature encourages immutability and pure functions, leading to more predictable and maintainable code. This paradigm reduces side effects, making code easier to reason about, test, and debug.</li>
+</ul>
+
+<p><strong>4. Metaprogramming</strong>:</p>
+<ul>
+  <li>Elixir supports powerful metaprogramming through macros, allowing developers to write code that generates code. This can lead to more flexible and reusable codebases.</li>
+</ul>
+
+<p><strong>5. Active Community and Ecosystem</strong>:</p>
+<ul>
+  <li>Elixir has a growing community and a rich ecosystem of libraries and tools, including Phoenix (a popular web framework). The community is known for its friendliness and support.</li>
+</ul>
+
+<p><strong>6. Ease of Deployment</strong>:</p>
+<ul>
+  <li>Elixir’s deployment story is strong, especially with tools like Distillery and Mix, which make it easy to build and deploy releases across distributed systems.</li>
+</ul>
+
+<p><strong>7. Real-time Capabilities</strong>:</p>
+<ul>
+  <li>Elixir, particularly with the Phoenix framework, offers built-in support for real-time features like websockets and channels, making it a top choice for real-time applications.</li>
+</ul>
+
+<h2 id="3-cons-of-elixir">3. Cons of Elixir</h2>
+
+<p><strong>1. Learning Curve</strong>:</p>
+<ul>
+  <li>For developers coming from imperative or object-oriented backgrounds, the functional programming paradigm, as well as concepts like immutability and recursion, can take some time to master.</li>
+</ul>
+
+<p><strong>2. Performance</strong>:</p>
+<ul>
+  <li>While Elixir performs well in I/O-bound and concurrent tasks, it may not match the raw computational performance of languages like C, Rust, or even Java for CPU-bound tasks. This is due to its dynamic nature and the overhead of running on the BEAM.</li>
+</ul>
+
+<p><strong>3. Smaller Talent Pool</strong>:</p>
+<ul>
+  <li>Compared to languages like JavaScript, Python, or Java, the pool of Elixir developers is smaller. This can make it more difficult to hire Elixir developers, especially those with experience in large-scale production environments.</li>
+</ul>
+
+<p><strong>4. Tooling and Libraries</strong>:</p>
+<ul>
+  <li>Although Elixir’s ecosystem is robust and growing, it still lags behind older, more established languages in terms of the breadth and depth of available libraries and tools.</li>
+</ul>
+
+<p><strong>5. Maturity</strong>:</p>
+<ul>
+  <li>Elixir, while stable and mature in many ways, is still relatively young compared to languages like Java or Python. This can sometimes result in less mature tooling, fewer enterprise-level case studies, and a more experimental feel in certain areas.</li>
+</ul>
+
+<p><strong>6. Niche Use Cases</strong>:</p>
+<ul>
+  <li>Elixir is fantastic for concurrent, distributed, and fault-tolerant systems but may be overkill for simpler projects where such features are not needed. For basic CRUD apps or simple scripts, more straightforward languages might be a better fit.</li>
+</ul>
+
+<p><strong>7. Deployment Complexity in Certain Environments</strong>:</p>
+<ul>
+  <li>While Elixir’s deployment story is strong, deploying distributed Elixir systems can be complex, especially for teams unfamiliar with Erlang/BEAM architecture. Handling node clustering and network partitions requires a deep understanding of the underlying system.</li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="tip">TIP</h5>
+
+  <p>Elixir’s strengths lie in its ability to build scalable, fault-tolerant, and concurrent systems with ease, making it an excellent choice for web development, real-time applications, and distributed systems. However, it comes with a learning curve, a smaller talent pool, and some performance limitations for CPU-bound tasks. Teams should carefully consider these factors when deciding if Elixir is the right tool for their specific needs.</p>
+</blockquote>
+
+<h2 id="4-comparison-between-elixir-and-c">4. Comparison Between Elixir and C:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Feature</strong></th>
+      <th><strong>Elixir</strong></th>
+      <th><strong>C</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Paradigm</strong></td>
+      <td>Functional, Concurrent</td>
+      <td>Procedural, Low-level</td>
+    </tr>
+    <tr>
+      <td><strong>Memory Management</strong></td>
+      <td>Automatic (Garbage Collection)</td>
+      <td>Manual (malloc/free)</td>
+    </tr>
+    <tr>
+      <td><strong>Concurrency Model</strong></td>
+      <td>Actor model with lightweight processes</td>
+      <td>Threads, but manual handling required</td>
+    </tr>
+    <tr>
+      <td><strong>Compilation</strong></td>
+      <td>Runs on BEAM (Erlang VM), compiled to bytecode</td>
+      <td>Compiled to machine code, highly optimized</td>
+    </tr>
+    <tr>
+      <td><strong>Performance</strong></td>
+      <td>High for I/O-bound tasks, not CPU-bound</td>
+      <td>High performance, especially for CPU-bound tasks</td>
+    </tr>
+    <tr>
+      <td><strong>Fault Tolerance</strong></td>
+      <td>High (let it crash philosophy)</td>
+      <td>Limited, must be managed manually</td>
+    </tr>
+    <tr>
+      <td><strong>Use Cases</strong></td>
+      <td>Web apps, real-time systems, distributed apps</td>
+      <td>System programming, embedded systems, performance-critical applications</td>
+    </tr>
+    <tr>
+      <td><strong>Syntax</strong></td>
+      <td>Dynamic and expressive</td>
+      <td>Low-level, closer to hardware</td>
+    </tr>
+    <tr>
+      <td><strong>Type System</strong></td>
+      <td>Dynamic typing</td>
+      <td>Static typing</td>
+    </tr>
+    <tr>
+      <td><strong>Standard Library</strong></td>
+      <td>Extensive, high-level functions</td>
+      <td>Minimal, relies heavily on external libraries</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="5-key-differences">5. Key Differences:</h2>
+
+<p><strong>1. Programming Paradigm</strong>:</p>
+<ul>
+  <li><strong>Elixir</strong>: Emphasizes functional programming, where functions are first-class citizens and data is immutable.</li>
+  <li><strong>C</strong>: Procedural and imperative, focusing on explicit control flow and mutable state.</li>
+</ul>
+
+<p><strong>2. Concurrency</strong>:</p>
+<ul>
+  <li><strong>Elixir</strong>: Built-in concurrency support using the actor model, allowing easy management of millions of lightweight processes.</li>
+  <li><strong>C</strong>: Requires manual management of threads, synchronization, and shared memory, which is complex and error-prone.</li>
+</ul>
+
+<p><strong>3. Memory Management</strong>:</p>
+<ul>
+  <li><strong>Elixir</strong>: Automatic memory management with garbage collection.</li>
+  <li><strong>C</strong>: Manual memory management, giving more control but also requiring careful handling to avoid memory leaks or corruption.</li>
+</ul>
+
+<p><strong>4. Performance</strong>:</p>
+<ul>
+  <li><strong>C</strong>: Typically faster and more efficient for CPU-bound tasks due to direct compilation to machine code.</li>
+  <li><strong>Elixir</strong>: Optimized for I/O-bound and concurrent tasks, but not as fast for raw computation.</li>
+</ul>
+
+<p><strong>5. Fault Tolerance</strong>:</p>
+<ul>
+  <li><strong>Elixir</strong>: Highly resilient, designed for long-running, distributed systems that need to recover gracefully from failures.</li>
+  <li><strong>C</strong>: Fault tolerance needs to be manually implemented, and errors can lead to undefined behavior or crashes.</li>
+</ul>
+
+<p><strong>6. Development Speed</strong>:</p>
+<ul>
+  <li><strong>Elixir</strong>: Higher-level abstractions and built-in libraries result in faster development cycles for complex applications.</li>
+  <li><strong>C</strong>: Lower-level control requires more code and a deeper understanding of the system, leading to longer development times for complex tasks.</li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="tip-1">TIP</h5>
+
+  <p>Elixir is ideal for building distributed, fault-tolerant systems and web applications, leveraging concurrency and scalability. C, on the other hand, is unparalleled in scenarios demanding direct hardware control, performance optimization, or embedded system development. The choice between Elixir and C depends on the specific requirements of the application, such as performance needs, system complexity, and fault tolerance.</p>
+</blockquote>
+
+<h1 id="12-getting-started">1.2 Getting Started</h1>
+
+<p>To run Elixir on Ubuntu, follow these steps to install and get started:</p>
+
+<h2 id="1-install-elixir">1. Install Elixir</h2>
+
+<p>First, ensure your system is up-to-date:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+</code></pre></div></div>
+
+<p>install Elixir:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> elixir
+</code></pre></div></div>
+
+<h2 id="2-verify-installation">2. Verify Installation</h2>
+
+<p>After installation, check if Elixir was installed correctly:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>elixir <span class="nt">-v</span>
+</code></pre></div></div>
+
+<p>This command should display the installed version of Elixir.</p>
+
+<h2 id="3-running-elixir-code">3. Running Elixir Code</h2>
+
+<p>You can run Elixir in several ways:</p>
+
+<h3 id="31-interactive-elixir-iex">3.1 Interactive Elixir (IEx)</h3>
+
+<p>To start an interactive Elixir shell, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iex
+</code></pre></div></div>
+
+<p>In the <code class="language-plaintext highlighter-rouge">iex</code> shell, you can enter Elixir code and get immediate feedback:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="o">&gt;</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">)</span>
+<span class="no">Hello</span><span class="p">,</span> <span class="no">World</span><span class="n">!</span>
+<span class="ss">:ok</span>
+</code></pre></div></div>
+
+<h3 id="32-running-a-script">3.2 Running a Script</h3>
+
+<p>Create a file named <code class="language-plaintext highlighter-rouge">example.exs</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano example.exs
+</code></pre></div></div>
+
+<p>Add the following Elixir code:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Hello, Elixir!"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Save and exit. Then run the script with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>elixir example.exs
+</code></pre></div></div>
+
+<p>You should see:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, Elixir!
+</code></pre></div></div>
+
+<h1 id="13-data-structures-in-elixir">1.3 Data Structures in Elixir</h1>
+
+<p>In Elixir, data structures and control structures are designed to work harmoniously with its functional programming paradigm. Here’s an overview along with examples:</p>
+
+<p><strong>1. Tuples</strong>:</p>
+<ul>
+  <li>Tuples are fixed-size collections of values. They are often used to group related values.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"John"</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="ss">:male</span><span class="p">}</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">elem</span><span class="p">(</span><span class="n">person</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Outputs: 30</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>2. Lists</strong>:</p>
+<ul>
+  <li>Lists are linked lists, which means they are efficient for prepending elements but can be slow for indexing.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="s2">"cherry"</span><span class="p">]</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">hd</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span> <span class="c1"># Outputs: apple</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>3. Maps</strong>:</p>
+<ul>
+  <li>Maps are key-value stores, useful when you need to associate keys with values.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">%{</span><span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">,</span> <span class="s2">"age"</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">}</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">person</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span> <span class="c1"># Outputs: John</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>4. Keyword Lists</strong>:</p>
+<ul>
+  <li>A special list of tuples where the first element is an atom. Often used for options.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="ss">width:</span> <span class="mi">200</span><span class="p">,</span> <span class="ss">height:</span> <span class="mi">100</span><span class="p">]</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">options</span><span class="p">[</span><span class="ss">:width</span><span class="p">]</span> <span class="c1"># Outputs: 200</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>5. Structs</strong>:</p>
+<ul>
+  <li>Structs are special maps with a fixed set of keys and default values, used to create custom data types.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">Person</span> <span class="k">do</span>
+  <span class="k">defstruct</span> <span class="ss">name:</span> <span class="s2">"John"</span><span class="p">,</span> <span class="ss">age:</span> <span class="mi">30</span>
+<span class="k">end</span>
+
+<span class="n">person</span> <span class="o">=</span> <span class="p">%</span><span class="no">Person</span><span class="p">{</span><span class="ss">name:</span> <span class="s2">"Alice"</span><span class="p">}</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span> <span class="c1"># Outputs: Alice</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>6. Binaries and Strings</strong>:</p>
+<ul>
+  <li>Binaries are sequences of bytes, and strings are UTF-8 encoded binaries.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">binary</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="mi">104</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="o">&gt;&gt;</span> <span class="c1"># "hello" in binary</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">binary</span> <span class="c1"># Outputs: hello</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="14-control-structures-in-elixir">1.4 Control Structures in Elixir</h1>
+
+<p><strong>1. <code class="language-plaintext highlighter-rouge">if/else</code></strong>:</p>
+<ul>
+  <li>Conditional execution based on a boolean value.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="k">do</span>
+  <span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Adult"</span>
+<span class="k">else</span>
+  <span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Minor"</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>2. <code class="language-plaintext highlighter-rouge">unless/else</code></strong>:</p>
+<ul>
+  <li>The opposite of <code class="language-plaintext highlighter-rouge">if</code>, it executes the block if the condition is false.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">unless</span> <span class="n">is_nil</span><span class="p">(</span><span class="no">nil</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Not nil"</span>
+<span class="k">else</span>
+  <span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Is nil"</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>3. <code class="language-plaintext highlighter-rouge">case</code></strong>:</p>
+<ul>
+  <li>Pattern matching against multiple possible values.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="k">do</span>
+  <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Matched with x = </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span>
+  <span class="n">_</span> <span class="o">-&gt;</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"No match"</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>4. <code class="language-plaintext highlighter-rouge">cond</code></strong>:</p>
+<ul>
+  <li>Similar to <code class="language-plaintext highlighter-rouge">if/else</code>, but evaluates multiple conditions.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">cond</span> <span class="k">do</span>
+  <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">5</span> <span class="o">-&gt;</span> <span class="s2">"Math is wrong"</span>
+  <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">-&gt;</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Math is correct"</span>
+  <span class="no">true</span> <span class="o">-&gt;</span> <span class="s2">"Default"</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>5. <code class="language-plaintext highlighter-rouge">with</code></strong>:</p>
+<ul>
+  <li>Used to chain pattern matches that depend on each other, often for more readable code.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">with</span> <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">data</span><span class="p">}</span> <span class="o">&lt;-</span> <span class="n">fetch_data</span><span class="p">(),</span>
+     <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">processed</span><span class="p">}</span> <span class="o">&lt;-</span> <span class="n">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Success"</span>
+<span class="k">else</span>
+  <span class="n">_</span> <span class="o">-&gt;</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Failure"</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="tip-2">TIP</h5>
+
+  <ul>
+    <li><strong>Data Structures</strong>: Tuples, Lists, Maps, Keyword Lists, Structs, Binaries/Strings.</li>
+    <li><strong>Control Structures</strong>: <code class="language-plaintext highlighter-rouge">if/else</code>, <code class="language-plaintext highlighter-rouge">unless/else</code>, <code class="language-plaintext highlighter-rouge">case</code>, <code class="language-plaintext highlighter-rouge">cond</code>, <code class="language-plaintext highlighter-rouge">with</code>.</li>
+  </ul>
+
+  <p>Elixir’s data structures are designed for immutability, and its control structures are pattern matching-centric, enabling concise and powerful ways to handle logic.</p>
+</blockquote>
+
+<h1 id="15-data-structure---tuple">1.5 Data Structure - Tuple</h1>
+
+<p>Tuples in Elixir are versatile data structures that can store a fixed number of elements. Here are some additional examples to illustrate their usage:</p>
+
+<h2 id="1-basic-tuple">1. Basic Tuple</h2>
+<ul>
+  <li>A tuple can hold different data types, such as integers, strings, atoms, or other tuples.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">coordinates</span> <span class="o">=</span> <span class="p">{</span><span class="mf">40.7128</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">}</span> <span class="c1"># Tuple representing latitude and longitude</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">elem</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Outputs: 40.7128</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">elem</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Outputs: -74.0060</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="2-pattern-matching-with-tuples">2. Pattern Matching with Tuples</h2>
+<ul>
+  <li>You can use pattern matching to destructure tuples and extract their values.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">}</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">}</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">x</span> <span class="c1"># Outputs: 10</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">y</span> <span class="c1"># Outputs: 20</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="3-returning-multiple-values-from-a-function">3. Returning Multiple Values from a Function</h2>
+<ul>
+  <li>Tuples are often used to return multiple values from a function.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">Math</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">add_and_subtract</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">do</span>
+    <span class="p">{</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="p">{</span><span class="n">sum</span><span class="p">,</span> <span class="n">difference</span><span class="p">}</span> <span class="o">=</span> <span class="no">Math</span><span class="o">.</span><span class="n">add_and_subtract</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">sum</span>        <span class="c1"># Outputs: 14</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">difference</span> <span class="c1"># Outputs: 6</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="4-tagged-tuples">4. Tagged Tuples</h2>
+<ul>
+  <li>A common pattern in Elixir is using a tuple where the first element is an atom that “tags” the data (often used for success/error handling).</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">result</span><span class="p">}</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="mi">42</span><span class="p">}</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">result</span> <span class="c1"># Outputs: 42</span>
+
+<span class="p">{</span><span class="ss">:error</span><span class="p">,</span> <span class="n">message</span><span class="p">}</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:error</span><span class="p">,</span> <span class="s2">"Something went wrong"</span><span class="p">}</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">message</span> <span class="c1"># Outputs: Something went wrong</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="5-storing-related-data">5. Storing Related Data</h2>
+<ul>
+  <li>Tuples can store related data together, like a mini-record.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"John"</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="ss">:developer</span><span class="p">}</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Name: </span><span class="si">#{</span><span class="n">elem</span><span class="p">(</span><span class="n">person</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Age: </span><span class="si">#{</span><span class="n">elem</span><span class="p">(</span><span class="n">person</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="s2">"Occupation: </span><span class="si">#{</span><span class="n">elem</span><span class="p">(</span><span class="n">person</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="6-nested-tuples">6. Nested Tuples</h2>
+<ul>
+  <li>Tuples can contain other tuples, which is useful for organizing complex data.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nested_tuple</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span> <span class="p">}</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span> <span class="n">elem</span><span class="p">(</span><span class="n">nested_tuple</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Outputs: {3, 4}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="7-updating-tuples">7. Updating Tuples</h2>
+<ul>
+  <li>Tuples are immutable, so to “update” a tuple, you create a new one with the desired changes.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tuple</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">new_tuple</span> <span class="o">=</span> <span class="n">put_elem</span><span class="p">(</span><span class="n">tuple</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span> <span class="n">new_tuple</span> <span class="c1"># Outputs: {1, 42, 3}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="8-tuple-size">8. Tuple Size</h2>
+<ul>
+  <li>You can check the size of a tuple using <code class="language-plaintext highlighter-rouge">tuple_size/1</code>.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tuple</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:apple</span><span class="p">,</span> <span class="ss">:banana</span><span class="p">,</span> <span class="ss">:cherry</span><span class="p">}</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">tuple_size</span><span class="p">(</span><span class="n">tuple</span><span class="p">)</span> <span class="c1"># Outputs: 3</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="tip-3">TIP</h5>
+
+  <p>Tuples are versatile in Elixir, useful for pattern matching, returning multiple values, and organizing related data. They are immutable and can hold elements of any data type, including other tuples.</p>
+</blockquote>
+
+<h1 id="16-data-structure---list">1.6 Data Structure - List</h1>
+
+<p>Lists in Elixir are fundamental data structures that are commonly used for storing collections of elements. Here are some examples to showcase how you can work with lists:</p>
+
+<h2 id="1-creating-and-accessing-lists">1. Creating and Accessing Lists</h2>
+<ul>
+  <li>Lists are defined using square brackets, and elements can be accessed using the <code class="language-plaintext highlighter-rouge">hd/1</code> (head) and <code class="language-plaintext highlighter-rouge">tl/1</code> (tail) functions.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="s2">"cherry"</span><span class="p">]</span>
+     
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">hd</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span> <span class="c1"># Outputs: apple (head of the list)</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span> <span class="n">tl</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span> <span class="c1"># Outputs: ["banana", "cherry"] (tail of the list)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="2-concatenating-lists">2. Concatenating Lists</h2>
+<ul>
+  <li>You can concatenate lists using the <code class="language-plaintext highlighter-rouge">++/2</code> operator.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+     
+<span class="n">combined</span> <span class="o">=</span> <span class="n">list1</span> <span class="o">++</span> <span class="n">list2</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span> <span class="n">combined</span> <span class="c1"># Outputs: [1, 2, 3, 4, 5, 6]</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="3-subtracting-lists">3. Subtracting Lists</h2>
+<ul>
+  <li>Use the <code class="language-plaintext highlighter-rouge">--/2</code> operator to remove elements from a list.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">filtered</span> <span class="o">=</span> <span class="n">numbers</span> <span class="o">--</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+     
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span> <span class="n">filtered</span> <span class="c1"># Outputs: [1, 3, 5]</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="4-pattern-matching-with-lists">4. Pattern Matching with Lists</h2>
+<ul>
+  <li>You can destructure lists using pattern matching.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">head</span> <span class="o">|</span> <span class="n">tail</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+     
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">head</span>    <span class="c1"># Outputs: 10</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span> <span class="n">tail</span> <span class="c1"># Outputs: [20, 30, 40]</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="5-recursively-processing-lists">5. Recursively Processing Lists</h2>
+<ul>
+  <li>Lists are commonly processed recursively in Elixir.</li>
+  <li>Example: Summing all elements in a list.
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">Math</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">sum</span><span class="p">([]),</span> <span class="k">do</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="k">def</span> <span class="n">sum</span><span class="p">([</span><span class="n">head</span> <span class="o">|</span> <span class="n">tail</span><span class="p">]),</span> <span class="k">do</span><span class="p">:</span> <span class="n">head</span> <span class="o">+</span> <span class="n">sum</span><span class="p">(</span><span class="n">tail</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="no">Math</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="c1"># Outputs: 10</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="6-list-comprehensions">6. List Comprehensions</h2>
+<ul>
+  <li>List comprehensions provide a concise way to generate lists or perform operations on lists.</li>
+  <li>Example: Doubling each element in a list.
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">doubled</span> <span class="o">=</span> <span class="n">for</span> <span class="n">n</span> <span class="o">&lt;-</span> <span class="n">numbers</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span>
+     
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span> <span class="n">doubled</span> <span class="c1"># Outputs: [2, 4, 6, 8]</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="7-filtering-lists">7. Filtering Lists</h2>
+<ul>
+  <li>You can filter lists based on a condition using list comprehensions.</li>
+  <li>Example: Filtering even numbers.
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">evens</span> <span class="o">=</span> <span class="n">for</span> <span class="n">n</span> <span class="o">&lt;-</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">rem</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="n">n</span>
+     
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span> <span class="n">evens</span> <span class="c1"># Outputs: [2, 4, 6]</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="8-appending-elements-to-a-list">8. Appending Elements to a List</h2>
+<ul>
+  <li>Since lists are linked lists, appending elements to the end requires creating a new list.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="n">list</span> <span class="o">++</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+     
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span> <span class="n">new_list</span> <span class="c1"># Outputs: [1, 2, 3, 4]</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="9-reversing-a-list">9. Reversing a List</h2>
+<ul>
+  <li>You can reverse a list using the <code class="language-plaintext highlighter-rouge">Enum.reverse/1</code> function.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">reversed</span> <span class="o">=</span> <span class="no">Enum</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">list</span><span class="p">)</span>
+     
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span> <span class="n">reversed</span> <span class="c1"># Outputs: [3, 2, 1]</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="10-finding-the-length-of-a-list">10. Finding the Length of a List</h2>
+<ul>
+  <li>Use the <code class="language-plaintext highlighter-rouge">length/1</code> function to determine the number of elements in a list.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="s2">"cherry"</span><span class="p">]</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">length</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="c1"># Outputs: 3</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="11-inserting-an-element-at-the-beginning-of-a-list">11. Inserting an Element at the Beginning of a List</h2>
+<ul>
+  <li>Prepending an element to a list is efficient and straightforward using the <code class="language-plaintext highlighter-rouge">|</code> operator.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">|</span> <span class="n">list</span><span class="p">]</span>
+     
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span> <span class="n">new_list</span> <span class="c1"># Outputs: [1, 2, 3, 4]</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="12-checking-if-a-list-is-empty">12. Checking if a List is Empty</h2>
+<ul>
+  <li>You can check if a list is empty by pattern matching or using the <code class="language-plaintext highlighter-rouge">==</code> operator.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+     
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">length</span><span class="p">(</span><span class="n">empty_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="c1"># Outputs: true</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span> <span class="n">empty_list</span> <span class="o">==</span> <span class="p">[]</span>        <span class="c1"># Outputs: true</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="tip-4">TIP</h5>
+
+  <p>Elixir lists are versatile and are well-suited for functional programming, offering features such as efficient prepending, pattern matching, and recursion. They are fundamental to many Elixir programs, and understanding how to manipulate lists is key to writing effective Elixir code.</p>
+</blockquote>
+
+<h1 id="17-control-structure---loops">1.7 Control Structure - Loops</h1>
+
+<p>Elixir uses recursion or higher-order functions like <code class="language-plaintext highlighter-rouge">Enum</code> and <code class="language-plaintext highlighter-rouge">Stream</code> instead of traditional loops. Here’s an example using <code class="language-plaintext highlighter-rouge">Enum.each</code> to loop through a list:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Enum</span><span class="o">.</span><span class="n">each</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="k">fn</span> <span class="n">x</span> <span class="o">-&gt;</span>
+  <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Number: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">end</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This code loops through the list <code class="language-plaintext highlighter-rouge">[1, 2, 3, 4, 5]</code> and prints each number.</p>
+
+<p>You can also use recursion:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">LoopExample</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">print_numbers</span><span class="p">([]),</span> <span class="k">do</span><span class="p">:</span> <span class="ss">:ok</span>
+
+  <span class="k">def</span> <span class="n">print_numbers</span><span class="p">([</span><span class="n">head</span> <span class="o">|</span> <span class="n">tail</span><span class="p">])</span> <span class="k">do</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Number: </span><span class="si">#{</span><span class="n">head</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">print_numbers</span><span class="p">(</span><span class="n">tail</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">LoopExample</span><span class="o">.</span><span class="n">print_numbers</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>This recursive function achieves the same result.</p>
+
+<h1 id="18-functions">1.8 Functions</h1>
+
+<h2 id="1-writing-a-simple-function">1. Writing a simple Function</h2>
+
+<p>In Elixir, functions can be defined inside a module. Here’s a basic example of how to write a function:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">MyModule</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">greet</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">do</span>
+    <span class="s2">"Hello, </span><span class="si">#{</span><span class="n">name</span><span class="si">}</span><span class="s2">!"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">defmodule MyModule do</code>: Defines a module named <code class="language-plaintext highlighter-rouge">MyModule</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">def greet(name) do</code>: Defines a function <code class="language-plaintext highlighter-rouge">greet</code> that takes one argument, <code class="language-plaintext highlighter-rouge">name</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">"Hello, #{name}!"</code>: Returns a greeting string.</li>
+  <li><code class="language-plaintext highlighter-rouge">end</code>: Closes the function and module.</li>
+</ul>
+
+<p>You can call the function like this:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">MyModule</span><span class="o">.</span><span class="n">greet</span><span class="p">(</span><span class="s2">"Alice"</span><span class="p">)</span> <span class="c1"># Returns "Hello, Alice!"</span>
+</code></pre></div></div>
+
+<p>Elixir functions can also be written in a one-liner if they are simple:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">MyModule</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">greet</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="s2">"Hello, </span><span class="si">#{</span><span class="n">name</span><span class="si">}</span><span class="s2">!"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h4 id="function-that-returns-no-value">Function that returns no value</h4>
+
+<p>In Elixir, a function that returns no meaningful value usually returns the atom <code class="language-plaintext highlighter-rouge">:ok</code> or <code class="language-plaintext highlighter-rouge">:nil</code>. Here’s an example:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">MyModule</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">log_message</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">"Logging: </span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="ss">:ok</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">log_message/1</code> prints a message to the console using <code class="language-plaintext highlighter-rouge">IO.puts/1</code> and then returns <code class="language-plaintext highlighter-rouge">:ok</code>.</li>
+  <li>The function doesn’t return a value that’s meant to be used elsewhere, so <code class="language-plaintext highlighter-rouge">:ok</code> is used to signify successful completion.</li>
+</ul>
+
+<p>You can call this function like so:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">MyModule</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="s2">"Engine started"</span><span class="p">)</span> <span class="c1"># Outputs "Logging: Engine started" and returns :ok</span>
+</code></pre></div></div>
+
+<h2 id="2-function-name-and-arity">2. Function name and Arity</h2>
+
+<p>In Elixir (and other functional programming languages), the terms <strong>arity</strong> and <strong>function name</strong> are essential concepts for understanding how functions work.</p>
+
+<h3 id="21-function-name">2.1 Function Name</h3>
+<ul>
+  <li>The <strong>function name</strong> is simply the identifier you give to a function. It is what you use to call the function in your code.</li>
+  <li>Example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">defmodule</span> <span class="no">Math</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+    <ul>
+      <li>In this example, <code class="language-plaintext highlighter-rouge">add</code> is the function name.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="22-arity">2.2 Arity</h3>
+<ul>
+  <li><strong>Arity</strong> refers to the number of arguments a function takes. It is an integral part of how functions are identified in Elixir.</li>
+  <li>Functions with the same name but different arities are treated as different functions.</li>
+  <li>In Elixir, the arity is often explicitly mentioned alongside the function name, such as <code class="language-plaintext highlighter-rouge">add/2</code>, where <code class="language-plaintext highlighter-rouge">2</code> indicates that the function takes two arguments.</li>
+</ul>
+
+<h4 id="examples">Examples:</h4>
+
+<p><strong>1. Single Arity Function:</strong></p>
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">defmodule</span> <span class="no">Greeter</span> <span class="k">do</span>
+     <span class="k">def</span> <span class="n">hello</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">do</span>
+       <span class="s2">"Hello, "</span> <span class="o">&lt;&gt;</span> <span class="n">name</span>
+     <span class="k">end</span>
+   <span class="k">end</span>
+</code></pre></div></div>
+<ul>
+  <li>The function <code class="language-plaintext highlighter-rouge">hello/1</code> has an arity of 1 because it takes one argument.</li>
+</ul>
+
+<p><strong>2. Multiple Functions with Different Arities:</strong></p>
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">defmodule</span> <span class="no">Math</span> <span class="k">do</span>
+     <span class="k">def</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">do</span>
+       <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+     <span class="k">end</span>
+
+     <span class="k">def</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">do</span>
+       <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+     <span class="k">end</span>
+   <span class="k">end</span>
+</code></pre></div></div>
+<ul>
+  <li>Here, <code class="language-plaintext highlighter-rouge">add/2</code> and <code class="language-plaintext highlighter-rouge">add/3</code> are two different functions with different arities. The first takes two arguments, and the second takes three.</li>
+</ul>
+
+<h4 id="why-is-arity-important"><strong>Why is Arity Important?</strong></h4>
+
+<ul>
+  <li>
+    <p><strong>Function Identification</strong>: In Elixir, functions are uniquely identified by both their name and their arity. This allows you to define multiple functions with the same name but different numbers of arguments.</p>
+  </li>
+  <li>
+    <p><strong>Pattern Matching</strong>: Arity is essential when using pattern matching. Functions with different arities can have different behavior based on the number of arguments provided.</p>
+  </li>
+</ul>
+
+<blockquote class="block-tip">
+  <h5 id="tip-5">TIP</h5>
+
+  <ul>
+    <li><strong>Function name</strong> is the identifier used to call a function.</li>
+    <li><strong>Arity</strong> refers to the number of arguments a function takes.</li>
+    <li>In Elixir, functions are uniquely identified by their name and arity, such as <code class="language-plaintext highlighter-rouge">add/2</code> or <code class="language-plaintext highlighter-rouge">add/3</code>.</li>
+  </ul>
+</blockquote>
+
+<h2 id="3-help-on-functions">3. Help on Functions</h2>
+
+<p>In Elixir, you can get help or documentation for a function using the <code class="language-plaintext highlighter-rouge">h</code> helper in an interactive Elixir shell (IEx). The <code class="language-plaintext highlighter-rouge">h</code> command provides detailed information about the function, including its purpose, arguments, and examples.</p>
+
+<h3 id="31-steps-to-get-help-for-a-function-in-elixir">3.1 Steps to Get Help for a Function in Elixir:</h3>
+
+<p><strong>1. Start IEx</strong>:</p>
+<ul>
+  <li>Open your terminal and start the interactive Elixir shell by typing:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iex
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>2. Use the <code class="language-plaintext highlighter-rouge">h</code> Helper</strong>:</p>
+<ul>
+  <li>To get help for a specific function, use the <code class="language-plaintext highlighter-rouge">h</code> helper followed by the module name and the function name, along with its arity. For example:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">h</span> <span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="o">/</span><span class="mi">2</span>
+</code></pre></div>    </div>
+  </li>
+  <li>This command will display the documentation for the <code class="language-plaintext highlighter-rouge">Enum.map/2</code> function.</li>
+</ul>
+
+<h3 id="32-example-in-iex">3.2 Example in IEx:</h3>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="o">&gt;</span> <span class="n">h</span> <span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="o">/</span><span class="mi">2</span>
+
+                                  <span class="k">def</span> <span class="n">map</span><span class="p">(</span><span class="n">enumerable</span><span class="p">,</span> <span class="n">fun</span><span class="p">)</span>
+
+  <span class="no">Returns</span> <span class="n">a</span> <span class="n">new</span> <span class="n">enumerable</span> <span class="n">where</span> <span class="n">each</span> <span class="n">item</span> <span class="n">is</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">invoking</span> <span class="err">`</span><span class="n">fun</span><span class="err">`</span> <span class="n">on</span> <span class="n">each</span>
+  <span class="n">corresponding</span> <span class="n">item</span> <span class="n">of</span> <span class="err">`</span><span class="n">enumerable</span><span class="err">`</span><span class="o">.</span>
+
+  <span class="c1">## Examples</span>
+
+      <span class="n">iex</span><span class="o">&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="k">fn</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">end</span><span class="p">)</span>
+      <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="33-additional-tips">3.3 Additional Tips:</h3>
+<ul>
+  <li>If you need help with all the functions in a module, you can type <code class="language-plaintext highlighter-rouge">h ModuleName</code>:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">h</span> <span class="no">Enum</span>
+</code></pre></div>    </div>
+  </li>
+  <li>To get help on Elixir’s operators or other special constructs, you can use <code class="language-plaintext highlighter-rouge">h</code> with the operator:
+    <div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">h</span> <span class="no">Kernel</span><span class="o">.+/</span><span class="mi">2</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="19-pipe-operator">1.9 Pipe Operator</h1>
+
+<p>The <code class="language-plaintext highlighter-rouge">|&gt;</code> operator in Elixir is known as the <strong>pipe operator</strong>. It is used to pass the result of one function as the first argument to the next function in a chain, creating a more readable and concise flow of data through multiple functions.</p>
+
+<h2 id="1-how-the-pipe-operator-works">1. How the Pipe Operator Works</h2>
+<ul>
+  <li>The expression on the left side of the <code class="language-plaintext highlighter-rouge">|&gt;</code> operator is passed as the first argument to the function on the right side.</li>
+  <li>This allows for a clean and natural flow, especially when chaining multiple function calls.</li>
+</ul>
+
+<h2 id="2-simple-example">2. Simple Example</h2>
+<p>Here’s a basic example using the pipe operator to manipulate a list:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Without the pipe operator</span>
+<span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">final_result</span> <span class="o">=</span> <span class="no">Enum</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="k">fn</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="k">end</span><span class="p">)</span>
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">final_result</span><span class="p">)</span> <span class="c1"># Outputs: [6, 8]</span>
+
+<span class="c1"># Using the pipe operator</span>
+<span class="n">final_result</span> <span class="o">=</span> 
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+  <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">fn</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">end</span><span class="p">)</span>
+  <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">fn</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="k">end</span><span class="p">)</span>
+
+<span class="no">IO</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">final_result</span><span class="p">)</span> <span class="c1"># Outputs: [6, 8]</span>
+</code></pre></div></div>
+
+<h2 id="3-explanation">3. Explanation</h2>
+<ul>
+  <li><strong>Without the pipe operator</strong>: The result of each function must be stored in a variable before passing it to the next function, which can lead to nested or repetitive code.</li>
+  <li><strong>With the pipe operator</strong>: The flow is more readable and intuitive. The list <code class="language-plaintext highlighter-rouge">[1, 2, 3, 4]</code> is passed through the <code class="language-plaintext highlighter-rouge">Enum.map/2</code> function, and its result is automatically passed to <code class="language-plaintext highlighter-rouge">Enum.filter/2</code>.</li>
+</ul>
+
+<h2 id="4-additional-example">4. Additional Example</h2>
+<p>Using the pipe operator to transform a string:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span>
+  <span class="s2">"elixir is awesome"</span>
+  <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">upcase</span><span class="p">()</span>
+  <span class="o">|&gt;</span> <span class="no">String</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span>
+  <span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">"-"</span><span class="p">)</span>
+
+<span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1"># Outputs: ELIXIR-IS-AWESOME</span>
+</code></pre></div></div>
+
+<blockquote class="block-tip">
+  <h5 id="tip-6">TIP</h5>
+
+  <p>The <code class="language-plaintext highlighter-rouge">|&gt;</code> operator in Elixir simplifies chaining function calls by passing the result of one function as the first argument to the next. It improves code readability and reduces the need for intermediate variables.</p>
+</blockquote>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- introduce js_includes_ex support -->
+
+<script>
+
+    // Libraries to add dynamic tags below using .html files
+    
+    
+    window.sciptsLib = new Map();
+    window.cssLib = new Map();
+    window.scipts = new Map();
+    window.links = new Map();
+    var jsIdIdx = 0;
+    var cssIdIdx = 0;
+    
+    window.sciptsLib.set('bootstrap', [
+        {uri: '//cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js'},
+        {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'}
+    ]);
+    window.cssLib.set('bootstrap', {uri: '//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'});
+    
+    window.sciptsLib.set('prism', {uri: '/cs/lang_pl/assets/libs/prism/prism.js', defer: false});
+    window.cssLib.set('prism', {uri: '/cs/lang_pl/assets/libs/prism/prism.css', defer: false});
+
+    //window.sciptsLib.set('xmind', {uri: '/cs/lang_pl/assets/xmind/umd/xmind-embed-viewer.js', defer: false});
+    
+    // animate is included in head.html to support logo animation in navbar
+    // window.cssLib.set('animate', {uri: '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'});
+    
+    // Add the script tags before the following element
+    var getbookStyleElement = document.getElementById("gitbook_style")
+
+    // Adding script tags to externally link js
+        keyName = `prism_js`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from sciptsLib
+            jsLinks = window.sciptsLib.get( 'prism');
+
+            if (jsLinks instanceof Array) {
+            
+                let scriptTags = []            
+                
+                for (i in jsLinks) {
+                    scriptTag = document.createElement("script")
+                    scriptTag.src = jsLinks[i]['uri'];                    
+                    scriptTag.defer = ('defer' in jsLinks[i]) ? jsLinks[i]['defer'] : true;
+                    scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                    document.head.insertBefore(scriptTag, getbookStyleElement)
+                    
+                    scriptTags.push(scriptTag);
+                    console.log(scriptTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, scriptTags)
+            
+            } else if (window.sciptsLib.has( 'prism')) {
+
+                scriptTag = document.createElement("script");
+                // console.log("sadasd", prism, jsLinks);
+                scriptTag.src = jsLinks['uri'];
+                scriptTag.defer = ('defer' in jsLinks) ? jsLinks['defer'] : true;
+                scriptTag.id =  `prism_js_${jsIdIdx++}`;
+                document.head.insertBefore(scriptTag, getbookStyleElement)
+                console.log(scriptTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, scriptTag);
+            }
+        }
+
+
+        // Adding link tags to externally link css
+        keyName = `prism_css`
+
+        if (!window.scipts.get(keyName)) {
+
+            // Get the links from cssLib
+            cssLinks = window.cssLib.get( 'prism');            
+            
+            if (cssLinks instanceof Array) {
+            
+                let cssLinkTags = []            
+                
+                for (i in cssLinks) {
+                    cssLinkTag = document.createElement("script")
+                    cssLinkTag.href = cssLinks[i]['uri'];
+                    cssLinkTag.defer = ('defer' in cssLinks[i]) ? cssLinks[i]['defer'] : true;
+                    cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                    cssLinkTag.rel = 'stylesheet';
+                    document.head.insertBefore(cssLinkTag, getbookStyleElement)
+                    
+                    cssLinkTags.push(cssLinkTag);
+                    console.log(cssLinkTag)
+                }
+
+                // Add script tags to window.scripts map object
+                window.scipts.set(keyName, cssLinkTags)
+            
+            } else if (window.cssLib.has( 'prism')) {
+
+                cssLinkTag = document.createElement("link")
+                cssLinkTag.href = cssLinks['uri'];
+                cssLinkTag.defer = ('defer' in cssLinks) ? cssLinks['defer'] : true;
+                cssLinkTag.id =  `prism_css_${cssIdIdx++}`;
+                cssLinkTag.rel = 'stylesheet';
+                document.head.insertBefore(cssLinkTag, getbookStyleElement)
+
+                console.log(cssLinkTag)
+
+                // Add script tag to window.scripts map object
+                window.scipts.set(keyName, cssLinkTag);
+            }
+        }    
+        
+    
+
+</script>
+
+
+
+
+
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+                        <a href="/cs/lang_pl/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Wiki | Programming Languages Evolution"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/cs/lang_pl/functional/1_elixir_2_extended_example/" class="navigation navigation-next navigation-unique" aria-label="Next page: 2. Extended Examples"> <!-- class="hide_element" -->
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                    <div class="copyright"><span>&copy; 2024 Intelligent Mind Labs, Inc. All rights reserved.</span>.</div>
+                </div>
+            </div>
+
+            <script>
+                // div "book" element's content is the only content refreshed when nav link is pressed.
+                // This functionality is implemented in "gitbook.js" and "theme.js"
+                // head.html and footer.html will not be called again and again when a new nav link is clicked
+                // Gitbook js is optimized to dynamically change content inside div "book" element.
+                // Due to this: script put in the footer will only be called once,
+                // which is the very first time the page is loaded by entering
+                // the web address in the address bar in the browser
+                // 
+                $ = jQuery;
+                $(function() {
+                    // spinnerHide();
+                    // setTimeout(spinnerHide, 200);
+           
+                    $('.childBtn').on('click', function(event) {
+                        event.stopImmediatePropagation(); // To prevent following the link (optional)
+                        window.location = $(this).attr('link');
+                    });
+
+                    $('.parentBtn').on('click', function(event) {
+                        window.location = $(this).attr('link');
+                    });
+                });
+            </script>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "2. Extended Examples",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_4_functional/1_elixir_2_extended_example.md",
+            "ref": "_4_functional/1_elixir_2_extended_example.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Intelligent Mind Labs",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Wiki | Programming Languages Evolution",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_4_functional/1_elixir_1_basics.md",
+        "mtime": "2019-04-27 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-08-29 10:51:24 +0800"
+    },
+    "basePath": "/cs/lang_pl",
+    "book": {
+        "language": ""
+    }
+});
+            });
+
+            </script>
+        </div><script src="/cs/lang_pl/assets/gitbook/gitbook.js"></script>
+<script src="/cs/lang_pl/assets/gitbook/theme.js"></script>
+
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js" async=""></script>
+<!-- <script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script> -->
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" defer=""></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-search-pro/search.js" defer=""></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-sharing/buttons.js" defer=""></script>
+<script src="/cs/lang_pl/assets/gitbook/gitbook-plugin-splitter/splitter.js" defer=""></script>
+
+
+
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+
+
+<script>
+function spinnerHide() {
+    $(".spinner-container").removeClass("show_element");
+    $(".spinner-container").addClass("hide_element");
+    $(".spinner-container").addClass("display_none");
+    
+
+    $("#book-search-results").removeClass("hide_element");
+    $("#book-search-results").addClass("show_element");
+
+    $(".navigation.navigation-next").removeClass("hide_element");
+    $(".navigation.navigation-next").addClass("show_element");
+
+    $(".navigation.navigation-prev").removeClass("hide_element");
+    $(".navigation.navigation-prev").addClass("show_element");
+}        
+</script><!-- trackers --><!-- google analytics --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script>
+</body>
+</html>
