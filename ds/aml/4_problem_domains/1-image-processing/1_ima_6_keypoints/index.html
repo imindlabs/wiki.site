@@ -1,0 +1,847 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-has-toc data-has-sidebar data-theme="dark" class="astro-tnkgpltv"> <head><!-- Google tag (gtag.js) --><script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-V3WBTFTQWG"></script> <script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3WBTFTQWG');
+</script> <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>1.7 Keypoint Detectors | Advance Machine Learning</title><link rel="canonical"/><link rel="shortcut icon" href="/ds/aml/fav.png" type="image/png"/><meta name="generator" content="Astro v4.15.3"/><meta name="generator" content="Starlight v0.26.3"/><meta property="og:title" content="1.7 Keypoint Detectors"/><meta property="og:type" content="article"/><meta property="og:url"/><meta property="og:locale" content="en"/><meta property="og:description" content="Fundamentals of Advance Machine Learning."/><meta property="og:site_name" content="Advance Machine Learning"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="Fundamentals of Advance Machine Learning."/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg> <svg aria-hidden="true" class="dark astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg> <svg aria-hidden="true" class="auto astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> </template><link rel="stylesheet" href="/ds/aml/_astro/index.B7uW-lu5.css">
+<style>:root{--sl-badge-default-border: var(--sl-color-accent);--sl-badge-default-bg: var(--sl-color-accent-low);--sl-badge-default-text: #fff;--sl-badge-note-border: var(--sl-color-blue);--sl-badge-note-bg: var(--sl-color-blue-low);--sl-badge-note-text: #fff;--sl-badge-danger-border: var(--sl-color-red);--sl-badge-danger-bg: var(--sl-color-red-low);--sl-badge-danger-text: #fff;--sl-badge-success-border: var(--sl-color-green);--sl-badge-success-bg: var(--sl-color-green-low);--sl-badge-success-text: #fff;--sl-badge-caution-border: var(--sl-color-orange);--sl-badge-caution-bg: var(--sl-color-orange-low);--sl-badge-caution-text: #fff;--sl-badge-tip-border: var(--sl-color-purple);--sl-badge-tip-bg: var(--sl-color-purple-low);--sl-badge-tip-text: #fff}[data-theme=light]:root{--sl-badge-default-bg: var(--sl-color-accent-high);--sl-badge-note-bg: var(--sl-color-blue-high);--sl-badge-danger-bg: var(--sl-color-red-high);--sl-badge-success-bg: var(--sl-color-green-high);--sl-badge-caution-bg: var(--sl-color-orange-high);--sl-badge-tip-bg: var(--sl-color-purple-high)}.sl-badge:where(.astro-5lqpf2io){display:inline-block;border:1px solid var(--sl-color-border-badge);border-radius:.25rem;font-family:var(--sl-font-system-mono);line-height:normal;color:var(--sl-color-text-badge);background-color:var(--sl-color-bg-badge);overflow-wrap:anywhere}.sidebar-content .sl-badge:where(.astro-5lqpf2io){line-height:1;font-size:var(--sl-text-xs);padding:.125rem .375rem}.sidebar-content a[aria-current=page]>.sl-badge:where(.astro-5lqpf2io){--sl-color-bg-badge: transparent;--sl-color-border-badge: currentColor;color:inherit}.default:where(.astro-5lqpf2io){--sl-color-bg-badge: var(--sl-badge-default-bg);--sl-color-border-badge: var(--sl-badge-default-border);--sl-color-text-badge: var(--sl-badge-default-text)}.note:where(.astro-5lqpf2io){--sl-color-bg-badge: var(--sl-badge-note-bg);--sl-color-border-badge: var(--sl-badge-note-border);--sl-color-text-badge: var(--sl-badge-note-text)}.danger:where(.astro-5lqpf2io){--sl-color-bg-badge: var(--sl-badge-danger-bg);--sl-color-border-badge: var(--sl-badge-danger-border);--sl-color-text-badge: var(--sl-badge-danger-text)}.success:where(.astro-5lqpf2io){--sl-color-bg-badge: var(--sl-badge-success-bg);--sl-color-border-badge: var(--sl-badge-success-border);--sl-color-text-badge: var(--sl-badge-success-text)}.tip:where(.astro-5lqpf2io){--sl-color-bg-badge: var(--sl-badge-tip-bg);--sl-color-border-badge: var(--sl-badge-tip-border);--sl-color-text-badge: var(--sl-badge-tip-text)}.caution:where(.astro-5lqpf2io){--sl-color-bg-badge: var(--sl-badge-caution-bg);--sl-color-border-badge: var(--sl-badge-caution-border);--sl-color-text-badge: var(--sl-badge-caution-text)}.small:where(.astro-5lqpf2io){font-size:var(--sl-text-xs);padding:.125rem .25rem}.medium:where(.astro-5lqpf2io){font-size:var(--sl-text-sm);padding:.175rem .35rem}.large:where(.astro-5lqpf2io){font-size:var(--sl-text-base);padding:.225rem .45rem}.sl-markdown-content :is(h1,h2,h3,h4,h5,h6) .sl-badge:where(.astro-5lqpf2io){vertical-align:middle}
+svg:where(.astro-l4bgpgeq){color:var(--sl-icon-color);font-size:var(--sl-icon-size, 1em);width:1em;height:1em}
+.sl-steps{--bullet-size: calc(var(--sl-line-height) * 1rem);--bullet-margin: .375rem;list-style:none;counter-reset:steps-counter var(--sl-steps-start, 0);padding-inline-start:0}.sl-steps>li{counter-increment:steps-counter;position:relative;padding-inline-start:calc(var(--bullet-size) + 1rem);padding-bottom:1px;min-height:calc(var(--bullet-size) + var(--bullet-margin))}.sl-steps>li+li{margin-top:0}.sl-steps>li:before{content:counter(steps-counter);position:absolute;top:0;inset-inline-start:0;width:var(--bullet-size);height:var(--bullet-size);line-height:var(--bullet-size);font-size:var(--sl-text-xs);font-weight:600;text-align:center;color:var(--sl-color-white);background-color:var(--sl-color-gray-6);border-radius:99rem;box-shadow:inset 0 0 0 1px var(--sl-color-gray-5)}.sl-steps>li:after{--guide-width: 1px;content:"";position:absolute;top:calc(var(--bullet-size) + var(--bullet-margin));bottom:var(--bullet-margin);inset-inline-start:calc((var(--bullet-size) - var(--guide-width)) / 2);width:var(--guide-width);background-color:var(--sl-color-hairline-light)}.sl-steps>li>:first-child{--lh: calc(1em * var(--sl-line-height));--shift-y: calc(.5 * (var(--bullet-size) - var(--lh)));transform:translateY(var(--shift-y));margin-bottom:var(--shift-y)}.sl-steps>li>:first-child:where(h1,h2,h3,h4,h5,h6){--lh: calc(1em * var(--sl-line-height-headings))}@supports (--prop: 1lh){.sl-steps>li>:first-child{--lh: 1lh}}
+.sl-link-button:where(.astro-co5pw7sj){align-items:center;border:1px solid transparent;border-radius:999rem;display:inline-flex;font-size:var(--sl-text-sm);gap:.5em;line-height:1.1875;outline-offset:.25rem;padding:.4375rem 1.125rem;text-decoration:none}.sl-link-button:where(.astro-co5pw7sj).primary{background:var(--sl-color-text-accent);border-color:var(--sl-color-text-accent);color:var(--sl-color-black)}.sl-link-button:where(.astro-co5pw7sj).primary:hover{color:var(--sl-color-black)}.sl-link-button:where(.astro-co5pw7sj).secondary{border-color:inherit;color:var(--sl-color-white)}.sl-link-button:where(.astro-co5pw7sj).minimal{color:var(--sl-color-white);padding-inline:0}.sl-link-button:where(.astro-co5pw7sj) svg{flex-shrink:0}@media (min-width: 50rem){.sl-link-button:where(.astro-co5pw7sj){font-size:var(--sl-text-base);padding:.9375rem 1.25rem}}.sl-markdown-content .sl-link-button:where(.astro-co5pw7sj){margin-inline-end:1rem}.sl-markdown-content .sl-link-button:where(.astro-co5pw7sj):not(:where(p *)){margin-block:1rem}
+</style><script type="module" src="/ds/aml/_astro/hoisted.BL_PbTYa.js"></script>
+<script type="module" src="/ds/aml/_astro/page.7qqag-5g.js"></script>
+<script>!(function(w,p,f,c){if(!window.crossOriginIsolated && !navigator.serviceWorker) return;c=w[p]=Object.assign(w[p]||{},{"lib":"/ds/aml/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.10.2 - MIT builder.io */
+const t={preserveBehavior:!1},e=e=>{if("string"==typeof e)return[e,t];const[n,r=t]=e;return[n,{...t,...r}]},n=Object.freeze((t=>{const e=new Set;let n=[];do{Object.getOwnPropertyNames(n).forEach((t=>{"function"==typeof n[t]&&e.add(t)}))}while((n=Object.getPrototypeOf(n))!==Object.prototype);return Array.from(e)})());!function(t,r,o,i,a,s,c,d,l,p,u=t,f){function h(){f||(f=1,"/"==(c=(s.lib||"/~partytown/")+(s.debug?"debug/":""))[0]&&(l=r.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(v,1e4),r.addEventListener("pt0",w),a?y(1):o.serviceWorker?o.serviceWorker.register(c+(s.swPath||"partytown-sw.js"),{scope:c}).then((function(t){t.active?y():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&y()}))}),console.error):v())))}function y(e){p=r.createElement(e?"script":"iframe"),t._pttab=Date.now(),e||(p.style.display="block",p.style.width="0",p.style.height="0",p.style.border="0",p.style.visibility="hidden",p.setAttribute("aria-hidden",!0)),p.src=c+"partytown-"+(e?"atomics.js?v=0.10.2":"sandbox-sw.html?"+t._pttab),r.querySelector(s.sandboxParent||"body").appendChild(p)}function v(n,o){for(w(),i==t&&(s.forward||[]).map((function(n){const[r]=e(n);delete t[r.split(".")[0]]})),n=0;n<l.length;n++)(o=r.createElement("script")).innerHTML=l[n].innerHTML,o.nonce=s.nonce,r.head.appendChild(o);p&&p.parentNode.removeChild(p)}function w(){clearTimeout(d)}s=t.partytown||{},i==t&&(s.forward||[]).map((function(r){const[o,{preserveBehavior:i}]=e(r);u=t,o.split(".").map((function(e,r,o){var a;u=u[o[r]]=r+1<o.length?u[o[r]]||(a=o[r+1],n.includes(a)?[]:{}):(()=>{let e=null;if(i){const{methodOrProperty:n,thisObject:r}=((t,e)=>{let n=t;for(let t=0;t<e.length-1;t+=1)n=n[e[t]];return{thisObject:n,methodOrProperty:e.length>0?n[e[e.length-1]]:void 0}})(t,o);"function"==typeof n&&(e=(...t)=>n.apply(r,...t))}return function(){let n;return e&&(n=e(arguments)),(t._ptf=t._ptf||[]).push(o,arguments),n}})()}))})),"complete"==r.readyState?h():(t.addEventListener("DOMContentLoaded",h),t.addEventListener("load",h))}(window,document,navigator,top,window.crossOriginIsolated);;(e=>{e.addEventListener("astro:before-swap",e=>{let r=document.body.querySelector("iframe[src*='/ds/aml/~partytown/']");if(r)e.newDocument.body.append(r)})})(document);</script></head> <body class="astro-tnkgpltv"> <a href="#_top" class="astro-6wmuwu6q">Skip to content</a>  <div class="page sl-flex astro-wgwt2p6u"> <header class="header astro-wgwt2p6u"><div class="header sl-flex astro-hn3ss3xt"> <div class="title-wrapper sl-flex astro-hn3ss3xt"> <a href="/ds/aml/" class="site-title sl-flex astro-yvrxj25y">  <img class="astro-yvrxj25y" alt="" src="/ds/aml/_astro/logo_head_square.C50n2dyk.png" width="512" height="512">  <span class="astro-yvrxj25y"> Advance Machine Learning </span> </a>  </div> <div class="sl-flex astro-hn3ss3xt"> <site-search data-translations="{&#34;placeholder&#34;:&#34;Search&#34;}" class="astro-a7p2hsaf"> <button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-a7p2hsaf"> <svg aria-hidden="true" class="astro-a7p2hsaf astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg>  <span class="sl-hidden md:sl-block astro-a7p2hsaf" aria-hidden="true">Search</span> <kbd class="sl-hidden md:sl-flex astro-a7p2hsaf" style="display: none;"> <kbd class="astro-a7p2hsaf">Ctrl</kbd><kbd class="astro-a7p2hsaf">K</kbd> </kbd> </button> <dialog style="padding:0" aria-label="Search" class="astro-a7p2hsaf"> <div class="dialog-frame sl-flex astro-a7p2hsaf">  <button data-close-modal class="sl-flex md:sl-hidden astro-a7p2hsaf"> Cancel </button> <div class="search-container astro-a7p2hsaf"> <div id="starlight__search" class="astro-a7p2hsaf"></div> </div> </div> </dialog> </site-search>  <script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script>    </div> <div class="sl-hidden md:sl-flex right-group astro-hn3ss3xt"> <div class="sl-flex social-icons astro-hn3ss3xt">  </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-vkr4p5k4"> <span class="sr-only astro-vkr4p5k4">Select theme</span> <svg aria-hidden="true" class="icon label-icon astro-vkr4p5k4 astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg>  <select value="auto" class="astro-vkr4p5k4"> <option value="dark" class="astro-vkr4p5k4">Dark</option><option value="light" class="astro-vkr4p5k4">Light</option><option value="auto" selected="true" class="astro-vkr4p5k4">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-vkr4p5k4 astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>   </div> </div> </header> <nav class="sidebar astro-wgwt2p6u" aria-label="Main"> <starlight-menu-button class="astro-iuqnx57a"> <button aria-expanded="false" aria-label="Menu" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-iuqnx57a"> <svg aria-hidden="true" class="astro-iuqnx57a astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg>  </button> </starlight-menu-button>    <div id="starlight__sidebar" class="sidebar-pane astro-wgwt2p6u"> <div class="sidebar-content sl-flex astro-wgwt2p6u"> <sl-sidebar-state-persist data-hash="1jroj94" class="astro-22wkwjli"> <ul class="top-level astro-lrovcrdd"> <li class="astro-lrovcrdd"> <a href="/ds/aml/introduction" class="large astro-lrovcrdd"> <span class="astro-lrovcrdd">Introduction</span>  </a> </li><li class="astro-lrovcrdd"> <details open class="astro-lrovcrdd"> <summary class="astro-lrovcrdd"> <div class="group-label astro-lrovcrdd"> <span class="large astro-lrovcrdd">Problem Domains</span>  </div> <svg aria-hidden="true" class="caret astro-lrovcrdd astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-lrovcrdd"> <li class="astro-lrovcrdd"> <details open class="astro-lrovcrdd"> <summary class="astro-lrovcrdd"> <div class="group-label astro-lrovcrdd"> <span class="large astro-lrovcrdd">1. Image Processing</span>  </div> <svg aria-hidden="true" class="caret astro-lrovcrdd astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-lrovcrdd"> <li class="astro-lrovcrdd"> <a href="/ds/aml/4_problem_domains/1-image-processing/1_ima_1_basics/" class="astro-lrovcrdd"> <span class="astro-lrovcrdd">1.1 Introduction</span>  </a> </li><li class="astro-lrovcrdd"> <a href="/ds/aml/4_problem_domains/1-image-processing/1_ima_2_filters/" class="astro-lrovcrdd"> <span class="astro-lrovcrdd">1.2 Filters</span>  </a> </li><li class="astro-lrovcrdd"> <a href="/ds/aml/4_problem_domains/1-image-processing/1_ima_3_edge_detectors/" class="astro-lrovcrdd"> <span class="astro-lrovcrdd">1.3 Edge Detectors</span>  </a> </li><li class="astro-lrovcrdd"> <a href="/ds/aml/4_problem_domains/1-image-processing/1_ima_4_corner_detectors/" class="astro-lrovcrdd"> <span class="astro-lrovcrdd">1.4 Corner Detectors</span>  </a> </li><li class="astro-lrovcrdd"> <a href="/ds/aml/4_problem_domains/1-image-processing/1_ima_5_region_detectors/" class="astro-lrovcrdd"> <span class="astro-lrovcrdd">1.5 Region Detectors</span>  </a> </li><li class="astro-lrovcrdd"> <a href="/ds/aml/4_problem_domains/1-image-processing/1_ima_6_feature_detectors/" class="astro-lrovcrdd"> <span class="astro-lrovcrdd">1.6 Feature Detectors</span>  </a> </li><li class="astro-lrovcrdd"> <a href="/ds/aml/4_problem_domains/1-image-processing/1_ima_6_keypoints/" aria-current="page" class="astro-lrovcrdd"> <span class="astro-lrovcrdd">1.7 Keypoint Detectors</span>  </a> </li><li class="astro-lrovcrdd"> <a href="/ds/aml/4_problem_domains/1-image-processing/1_ima_7_misc/" class="astro-lrovcrdd"> <span class="astro-lrovcrdd">1.8 Misc</span>  </a> </li> </ul>  </details> </li><li class="astro-lrovcrdd"> <details open class="astro-lrovcrdd"> <summary class="astro-lrovcrdd"> <div class="group-label astro-lrovcrdd"> <span class="large astro-lrovcrdd">2. Regression</span>  </div> <svg aria-hidden="true" class="caret astro-lrovcrdd astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-lrovcrdd"> <li class="astro-lrovcrdd"> <a href="/ds/aml/4_problem_domains/2-regression/1_regression_1_cv/" class="astro-lrovcrdd"> <span class="astro-lrovcrdd">2.1 Computer Vision</span>  </a> </li><li class="astro-lrovcrdd"> <a href="/ds/aml/4_problem_domains/2-regression/1_regression_1_nlp/" class="astro-lrovcrdd"> <span class="astro-lrovcrdd">2.2 Natural Language Processing</span>  </a> </li> </ul>  </details> </li> </ul>  </details> </li> </ul>  </sl-sidebar-state-persist> <div class="md:sl-hidden astro-22wkwjli"> <div class="mobile-preferences sl-flex astro-oism4in2"> <div class="sl-flex social-icons astro-oism4in2">  </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-vkr4p5k4"> <span class="sr-only astro-vkr4p5k4">Select theme</span> <svg aria-hidden="true" class="icon label-icon astro-vkr4p5k4 astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg>  <select value="auto" class="astro-vkr4p5k4"> <option value="dark" class="astro-vkr4p5k4">Dark</option><option value="light" class="astro-vkr4p5k4">Light</option><option value="auto" selected="true" class="astro-vkr4p5k4">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-vkr4p5k4 astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>   </div>  </div>  <script>
+	(() => {
+		try {
+			if (!matchMedia('(min-width: 50em)').matches) return;
+			const scroller = document.getElementById('starlight__sidebar');
+			/** @type {HTMLElement | null} */
+			const target = document.querySelector('sl-sidebar-state-persist');
+			const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+			if (!scroller || !target || !state || target.dataset.hash !== state.hash) return;
+			target
+				.querySelectorAll('details')
+				.forEach((el, idx) => typeof state.open[idx] === 'boolean' && (el.open = state.open[idx]));
+			scroller.scrollTop = state.scroll;
+		} catch {}
+	})();
+</script>  </div> </div> </nav> <div class="main-frame astro-wgwt2p6u">   <div class="lg:sl-flex astro-ky6ec5xa"> <aside class="right-sidebar-container astro-ky6ec5xa"> <div class="right-sidebar astro-ky6ec5xa"> <div class="lg:sl-hidden astro-26ir5msd"><mobile-starlight-toc data-min-h="1" data-max-h="3" class="astro-fmlrjppt"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-fmlrjppt"><details id="starlight__mobile-toc" class="astro-fmlrjppt"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-fmlrjppt"><div class="toggle sl-flex astro-fmlrjppt">On this page<svg aria-hidden="true" class="caret astro-fmlrjppt astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </div><span class="display-current astro-fmlrjppt"></span></summary><div class="dropdown astro-fmlrjppt"><ul class="isMobile astro-jjbp3tvj" style="--depth: 0;"> <li class="astro-jjbp3tvj" style="--depth: 0;"> <a href="#_top" class="astro-jjbp3tvj" style="--depth: 0;"> <span class="astro-jjbp3tvj" style="--depth: 0;">Overview</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 0;"> <a href="#1-sift" class="astro-jjbp3tvj" style="--depth: 0;"> <span class="astro-jjbp3tvj" style="--depth: 0;">1. SIFT</span> </a> <ul class="isMobile astro-jjbp3tvj" style="--depth: 1;"> <li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#steps" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Steps:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#objective" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Objective:</span> </a>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 0;"> <a href="#sift-scale-invariant-feature-transform" class="astro-jjbp3tvj" style="--depth: 0;"> <span class="astro-jjbp3tvj" style="--depth: 0;">SIFT (Scale-Invariant Feature Transform)</span> </a> <ul class="isMobile astro-jjbp3tvj" style="--depth: 1;"> <li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#keypoint-detection" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Keypoint Detection</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#sift-descriptor" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">SIFT Descriptor</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#summary" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Summary</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#sift-feature-extraction-on-checkerboard-image" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">SIFT Feature Extraction on Checkerboard Image</span> </a> <ul class="isMobile astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#step-by-step-explanation" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Step-by-Step Explanation:</span> </a>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#opencvs-sift-function-explanation" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">OpenCV’s SIFT Function Explanation:</span> </a> <ul class="isMobile astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#initialization" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Initialization:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#key-point-detection" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Key Point Detection:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#descriptor-extraction" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Descriptor Extraction:</span> </a>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#explanation-of-cv2drawkeypoints" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Explanation of cv2.drawKeypoints()</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#observations" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Observations</span> </a> <ul class="isMobile astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#1-sift-keypoints-on-original-image" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">1. SIFT Keypoints on Original Image:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#2-sift-descriptors" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">2. SIFT Descriptors:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#3-sift-keypoints-on-rotated-and-scaled-image" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">3. SIFT Keypoints on Rotated and Scaled Image:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#4-sift-descriptors-on-rotated-and-scaled-image" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">4. SIFT Descriptors on Rotated and Scaled Image:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#note" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Note</span> </a>  </li> </ul>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 0;"> <a href="#binary-shape-analyais" class="astro-jjbp3tvj" style="--depth: 0;"> <span class="astro-jjbp3tvj" style="--depth: 0;">Binary Shape Analyais</span> </a> <ul class="isMobile astro-jjbp3tvj" style="--depth: 1;"> <li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#httpspyimagesearchcom20210222opencv-connected-component-labeling-and-analysis" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">https://pyimagesearch.com/2021/02/22/opencv-connected-component-labeling-and-analysis/</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#steps-1" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Steps:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#observations-from-the-binary-shape-analysis-task" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Observations from the Binary Shape Analysis Task</span> </a> <ul class="isMobile astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#1-image-thresholding" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">1. Image Thresholding:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#2-connected-component-analysis" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">2. Connected Component Analysis:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#3-blob-statistics" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">3. Blob Statistics:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#before-diving-into-the-main-steps-lets-understand-the-utility-functions-that-will-be-used-throughout-the-process" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Before diving into the main steps, let’s understand the utility functions that will be used throughout the process.</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-display_imageimg-title" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: display_image(img, title=&quot;&quot;)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-imshow_componentslabels" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: imshow_components(labels)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-extract_featureslabels_im-stats" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: extract_features(labels_im, stats)</span> </a>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#image-loading-and-preprocessing" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Image Loading and Preprocessing</span> </a> <ul class="isMobile astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#step-by-step-explanation-1" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Step-by-Step Explanation:</span> </a>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#connected-component-analysis-and-feature-extraction" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Connected Component Analysis and Feature Extraction</span> </a> <ul class="isMobile astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#step-by-step-explanation-2" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Step-by-Step Explanation:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#cv2connectedcomponentswithstats-explanation" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">cv2.connectedComponentsWithStats Explanation</span> </a>  </li> </ul>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 0;"> <a href="#exercise-3---histogram-feature-extraction" class="astro-jjbp3tvj" style="--depth: 0;"> <span class="astro-jjbp3tvj" style="--depth: 0;">Exercise 3 - Histogram Feature Extraction</span> </a> <ul class="isMobile astro-jjbp3tvj" style="--depth: 1;"> <li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#objective-1" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Objective:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#steps-2" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Steps:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#deliverables" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Deliverables:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#utility-functions-explanation" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Utility Functions Explanation</span> </a> <ul class="isMobile astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-compute_histogramimage-bins256" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: compute_histogram(image, bins=256)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-display_histogramhist-titlehistogram" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: display_histogram(hist, title=&quot;Histogram&quot;)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-display_imageimg-title-1" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: display_image(img, title=&quot;&quot;)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#histogram-computation-and-visualization-for-each-character" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Histogram Computation and Visualization for Each Character</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#loop-for-k-in-range1-num_labels" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Loop: for k in range(1, num_labels)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#post-loop" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Post Loop:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#comparing-histograms-of-characters" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Comparing Histograms of Characters:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#insights-on-the-histogram-feature" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Insights on the Histogram Feature:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#resolution-of-the-histogram" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Resolution of the Histogram:</span> </a>  </li> </ul>  </li> </ul>  </li> </ul> </div></details></nav></mobile-starlight-toc></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-26ir5msd"><div class="sl-container astro-26ir5msd"><starlight-toc data-min-h="1" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-jjbp3tvj" style="--depth: 0;"> <li class="astro-jjbp3tvj" style="--depth: 0;"> <a href="#_top" class="astro-jjbp3tvj" style="--depth: 0;"> <span class="astro-jjbp3tvj" style="--depth: 0;">Overview</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 0;"> <a href="#1-sift" class="astro-jjbp3tvj" style="--depth: 0;"> <span class="astro-jjbp3tvj" style="--depth: 0;">1. SIFT</span> </a> <ul class="astro-jjbp3tvj" style="--depth: 1;"> <li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#steps" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Steps:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#objective" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Objective:</span> </a>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 0;"> <a href="#sift-scale-invariant-feature-transform" class="astro-jjbp3tvj" style="--depth: 0;"> <span class="astro-jjbp3tvj" style="--depth: 0;">SIFT (Scale-Invariant Feature Transform)</span> </a> <ul class="astro-jjbp3tvj" style="--depth: 1;"> <li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#keypoint-detection" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Keypoint Detection</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#sift-descriptor" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">SIFT Descriptor</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#summary" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Summary</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#sift-feature-extraction-on-checkerboard-image" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">SIFT Feature Extraction on Checkerboard Image</span> </a> <ul class="astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#step-by-step-explanation" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Step-by-Step Explanation:</span> </a>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#opencvs-sift-function-explanation" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">OpenCV’s SIFT Function Explanation:</span> </a> <ul class="astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#initialization" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Initialization:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#key-point-detection" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Key Point Detection:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#descriptor-extraction" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Descriptor Extraction:</span> </a>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#explanation-of-cv2drawkeypoints" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Explanation of cv2.drawKeypoints()</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#observations" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Observations</span> </a> <ul class="astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#1-sift-keypoints-on-original-image" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">1. SIFT Keypoints on Original Image:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#2-sift-descriptors" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">2. SIFT Descriptors:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#3-sift-keypoints-on-rotated-and-scaled-image" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">3. SIFT Keypoints on Rotated and Scaled Image:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#4-sift-descriptors-on-rotated-and-scaled-image" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">4. SIFT Descriptors on Rotated and Scaled Image:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#note" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Note</span> </a>  </li> </ul>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 0;"> <a href="#binary-shape-analyais" class="astro-jjbp3tvj" style="--depth: 0;"> <span class="astro-jjbp3tvj" style="--depth: 0;">Binary Shape Analyais</span> </a> <ul class="astro-jjbp3tvj" style="--depth: 1;"> <li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#httpspyimagesearchcom20210222opencv-connected-component-labeling-and-analysis" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">https://pyimagesearch.com/2021/02/22/opencv-connected-component-labeling-and-analysis/</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#steps-1" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Steps:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#observations-from-the-binary-shape-analysis-task" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Observations from the Binary Shape Analysis Task</span> </a> <ul class="astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#1-image-thresholding" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">1. Image Thresholding:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#2-connected-component-analysis" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">2. Connected Component Analysis:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#3-blob-statistics" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">3. Blob Statistics:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#before-diving-into-the-main-steps-lets-understand-the-utility-functions-that-will-be-used-throughout-the-process" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Before diving into the main steps, let’s understand the utility functions that will be used throughout the process.</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-display_imageimg-title" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: display_image(img, title=&quot;&quot;)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-imshow_componentslabels" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: imshow_components(labels)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-extract_featureslabels_im-stats" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: extract_features(labels_im, stats)</span> </a>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#image-loading-and-preprocessing" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Image Loading and Preprocessing</span> </a> <ul class="astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#step-by-step-explanation-1" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Step-by-Step Explanation:</span> </a>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#connected-component-analysis-and-feature-extraction" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Connected Component Analysis and Feature Extraction</span> </a> <ul class="astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#step-by-step-explanation-2" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Step-by-Step Explanation:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#cv2connectedcomponentswithstats-explanation" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">cv2.connectedComponentsWithStats Explanation</span> </a>  </li> </ul>  </li> </ul>  </li><li class="astro-jjbp3tvj" style="--depth: 0;"> <a href="#exercise-3---histogram-feature-extraction" class="astro-jjbp3tvj" style="--depth: 0;"> <span class="astro-jjbp3tvj" style="--depth: 0;">Exercise 3 - Histogram Feature Extraction</span> </a> <ul class="astro-jjbp3tvj" style="--depth: 1;"> <li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#objective-1" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Objective:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#steps-2" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Steps:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#deliverables" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Deliverables:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 1;"> <a href="#utility-functions-explanation" class="astro-jjbp3tvj" style="--depth: 1;"> <span class="astro-jjbp3tvj" style="--depth: 1;">Utility Functions Explanation</span> </a> <ul class="astro-jjbp3tvj" style="--depth: 2;"> <li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-compute_histogramimage-bins256" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: compute_histogram(image, bins=256)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-display_histogramhist-titlehistogram" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: display_histogram(hist, title=&quot;Histogram&quot;)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#function-display_imageimg-title-1" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Function: display_image(img, title=&quot;&quot;)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#histogram-computation-and-visualization-for-each-character" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Histogram Computation and Visualization for Each Character</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#loop-for-k-in-range1-num_labels" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Loop: for k in range(1, num_labels)</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#post-loop" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Post Loop:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#comparing-histograms-of-characters" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Comparing Histograms of Characters:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#insights-on-the-histogram-feature" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Insights on the Histogram Feature:</span> </a>  </li><li class="astro-jjbp3tvj" style="--depth: 2;"> <a href="#resolution-of-the-histogram" class="astro-jjbp3tvj" style="--depth: 2;"> <span class="astro-jjbp3tvj" style="--depth: 2;">Resolution of the Histogram:</span> </a>  </li> </ul>  </li> </ul>  </li> </ul> </nav></starlight-toc></div></div> </div> </aside> <div class="main-pane astro-ky6ec5xa">  <main data-pagefind-body lang="en" dir="ltr" class="astro-tnkgpltv">    <div class="content-panel astro-lunt5ejt"> <div class="sl-container astro-lunt5ejt"> <h1 id="_top" class="astro-2sicnpfu">1.7 Keypoint Detectors</h1>  </div> </div>  <div class="content-panel astro-lunt5ejt"> <div class="sl-container astro-lunt5ejt"> <div class="sl-markdown-content"> <h1 id="1-sift">1. SIFT</h1>
+<p>In this exercise, we will delve into the properties of the <strong>Scale-Invariant Feature Transform (SIFT)</strong>, particularly its invariance characteristics.</p>
+<h2 id="steps">Steps:</h2>
+<ol>
+<li>
+<p><strong>Keypoint Detection on Checkerboard Image</strong>:</p>
+<ul>
+<li>Use the SIFT algorithm to detect keypoints on a natural image.</li>
+<li>Count the number of keypoints identified.</li>
+<li>Visualize these keypoints using the <code dir="auto">drawKeypoints</code> method.</li>
+<li><strong>Observation</strong>: Pay attention to the locations of the keypoints. How do they compare to the Harris corners from Practical 3? What can you infer about their main orientation?</li>
+</ul>
+</li>
+<li>
+<p><strong>SIFT Descriptors</strong>:</p>
+<ul>
+<li>Extract SIFT descriptors for the detected keypoints.</li>
+<li>Analyze the number of descriptors and the dimensionality of each.</li>
+<li>Compare your findings with your lecture notes on SIFT. Are they consistent?</li>
+<li>Convert the descriptors to an intensity image and inspect it.</li>
+<li><strong>Observation</strong>: Look for any discernible patterns in the intensity image. What do the descriptors convey?</li>
+</ul>
+</li>
+<li>
+<p><strong>Invariance Test with Rotated and Scaled Image</strong>:</p>
+<ul>
+<li>Rotate (10 deg) and slightly scale (1.2) the input image.</li>
+<li>Repeat the SIFT keypoint detection and descriptor extraction on this transformed image.</li>
+<li>Convert the new set of descriptors to an intensity image.</li>
+<li><strong>Observation</strong>: Compare the intensity images of the original and transformed checkerboard. Can you validate the scale invariance of the SIFT descriptors?</li>
+<li>Choose a few keypoint pairs from both images and delve deeper into their descriptors. What similarities or differences can you spot?</li>
+<li>Extra: perform correspondence between the original image and its rotated and scaled version. Draw a line between any two matched keypoints in the two images.</li>
+</ul>
+</li>
+</ol>
+<h2 id="objective">Objective:</h2>
+<p>Through this exercise, you’ll gain hands-on experience with the SIFT algorithm, understanding its robustness against transformations and its ability to capture distinctive features in images. By comparing it with other methods like Harris corners, you’ll appreciate the nuances and
+---strengths of each approach.</p>
+<hr>
+<h1 id="sift-scale-invariant-feature-transform">SIFT (Scale-Invariant Feature Transform)</h1>
+<p>SIFT is a method in computer vision to detect and describe local features in images. The algorithm provides key advantages when it comes to scale, rotation, and translation invariances.</p>
+<h3 id="keypoint-detection">Keypoint Detection</h3>
+<h4 id="scale-space-extrema-detection">Scale-space Extrema Detection</h4>
+<ul>
+<li>The image is progressively blurred using Gaussian filters, creating a series of scaled images.</li>
+<li>The Difference of Gaussians (DoG) is found between successive Gaussian blurred images.</li>
+<li>Extrema (maxima and minima) in the DoG images are potential keypoints.</li>
+</ul>
+<h4 id="keypoint-localization">Keypoint Localization</h4>
+<ul>
+<li>Refines keypoints to eliminate less stable ones.</li>
+<li>Uses a method similar to the Harris corner detection to discard keypoints that have low contrast or lie along an edge.</li>
+</ul>
+<h4 id="orientation-assignment">Orientation Assignment</h4>
+<ul>
+<li>Each keypoint is given one or more orientations based on local image gradient directions.</li>
+<li>This ensures the keypoint descriptor is rotation invariant.</li>
+</ul>
+<h3 id="sift-descriptor">SIFT Descriptor</h3>
+<h4 id="descriptor-representation">Descriptor Representation</h4>
+<ul>
+<li>For each keypoint, a descriptor is computed.</li>
+<li>A 16x16 neighborhood around the keypoint is considered, divided into 4x4 sub-blocks.</li>
+<li>An 8-bin orientation histogram is computed for each sub-block, resulting in a 128-bin descriptor for each keypoint.</li>
+</ul>
+<h4 id="descriptor-normalization">Descriptor Normalization</h4>
+<ul>
+<li>The descriptor is normalized to ensure invariance to illumination changes.</li>
+</ul>
+<h3 id="summary">Summary</h3>
+<p>SIFT is powerful for detecting and describing local features in images. It’s invariant to image scale, rotation, and partially invariant to affine transformations and illumination changes. This makes it suitable for tasks like object recognition, panorama stitching, and 3D scene reconstruction.</p>
+<hr>
+<h2 id="sift-feature-extraction-on-checkerboard-image">SIFT Feature Extraction on Checkerboard Image</h2>
+<p>This code demonstrates the process of detecting and extracting SIFT (Scale-Invariant Feature Transform) keypoints and descriptors from a checkerboard image and its rotated and scaled version.</p>
+<h3 id="step-by-step-explanation">Step-by-Step Explanation:</h3>
+<ol>
+<li>
+<p><strong>Loading Image Files</strong>:</p>
+<div class="expressive-code"><link rel="stylesheet" href="/ds/aml/_astro/ec.r03g6.css"><script type="module" src="/ds/aml/_astro/ec.8zarh.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">filenames </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> glob.</span><span style="--0:#B2CCD6;--1:#097174">glob</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">os.path.</span><span style="--0:#B2CCD6;--1:#097174">join</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">path</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">*.png</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">))</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">filename </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> filenames[</span><span style="--0:#F78C6C;--1:#AA0982">0</span><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="filenames = glob.glob(os.path.join(path, &#x27;*.png&#x27;))filename = filenames[0]"><div></div></button></div></figure></div>
+<ul>
+<li>The code first fetches all the image filenames with <code dir="auto">.png</code> extension from the specified directory.</li>
+<li>It then selects the first image from this list for further processing.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reading the Image and Initializing SIFT</strong>:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">img </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">imread</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">filename</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> cv2.IMREAD_GRAYSCALE</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">sift </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">SIFT_create</span><span style="--0:#D6DEEB;--1:#403F53">()</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="img = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)sift = cv2.SIFT_create()"><div></div></button></div></figure></div>
+<ul>
+<li>The selected image is read in grayscale mode.</li>
+<li>A SIFT detector object is initialized.</li>
+</ul>
+</li>
+<li>
+<p><strong>Detecting SIFT Keypoints</strong>:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">keypoints </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> sift.</span><span style="--0:#B2CCD6;--1:#097174">detect</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">img</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#FF5874;--1:#A54A4A">None</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="keypoints = sift.detect(img, None)"><div></div></button></div></figure></div>
+<ul>
+<li>The SIFT keypoints are detected for the grayscale image.</li>
+</ul>
+</li>
+<li>
+<p><strong>Extracting SIFT Descriptors</strong>:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">keypoints, descriptors </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> sift.</span><span style="--0:#B2CCD6;--1:#097174">compute</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">img</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> keypoints</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">plt.</span><span style="--0:#B2CCD6;--1:#097174">figure</span><span style="--1:#403F53"><span style="--0:#D6DEEB">(</span><span style="--0:#D7DBE0">figsize</span></span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#82AAFF;--1:#3C63B3">(</span><span style="--0:#F78C6C;--1:#AA0982">5</span><span style="--0:#82AAFF;--1:#3C63B3">, </span><span style="--0:#F78C6C;--1:#AA0982">5</span><span style="--0:#82AAFF;--1:#3C63B3">)</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">plt.</span><span style="--0:#B2CCD6;--1:#097174">imshow</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">descriptors</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#D7DBE0;--1:#403F53">cmap</span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">gray</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">plt.</span><span style="--0:#B2CCD6;--1:#097174">title</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">SIFT Descriptors</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">plt.</span><span style="--0:#B2CCD6;--1:#097174">axis</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">off</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">plt.</span><span style="--0:#B2CCD6;--1:#097174">show</span><span style="--0:#D6DEEB;--1:#403F53">()</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="keypoints, descriptors = sift.compute(img, keypoints)plt.figure(figsize=(5, 5))plt.imshow(descriptors, cmap=&#x27;gray&#x27;)plt.title(&#x27;SIFT Descriptors&#x27;)plt.axis(&#x27;off&#x27;)plt.show()"><div></div></button></div></figure></div>
+<ul>
+<li>SIFT descriptors are computed for the detected keypoints.</li>
+<li>The descriptors are visualized as an intensity image.</li>
+</ul>
+</li>
+<li>
+<p><strong>Rotating and Scaling the Image</strong>:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">rows, cols </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> img.shape</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">M </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">getRotationMatrix2D</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">(cols</span><span style="--0:#C792EA;--1:#8D46B4">/</span><span style="--0:#F78C6C;--1:#AA0982">2</span><span style="--0:#82AAFF;--1:#3C63B3">, rows</span><span style="--0:#C792EA;--1:#8D46B4">/</span><span style="--0:#F78C6C;--1:#AA0982">2</span><span style="--0:#82AAFF;--1:#3C63B3">)</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#F78C6C;--1:#AA0982">2</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#F78C6C;--1:#AA0982">1.2</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">rotated_scaled_img </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">warpAffine</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">img</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> M</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> (cols, rows)</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="rows, cols = img.shapeM = cv2.getRotationMatrix2D((cols/2, rows/2), 2, 1.2)rotated_scaled_img = cv2.warpAffine(img, M, (cols, rows))"><div></div></button></div></figure></div>
+<ul>
+<li>The original image is rotated by 2 degrees and scaled by a factor of 1.2.</li>
+<li>The transformed image is stored in <code dir="auto">rotated_scaled_img</code>.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="opencvs-sift-function-explanation">OpenCV’s SIFT Function Explanation:</h2>
+<h3 id="initialization">Initialization:</h3>
+<p>To initialize a SIFT detector object, use the following code:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">sift </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">SIFT_create</span><span style="--0:#D6DEEB;--1:#403F53">()</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="sift = cv2.SIFT_create()"><div></div></button></div></figure></div>
+<p>SIFT stands for Scale-Invariant Feature Transform. It’s an algorithm in computer vision to detect and describe local features in images.</p>
+<h3 id="key-point-detection">Key Point Detection:</h3>
+<p>To detect the SIFT keypoints of an image, use the following code:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">keypoints </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> sift.</span><span style="--0:#B2CCD6;--1:#097174">detect</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">img</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#FF5874;--1:#A54A4A">None</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="keypoints = sift.detect(img, None)"><div></div></button></div></figure></div>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code dir="auto">img</code>: The input image where keypoints are to be detected.</li>
+<li><code dir="auto">None</code>: Mask of the image. It’s an optional parameter. If provided, the function will look for keypoints only in the specified region.</li>
+</ul>
+<h3 id="descriptor-extraction">Descriptor Extraction:</h3>
+<p>To compute the descriptors from the detected keypoints, use the following code:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">keypoints, descriptors </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> sift.</span><span style="--0:#B2CCD6;--1:#097174">compute</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">img</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> keypoints</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="keypoints, descriptors = sift.compute(img, keypoints)"><div></div></button></div></figure></div>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code dir="auto">img</code>: The input image.</li>
+<li><code dir="auto">keypoints</code>: The detected keypoints for which descriptors are to be computed.</li>
+</ul>
+<p><strong>Return</strong>:</p>
+<ul>
+<li><code dir="auto">keypoints</code>: List of keypoints.</li>
+<li><code dir="auto">descriptors</code>: The SIFT descriptors of the keypoints. Each keypoint is represented by a vector of 128 values.</li>
+</ul>
+<hr>
+<h2 id="explanation-of-cv2drawkeypoints">Explanation of <code dir="auto">cv2.drawKeypoints()</code></h2>
+<p>The <code dir="auto">cv2.drawKeypoints()</code> function is a utility provided by OpenCV to visualize the keypoints detected in an image.</p>
+<h4 id="parameters">Parameters:</h4>
+<ul>
+<li>
+<p><strong>input_image</strong>:</p>
+<ul>
+<li>Description: The original image on which keypoints were detected.</li>
+<li>Type: 2D or 3D array (typically a grayscale or color image).</li>
+</ul>
+</li>
+<li>
+<p><strong>keypoints</strong>:</p>
+<ul>
+<li>Description: A list of detected keypoints on the <code dir="auto">input_image</code>. These keypoints encapsulate information about the location, scale, orientation, and other characteristics of local features in the image.</li>
+<li>Type: List of <code dir="auto">cv2.KeyPoint</code> objects. These objects are typically obtained from feature detection methods like SIFT, SURF, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>output_image</strong> (optional):</p>
+<ul>
+<li>Description: Image on which the keypoints will be drawn. If not provided, a new image is created to draw the keypoints. In most scenarios, this is the same as the <code dir="auto">input_image</code>.</li>
+<li>Type: 2D or 3D array.</li>
+</ul>
+</li>
+<li>
+<p><strong>flags</strong> (optional):</p>
+<ul>
+<li>Description: Determines the drawing characteristics of the keypoints.</li>
+<li>Type: Integer or combination of flag values.</li>
+<li>Notable Flag:
+<ul>
+<li><code dir="auto">cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS</code>: Ensures that the size of the keypoint is visualized along with its orientation, providing a richer representatin of the keypoint.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="output">Output:</h4>
+<ul>
+<li><strong>img_keypoints</strong>:
+<ul>
+<li>Description: Image with the keypoints drawn on it.</li>
+<li>Type: 2D or 3D array, sthe <code dir="auto">img_keypoints</code> variable.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="observations">Observations</h2>
+<h3 id="1-sift-keypoints-on-original-image">1. SIFT Keypoints on Original Image:</h3>
+<p>When we detect SIFT keypoints on the original checkerboard image, we observe that the keypoints are not just located at the corners of the squares (as we might expect with Harris corners). Instead, SIFT keypoints are distributed across the image, capturing more intricate details and patterns.</p>
+<p><strong>Why is this the case?</strong></p>
+<p>SIFT keypoints are scale-invariant and rotation-invariant. This means that they are designed to capture features that remain consistent across different scales and orientations. The keypoints are detected based on the difference of Gaussian functions applied at different scales, allowing them to capture features at various levels of detail.</p>
+<h3 id="2-sift-descriptors">2. SIFT Descriptors:</h3>
+<p>The SIFT descriptors provide a unique fingerprint for each keypoint, capturing the local image gradient information around the keypoint. When visualized as an intensity image, the descriptors might not show a clear pattern to the human eye, but they contain rich information about the local image gradients.</p>
+<p><strong>What can we infer from the descriptors?</strong></p>
+<p>The intensity image of the descriptors might seem like random patterns, but these patterns encode the gradient orientations in the keypoint’s neighborhood. This makes the descriptors robust to transformations like rotation and scaling.</p>
+<h3 id="3-sift-keypoints-on-rotated-and-scaled-image">3. SIFT Keypoints on Rotated and Scaled Image:</h3>
+<p>Upon rotating and scaling the checkerboard image, and then detecting SIFT keypoints, we observe that some of the keypoints are still consistently detected in similar regions as in the original image. This demonstrates the scale and rotation invariance of SIFT keypoints.</p>
+<h3 id="4-sift-descriptors-on-rotated-and-scaled-image">4. SIFT Descriptors on Rotated and Scaled Image:</h3>
+<p>When we extract the SIFT descriptors for the keypoints detected on the rotated and scaled image and visualize them as an intensity image, we notice that the patterns are quite similar to the descriptors of the original image. This is because the descriptors capture the local gradient information, which remains consistent even after transformations.</p>
+<p><strong>Scale Invariance Verification:</strong></p>
+<p>By comparing the SIFT descriptors of the original image and the rotated and scaled image, we can verify the scale invariance property of SIFT. Even though the image underwent transformations, the descriptors remain consistent, proving the robustness of SIFT features.</p>
+<h3 id="note">Note</h3>
+<p>The performance of SIFT might not be optimal on chessboard images. This is primarily because chessboard patterns lack the intricate textures and features that SIFT excels at detecting. For more pronounced results, consider applying SIFT on images with richer details, such as car license plates.</p>
+<h1 id="binary-shape-analyais">Binary Shape Analyais</h1>
+<h3 id="httpspyimagesearchcom20210222opencv-connected-component-labeling-and-analysis"><a href="https://pyimagesearch.com/2021/02/22/opencv-connected-component-labeling-and-analysis/">https://pyimagesearch.com/2021/02/22/opencv-connected-component-labeling-and-analysis/</a></h3>
+<p>In this exercise, you’ll be working with binary shape analysis to extract blob features from a gray-scale input image. The main goal is to separate individual characters from the image and then extract several binary features from them.</p>
+<h3 id="steps-1">Steps:</h3>
+<ol>
+<li>
+<p><strong>Image Thresholding</strong>:</p>
+<ul>
+<li>Convert the input gray-scale image into a binary image.</li>
+<li>Use Otsu’s thresholding method (available in OpenCV) to achieve this.</li>
+<li>Examine the resulting binary image to ensure the thresholding is effective.</li>
+</ul>
+</li>
+<li>
+<p><strong>Connected Component Labeling (CCL)</strong>:</p>
+<ul>
+<li>Implement a CCL algorithm to separate the blobs, which in this context refers to the characters in the image.</li>
+<li>Refer to lecture notes or documentation for guidance on implementing this algorithm.</li>
+</ul>
+</li>
+<li>
+<p><strong>Blob Extraction</strong>:</p>
+<ul>
+<li>Apply the CCL algorithm to the binary image.</li>
+<li>For each detected blob, identify the tightest bounding box.</li>
+<li>Extract the character within each bounding box.</li>
+<li>Verify the accuracy of the bounding boxes by either:
+<ul>
+<li>Saving individual characters as image files, or</li>
+<li>Drawing the bounding boxes on the original image.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Feature Computation</strong>:
+For each extracted character, compute the following features:</p>
+<ul>
+<li><strong>Area</strong>: Total number of foreground pixels.</li>
+<li><strong>Height</strong>: Height of the bounding box.</li>
+<li><strong>Width</strong>: Width of the bounding box.</li>
+<li><strong>Fraction of Foreground Pixels</strong>: Calculated as <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -1.11ex;" xmlns="http://www.w3.org/2000/svg" width="11.397ex" height="3.147ex" role="img" focusable="false" viewBox="0 -900.3 5037.6 1391" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-1-TEX-N-41" d="M255 0Q240 3 140 3Q48 3 39 0H32V46H47Q119 49 139 88Q140 91 192 245T295 553T348 708Q351 716 366 716H376Q396 715 400 709Q402 707 508 390L617 67Q624 54 636 51T687 46H717V0H708Q699 3 581 3Q458 3 437 0H427V46H440Q510 46 510 64Q510 66 486 138L462 209H229L209 150Q189 91 189 85Q189 72 209 59T259 46H264V0H255ZM447 255L345 557L244 256Q244 255 345 255H447Z"></path><path id="MJX-1-TEX-N-72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"></path><path id="MJX-1-TEX-N-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"></path><path id="MJX-1-TEX-N-61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"></path><path id="MJX-1-TEX-N-48" d="M128 622Q121 629 117 631T101 634T58 637H25V683H36Q57 680 180 680Q315 680 324 683H335V637H302Q262 636 251 634T233 622L232 500V378H517V622Q510 629 506 631T490 634T447 637H414V683H425Q446 680 569 680Q704 680 713 683H724V637H691Q651 636 640 634T622 622V61Q628 51 639 49T691 46H724V0H713Q692 3 569 3Q434 3 425 0H414V46H447Q489 47 498 49T517 61V332H232V197L233 61Q239 51 250 49T302 46H335V0H324Q303 3 180 3Q45 3 36 0H25V46H58Q100 47 109 49T128 61V622Z"></path><path id="MJX-1-TEX-N-69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z"></path><path id="MJX-1-TEX-N-67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"></path><path id="MJX-1-TEX-N-68" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 124T102 167T103 217T103 272T103 329Q103 366 103 407T103 482T102 542T102 586T102 603Q99 622 88 628T43 637H25V660Q25 683 27 683L37 684Q47 685 66 686T103 688Q120 689 140 690T170 693T181 694H184V367Q244 442 328 442Q451 442 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path id="MJX-1-TEX-N-74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"></path><path id="MJX-1-TEX-N-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path><path id="MJX-1-TEX-N-57" d="M792 683Q810 680 914 680Q991 680 1003 683H1009V637H996Q931 633 915 598Q912 591 863 438T766 135T716 -17Q711 -22 694 -22Q676 -22 673 -15Q671 -13 593 231L514 477L435 234Q416 174 391 92T358 -6T341 -22H331Q314 -21 310 -15Q309 -14 208 302T104 622Q98 632 87 633Q73 637 35 637H18V683H27Q69 681 154 681Q164 681 181 681T216 681T249 682T276 683H287H298V637H285Q213 637 213 620Q213 616 289 381L364 144L427 339Q490 535 492 546Q487 560 482 578T475 602T468 618T461 628T449 633T433 636T408 637H380V683H388Q397 680 508 680Q629 680 650 683H660V637H647Q576 637 576 619L727 146Q869 580 869 600Q869 605 863 612T839 627T794 637H783V683H792Z"></path><path id="MJX-1-TEX-N-64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mtext" transform="translate(1781.3,394) scale(0.707)"><use data-c="41" xlink:href="#MJX-1-TEX-N-41"></use><use data-c="72" xlink:href="#MJX-1-TEX-N-72" transform="translate(750,0)"></use><use data-c="65" xlink:href="#MJX-1-TEX-N-65" transform="translate(1142,0)"></use><use data-c="61" xlink:href="#MJX-1-TEX-N-61" transform="translate(1586,0)"></use></g><g data-mml-node="mrow" transform="translate(220,-345) scale(0.707)"><g data-mml-node="mtext"><use data-c="48" xlink:href="#MJX-1-TEX-N-48"></use><use data-c="65" xlink:href="#MJX-1-TEX-N-65" transform="translate(750,0)"></use><use data-c="69" xlink:href="#MJX-1-TEX-N-69" transform="translate(1194,0)"></use><use data-c="67" xlink:href="#MJX-1-TEX-N-67" transform="translate(1472,0)"></use><use data-c="68" xlink:href="#MJX-1-TEX-N-68" transform="translate(1972,0)"></use><use data-c="74" xlink:href="#MJX-1-TEX-N-74" transform="translate(2528,0)"></use></g><g data-mml-node="mo" transform="translate(2917,0)"><use data-c="D7" xlink:href="#MJX-1-TEX-N-D7"></use></g><g data-mml-node="mtext" transform="translate(3695,0)"><use data-c="57" xlink:href="#MJX-1-TEX-N-57"></use><use data-c="69" xlink:href="#MJX-1-TEX-N-69" transform="translate(1028,0)"></use><use data-c="64" xlink:href="#MJX-1-TEX-N-64" transform="translate(1306,0)"></use><use data-c="74" xlink:href="#MJX-1-TEX-N-74" transform="translate(1862,0)"></use><use data-c="68" xlink:href="#MJX-1-TEX-N-68" transform="translate(2251,0)"></use></g></g><rect width="4797.6" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></li>
+<li><strong>Distribution in X-direction</strong>: Analyze the spread of foreground pixels horizontally.</li>
+<li><strong>Distribution in Y-direction</strong>: Analyze the spread of foreground pixels vertically.</li>
+</ul>
+</li>
+<li>
+<p><strong>Feature Analysis</strong>:</p>
+<ul>
+<li>Compare the features obtained for different pairs of characters.</li>
+<li>Identify which features help in distinguishing different characters.</li>
+<li>Determine which features consistently describe characters that appear the same.</li>
+</ul>
+</li>
+</ol>
+<p>By the end of this exercise, you should be able to effectively separate characters from an image and analyze their binary features to understand their distinct characteristics.</p>
+<hr>
+<h2 id="observations-from-the-binary-shape-analysis-task">Observations from the Binary Shape Analysis Task</h2>
+<h3 id="1-image-thresholding">1. Image Thresholding:</h3>
+<p>After loading the image, we first converted it to grayscale. This simplifies the image and helps in thresholding. We applied three types of thresholding:</p>
+<ul>
+<li><strong>Basic Binary Thresholding</strong>: Pixels with intensity above 127 are set to 255 (white), and those below are set to 0 (black).</li>
+<li><strong>Otsu’s Thresholding</strong>: This method automatically calculates an optimal threshold value based on the image histogram.</li>
+<li><strong>Gaussian Blur + Otsu’s Thresholding</strong>: Before applying Otsu’s thresholding, we smoothed the image using Gaussian blur. This can help in removing noise and improving the thresholding result.</li>
+</ul>
+<p>From the displayed images, we can observe that the combination of Gaussian blur and Otsu’s thresholding provides a cleaner binary image, especially if the original image has noise.</p>
+<h3 id="2-connected-component-analysis">2. Connected Component Analysis:</h3>
+<p>After thresholding, we performed connected component labeling to identify individual blobs or regions in the binary image. Each unique blob is assigned a unique label.</p>
+<ul>
+<li>The number of labels gives us the number of unique regions detected, including the background.</li>
+<li>The maximum label value provides an idea of the labeling range.</li>
+</ul>
+<p>The colored components image visually represents each unique region with a different color. This helps in understanding the separation of different blobs and verifying the accuracy of the connected component analysis.</p>
+<h3 id="3-blob-statistics">3. Blob Statistics:</h3>
+<p>The <code dir="auto">connectedComponentsWithStats</code> function provides statistics for each detected blob:</p>
+<ul>
+<li><strong>Leftmost coordinate</strong>: The x-coordinate of the top-left corner of the bounding box.</li>
+<li><strong>Topmost coordinate</strong>: The y-coordinate of the top-left corner of the bounding box.</li>
+<li><strong>Width</strong>: Width of the bounding box.</li>
+<li><strong>Height</strong>: Height of the bounding box.</li>
+<li><strong>Area</strong>: Total number of pixels in the blob.</li>
+</ul>
+<p>From the displayed statistics, we can analyze the size and position of each blob. This information can be crucial for further processing, such as feature extraction or classification tasks.</p>
+<hr>
+<h3 id="before-diving-into-the-main-steps-lets-understand-the-utility-functions-that-will-be-used-throughout-the-process">Before diving into the main steps, let’s understand the utility functions that will be used throughout the process.</h3>
+<h3 id="function-display_imageimg-title">Function: <code dir="auto">display_image(img, title="")</code></h3>
+<p>This function displays an image using the <code dir="auto">matplotlib</code> library.</p>
+<ul>
+<li><strong>Parameters</strong>:
+<ul>
+<li><code dir="auto">img</code>: The image to be displayed.</li>
+<li><code dir="auto">title</code> (optional): A title for the image display.</li>
+</ul>
+</li>
+<li><strong>Functionality</strong>:
+<ul>
+<li>The function creates a figure with a specified size.</li>
+<li>It then displays the image in grayscale format.</li>
+<li>The title is set, and the axis is turned off for better visualization.</li>
+</ul>
+</li>
+</ul>
+<h3 id="function-imshow_componentslabels">Function: <code dir="auto">imshow_components(labels)</code></h3>
+<p>This function visualizes the connected components (or blobs) in an image with different colors.</p>
+<ul>
+<li><strong>Parameters</strong>:
+<ul>
+<li><code dir="auto">labels</code>: The labeled image obtained from the connected component analysis.</li>
+</ul>
+</li>
+<li><strong>Functionality</strong>:
+<ul>
+<li>Maps each label to a unique hue.</li>
+<li>Merges it with blank channels to create an HSV image.</li>
+<li>Converts the HSV image to BGR format for visualization.</li>
+<li>Sets the background label (usually 0) t</li>
+</ul>
+</li>
+</ul>
+<h3 id="function-extract_featureslabels_im-stats">Function: <code dir="auto">extract_features(labels_im, stats)</code></h3>
+<p>This function extracts specific features from each detected blob or character in the image.</p>
+<ul>
+<li><strong>Parameters</strong>:
+<ul>
+<li><code dir="auto">labels_im</code>: The labeled image from the connected component analysis.</li>
+<li><code dir="auto">stats</code>: Statistics of each blob, usually obtained alongside the labeled image.</li>
+</ul>
+</li>
+<li><strong>Functionality</strong>:
+<ul>
+<li>For each blob, the function computes:
+<ul>
+<li><code dir="auto">Area</code>: Total number of foreground pixels.</li>
+<li><code dir="auto">Height</code>: Height of the blob’s bounding box.</li>
+<li><code dir="auto">Width</code>: Width of the blob’s bounding box.</li>
+<li><code dir="auto">Fraction of Foreground Pixels</code>: Ratio of the area to the bounding box’s area.</li>
+<li><code dir="auto">X Distribution</code>: Distribution of foreground pixels along the x-axis.</li>
+<li><code dir="auto">Y Distribution</code>: Distribution of foreground pixels along the y-axis.</li>
+</ul>
+</li>
+<li>The function returns a list of dictionaries, where each dictionary contains the features for a specific blob.
+o black.</li>
+</ul>
+</li>
+</ul>
+<h2 id="image-loading-and-preprocessing">Image Loading and Preprocessing</h2>
+<p>In this section, we load an image and convert it to grayscale, and apply different thresholding techniques to binarize the image.</p>
+<h3 id="step-by-step-explanation-1">Step-by-Step Explanation:</h3>
+<ol>
+<li>
+<p><strong>Loading Image Files</strong>:
+We first fetch all the image filenames with <code dir="auto">.png</code> extension from the specified directory and then select one of the images for further processing.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">path </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">images</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">  </span><span style="--0:#809191;--1:#616671"># Replace with your path</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">filenames </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> glob.</span><span style="--0:#B2CCD6;--1:#097174">glob</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">os.path.</span><span style="--0:#B2CCD6;--1:#097174">join</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">path</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#9B504E">*.png</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">))</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">filename </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> filenames[</span><span style="--0:#F78C6C;--1:#AA0982">2</span><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">img </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">imread</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">filename</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> cv2.IMREAD_COLOR</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="path = &#x22;images&#x22;  # Replace with your pathfilenames = glob.glob(os.path.join(path, &#x27;*.png&#x27;))filename = filenames[2]img = cv2.imread(filename, cv2.IMREAD_COLOR)"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Displaying the Original Image</strong>:
+We use the <code dir="auto">display_image</code> function to visualize the original image.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#B2CCD6;--1:#097174">display_image</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">img</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">Original Image</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="display_image(img, &#x22;Original Image&#x22;)"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Grayscale Conversion</strong>:
+The color image is converted to grayscale. This is done to simplify the image and to prepare it for thresholding.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">gray </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">cvtColor</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">img</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> cv2.COLOR_BGR2GRAY</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Thresholding</strong>:
+Thresholding is a technique to segment an image by setting a pixel to a foreground value if it’s above a certain threshold and to a background value if it’s below that threshold.</p>
+<ul>
+<li>
+<p><strong>Basic Binary Thresholding</strong>:
+Pixels with intensity above 127 are set to 255 (white), and those below are set to 0 (black).</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">_, th1 </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">threshold</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">gray</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#F78C6C;--1:#AA0982">127</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#F78C6C;--1:#AA0982">255</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> cv2.THRESH_BINARY</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#B2CCD6;--1:#097174">display_image</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">th1</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">Basic Binary Thresholding</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="_, th1 = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)display_image(th1, &#x22;Basic Binary Thresholding&#x22;)"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Otsu’s Thresholding</strong>:
+Otsu’s method calculates an “optimal” threshold by maximizing the variance between two classes of pixels (foreground and background). It’s more adaptive than basic thresholding.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">_, th2 </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">threshold</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">gray</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#F78C6C;--1:#AA0982">0</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#F78C6C;--1:#AA0982">255</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> cv2.THRESH_BINARY </span><span style="--0:#C792EA;--1:#8D46B4">+</span><span style="--0:#82AAFF;--1:#3C63B3"> cv2.THRESH_OTSU</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#B2CCD6;--1:#097174">display_image</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">th2</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">Otsu's Thresholding</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="_, th2 = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)display_image(th2, &#x22;Otsu&#x27;s Thresholding&#x22;)"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Gaussian Blur + Otsu’s Thresholding</strong>:
+Before applying Otsu’s thresholding, we smooth the image using a Gaussian blur. This helps in removing noise and can lead to better thresholding results.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">blur </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">GaussianBlur</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">gray</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> (</span><span style="--0:#F78C6C;--1:#AA0982">5</span><span style="--0:#82AAFF;--1:#3C63B3">, </span><span style="--0:#F78C6C;--1:#AA0982">5</span><span style="--0:#82AAFF;--1:#3C63B3">)</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#F78C6C;--1:#AA0982">0</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">_, th3 </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">threshold</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">blur</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#F78C6C;--1:#AA0982">0</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#F78C6C;--1:#AA0982">255</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> cv2.THRESH_BINARY </span><span style="--0:#C792EA;--1:#8D46B4">+</span><span style="--0:#82AAFF;--1:#3C63B3"> cv2.THRESH_OTSU</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#B2CCD6;--1:#097174">display_image</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">th3</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">Gaussian Blur + Otsu's Thresholding</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="blur = cv2.GaussianBlur(gray, (5, 5), 0)_, th3 = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)display_image(th3, &#x22;Gaussian Blur + Otsu&#x27;s Thresholding&#x22;)"><div></div></button></div></figure></div>
+</li>
+</ul>
+</li>
+</ol>
+<p>By the end of these steps, we have three binarized versions of the original image using different thresholding techniques. This allows us to compare and choose the best method for further processing.</p>
+<hr>
+<h2 id="connected-component-analysis-and-feature-extraction">Connected Component Analysis and Feature Extraction</h2>
+<p>In this section, we perform connected component analysis on the thresholded image to identify and label individual blobs (connected components). After labeling, we will extract specific features for each blob and compare them.</p>
+<h3 id="step-by-step-explanation-2">Step-by-Step Explanation:</h3>
+<ol>
+<li>
+<p><strong>Inverting the Image</strong>:
+The connected component function in OpenCV treats white as the foreground and black as the background. Since our image has black characters on a white background, we invert the image colors.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">th </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">bitwise_not</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">th3</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="th = cv2.bitwise_not(th3)"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Connected Component Analysis</strong>:
+We perform connected component labeling on the inverted image. This function labels each connected component with a unique label.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">num_labels, labels_im, stats, centroids </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> cv2.</span><span style="--0:#B2CCD6;--1:#097174">connectedComponentsWithStats</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">th</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#D7DBE0;--1:#403F53">connectivity</span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#F78C6C;--1:#AA0982">4</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="num_labels, labels_im, stats, centroids = cv2.connectedComponentsWithStats(th, connectivity=4)"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Visualizing the Components</strong>:
+Using the <code dir="auto">imshow_components</code> function, we color each connected component differently to visualize them distinctly.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">colored_components_img </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#B2CCD6;--1:#097174">imshow_components</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">labels_im</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#B2CCD6;--1:#097174">display_image</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">colored_components_img</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">Colored Components</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="colored_components_img = imshow_components(labels_im)display_image(colored_components_img, &#x22;Colored Components&#x22;)"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Extracting Features for Each Blob</strong>:
+For each labeled component (blob), we extract specific features like area, height, width, and distributions using the <code dir="auto">extract_features</code> function.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">blob_features </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#B2CCD6;--1:#097174">extract_features</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#82AAFF;--1:#3C63B3">labels_im</span><span style="--0:#D9F5DD;--1:#111111">,</span><span style="--0:#82AAFF;--1:#3C63B3"> stats</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="blob_features = extract_features(labels_im, stats)"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Comparing Features of Blobs</strong>:
+As a demonstration, we compare the features of the first two blobs.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">blob1_features </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> blob_features[</span><span style="--0:#F78C6C;--1:#AA0982">1</span><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">blob2_features </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> blob_features[</span><span style="--0:#F78C6C;--1:#AA0982">2</span><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="blob1_features = blob_features[1]blob2_features = blob_features[2]"><div></div></button></div></figure></div>
+<ul>
+<li>
+<p>Displaying features for the first blob:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3C63B3">print</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">Features for Blob 1:</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">for</span><span style="--0:#D6DEEB;--1:#403F53"> key, value </span><span style="--0:#C792EA;--1:#8D46B4">in</span><span style="--0:#D6DEEB;--1:#403F53"> blob1_features.</span><span style="--0:#B2CCD6;--1:#097174">items</span><span style="--0:#D6DEEB;--1:#403F53">():</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#C792EA;--1:#8D46B4">if</span><span style="--0:#D6DEEB;--1:#403F53"> key </span><span style="--0:#C792EA;--1:#8D46B4">not</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8D46B4">in</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">[</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">X Distribution</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">Y Distribution</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D9F5DD;--1:#111111">]</span><span style="--0:#D6DEEB;--1:#403F53">:</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#C5E478;--1:#3C63B3">print</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#C792EA;--1:#8D46B4">f</span><span style="--0:#ECC48D;--1:#9B504E">"</span><span style="--0:#82AAFF;--1:#3C63B3">{key}</span><span style="--0:#ECC48D;--1:#9B504E">: </span><span style="--0:#82AAFF;--1:#3C63B3">{value}</span><span style="--0:#ECC48D;--1:#9B504E">"</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="print(&#x22;Features for Blob 1:&#x22;)for key, value in blob1_features.items():    if key not in [&#x22;X Distribution&#x22;, &#x22;Y Distribution&#x22;]:        print(f&#x22;{key}: {value}&#x22;)"><div></div></button></div></figure></div>
+</li>
+<li>
+<p>Displaying features for the second blob:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3C63B3">print</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#F78C6C;--1:#AA0982">\n</span><span style="--0:#ECC48D;--1:#9B504E">Features for Blob 2:</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8D46B4">for</span><span style="--0:#D6DEEB;--1:#403F53"> key, value </span><span style="--0:#C792EA;--1:#8D46B4">in</span><span style="--0:#D6DEEB;--1:#403F53"> blob2_features.</span><span style="--0:#B2CCD6;--1:#097174">items</span><span style="--0:#D6DEEB;--1:#403F53">():</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#C792EA;--1:#8D46B4">if</span><span style="--0:#D6DEEB;--1:#403F53"> key </span><span style="--0:#C792EA;--1:#8D46B4">not</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C792EA;--1:#8D46B4">in</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">[</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">X Distribution</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">Y Distribution</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D9F5DD;--1:#111111">]</span><span style="--0:#D6DEEB;--1:#403F53">:</span></div></div><div class="ec-line"><div class="code"><span class="indent">        </span><span style="--0:#C5E478;--1:#3C63B3">print</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#C792EA;--1:#8D46B4">f</span><span style="--0:#ECC48D;--1:#9B504E">"</span><span style="--0:#82AAFF;--1:#3C63B3">{key}</span><span style="--0:#ECC48D;--1:#9B504E">: </span><span style="--0:#82AAFF;--1:#3C63B3">{value}</span><span style="--0:#ECC48D;--1:#9B504E">"</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="print(&#x22;\nFeatures for Blob 2:&#x22;)for key, value in blob2_features.items():    if key not in [&#x22;X Distribution&#x22;, &#x22;Y Distribution&#x22;]:        print(f&#x22;{key}: {value}&#x22;)"><div></div></button></div></figure></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Demonstrating Feature Comparison</strong>:
+As an example, we demonstrate how to compare the area of the first two blobs.</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="python"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">difference_in_area </span><span style="--0:#C792EA;--1:#8D46B4">=</span><span style="--0:#D6DEEB;--1:#403F53"> blob1_features[</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">Area</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">] </span><span style="--0:#C792EA;--1:#8D46B4">-</span><span style="--0:#D6DEEB;--1:#403F53"> blob2_features[</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">Area</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3C63B3">print</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#C792EA;--1:#8D46B4">f</span><span style="--0:#ECC48D;--1:#9B504E">"</span><span style="--0:#F78C6C;--1:#AA0982">\n</span><span style="--0:#ECC48D;--1:#9B504E">Difference in Area between Blob 1 and Blob 2: </span><span style="--0:#82AAFF;--1:#3C63B3">{difference_in_area}</span><span style="--0:#ECC48D;--1:#9B504E">"</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="difference_in_area = blob1_features[&#x22;Area&#x22;] - blob2_features[&#x22;Area&#x22;]print(f&#x22;\nDifference in Area between Blob 1 and Blob 2: {difference_in_area}&#x22;)"><div></div></button></div></figure></div>
+</li>
+</ol>
+<p>By the end of these steps, we have labeled each connected component in the image, extracted features for each blob, and demonstrated how to compare these features. This process can be useful in various image processing tasks, such as character recognition, where distinguishing between different characters based on their features is essential.</p>
+<h3 id="cv2connectedcomponentswithstats-explanation"><code dir="auto">cv2.connectedComponentsWithStats</code> Explanation</h3>
+<h4 id="input">Input:</h4>
+<ul>
+<li><strong>th</strong>: This is the binary image on which connected component labeling is performed. In our case, it’s the inverted thresholded image.</li>
+<li><strong>connectivity</strong>: This parameter determines how a pixel is connected to its neighbors. A value of <code dir="auto">4</code> means a pixel is connected to its top, bottom, left, and right neighbors. A value of <code dir="auto">8</code> would also include diagonal neighbors.</li>
+</ul>
+<h4 id="outputs">Outputs:</h4>
+<ul>
+<li><strong>num_labels</strong>: This is the total number of unique labels assigned. It includes the background as one label.</li>
+<li><strong>labels_im</strong>: This is an image of the same size as the input where each pixel’s value is its label. Pixels belonging to the same connected component have the same label.</li>
+<li><strong>stats</strong>: This is a matrix where each row corresponds to a label and contains statistics related to that label. The columns represent:
+<ul>
+<li>The x-coordinate of the top-left point of the bounding box.</li>
+<li>The y-coordinate of the top-left point of the bounding box.</li>
+<li>The width of the bounding box.</li>
+<li>The height of the bounding box.</li>
+<li>The total area (in pixels) of the connected component.</li>
+</ul>
+</li>
+<li><strong>centroids</strong>: This is a matrix where each row corresponds to a label, and the columns represent the x and y coordinates of the centroid of the connurther processing.</li>
+</ul>
+<hr>
+<h1 id="exercise-3---histogram-feature-extraction">Exercise 3 - Histogram Feature Extraction</h1>
+<h3 id="objective-1">Objective:</h3>
+<p>Develop a program to compute the histogram of a given input gray-scale image patch. Utilize this program to analyze the characters segmented in Exercise 2</p>
+<h3 id="steps-2">Steps:</h3>
+<ol>
+<li>
+<p><strong>Histogram Computation</strong>:</p>
+<ul>
+<li>Write a function or program that calculates the histogram of an input gray-scale image patch.</li>
+<li>Decide on the number of bins for the histogram. This choice will affect the resolution and the details captured by the histogram.</li>
+</ul>
+</li>
+<li>
+<p><strong>Application on Exercise 2</strong>:</p>
+<ul>
+<li>Revisit the results from Exercise 2 where individual characters were segmented using bounding boxes.</li>
+<li>For each segmented character, compute its histogram using the program developed in the first step.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li>Compare the histograms of different characters. Observe the differences and similarities.</li>
+<li>Compare the histograms of characters that are identical. Note the variations, if any, and the consistencies.</li>
+<li>Discuss the effectiveness of the histogram as a feature for character differentiation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Resolution Dependency</strong>:</p>
+<ul>
+<li>Analyze how the histogram feature’s effectiveness changes with the resolution (i.e., the number of bins).</li>
+<li>Does increasing the number of bins provide more discriminative power, or does it introduce noise? Conversely, does reducing the number of bins oversiplify the feature?</li>
+</ul>
+</li>
+</ol>
+<h3 id="deliverables">Deliverables:</h3>
+<ul>
+<li>A program or function for histogram computation.</li>
+<li>Histograms of segmented characters from Exercise 2.</li>
+<li>Analysis and comments on the utility of the histogram feature for character differentiation and its dependency on resolution.</li>
+</ul>
+<hr>
+<h2 id="utility-functions-explanation">Utility Functions Explanation</h2>
+<h3 id="function-compute_histogramimage-bins256">Function: <code dir="auto">compute_histogram(image, bins=256)</code></h3>
+<p>This function calculates the histogram of a given grayscale image.</p>
+<ul>
+<li><strong>Parameters</strong>:
+<ul>
+<li><code dir="auto">image</code>: The input grayscale image for which the histogram is to be computed.</li>
+<li><code dir="auto">bins</code> (optional): The number of bins for the histogram. Default is set to 256, which represents each pixel intensity value from 0 to 255.</li>
+</ul>
+</li>
+<li><strong>Functionality</strong>:
+<ul>
+<li>The function uses OpenCV’s <code dir="auto">calcHist</code> method to compute the histogram of the input image.</li>
+<li>It returns the histogram as a list of pixel intensities.</li>
+</ul>
+</li>
+</ul>
+<h3 id="function-display_histogramhist-titlehistogram">Function: <code dir="auto">display_histogram(hist, title="Histogram")</code></h3>
+<p>This function visualizes the computed histogram using the <code dir="auto">matplotlib</code> library.</p>
+<ul>
+<li><strong>Parameters</strong>:
+<ul>
+<li><code dir="auto">hist</code>: The histogram values that need to be plotted.</li>
+<li><code dir="auto">title</code> (optional): The title for the histogram plot. Default is set to “Histogram”.</li>
+</ul>
+</li>
+<li><strong>Functionality</strong>:
+<ul>
+<li>The function creates a figure with a specified size.</li>
+<li>It then plots the histogram values with pixel values on the x-axis and their frequencies on the y-axis.</li>
+<li>A grid is added for better visualization.</li>
+</ul>
+</li>
+</ul>
+<h3 id="function-display_imageimg-title-1">Function: <code dir="auto">display_image(img, title="")</code></h3>
+<p>This function displays a grayscale image using the <code dir="auto">matplotlib</code> library.</p>
+<ul>
+<li><strong>Parameters</strong>:
+<ul>
+<li><code dir="auto">img</code>: The grayscale image that needs to be displayed.</li>
+<li><code dir="auto">title</code> (optional): A title for the image display.</li>
+</ul>
+</li>
+<li><strong>Functionality</strong>:
+<ul>
+<li>The function creates a figure with a specified size.</li>
+<li>It then displays the image in grayscale format.</li>
+<li>The title is set, and the axis is turned on for better visualization.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="histogram-computation-and-visualization-for-each-character">Histogram Computation and Visualization for Each Character</h3>
+<p>In the provided code, we’re iterating through each detected character (or blob) in the image, extracting its bounding box, computing its histogram, and then visualizing both the character with its bounding box and its histogram.</p>
+<h3 id="loop-for-k-in-range1-num_labels">Loop: <code dir="auto">for k in range(1, num_labels)</code></h3>
+<p>This loop iterates over each detected character. We start from 1 because the label 0 is reserved for the background.</p>
+<ul>
+<li>
+<p><strong>Inside the Loop</strong>:</p>
+<ul>
+<li>
+<p><strong>Bounding Box Extraction</strong>:</p>
+<ul>
+<li><code dir="auto">x, y, w, h, area = stats[k]</code>: For each character, we extract its bounding box’s top-left coordinates <code dir="auto">(x, y)</code>, its width <code dir="auto">w</code>, height <code dir="auto">h</code>, and the total area <code dir="auto">area</code> from the <code dir="auto">stats</code> array.</li>
+<li><code dir="auto">character_patch = gray[y:y+h, x:x+w]</code>: Using the bounding box coordinates and dimensions, we extract the character’s region from the grayscale image.</li>
+</ul>
+</li>
+<li>
+<p><strong>Histogram Computation</strong>:</p>
+<ul>
+<li><code dir="auto">hist = compute_histogram(character_patch, bins=32)</code>: We compute the histogram of the extracted character patch using 256 bins. The number of bins can be adjusted based on the desired resolution.</li>
+</ul>
+</li>
+<li>
+<p><strong>Histogram Visualization</strong>:</p>
+<ul>
+<li><code dir="auto">display_histogram(hist, title=f"Histogram for Character {k}")</code>: We visualize the computed histogram using the <code dir="auto">display_histogram</code> function.</li>
+</ul>
+</li>
+<li>
+<p><strong>Character Visualization with Bounding Box</strong>:</p>
+<ul>
+<li><code dir="auto">output = img.copy()</code>: We create a copy of the original image to draw the bounding box.</li>
+<li><code dir="auto">cv2.rectangle(output, (x, y), (x + w, y + h), (0, 255, 0), 3)</code>: We draw a green bounding box around the detected character.</li>
+<li><code dir="auto">display_image(output, title=f"Character {k} with Bounding Box")</code>: We display the character with its bounding box using the <code dir="auto">display_image</code> function.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="post-loop">Post Loop:</h3>
+<p>After processing all characters, you can compare the histograms of different characters using various methods like correlation, chi-square, etc. This step is essential to understand the similarity or difference between characters based on their histograms.</p>
+<hr>
+<hr>
+<h3 id="comparing-histograms-of-characters">Comparing Histograms of Characters:</h3>
+<p>When we analyze the histograms of characters, several observations can be made:</p>
+<ol>
+<li>
+<p><strong>Same Characters</strong>:</p>
+<ul>
+<li>Histograms of the same characters tend to be very similar. This is because the distribution of pixel intensities for the same character will closely match.</li>
+<li>When comparing the histograms of the same characters, the correlation value will be close to 1, indicating a high degree of similarity.</li>
+</ul>
+</li>
+<li>
+<p><strong>Different Characters</strong>:</p>
+<ul>
+<li>For different characters, the histograms might vary significantly. This is especially true if the characters have distinct shapes or structures.</li>
+<li>The correlation between the histograms of different characters will be lower. In some cases, if the intensity distributions are contrasting sharply, the correlation might even be negative.</li>
+</ul>
+</li>
+</ol>
+<h3 id="insights-on-the-histogram-feature">Insights on the Histogram Feature:</h3>
+<p>The histogram, which represents the distribution of pixel intensities in an image, provides both advantages and limitations when used for character recognition:</p>
+<ol>
+<li>
+<p><strong>Advantages</strong>:</p>
+<ul>
+<li><strong>Simplicity</strong>: Histograms are straightforward to compute and understand.</li>
+<li><strong>Robustness</strong>: They can be robust against minor variations or noise in the image.</li>
+<li><strong>Profile Capture</strong>: Histograms can capture the general profile of a character, such as whether it’s generally bright or dark, which can be useful in differentiating certain characters.</li>
+</ul>
+</li>
+<li>
+<p><strong>Limitations</strong>:</p>
+<ul>
+<li><strong>Loss of Spatial Information</strong>: While histograms capture the intensity distribution, they lose the spatial arrangement of these intensities. This means two very different characters might have the same histogram if they have a similar count of dark and light pixels.</li>
+<li><strong>Discrimination</strong>: For characters that have similar pixel intensity distributions, histograms might not be able to distinguish them effectively.</li>
+</ul>
+</li>
+</ol>
+<h3 id="resolution-of-the-histogram">Resolution of the Histogram:</h3>
+<p>The number of bins in the histogram, which determines its resolution, plays a crucial role in its effectiveness:</p>
+<ol>
+<li>
+<p><strong>High Resolution (Many Bins)</strong>:</p>
+<ul>
+<li>Can capture intricate details of the pixel intensity distribution.</li>
+<li>Might be overly sensitive to minor variations or noise in the image.</li>
+<li>Requires more memory and might be slower when used for comparisons.</li>
+</ul>
+</li>
+<li>
+<p><strong>Low Resolution (Fewer Bins)</strong>:</p>
+<ul>
+<li>Provides a more generalized view of the pixel intensity distribution, which can make it more robust against noise.</li>
+<li>However, it might miss out on capturing subtle differences between characters.</li>
+<li>Computationally more efficient due to fewer bins.</li>
+</ul>
+</li>
+</ol>
+<p><strong>In Conclusion</strong>:
+The resolution of the histogram is a crucial parameter. A very high-resolution histogram might be too sensitive to noise, while a very low-resolution histogram might miss out on important character details. It’s always a good idea to experiment with different resolutions to find the one that works best for the specific dataset and task at hand.</p><style>
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+</style> </div> <footer class="sl-flex astro-wfnuabzr"> <div class="meta sl-flex astro-wfnuabzr">   </div> <div class="pagination-links astro-hw4muy6m" dir="ltr"> <a href="/ds/aml/4_problem_domains/1-image-processing/1_ima_6_feature_detectors/" rel="prev" class="astro-hw4muy6m"> <svg aria-hidden="true" class="astro-hw4muy6m astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg>  <span class="astro-hw4muy6m"> Previous <br class="astro-hw4muy6m"> <span class="link-title astro-hw4muy6m">1.6 Feature Detectors</span> </span> </a> <a href="/ds/aml/4_problem_domains/1-image-processing/1_ima_7_misc/" rel="next" class="astro-hw4muy6m"> <svg aria-hidden="true" class="astro-hw4muy6m astro-l4bgpgeq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg>  <span class="astro-hw4muy6m"> Next <br class="astro-hw4muy6m"> <span class="link-title astro-hw4muy6m">1.8 Misc</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>
